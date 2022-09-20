@@ -1,0 +1,320 @@
+..
+cd nushell/
+hx config.nu
+hx env.nu
+..
+alacritty 
+cd alacritty/
+hx alacritty.yml
+which nu
+nvim alacritty.yml
+d
+ls
+cd .config/nixpkgs/
+nvim home.nix
+update
+bat -v
+bat home.nix
+nvim home.nix
+nux
+zellij 
+zellij list-sessions
+config nu
+history
+zellij attach low-rings
+zellij list-sessions
+zellij
+wc
+clear
+which zellij
+nvim .config/alacritty/alacritty.yml
+config -h 
+nvim .config/nushell/config.nu
+clear
+nuconf
+c
+nvim .config/nushell/config.nu
+ll
+config set startup ["alias e = exa"]
+nvim .config/nushell/config.nu
+pwd
+clear
+e
+nuconf
+nvim .config/nushell/config.nu
+config env 
+nvim .config/nushell/config.nu
+config env 
+sys
+z 
+config nu
+nico
+z
+zoxide 
+config env 
+config nu 
+..
+zoxide 
+kosumi
+cd kosumi/
+config nu 
+e
+e -t
+e --tree
+config nu 
+lt
+nico
+update
+nico
+update
+nico
+update
+nico
+hx 
+config nu 
+config env 
+config nu 
+nvim .config/alacritty/alacritty.yml
+config nu 
+alco
+config nu 
+hxco 
+nico 
+cd .config/nixpkgs/
+cd programs/
+;s
+e
+mkdir helix
+v helix/default.nix
+v helix/languages.nix
+..
+v programs/default.nix
+update
+v programs/default.nix
+update
+./programs/
+v
+v helix/languages.nix
+v helix/default.nix
+hexo
+hxco 
+nico
+hx ~/.config/starship.toml
+kate  ~/.config/starship.toml
+hx ~/.config/starship.toml
+clear
+~
+cd nix-config/
+nuco
+alco
+btm
+which nushell
+which nu
+clear
+paru latte
+latte
+.config/nixpkgs/
+;ls
+hx
+cd programs/
+;s
+ls
+c default.nix
+cd helix/
+ls
+c languages.nix
+c default.nix
+..
+his
+his | rg d 
+his | rg switch
+home-manager switch
+ls
+v home.nix
+his | rg nix
+cd programs/helix/
+rm languages.nix
+v default.nix
+home-manager switch
+v default.nix
+home-manager switch
+rm ~/.config/helix/config.toml
+home-manager switch
+v default.nix
+..
+v programs/default.nix
+ls
+v default.nix
+v helix/default.nix
+v default.nix
+v ../home.nix
+home-manager switch
+v default.nix
+v ../home.nix
+v default.nix
+home-manager switch
+v default.nix
+nvim .config/alacritty/alacritty.yml
+v ../home.nix
+hx ~/.config/starship.toml
+hx helix/default.nix
+hx default.nix
+hx ../home.nix
+v ../home.nix
+up
+update
+hx default.nix
+cd programs/helix/
+cd helix/
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+v default.nix
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+nix-fmt
+nix fmt default.nix
+hx ../../flake.nix
+update
+nix fmt default.nix
+nix fmt 
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+update
+hx default.nix
+..
+ls
+mkdir nvim
+v nvim/default.nix
+v default.nix
+update
+v nvim/default.nix
+update
+v ../flake.nix
+update
+alias update
+alias --help 
+v ../outputs/home-conf.nix
+update
+v ../outputs/home-conf.nix
+update
+v ../outputs/home-conf.nix
+v default.nix
+update
+v default.nix
+v ../flake.nix
+v default.nix
+v nvim/default.nix
+kate nvim/default.nix
+update
+v nvim/default.nix
+hx nvim/default.nix
+update
+hx nvim/default.nix
+update
+v nvim/default.nix
+mkdir ~/nixp
+git clone git@github.com:malob/nixpkgs.git ~/nixp/
+ls ~/.ssh/
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+bash 
+cat ~/.ssh/id_ed25519.pub
+git clone git@github.com:malob/nixpkgs.git ~/nixp/
+kate  ~/.ssh/id_ed25519.pub
+git clone git@github.com:malob/nixpkgs.git ~/nixp/
+nushell
+bash
+update
+git clone git@github.com:malob/nixpkgs.git ~/nixp/
+..
+grep -r ssh .
+rp -r ssh .
+rg -r ssh .
+grep -r ssh .
+bash 
+ssh-add -h
+eval `ssh-agent -s`
+^eval `ssh-agent -s`
+bash
+ls ~/.ssh/
+dolphin .
+v programs/nvim/default.nix
+hx programs/nvim/default.nix
+v programs/nvim/default.nix
+update
+v programs/nvim/default.nix
+hx programs/nvim/default.nix
+pwd
+hx programs/nvim/default.nix
+update
+hx programs/nvim/default.nix
+v programs/nvim/default.nix
+hx programs/nvim/default.nix
+hx programs/default.nix
+hx programs/nvim/default.nix
+programs/
+cd programs/helix/
+..
+mkdir starship
+v 
+update
+v
+hx starship/default.nix
+hx starship/symbols.nix
+hx default.nix
+update
+rm ~/.config/starship.toml
+update
+hx starship/default.nix
+hx default.nix
+update
+ls starship/
+hx default.nix
+ls starship/
+update
+cd nix-config/
+hx default.nix
+ls
+..
+ls
+cd ~/.config/nixpkgs/
+hx default.nix
+hx home.nix
+shutdown 
+cd ~/.config/nixpkgs/
+ls programs/
