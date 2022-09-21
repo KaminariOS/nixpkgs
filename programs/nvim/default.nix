@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       vim = {
-        viAlias = false;
+        viAlias = true;
         vimAlias = true;
         customPlugins = with pkgs.vimPlugins; [
           multiple-cursors

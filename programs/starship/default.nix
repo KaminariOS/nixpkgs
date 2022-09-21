@@ -55,8 +55,8 @@
 
     status = {
     style = "bg:transparent";
-    symbol = "😅";
-    success_symbol = "🎯";
+    symbol = "💀";
+    success_symbol = "😅";
     format = ''[$symbol$common_meaning$signal_name$maybe_int]($style) '';
     map_symbol = true;
     disabled = false;
@@ -139,11 +139,12 @@
     battery = {
         full_symbol = "🔋";
         charging_symbol = "⚡";
-        discharging_symbol = "💀";
+        discharging_symbol = "🪫";
+        format = "[$percentage$symbol]($style)";
         display = [
         {
-        threshold = 80;
-         style = "fg:bold green bg:#33658A";
+        threshold = 90;
+         style = "bg:#33658A";
         }
         ];
     };
