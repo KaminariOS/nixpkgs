@@ -133,7 +133,7 @@
     disabled = false;
     time_format = "%R"; # Hour:Minute Format
     style = "bg:#33658A";
-    format = "[ ♥ $time ]($style)";
+    format = "[ $time ]($style)";
     };
     add_newline = true;
     battery = {

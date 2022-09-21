@@ -57,7 +57,7 @@ let
     helix
     zellij
 #    alacritty
-
+    fortune
   ];
 
 in
