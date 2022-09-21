@@ -533,3 +533,4 @@ alias e = exa --icons -l --no-user --no-permissions
 alias ls = exa --icons -l --no-user --no-permissions
 alias du = dust
 alias ps = procs
+alias rn = rofi -show run

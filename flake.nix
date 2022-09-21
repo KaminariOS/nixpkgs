@@ -62,7 +62,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       # };
-   homeConfigurations.kaminari = let username = "kaminari"; in
+   homeConfigurations.kosumi = let username = "kosumi"; in
   home-manager.lib.homeManagerConfiguration
    rec {
     pkgs = pkgsForSystem system;
@@ -80,19 +80,21 @@
 
   };
 
-   homeConfigurations.kosumi = let username = "kosumi"; in home-manager.lib.homeManagerConfiguration rec {
-    pkgs = pkgsForSystem system;
+   homeConfigurations.kaminari = let username = "kaminari"; in
+    rec {
+       pkgs = pkgsForSystem system;
+       modules = [
+       ./home.nix
+        neovim-flake.nixosModules.hm
+       {
+       home = {
+           inherit username;
+               homeDirectory = "/home/${username}";
+               stateVersion = "22.05";
+             };
+       }
+       ];
 
-    modules = [
-    ./home.nix
-    {
-    home = {
-        inherit username;
-            homeDirectory = "/home/${username}";
-            stateVersion = "22.05";
-          };
-    }
-    ];
-  };
+     };
     };
 }

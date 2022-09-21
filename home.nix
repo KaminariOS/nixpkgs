@@ -37,7 +37,7 @@ let
     python-language-server
 
     simplescreenrecorder # screen recorder gui
-    kitty
+#    kitty
     fish
     rofi
 
@@ -56,7 +56,7 @@ let
     delta
     helix
     zellij
-    alacritty
+#    alacritty
 
   ];
 
@@ -103,6 +103,11 @@ in
           enableFishIntegration = true;
           options = [];
         };
+    starship = {
+        enable = true;
+        enableFishIntegration = true;
+        enableZshIntegration = true;
+    };
   };
 
   # This value determines the Home Manager release that your

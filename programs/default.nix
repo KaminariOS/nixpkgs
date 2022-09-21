@@ -1,5 +1,5 @@
 [
-  ./alacritty
+#  ./alacritty
   ./helix
   ./starship
   ./starship/symbols.nix
@@ -9,5 +9,5 @@
    ./git
    ./fish
    ./rofi
-   ./kitty
+#   ./kitty
 ]
