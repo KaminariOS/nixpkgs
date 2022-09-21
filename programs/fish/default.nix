@@ -89,7 +89,7 @@ let
     set __fish_git_prompt_color_upstream_behind blue
 
     # Local prompt customization
-    set -e fish_greeting
+    # set -e fish_greeting
 
 
     set -g fish_pager_color_completion normal
