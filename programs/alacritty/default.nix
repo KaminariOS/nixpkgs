@@ -1,7 +1,7 @@
 { pkgs, specialArgs, ... }:
 
 let
-  fontSize = if specialArgs.hidpi then 10 else 8;
+  fontSize = 10;
 in
 {
   programs.alacritty = {
@@ -26,7 +26,10 @@ in
         size = fontSize;
       };
       selection.save_to_clipboard = true;
-      shell.program = "${pkgs.fish}/bin/fish";
+      shell = {
+      program = "${pkgs.zellij}/bin/zellij";
+      args = ["options" "--default-shell" "fish"];
+      };
       window = {
         decorations = "full";
         opacity = 0.8;

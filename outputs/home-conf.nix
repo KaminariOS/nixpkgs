@@ -1,9 +1,6 @@
 { system, nixpkgs, home-manager, ... }:
 
 let
-  username = "kosumi";
-  homeDirectory = "/home/${username}";
-  configHome = "${homeDirectory}/.config";
 
   pkgs = import nixpkgs {
     inherit system;
@@ -11,19 +8,27 @@ let
     config.xdg.configHome = configHome;
     overlays = [ neovim-flake.overlays.default ];
   };
-
+  imports = [
+    ../home.nix
+  ];
 
 in
 {
-  imports = [
-    homeage.homeManagerModules.homeage
-    ../home.nix
-  ];
+   homeConfigurations.kaminari = home-manager.lib.homeManagerConfiguration rec {
+    inherit pkgs system;
+    username = "kaminari";
+    modules = [{ inherit imports; }];
+    configuration = import ../home.nix {
+      inherit (pkgs) config lib stdenv pkgs;
+    };
+  };
   main = home-manager.lib.homeManagerConfiguration rec {
-    inherit pkgs system username homeDirectory;
+    inherit pkgs system ;
+  username = "kosumi";
+    # pkgs.config.xdg.configHome = configHome;
     modules = [{ inherit imports; }];
     configuration = import ./home.nix {
-      inherit (pkgs) config lib stdenv;
+      inherit (pkgs) config lib stdenv pkgs;
     };
   };
 }

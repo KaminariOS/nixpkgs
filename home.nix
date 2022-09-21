@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 
 let
-  username = "kosumi";
-  homeDirectory = "/home/${username}";
-  configHome = "${homeDirectory}/.config";
+#  configHome = "${config.homeDirectory}/.config";
   defaultPkgs = with pkgs; [
+    any-nix-shell
     arandr # simple GUI for xrandr
     asciinema # record the terminal
     bottom # alternative to htop & ytop
@@ -19,10 +18,11 @@ let
     nyancat # the famous rainbow cat!
     ranger # terminal file explorer
     ripgrep # fast grep
+    direnv
 
     rnix-lsp # nix lsp server
     rust-analyzer
-    #    nodePackages_latest.bash-language-server
+    # nodePackages_latest.bash-language-server
     #   nodePackages_latest.vscode-css-languageserver-bin
     #    nodePackages.dockerfile-language-server-nodejs
     gopls
@@ -31,13 +31,15 @@ let
     #   nodePackages.vscode-json-languageserver
     texlab
     taplo
+    sumneko-lua-language-server
     #    wgsl_analyzer
     #  nodePackages_latest.yaml-language-server
     python-language-server
 
     simplescreenrecorder # screen recorder gui
-
-    sumneko-lua-language-server
+    kitty
+    fish
+    rofi
 
     nushell
     tealdeer
@@ -54,6 +56,8 @@ let
     delta
     helix
     zellij
+    alacritty
+
   ];
 
 in
@@ -68,12 +72,11 @@ in
   news.display = "silent";
 
   xdg = {
-    inherit configHome;
+#    inherit configHome;
     enable = true;
   };
 
   home = {
-    inherit username homeDirectory;
     stateVersion = "22.05";
     packages = defaultPkgs;
 
@@ -82,10 +85,24 @@ in
       EDITOR = "nvim";
     };
   };
-
+    # restart services on change
+  systemd.user.startServices = "sd-switch";
 
   programs = {
     bat.enable = true;
+    direnv = {
+          enable = true;
+          nix-direnv.enable = true;
+        };
+    broot = {
+          enable = true;
+          enableFishIntegration = true;
+        };
+    zoxide = {
+          enable = true;
+          enableFishIntegration = true;
+          options = [];
+        };
   };
 
   # This value determines the Home Manager release that your

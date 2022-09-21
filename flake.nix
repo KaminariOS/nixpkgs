@@ -7,47 +7,92 @@
     # nixgl is needed for alacritty outside of nixOS
     # refer to https://github.com/NixOS/nixpkgs/issues/122671
     # https://github.com/guibou/nixGL/#use-an-overlay
-    nixgl.url = "github:guibou/nixGL";
     neovim-flake = {
-      #url = git+file:///home/gvolpe/workspace/neovim-flake;
-      url = github:gvolpe/neovim-flake;
-      # neovim-flake pushes its binaries to the cache using its own nixpkgs version
-      # if we instead use ours, we'd be rebuilding all plugins from scratch
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
+        url = github:gvolpe/neovim-flake;
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixgl.url = "github:guibou/nixGL";
+    fish-bobthefish-theme = {
+      url = github:gvolpe/theme-bobthefish;
+      flake = false;
+    };
+
+    fish-keytool-completions = {
+      url = github:ckipp01/keytool-fish-completions;
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixgl, ... }:
+  outputs = inputs @ {self, nixgl, nixpkgs, home-manager, neovim-flake, ... }:
     let
       system = "x86_64-linux";
+      fishOverlay = with inputs; f: p: {
+    inherit fish-bobthefish-theme fish-keytool-completions;
+  };
       pkgs = nixpkgs.legacyPackages.${system};
-      hidpi = false;
       pkgsForSystem = system: import nixpkgs {
         inherit system;
         config = {
           allowUnfree = true;
         };
-        overlays = [ nixgl.overlay ];
+       overlays = [
+       fishOverlay
+        nixgl.overlay
+        inputs.neovim-flake.overlays.default
+       ];
       };
+
     in
     {
-      formatter.x86_64-linux = pkgs.nixpkgs-fmt;
-      homeConfigurations.kosumi = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgsForSystem system;
-        extraSpecialArgs = {
-          inherit hidpi;
-        };
+      formatter.${system} = pkgs.nixpkgs-fmt;
+      # homeConfigurations.kosumi = home-manager.lib.homeManagerConfiguration {
+        # pkgs = pkgsForSystem system;
+        # extraSpecialArgs = {
+         # inherit hidpi;
+        # };
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        # modules = [ ./home.nix ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
-      };
+      # };
+   homeConfigurations.kaminari = let username = "kaminari"; in
+  home-manager.lib.homeManagerConfiguration
+   rec {
+    pkgs = pkgsForSystem system;
+    modules = [
+    ./home.nix
+     neovim-flake.nixosModules.hm
+    {
+    home = {
+        inherit username;
+            homeDirectory = "/home/${username}";
+            stateVersion = "22.05";
+          };
+    }
+    ];
+
+  };
+
+   homeConfigurations.kosumi = let username = "kosumi"; in home-manager.lib.homeManagerConfiguration rec {
+    pkgs = pkgsForSystem system;
+
+    modules = [
+    ./home.nix
+    {
+    home = {
+        inherit username;
+            homeDirectory = "/home/${username}";
+            stateVersion = "22.05";
+          };
+    }
+    ];
+  };
     };
 }
