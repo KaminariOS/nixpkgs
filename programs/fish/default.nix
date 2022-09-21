@@ -25,8 +25,8 @@ let
   alias nuco  "nvim ~/.config/nushell/config.nu"
   alias hxco  "hx ~/.config/helix/config.toml"
   alias alco  "nvim ~/.config/alacritty/alacritty.yml"
-  alias swim  "home-manager switch --flake '~/.config/nixpkgs#kosumi'"
-  alias swir  "home-manager switch --flake '~/nixpkgs#kaminari'"
+  alias swim  "home-manager switch --flake '/home/kosumi/.config/nixpkgs#kosumi'"
+  alias swir  "home-manager switch --flake '/home/kaminari/nixpkgs#kaminari'"
   alias nico  "nvim ~/.config/nixpkgs/home.nix"
   alias ll  "exa -l"
   alias v  "nvim"
@@ -38,10 +38,9 @@ let
   alias ls  "exa --icons -l --no-user --no-permissions"
   alias du  "dust"
   alias ps  "procs"
-  alias rfr = "rofi -show run"
+  alias rfr  "rofi -show run"
   '';
   fishConfig = "
-    fish_vi_key_bindings
 
     set -g fish_color_autosuggestion 555 yellow
     set -g fish_color_command 5f87d7
@@ -107,6 +106,19 @@ let
     set -gx LESS_TERMCAP_so \e'[38;5;246m'    # begin standout-mode - info box
     set -gx LESS_TERMCAP_ue \e'[0m'           # end underline
     set -gx LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
+    "
+  + "
+    fish_vi_key_bindings
+    # Emulates vim's cursor shape behavior
+    # Set the normal and visual mode cursors to a block
+    set fish_cursor_default block blink
+    # Set the insert mode cursor to a line
+    set fish_cursor_insert line blink
+    # Set the replace mode cursor to an underscore
+    set fish_cursor_replace_one underscore blink
+    # The following variable can be used to configure cursor shape in
+    # visual mode, but due to fish_cursor_default, is redundant here
+    set fish_cursor_visual block blink
   " + fzfConfig + themeConfig + aliases;
 in
 {
