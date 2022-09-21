@@ -232,7 +232,7 @@ let light_theme = {
 }
 
 # External completer example
-# let carapace_completer = {|spans| 
+# let carapace_completer = {|spans|
 #     carapace $spans.0 nushell $spans | from json
 # }
 
@@ -522,7 +522,7 @@ alias nuco = nvim ~/.config/nushell/config.nu
 alias hxco = hx ~/.config/helix/config.toml
 alias alco = nvim ~/.config/alacritty/alacritty.yml
 alias swim = home-manager switch --flake '~/.config/nixpkgs#kosumi'
-alias swir = home-manager switch --flake '~/.config/nixpkgs#kaminari'
+alias swir = home-manager switch --flake '~/nixpkgs#kaminari'
 alias nico = nvim ~/.config/nixpkgs/home.nix
 alias ll = exa -l
 alias v = nvim
