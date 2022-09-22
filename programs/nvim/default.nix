@@ -5,9 +5,21 @@
     enable = true;
     settings = {
       vim = {
-        configRC = "
+        configRC =''
             set cursorline
-        ";
+            set shell=fish
+            " Remap splits navigation to just CTRL + hjkl
+            nnoremap <C-h> <C-w>h
+            nnoremap <C-j> <C-w>j
+            nnoremap <C-k> <C-w>k
+            nnoremap <C-l> <C-w>l
+
+            " Make adjusing split sizes a bit more friendly
+            noremap <silent> <C-Left> :vertical resize +3<CR>
+            noremap <silent> <C-Right> :vertical resize -3<CR>
+            noremap <silent> <C-Up> :resize +3<CR>
+            noremap <silent> <C-Down> :resize -3<CR>
+        '';
         viAlias = true;
         vimAlias = true;
         customPlugins = with pkgs.vimPlugins; [
@@ -52,12 +64,12 @@
         };
         statusline.lualine = {
           enable = true;
-          theme = "onedark";
+          theme = "nightfox";
         };
         theme = {
           enable = true;
-          name = "onedark";
-          style = "deep";
+          name = "nightfox";
+          style = "nightfox";
           transparency = true;
         };
         autopairs.enable = true;
