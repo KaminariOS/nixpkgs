@@ -25,7 +25,7 @@ let
   alias nuco  "nvim ~/.config/nushell/config.nu"
   alias hxco  "hx ~/.config/helix/config.toml"
   alias alco  "nvim ~/.config/alacritty/alacritty.yml"
-  alias swim  "home-manager switch --flake '/home/kosumi/.config/nixpkgs#kosumi'"
+  alias swim  "home-manager switch --flake '/home/kosumi/nixpkgs#kosumi'"
   alias swir  "home-manager switch --flake '/home/kaminari/nixpkgs#kaminari'"
   alias nico  "nvim ~/.config/nixpkgs/home.nix"
   alias ll  "exa -l"
@@ -119,6 +119,11 @@ let
     # The following variable can be used to configure cursor shape in
     # visual mode, but due to fish_cursor_default, is redundant here
     set fish_cursor_visual block blink
+
+    function fish_greeting
+        fortune
+    end
+    funcsave fish_greeting
   " + fzfConfig + themeConfig + aliases;
 in
 {
