@@ -6,18 +6,19 @@ let
     any-nix-shell
     arandr # simple GUI for xrandr
     asciinema # record the terminal
-    bottom # alternative to htop & ytop
     cachix # nix caching
+
+    bottom # alternative to htop & ytop
     du-dust # disk usage/free utility
     exa # a better `ls`
     fd # "find" for files
     gimp # gnu image manipulation program
     hyperfine # command-line benchmarking tool
     killall # kill processes by name
+
     multilockscreen # fast lockscreen based on i3lock
     nyancat # the famous rainbow cat!
     ranger # terminal file explorer
-    ripgrep # fast grep
     direnv
 
     rnix-lsp # nix lsp server
@@ -56,6 +57,8 @@ let
     delta
     helix
     zellij
+    ripgrep # fast grep
+
 #    alacritty
     fortune
   ];
