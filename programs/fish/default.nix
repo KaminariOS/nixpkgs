@@ -39,6 +39,7 @@ let
   alias du  "dust"
   alias ps  "procs"
   alias rfr  "rofi -show run"
+  alias diff "delta"
   '';
   fishConfig = "
 
