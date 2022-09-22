@@ -8,12 +8,7 @@ let
     asciinema # record the terminal
     cachix # nix caching
 
-    bottom # alternative to htop & ytop
-    du-dust # disk usage/free utility
-    exa # a better `ls`
-    fd # "find" for files
     gimp # gnu image manipulation program
-    hyperfine # command-line benchmarking tool
     killall # kill processes by name
 
     multilockscreen # fast lockscreen based on i3lock
@@ -42,6 +37,12 @@ let
     fish
     rofi
 
+
+#    alacritty
+    fortune
+    neofetch
+  ];
+  rust_cli = with pkgs; [
     nushell
     tealdeer
     zoxide
@@ -58,11 +59,15 @@ let
     helix
     zellij
     ripgrep # fast grep
+    navi
+    skim
 
-#    alacritty
-    fortune
+    bottom # alternative to htop & ytop
+    du-dust # disk usage/free utility
+    exa # a better `ls`
+    fd # "find" for files
+    hyperfine # command-line benchmarking tool
   ];
-
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -81,7 +86,7 @@ in
 
   home = {
     stateVersion = "22.05";
-    packages = defaultPkgs;
+    packages = defaultPkgs ++ rust_cli;
 
     sessionVariables = {
       DISPLAY = ":0";
@@ -107,6 +112,21 @@ in
           options = [];
         };
     starship = {
+        enable = true;
+        enableFishIntegration = true;
+        enableZshIntegration = true;
+    };
+    navi = {
+        enable = true;
+        enableZshIntegration = true;
+        enableFishIntegration = true;
+    };
+    skim = {
+        enable = true;
+        enableFishIntegration = true;
+        enableZshIntegration = true;
+    };
+    atuin = {
         enable = true;
         enableFishIntegration = true;
         enableZshIntegration = true;
