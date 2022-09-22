@@ -5,6 +5,9 @@
     enable = true;
     settings = {
       vim = {
+        configRC = "
+            set cursorline
+        ";
         viAlias = true;
         vimAlias = true;
         customPlugins = with pkgs.vimPlugins; [
