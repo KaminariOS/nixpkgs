@@ -4,7 +4,7 @@ let
   gitConfig = {
     core = {
       editor = "nvim";
-      pager  = "diff-so-fancy | less --tabs=4 -RFX";
+      pager  = "delta";
     };
     init.defaultBranch = "main";
     merge = {
@@ -42,6 +42,8 @@ in
       cm = "commit -m";
       ca = "commit -am";
       dc = "diff --cached";
+      pso = "push origin";
+      plo = "pull origin";
     };
     extraConfig = gitConfig;
     ignores = [
