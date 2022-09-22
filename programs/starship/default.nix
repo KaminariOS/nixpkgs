@@ -63,7 +63,7 @@
     };
 
     c = {
-    symbol = " ";
+    symbol = "";
     style = "bg:#86BBD8";
     format = "[ $symbol ($version) ]($style)";
     };
