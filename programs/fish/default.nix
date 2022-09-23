@@ -120,9 +120,18 @@ let
     # The following variable can be used to configure cursor shape in
     # visual mode, but due to fish_cursor_default, is redundant here
     set fish_cursor_visual block blink
+
     function fish_greeting
       fortune -a
     end
+
+
+    set -gx ATUIN_NOBIND true
+    # bind to ctrl-r in normal and insert mode, add any other bindings you want here too
+#    atuin init fish | source
+    bind \\e\\[A _atuin_search
+    bind -M insert \\e\\[A _atuin_search
+    set_color normal
   " + fzfConfig + themeConfig + aliases;
 in
 {
