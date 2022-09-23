@@ -120,7 +120,9 @@ let
     # The following variable can be used to configure cursor shape in
     # visual mode, but due to fish_cursor_default, is redundant here
     set fish_cursor_visual block blink
-    set -U fish_greeting fortune -a
+    function fish_greeting
+      fortune -a
+    end
   " + fzfConfig + themeConfig + aliases;
 in
 {

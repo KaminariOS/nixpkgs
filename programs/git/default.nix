@@ -43,7 +43,7 @@ in
       ca = "commit -am";
       dc = "diff --cached";
       pso = "push origin";
-      plo = "pull origin";
+      plo = "pull origin main";
     };
     extraConfig = gitConfig;
     ignores = [

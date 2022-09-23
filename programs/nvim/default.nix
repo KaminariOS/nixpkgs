@@ -19,6 +19,12 @@
             noremap <silent> <C-Right> :vertical resize -3<CR>
             noremap <silent> <C-Up> :resize +3<CR>
             noremap <silent> <C-Down> :resize -3<CR>
+            
+            set clipboard+=unnamedplus
+            set autoread
+            set autowriteall
+            set undofile
+            set undodir=~/nixpkgs/programs/nvim
         '';
         viAlias = true;
         vimAlias = true;
