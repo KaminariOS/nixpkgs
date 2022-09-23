@@ -67,6 +67,7 @@ let
     exa # a better `ls`
     fd # "find" for files
     hyperfine # command-line benchmarking tool
+    ripgrep-all
   ];
 in
 {
