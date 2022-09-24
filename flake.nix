@@ -15,7 +15,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixgl.url = "github:guibou/nixGL";
+
     fish-bobthefish-theme = {
       url = github:gvolpe/theme-bobthefish;
       flake = false;
@@ -41,7 +41,6 @@
         };
        overlays = [
        fishOverlay
-        nixgl.overlay
         inputs.neovim-flake.overlays.default
        ];
       };

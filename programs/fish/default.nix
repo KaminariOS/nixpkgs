@@ -40,6 +40,9 @@ let
   alias ps  "procs"
   alias rfr  "rofi -show run"
   alias diff "delta"
+  alias ca "cargo"
+  alias idea "intellij-idea-ultimate"
+  alias clo "clion"
   '';
   fishConfig = "
 
