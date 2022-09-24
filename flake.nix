@@ -6,7 +6,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # nixgl is needed for alacritty outside of nixOS
     # refer to https://github.com/NixOS/nixpkgs/issues/122671
-    # https://github.com/guibou/nixGL/#use-an-overlay
     neovim-flake = {
         url = github:gvolpe/neovim-flake;
         inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +26,7 @@
     };
   };
 
-  outputs = inputs @ {self, nixgl, nixpkgs, home-manager, neovim-flake, ... }:
+  outputs = inputs @ {self, nixpkgs, home-manager, neovim-flake, ... }:
     let
       system = "x86_64-linux";
       fishOverlay = with inputs; f: p: {
