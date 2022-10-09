@@ -25,6 +25,12 @@
             set autowriteall
             set undofile
             set undodir=~/.config/nvim
+            augroup jump_last_position
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+augroup END
+
         '';
         viAlias = true;
         vimAlias = true;
