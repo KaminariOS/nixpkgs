@@ -43,7 +43,6 @@ let
     fortune
     neofetch
 
-    cmake
   ];
   rust_cli = with pkgs; [
     nushell
@@ -75,6 +74,10 @@ let
   gui_apps = with pkgs; [
     i3-gaps
     i3status
+    brightnessctl
+
+    #polybar
+    feh
   ];
 in
 {

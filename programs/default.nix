@@ -10,5 +10,6 @@
    ./fish
    ./rofi
    ./i3
+   ./polybar
 #   ./kitty
 ]
