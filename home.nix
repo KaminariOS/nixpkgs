@@ -15,6 +15,7 @@ let
     nyancat # the famous rainbow cat!
     ranger # terminal file explorer
     direnv
+    nix-direnv
 
     rnix-lsp # nix lsp server
     rust-analyzer
@@ -41,6 +42,8 @@ let
 #    alacritty
     fortune
     neofetch
+
+    cmake
   ];
   rust_cli = with pkgs; [
     nushell
@@ -69,6 +72,10 @@ let
     hyperfine # command-line benchmarking tool
     ripgrep-all
   ];
+  gui_apps = with pkgs; [
+    i3-gaps
+    i3status
+  ];
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -87,7 +94,7 @@ in
 
   home = {
     stateVersion = "22.05";
-    packages = defaultPkgs ++ rust_cli;
+    packages = defaultPkgs ++ rust_cli ++ gui_apps;
 
     sessionVariables = {
       DISPLAY = ":0";
