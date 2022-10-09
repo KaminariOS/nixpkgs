@@ -24,7 +24,7 @@
             set autoread
             set autowriteall
             set undofile
-            set undodir=~/nixpkgs/programs/nvim
+            set undodir=~/.config/nvim
         '';
         viAlias = true;
         vimAlias = true;
