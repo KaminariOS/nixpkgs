@@ -1,0 +1,1 @@
+My NixOS & Home-manager configuration
