@@ -2,18 +2,29 @@
   description = "Home Manager configuration of Jane Doe";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixgl is needed for alacritty outside of nixOS
-    # refer to https://github.com/NixOS/nixpkgs/issues/122671
-    neovim-flake = {
-        url = github:gvolpe/neovim-flake;
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+    nixpkgs.url = "nixpkgs/nixos-22.05";
+
+    nurpkgs.url = github:nix-community/NUR;
+
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    homeage = {
+      url = github:jordanisaacs/homeage?ref=323037e;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    neovim-flake = {
+      #url = git+file:///home/gvolpe/workspace/neovim-flake;
+      url = github:gvolpe/neovim-flake;
+      # neovim-flake pushes its binaries to the cache using its own nixpkgs version
+      # if we instead use ours, we'd be rebuilding all plugins from scratch
+      #inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Fish shell
 
     fish-bobthefish-theme = {
       url = github:gvolpe/theme-bobthefish;
@@ -24,77 +35,40 @@
       url = github:ckipp01/keytool-fish-completions;
       flake = false;
     };
+
+    # Github Markdown ToC generator
+
+    gh-md-toc = {
+      url = github:ekalinin/github-markdown-toc;
+      flake = false;
+    };
+
+    # LaTeX stuff
+
+    tex2nix = {
+      #url = github:Mic92/tex2nix;
+      url = github:gvolpe/tex2nix; # fork with nixFlakes fix
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ {self, nixpkgs, home-manager, neovim-flake, ... }:
+  outputs = inputs:
     let
-      system = "x86_64-linux";
-      fishOverlay = with inputs; f: p: {
-    inherit fish-bobthefish-theme fish-keytool-completions;
-  };
-      pkgs = nixpkgs.legacyPackages.${system};
-      pkgsForSystem = system: import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-       overlays = [
-       fishOverlay
-        inputs.neovim-flake.overlays.default
-       ];
-      };
-
-    in
+    system = "x86_64-linux";
+    pkgs = inputs.nixpkgs.legacyPackages.${system};
+     in
     {
       formatter.${system} = pkgs.nixpkgs-fmt;
-      # homeConfigurations.kosumi = home-manager.lib.homeManagerConfiguration {
-        # pkgs = pkgsForSystem system;
-        # extraSpecialArgs = {
-         # inherit hidpi;
-        # };
+      homeConfigurations = (
+        import ./outputs/home-conf.nix {
+          inherit inputs system;
+        }
+      );
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        # modules = [ ./home.nix ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
-      # };
-   homeConfigurations.kosumi = let username = "kosumi"; in
-  home-manager.lib.homeManagerConfiguration
-   rec {
-    pkgs = pkgsForSystem system;
-    modules = [
-    ./home.nix
-     neovim-flake.nixosModules.hm
-    {
-    home = {
-        inherit username;
-            homeDirectory = "/home/${username}";
-            stateVersion = "22.05";
-          };
-    }
-    ];
-
-  };
-
-   homeConfigurations.kaminari = let username = "kaminari"; in
-  home-manager.lib.homeManagerConfiguration
-   rec {
-    pkgs = pkgsForSystem system;
-    modules = [
-    ./home.nix
-     neovim-flake.nixosModules.hm
-    {
-    home = {
-        inherit username;
-            homeDirectory = "/home/${username}";
-            stateVersion = "22.05";
-          };
-    }
-    ];
-
-  };
-
+      nixosConfigurations = (
+        import ./outputs/nixos-conf.nix {
+          inherit inputs system;
+        }
+      );
     };
 }
