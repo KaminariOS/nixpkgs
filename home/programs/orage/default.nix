@@ -3,10 +3,10 @@
 {
   xdg.configFile."orage/oragerc".text = ''
     [PARAMETERS]
-    Timezone=Europe/Warsaw
+    Timezone=America/Denver
     Archive limit=0
-    Archive file=/home/gvolpe/.local/share/orage/orage_archive.ics
-    Orage file=/home/gvolpe/.local/share/orage/orage.ics
+    Archive file=/home/kosumi/.local/share/orage/orage_archive.ics
+    Orage file=/home/kosumi/.local/share/orage/orage.ics
     Sound application=play
     Main window X=2816
     Main window Y=45

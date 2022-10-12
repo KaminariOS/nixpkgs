@@ -97,7 +97,7 @@ in
        ./programs
       ./scripts
       ./services
-      #./themes
+#      ./themes
     ];
 
     xdg = {

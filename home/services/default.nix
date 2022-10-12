@@ -13,5 +13,6 @@ in
   ./polybar
   ./screenlocker
   ./udiskie
+  ./i3
   more
 ]
