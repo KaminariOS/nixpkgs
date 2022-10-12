@@ -9,7 +9,6 @@ let
     fonts = [
       "JetBrainsMono"
       "Iosevka"
-      "FiraCode"
     ];
   };
 
@@ -137,6 +136,7 @@ in
     font-awesome
     myfonts.flags-world-color
     myfonts.icomoon-feather
+    fira-code
   ];
 
   programs.fish.enable = true;

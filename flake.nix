@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+#    nixpkgs.url = "nixpkgs/nixos-22.05";
 
     nurpkgs.url = github:nix-community/NUR;
 
