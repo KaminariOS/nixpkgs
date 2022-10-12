@@ -1,8 +1,8 @@
 {
-  description = "Home Manager configuration of Jane Doe";
+  description = "Home Manager configuration of Kosumi";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.05";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
     nurpkgs.url = github:nix-community/NUR;
 

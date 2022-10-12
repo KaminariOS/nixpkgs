@@ -1,7 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, stdenv, ... }:
 
 let
-#  configHome = "${config.homeDirectory}/.config";
+  username = "kosumi";
+    homeDirectory = "/home/${username}";
+    configHome = "${homeDirectory}/.config";
+
   defaultPkgs = with pkgs; [
     any-nix-shell
     arandr # simple GUI for xrandr
@@ -15,7 +18,6 @@ let
     nyancat # the famous rainbow cat!
     ranger # terminal file explorer
     direnv
-    nix-direnv
 
     rnix-lsp # nix lsp server
     rust-analyzer
@@ -27,7 +29,7 @@ let
     java-language-server
     #   nodePackages.vscode-json-languageserver
     texlab
-    taplo
+    taplo-lsp # A TOML toolkit written in Rust
     sumneko-lua-language-server
     #    wgsl_analyzer
     #  nodePackages_latest.yaml-language-server
@@ -43,6 +45,9 @@ let
     fortune
     neofetch
 
+    nyancat              # the famous rainbow cat!
+    prettyping           # a nicer ping
+    xsel                 # clipboard support (also for neovim)
   ];
   rust_cli = with pkgs; [
     nushell
@@ -79,70 +84,45 @@ let
     #polybar
     feh
   ];
+  nixos_app = with pkgs; [
+    jetbrains.clion
+    jetbrains.idea-ultimate
+    kitty
+
+  ];
 in
 {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
+    imports = builtins.concatMap import [
+      ./age
+       ./programs
+      ./scripts
+      ./services
+      #./themes
+    ];
 
-  targets.genericLinux.enable = true;
-
-  imports = (import ./programs);
-
-  news.display = "silent";
-
-  xdg = {
-#    inherit configHome;
-    enable = true;
-  };
-
-  home = {
-    stateVersion = "22.05";
-    packages = defaultPkgs ++ rust_cli ++ gui_apps;
-
-    sessionVariables = {
-      DISPLAY = ":0";
-      EDITOR = "nvim";
+    xdg = {
+      inherit configHome;
+      enable = true;
     };
-  };
+    home = {
+      inherit username homeDirectory;
+      stateVersion = "22.05";
+
+  #    packages = defaultPkgs ++ gnomePkgs;
+      packages = defaultPkgs ++ rust_cli ++ gui_apps ++ nixos_app;
+
+      sessionVariables = {
+        DISPLAY = ":0";
+        EDITOR = "nvim";
+      };
+    };
+
     # restart services on change
-  systemd.user.startServices = "sd-switch";
+    systemd.user.startServices = "sd-switch";
 
-  programs = {
-    bat.enable = true;
-    direnv = {
-          enable = true;
-          nix-direnv.enable = true;
-        };
-    broot = {
-          enable = true;
-          enableFishIntegration = true;
-        };
-    zoxide = {
-          enable = true;
-          enableFishIntegration = true;
-          options = [];
-        };
-    starship = {
-        enable = true;
-        enableFishIntegration = true;
-        enableZshIntegration = true;
-    };
-    navi = {
-        enable = true;
-        enableZshIntegration = true;
-        enableFishIntegration = true;
-    };
-    skim = {
-        enable = true;
-        enableFishIntegration = true;
-        enableZshIntegration = true;
-    };
-    atuin = {
-        enable = true;
-        enableFishIntegration = true;
-        enableZshIntegration = true;
-    };
-  };
+    # notifications about home-manager news
+    news.display = "silent";
+
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
