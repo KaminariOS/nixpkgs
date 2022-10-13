@@ -81,14 +81,15 @@ let
     i3status
     brightnessctl
 
-    #polybar
+#    polybar
     feh
   ];
   nixos_app = with pkgs; [
     jetbrains.clion
     jetbrains.idea-ultimate
     kitty
-
+    i3status
+    google-chrome
   ];
 in
 {

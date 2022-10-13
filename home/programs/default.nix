@@ -60,7 +60,7 @@ in
   ./starship
   ./starship/symbols.nix
   ./zellij
-  #./dconf
+  ./dconf
   ./git
   ./fish
   ./neofetch

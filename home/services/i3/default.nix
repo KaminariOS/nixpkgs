@@ -9,7 +9,7 @@ in {
     config = {
       modifier = mod;
 
-       window.border = 0;
+      window.border = 0;
 
       gaps = {
         inner = 10;
@@ -37,10 +37,10 @@ in {
         "${mod}+x" = "exec sh -c '${pkgs.maim}/bin/maim -s | xclip -selection clipboard -t image/png'";
         # "${mod}+Shift+x" = "exec sh -c '${pkgs.i3lock}/bin/i3lock -c 222222 & sleep 5 && xset dpms force of'";
         "${mod}+Shift+x" = "exec i3lock-fancy-dualmonitor";
-        "${mod}+Return" = "exec /usr/bin/kitty";
+        "${mod}+Return" = "exec kitty";
         "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
         "${mod}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
-        "${mod}+b" = "exec /usr/bin/google-chrome-stable";
+        "${mod}+b" = "exec google-chrome-stable";
 
         # Focus
         "${mod}+h" = "focus left";
@@ -87,6 +87,12 @@ in {
           command = "wget https://source.unsplash.com/random/3840x2160 -O ~/Pictures/wallpaper.jpg && ${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpaper.jpg";
           always = true;
           notification = false;
+        }
+
+        {
+            command = "exec --no-startup-id kitty";
+            always = true;
+            notification = false;
         }
         
       ];

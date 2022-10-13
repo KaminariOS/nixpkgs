@@ -30,4 +30,13 @@ in
       ../system/configuration.nix
     ];
   };
+
+  portable = nixosSystem {
+    inherit system;
+    specialArgs = { inherit inputs; };
+    modules = [
+      ../system/machine/portable
+      ../system/configuration.nix
+    ];
+  };
 }
