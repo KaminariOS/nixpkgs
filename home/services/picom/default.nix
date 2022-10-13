@@ -10,7 +10,7 @@
     shadow = true;
     shadowOpacity = 0.75;
     settings = {
-        corner-radius = 10;
+        corner-radius = 6;
         round-borders = 1;
     };
   };
