@@ -3,7 +3,7 @@
 {
   programs.rofi = {
     enable = true;
-    terminal = "${pkgs.alacritty}/bin/alacritty";
-    theme = ./theme.rafi;
+    terminal = "${pkgs.kitty}/bin/kitty";
+    theme = ./launcher/type2-style-10.rasi;
   };
 }
