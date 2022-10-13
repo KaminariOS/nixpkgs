@@ -58,10 +58,10 @@ in
       "*.mill-version" # used by metals
       "*.jvmopts"      # should be local to every project
     ];
-#    signing = {
-#      key = "121D4302A64B2261";
-#      signByDefault = true;
-#    };
+    signing = {
+      key = "169AE9214200B45D";
+      signByDefault = true;
+    };
     userEmail = "k@gmail.com";
     userName = "kosumi";
   };
