@@ -30,7 +30,7 @@ let
   alias nico  "nvim ~/.config/nixpkgs/home.nix"
   alias ll  "exa -l"
   alias v  "nvim"
-  alias grep  "ripgrep"
+  alias grep  "rg"
   alias his  "history"
   alias c  "bat"
   alias lt  "exa --icons --tree --no-user --no-permissions"
