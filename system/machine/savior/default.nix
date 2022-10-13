@@ -31,25 +31,42 @@
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.utf8";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
 
   # Optionally, you may need to select the appropriate driver version for your specific GPU.
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
+  # Enable the KDE Plasma Desktop Environment.
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
+    services.xserver = {
+        # Enable the X11 windowing system.
+        enable = true;
+
+        # Enable the KDE Plasma Desktop Environment.
+        displayManager = {
+          sddm.enable = true;
+          sessionCommands = "export KDEWM=${pkgs.i3-gaps}/bin/i3";
+          defaultSession = "plasma5+i3+whatever";
+           session = [
+                  {
+                      manage = "desktop";
+                      name = "plasma5+i3+whatever";
+                      start = ''exec env KDEWM=${pkgs.i3-gaps}/bin/i3 ${pkgs.plasma-workspace}/bin/startplasma-x11'';
+                  }
+                  {
+                      manage = "desktop";
+                      name = "i3+whatever";
+                      start = ''exec i3'';
+                  }
+              ];
+        };
+        desktopManager.plasma5.enable = true;
+
+        # Configure keymap in X11
+         layout = "us";
+         xkbVariant = "";
+    };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
