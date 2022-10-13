@@ -143,14 +143,30 @@ in
   };
 
   # Making fonts accessible to applications.
-  fonts.fonts = with pkgs; [
-    customFonts
-    font-awesome
-    myfonts.flags-world-color
-    myfonts.icomoon-feather
-    fira-code
-    unifont
-  ];
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [
+       ubuntu_font_family
+       customFonts
+       font-awesome
+       myfonts.flags-world-color
+       myfonts.icomoon-feather
+       fira-code
+       unifont
+       ipafont
+
+       noto-fonts-cjk-serif
+       noto-fonts-cjk-sans
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "noto-fonts-cjk-serif" "Ubuntu" ];
+        sansSerif = [ "noto-fonts-cjk-sans" "IPAPGothic" "Ubuntu" ];
+        monospace = [ "fira-code" ];
+      };
+    };
+  };
 
   programs.fish.enable = true;
 
