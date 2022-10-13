@@ -59,7 +59,7 @@ in
       "*.jvmopts"      # should be local to every project
     ];
     signing = {
-      key = "169AE9214200B45D";
+      key = "0x5710C5966568BAC5";
       signByDefault = true;
     };
     userEmail = "k@gmail.com";
