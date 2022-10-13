@@ -2,7 +2,8 @@ set $mod Mod4
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
-assign [class="google-chrome-stable"] 2
+assign [class="chrome"] 2
 assign [class="clion"] 3
+assign [class="idea"] 3
 
 popup_during_fullscreen smart
