@@ -71,7 +71,7 @@ in {
 
       startup = [
         {
-          command = "exec i3-msg workspace 1";
+          command = "exec --no-startup-id i3-msg 'workspace 1; exec kitty'";
           always = true;
           notification = false;
         }
@@ -90,13 +90,6 @@ in {
           always = true;
           notification = false;
         }
-
-        {
-            command = "exec --no-startup-id kitty";
-            always = true;
-            notification = false;
-        }
-        
       ];
     };
   };
