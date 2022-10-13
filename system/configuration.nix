@@ -43,6 +43,12 @@ in
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.enableRimeData = true;
+    fcitx5.addons = with pkgs; [ fcitx5-rime fcitx5-chinese-addons];
+  };
+
   # Set your time zone.
   time.timeZone = "America/Denver";
 
