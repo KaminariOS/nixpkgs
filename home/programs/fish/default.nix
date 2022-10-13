@@ -43,6 +43,7 @@ let
   alias ca "cargo"
   alias idea "intellij-idea-ultimate"
   alias clo "clion"
+  alias dnix "echo 'use nix' >> .envrc; direnv allow"
   '';
   fishConfig = "
 

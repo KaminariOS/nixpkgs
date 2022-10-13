@@ -47,6 +47,14 @@ let
            enableFishIntegration = true;
            enableZshIntegration = true;
        };
+       tealdeer = {
+        enable = true;
+        settings = {
+         updates = {
+            auto_update = false;
+          };
+        };
+       };
      };
   };
 in
