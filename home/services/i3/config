@@ -7,3 +7,4 @@ assign [class="clion"] 3
 assign [class="idea"] 3
 
 popup_during_fullscreen smart
+default_border pixel 4

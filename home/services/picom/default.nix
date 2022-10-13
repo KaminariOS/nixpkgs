@@ -9,5 +9,9 @@
     opacityRules = [ "100:name *= 'i3lock'" ];
     shadow = true;
     shadowOpacity = 0.75;
+    settings = {
+        corner-radius = 10;
+        round-borders = 1;
+    };
   };
 }
