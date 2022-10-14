@@ -39,10 +39,10 @@ in {
         # "${mod}+Shift+x" = "exec sh -c '${pkgs.i3lock}/bin/i3lock -c 222222 & sleep 5 && xset dpms force of'";
 #        "${mod}+Shift+x" = "exec i3lock-fancy-dualmonitor";
         "${mod}+Shift+x" = "exec loginctl lock-session";
-        "${mod}+Return" = "exec kitty";
+        "${mod}+Return" = "exec kitty; workspace1";
         "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
         "${mod}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
-        "${mod}+b" = "exec google-chrome-stable";
+        "${mod}+b" = "exec google-chrome-stable; workspace 2";
 
         # Focus
         "${mod}+h" = "focus left";
