@@ -30,7 +30,6 @@ let
   alias nico  "nvim ~/.config/nixpkgs/home.nix"
   alias ll  "exa -l"
   alias v  "nvim"
-  alias grep  "rg"
   alias his  "history"
   alias c  "bat"
   alias lt  "exa --icons --tree --no-user --no-permissions"
@@ -41,7 +40,7 @@ let
   alias rfr  "rofi -show run"
   alias diff "delta"
   alias ca "cargo"
-  alias idea "intellij-idea-ultimate"
+  alias idea "idea-ultimate"
   alias clo "clion"
   alias dnix "echo 'use nix' >> .envrc; direnv allow"
   '';
