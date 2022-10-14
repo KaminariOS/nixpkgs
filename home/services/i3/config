@@ -9,10 +9,14 @@ assign [class="idea"] 3
 popup_during_fullscreen smart
 default_border pixel 2
 
-# Plasma compatibility improvements
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
+for_window [window_role="pop-up"]                       floating enable
+for_window [window_role="bubble"]                       floating enable
+for_window [window_role="task_dialog"]                  floating enable
+for_window [window_role="Preferences"]                  floating enable
+for_window [window_type="dialog"]                       floating enable
+for_window [window_type="menu"]                         floating enable
 
+# Plasma compatibility improvements
 for_window [class="yakuake"] floating enable
 for_window [class="systemsettings"] floating enable
 for_window [class="plasmashell"] floating enable;
