@@ -41,8 +41,10 @@
     "$java"
     "$nodejs"
     "$rust"
+    "$python"
     "[](fg:#86BBD8 bg:#06969A)"
     "$docker_context"
+    "$nix_shell"
     "[](fg:#06969A bg:#33658A)"
     "$time"
     "$battery"
@@ -87,39 +89,51 @@
     golang = {
     symbol = " ";
     style = "bg:#86BBD8";
-    format = "[ $symbol ($version) ]($style)";
+    format = "[ $symbol($version) ]($style)";
     };
 
     haskell = {
     symbol = " ";
     style = "bg:#86BBD8";
-    format = "[ $symbol ($version) ]($style)";
+    format = "[ $symbol($version) ]($style)";
     };
 
     java = {
     symbol = " ";
     style = "bg:#86BBD8";
-    format = "[ $symbol ($version) ]($style)";
+    format = "[ $symbol($version) ]($style)";
     };
 
     nodejs = {
-    symbol = "";
+    symbol = " ";
     style = "bg:#86BBD8";
-    format = "[ $symbol ($version) ]($style)";
+    format = "[ $symbol($version) ]($style)";
     };
 
     rust = {
-    symbol = "";
+    symbol = " ";
     style = "bg:#86BBD8";
-    format = "[ $symbol ($version) ]($style)";
+    format = "[ $symbol($version) ]($style)";
+    };
+    python = {
+        style = "bg:#86BBD8";
+        format = "[ $symbol($version) ]($style)";
     };
 
     shell = {
-    fish_indicator = "";
+    fish_indicator = "🐟";
     powershell_indicator = "_";
     unknown_indicator = "mystery shell";
     style = "cyan bold";
     disabled = false;
+    };
+
+    nix_shell = {
+      disabled = false;
+    style = "bg:#06969A";
+      impure_msg = "[impure](fg:bold blue $style)";
+      pure_msg = "[pure](fg:bold green $style)";
+      format = ''[ $symbol$state(\($name\))]($style)'';
     };
     sudo = {
         style = "bg:#9A348E";
@@ -130,7 +144,7 @@
 
     time = {
     disabled = false;
-    time_format = "%R"; # Hour:Minute Format
+    time_format = "%I:%M%p %a %h-%e"; # Hour:Minute Format
     style = "bg:#33658A";
     format = "[ $time ]($style)";
     };
