@@ -90,6 +90,9 @@ let
     kitty
     i3status
     google-chrome
+    rclone
+    libsForQt5.kio-gdrive
+    libsForQt5.kdeconnect-kde
   ];
 in
 {
@@ -120,6 +123,18 @@ in
 
     # restart services on change
     systemd.user.startServices = "sd-switch";
+
+#    systemd.user.services.rclone = {
+#         Unit = {
+#              Description = "Example description";
+#              Documentation = [ "man:example(1)" "man:example(5)" ];
+#            };
+#
+#            Service = {
+#        script = "rclone mount remote: ~/rclone";
+#        wantedby = ["default.target"];
+#            };
+#    };
 
     # notifications about home-manager news
     news.display = "silent";
