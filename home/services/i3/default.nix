@@ -42,8 +42,6 @@ in {
         "${mod}+Return" = "exec kitty; workspace1";
         "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
         "${mod}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
-        "${mod}+b" = "exec google-chrome-stable; workspace 2";
-
         # Focus
         "${mod}+h" = "focus left";
         "${mod}+j" = "focus down";
