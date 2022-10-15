@@ -16,7 +16,7 @@ in
         monitor = 0;
         geometry = "600x50-50+65";
         shrink = "yes";
-        transparency = 10;
+        transparency = 8;
         padding = 16;
         horizontal_padding = 16;
         frame_width = 3;

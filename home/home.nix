@@ -75,6 +75,7 @@ let
     fd # "find" for files
     hyperfine # command-line benchmarking tool
     ripgrep-all
+    xplr
   ];
   gui_apps = with pkgs; [
     i3-gaps

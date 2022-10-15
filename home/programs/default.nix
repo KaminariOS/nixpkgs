@@ -77,5 +77,6 @@ in
   ./rofi
   # ./xmonad
   ./yubikey
+  ./xplr
   more
 ]
