@@ -94,6 +94,10 @@ let
     rclone
     libsForQt5.kio-gdrive
     libsForQt5.kdeconnect-kde
+    firefox
+    kate
+
+    wireshark
   ];
 in
 {
