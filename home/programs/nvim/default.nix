@@ -5,33 +5,7 @@
     enable = true;
     settings = {
       vim = {
-        configRC =''
-            set cursorline
-            set shell=fish
-            " Remap splits navigation to just CTRL + hjkl
-            nnoremap <C-h> <C-w>h
-            nnoremap <C-j> <C-w>j
-            nnoremap <C-k> <C-w>k
-            nnoremap <C-l> <C-w>l
-
-            " Make adjusing split sizes a bit more friendly
-            noremap <silent> <C-Left> :vertical resize +3<CR>
-            noremap <silent> <C-Right> :vertical resize -3<CR>
-            noremap <silent> <C-Up> :resize +3<CR>
-            noremap <silent> <C-Down> :resize -3<CR>
-            
-            set clipboard+=unnamedplus
-            set autoread
-            set autowriteall
-            set undofile
-            set undodir=~/.config/nvim
-            augroup jump_last_position
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-augroup END
-
-        '';
+        configRC = builtins.readFile ./init.vim;
         viAlias = true;
         vimAlias = true;
         customPlugins = with pkgs.vimPlugins; [
