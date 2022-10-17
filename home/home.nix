@@ -41,6 +41,8 @@ let
     fish
     rofi
 
+    gdbgui
+
 
 #    alacritty
     fortune
