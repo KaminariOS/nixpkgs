@@ -69,7 +69,7 @@ let
     helix
     zellij
     ripgrep # fast grep
-    navi
+    navi # cheatsheet
     skim
 
     bottom # alternative to htop & ytop
@@ -79,6 +79,8 @@ let
     hyperfine # command-line benchmarking tool
     ripgrep-all
     xplr
+    rustscan
+    grex # A command-line tool for generating regular expressions from user-provided test cases
   ];
   gui_apps = with pkgs; [
     i3-gaps
