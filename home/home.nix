@@ -7,6 +7,7 @@ let
 
   defaultPkgs = with pkgs; [
     any-nix-shell
+    xclip
     arandr # simple GUI for xrandr
     asciinema # record the terminal
     cachix # nix caching
