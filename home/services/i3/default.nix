@@ -84,7 +84,7 @@ in {
           notification = false;
         }
         {
-          command = "wget https://source.unsplash.com/random/3840x2160 -O ~/Pictures/wallpaper.jpg && ${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpaper.jpg";
+          command = ''wget -O wallpaper.jpg "http://www.bing.com/$(wget -q -O- https://binged.it/2ZButYc | sed -e 's/<[^>]*>//g' | cut -d / -f2 | cut -d \& -f1)" -O ~/Pictures/wallpaper.jpg && ${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpaper.jpg'';
           always = true;
           notification = false;
         }

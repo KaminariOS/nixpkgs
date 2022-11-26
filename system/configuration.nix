@@ -113,6 +113,7 @@ in
     enable = true;
     extraBackends = [ pkgs.epkowa pkgs.sane-airscan ];
   };
+  hardware.opengl.driSupport32Bit = true;
 
   services = {
     # Mount MTP devices

@@ -101,6 +101,7 @@ let
     libsForQt5.kdeconnect-kde
     firefox
     kate
+    zoom-us
 
     wireshark
   ];
