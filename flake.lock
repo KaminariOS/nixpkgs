@@ -247,8 +247,16 @@
       },
       "locked": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "lastModified": 1668788863,
         "narHash": "sha256-FsdUG+YkRX7JZKZm6T44J2h+0pXB1sWA9AobyiozFK0=",
+||||||| Stash base
+        "lastModified": 1665520899,
+        "narHash": "sha256-N8BYMgvrAYhiXeyrcEeLgngZZaU6MVVocSa+tIfyMyg=",
+=======
+        "lastModified": 1670280307,
+        "narHash": "sha256-3x+0whP1nCz5adQMIsBA3L9fI/ABOpRUJdbw0AmxBnU=",
+>>>>>>> Stashed changes
 ||||||| Stash base
         "lastModified": 1665520899,
         "narHash": "sha256-N8BYMgvrAYhiXeyrcEeLgngZZaU6MVVocSa+tIfyMyg=",
@@ -259,7 +267,13 @@
         "owner": "nix-community",
         "repo": "home-manager",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "rev": "948d1f8a5cef55a281d4f5d17f3b79df6c82fce1",
+||||||| Stash base
+        "rev": "5597b3a7425a9e3f41128308cb1105d3e780f633",
+=======
+        "rev": "2af0d07678fc15612345e0dd55337550dcf6465f",
+>>>>>>> Stashed changes
 ||||||| Stash base
         "rev": "5597b3a7425a9e3f41128308cb1105d3e780f633",
 =======
@@ -478,8 +492,16 @@
       },
       "locked": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "lastModified": 1667999470,
         "narHash": "sha256-7YJ5AP4FctnNYqfw5Ib0LFlhw48Jqsj22e2IEFcRLLs=",
+||||||| Stash base
+        "lastModified": 1665326692,
+        "narHash": "sha256-FRI1NowvR3Bmz86U89aRSJdzZg8lnhxP11EC/LqYI60=",
+=======
+        "lastModified": 1670237901,
+        "narHash": "sha256-Lf2tlupD0tGw5Ys5VkdCZHOHqHm1dntUYBrY53HYMLU=",
+>>>>>>> Stashed changes
 ||||||| Stash base
         "lastModified": 1665326692,
         "narHash": "sha256-FRI1NowvR3Bmz86U89aRSJdzZg8lnhxP11EC/LqYI60=",
@@ -490,7 +512,13 @@
         "owner": "gvolpe",
         "repo": "neovim-flake",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "rev": "a3a17d1d7dead4c2a8aae4df1146cc21f999bd15",
+||||||| Stash base
+        "rev": "ce91a9965486bf7faee699d175f61fe1bd1033be",
+=======
+        "rev": "2c9b5e898dd9fbe472ed8352a77db1fd8393b4ea",
+>>>>>>> Stashed changes
 ||||||| Stash base
         "rev": "ce91a9965486bf7faee699d175f61fe1bd1033be",
 =======
@@ -539,8 +567,16 @@
     "nixpkgs_2": {
       "locked": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "lastModified": 1668765800,
         "narHash": "sha256-rC40+/W6Hio7b/RsY8SvQPKNx4WqNcTgfYv8cUMAvJk=",
+||||||| Stash base
+        "lastModified": 1665643254,
+        "narHash": "sha256-IBVWNJxGCsshwh62eRfR6+ry3bSXmulB3VQRzLQo3hk=",
+=======
+        "lastModified": 1670242877,
+        "narHash": "sha256-jBLh7dRHnbfvPPA9znOC6oQfKrCPJ0El8Zoe0BqnCjQ=",
+>>>>>>> Stashed changes
 ||||||| Stash base
         "lastModified": 1665643254,
         "narHash": "sha256-IBVWNJxGCsshwh62eRfR6+ry3bSXmulB3VQRzLQo3hk=",
@@ -551,7 +587,13 @@
         "owner": "NixOS",
         "repo": "nixpkgs",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "rev": "52b2ac8ae18bbad4374ff0dd5aeee0fdf1aea739",
+||||||| Stash base
+        "rev": "ba187fbdc5e35322c7dff556ef2c47bddfd6e8d7",
+=======
+        "rev": "6e51c97f1c849efdfd4f3b78a4870e6aa2da4198",
+>>>>>>> Stashed changes
 ||||||| Stash base
         "rev": "ba187fbdc5e35322c7dff556ef2c47bddfd6e8d7",
 =======
@@ -584,8 +626,16 @@
     "nurpkgs": {
       "locked": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "lastModified": 1668876151,
         "narHash": "sha256-12pz+OzWzjlYRIXgwu7tUBtqga6MwpG8C3tyeehkzl0=",
+||||||| Stash base
+        "lastModified": 1665596786,
+        "narHash": "sha256-cCKP6xVGftmqDF79ohtNEOxvCAb/U4DuXKnogoak4Tk=",
+=======
+        "lastModified": 1670315682,
+        "narHash": "sha256-/v0RgZZIjvsFuJbJLUlzRbzSlYFXq3olgJTuJBNtcoY=",
+>>>>>>> Stashed changes
 ||||||| Stash base
         "lastModified": 1665596786,
         "narHash": "sha256-cCKP6xVGftmqDF79ohtNEOxvCAb/U4DuXKnogoak4Tk=",
@@ -596,7 +646,13 @@
         "owner": "nix-community",
         "repo": "NUR",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         "rev": "0745a777359ca736b6852dc79cfc93f1f11835b7",
+||||||| Stash base
+        "rev": "840416c998aa132adb1d660065a23e5c2ff6195d",
+=======
+        "rev": "af814db16c89385c65e758608296440555f61ccc",
+>>>>>>> Stashed changes
 ||||||| Stash base
         "rev": "840416c998aa132adb1d660065a23e5c2ff6195d",
 =======
