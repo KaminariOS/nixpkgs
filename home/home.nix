@@ -89,6 +89,7 @@ let
 
 #    polybar
     feh
+    zoom-us
   ];
   nixos_app = with pkgs; [
     jetbrains.clion

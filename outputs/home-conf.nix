@@ -15,7 +15,7 @@ let
     overlays = [
       fishOverlay
       nurpkgs.overlay
-      neovim-flake.overlays.default
+      neovim-flake.overlays.${system}.default
       (f: p: { tex2nix = tex2nix.defaultPackage.${system}; })
       ((import ../home/overlays/md-toc) { inherit (inputs) gh-md-toc; })
       (import ../home/overlays/ranger)
@@ -29,7 +29,7 @@ let
 
   imports = [
     homeage.homeManagerModules.homeage
-    neovim-flake.nixosModules.hm
+    neovim-flake.nixosModules.${system}.hm
     ../home/home.nix
   ];
 
