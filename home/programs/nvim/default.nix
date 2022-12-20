@@ -23,7 +23,10 @@
           trouble.enable = true;
           lspSignature.enable = true;
           rust.enable = true;
-          nix = true;
+          nix = {
+            enable = true;
+            type = "nil";
+          };
           dhall = true;
           elm = true;
           haskell = true;
