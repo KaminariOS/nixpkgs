@@ -31,7 +31,7 @@
           elm = true;
           haskell = true;
           sql = true;
-          python = false;
+          python = true;
           clang = true;
           ts = false;
           go = true;

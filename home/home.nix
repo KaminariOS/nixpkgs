@@ -51,6 +51,9 @@ let
     nyancat              # the famous rainbow cat!
     prettyping           # a nicer ping
     xsel                 # clipboard support (also for neovim)
+
+    zip 
+    unzip
   ];
   rust_cli = with pkgs; [
     nushell
