@@ -3,6 +3,10 @@
 let 
   mod = "Mod4";
 in {
+  xsession.initExtra = 
+  ''
+${pkgs.networkmanagerapplet}/bin/nm-applet --sm-disable 
+'';
   xsession.windowManager.i3 = {
     enable = true;
     package = pkgs.i3-gaps;
@@ -69,7 +73,12 @@ in {
 
       startup = [
         {
-          command = "exec --no-startup-id i3-msg 'workspace 1; exec kitty'";
+          command = "i3-msg 'workspace 1; exec kitty'";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "i3-msg 'workspace 2; exec firefox'";
           always = true;
           notification = false;
         }

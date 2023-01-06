@@ -35,6 +35,7 @@ let
     #    wgsl_analyzer
     #  nodePackages_latest.yaml-language-server
     python-language-server
+    cmake-language-server
 
     simplescreenrecorder # screen recorder gui
 #    kitty
@@ -93,6 +94,7 @@ let
 #    polybar
     feh
     zoom-us
+    libsForQt5.kdeconnect-kde
   ];
   nixos_app = with pkgs; [
     jetbrains.clion

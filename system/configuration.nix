@@ -119,6 +119,7 @@ in
     # Mount MTP devices
     gvfs.enable = true;
 
+
     xserver.enable = true;
     #xserver.autorun = false;
     #xserver.displayManager.startx.enable = true;
