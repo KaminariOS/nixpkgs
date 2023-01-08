@@ -1,4 +1,5 @@
 set cursorline
+set noswapfile
 set shell=fish
 " Remap splits navigation to just CTRL + hjkl
 nnoremap <C-h> <C-w>h

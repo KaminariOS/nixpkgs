@@ -110,6 +110,7 @@ let
     zoom-us
 
     wireshark
+    tev
   ];
 in
 {
