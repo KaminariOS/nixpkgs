@@ -78,5 +78,6 @@ in
   # ./xmonad
   ./yubikey
   ./xplr
+  ./networkmanager
   more
 ]
