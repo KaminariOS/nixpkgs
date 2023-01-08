@@ -2,6 +2,7 @@ let
   more = {
     services = {
       flameshot.enable = true;
+      gnome-keyring.enable = true;
     };
   };
 in

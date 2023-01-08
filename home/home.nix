@@ -85,6 +85,7 @@ let
     xplr
     rustscan
     grex # A command-line tool for generating regular expressions from user-provided test cases
+    pstree
   ];
   gui_apps = with pkgs; [
     i3-gaps
