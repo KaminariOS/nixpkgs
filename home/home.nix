@@ -141,19 +141,26 @@ in
     };
 
     # restart services on change
-    systemd.user.startServices = "sd-switch";
+    systemd.user = {
+      startServices = "sd-switch";
 
-#    systemd.user.services.rclone = {
-#         Unit = {
-#              Description = "Example description";
-#              Documentation = [ "man:example(1)" "man:example(5)" ];
-#            };
-#
-#            Service = {
-#        script = "rclone mount remote: ~/rclone";
-#        wantedby = ["default.target"];
-#            };
-#    };
+    services = {
+      imec = {
+        Unit.description = "...";
+        Service.ExecStart = "${pkgs.fcitx5}/bin/fcitx5";
+        Install.wantedBy = [ "default.target" ]; # starts after login
+    };
+      rclone = {
+
+        Service = {
+          Type = "notify";
+          ExecStart = "${pkgs.rclone}/bin/rclone mount --umask 022  --allow-other remote: %h/rclone";
+          Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
+        };
+        Install.wantedBy = ["default.target"];
+      };
+    };
+    };
 
     # notifications about home-manager news
     news.display = "silent";

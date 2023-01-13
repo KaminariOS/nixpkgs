@@ -170,8 +170,10 @@ in
     };
   };
 
-  programs.fish.enable = true;
-
+  programs= {
+    fish.enable = true;
+    fuse.userAllowOther = true;
+  };
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kosumi = {
     isNormalUser = true;
