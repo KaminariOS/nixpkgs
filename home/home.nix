@@ -97,6 +97,12 @@ networkmanagerapplet
     feh
     zoom-us
     libsForQt5.kdeconnect-kde
+    discord
+    zoom-us
+    slack
+
+    wireshark
+    tev
   ];
   nixos_app = with pkgs; [
     jetbrains.clion
@@ -109,10 +115,7 @@ networkmanagerapplet
     libsForQt5.kdeconnect-kde
     firefox
     kate
-    zoom-us
 
-    wireshark
-    tev
     gnome.seahorse
   ];
 in
