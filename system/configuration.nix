@@ -117,8 +117,9 @@ in
 
   services = {
     # Mount MTP devices
-    gvfs.enable = true;
 
+    gvfs.enable = true;
+    gnome.gnome-keyring.enable = true; 
 
     xserver.enable = true;
     #xserver.autorun = false;
@@ -188,7 +189,8 @@ in
       debug = false;
       mode = "challenge-response";
     };
-
+    pam.services.login.enableGnomeKeyring = true;
+    pam.services.kwallet.enableKwallet = false;
     # Sudo custom prompt message
     sudo.configFile = ''
       Defaults lecture=always

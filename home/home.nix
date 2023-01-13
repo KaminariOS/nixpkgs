@@ -55,6 +55,7 @@ let
 
     zip 
     unzip
+networkmanagerapplet
   ];
   rust_cli = with pkgs; [
     nushell
@@ -112,6 +113,7 @@ let
 
     wireshark
     tev
+    gnome.seahorse
   ];
 in
 {

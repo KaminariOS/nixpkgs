@@ -7,6 +7,11 @@ in {
   ''
 ${pkgs.networkmanagerapplet}/bin/nm-applet --sm-disable 
 '';
+
+  xsession.profileExtra = ''
+      eval $(${pkgs.gnome3.gnome-keyring}/bin/gnome-keyring-daemon --daemonize --components=ssh,secrets)
+      export SSH_AUTH_SOCK
+  '';
   xsession.windowManager.i3 = {
     enable = true;
     package = pkgs.i3-gaps;
