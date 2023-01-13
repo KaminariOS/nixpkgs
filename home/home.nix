@@ -146,18 +146,17 @@ in
 
     services = {
       imec = {
-        Unit.description = "...";
-        Service.ExecStart = "${pkgs.fcitx5}/bin/fcitx5";
-        Install.wantedBy = [ "default.target" ]; # starts after login
+        Unit.Description = "...";
+        Service.ExecStart = "/run/current-system/sw/bin/fcitx5";
+        Install.WantedBy = [ "default.target" ]; # starts after login
     };
       rclone = {
-
         Service = {
           Type = "notify";
           ExecStart = "${pkgs.rclone}/bin/rclone mount --umask 022  --allow-other remote: %h/rclone";
           Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
         };
-        Install.wantedBy = ["default.target"];
+        Install.WantedBy = ["default.target"];
       };
     };
     };
