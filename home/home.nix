@@ -103,6 +103,14 @@ networkmanagerapplet
 
     wireshark
     tev
+    
+    maim
+
+    gnumake
+    cmake
+    gcc
+
+    python
   ];
   nixos_app = with pkgs; [
     jetbrains.clion
