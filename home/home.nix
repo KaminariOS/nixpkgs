@@ -109,6 +109,7 @@ networkmanagerapplet
     gnumake
     cmake
     gcc
+    gdb
 
     python
   ];
