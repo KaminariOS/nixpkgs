@@ -42,7 +42,6 @@ let
     fish
     rofi
 
-    gdbgui
 
 
 #    alacritty
@@ -55,7 +54,14 @@ let
 
     zip 
     unzip
-networkmanagerapplet
+    networkmanagerapplet
+
+
+    gnumake
+    cmake
+    gcc
+
+    python
   ];
   rust_cli = with pkgs; [
     nushell
@@ -105,13 +111,7 @@ networkmanagerapplet
     tev
     
     maim
-
-    gnumake
-    cmake
-    gcc
-    gdb
-
-    python
+    gdbgui
   ];
   nixos_app = with pkgs; [
     jetbrains.clion
