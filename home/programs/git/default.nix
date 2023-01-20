@@ -62,7 +62,7 @@ in
       key = "0x5710C5966568BAC5";
       signByDefault = true;
     };
-    userEmail = "k@gmail.com";
+    userEmail = "chankocyo@gmail.com";
     userName = "kosumi";
   };
 }
