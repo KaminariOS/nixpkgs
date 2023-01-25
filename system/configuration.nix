@@ -190,7 +190,7 @@ in
       mode = "challenge-response";
     };
     pam.services.login.enableGnomeKeyring = true;
-    pam.services.kwallet.enableKwallet = false;
+    pam.services.kwallet.enableKwallet = true;
     # Sudo custom prompt message
     sudo.configFile = ''
       Defaults lecture=always
