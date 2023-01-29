@@ -59,6 +59,7 @@ in
     vim
     wget
     home-manager
+    kwallet-pam
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

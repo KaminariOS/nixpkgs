@@ -5,12 +5,13 @@ let
 in {
   xsession.initExtra = 
   ''
-${pkgs.networkmanagerapplet}/bin/nm-applet --sm-disable 
+#${pkgs.kwallet-pam}/libexec/pam_kwallet_init
+#${pkgs.networkmanagerapplet}/bin/nm-applet --sm-disable 
 '';
 
   xsession.profileExtra = ''
-      eval $(${pkgs.gnome3.gnome-keyring}/bin/gnome-keyring-daemon --daemonize --components=ssh,secrets)
-      export SSH_AUTH_SOCK
+      #eval $(${pkgs.gnome3.gnome-keyring}/bin/gnome-keyring-daemon --daemonize --components=ssh,secrets)
+      #export SSH_AUTH_SOCK
   '';
   xsession.windowManager.i3 = {
     enable = true;
@@ -92,6 +93,7 @@ ${pkgs.networkmanagerapplet}/bin/nm-applet --sm-disable
           always = true;
           notification = false;
         }
+
         {
           command = "systemctl --user restart polybar.service";
           always = true;

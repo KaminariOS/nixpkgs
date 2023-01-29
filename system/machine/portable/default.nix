@@ -39,18 +39,18 @@
         # Enable the KDE Plasma Desktop Environment.
         displayManager = {
           sddm.enable = true;
-          sessionCommands = "export KDEWM=${pkgs.i3-gaps}/bin/i3";
-          defaultSession = "plasma5+i3+whatever";
+          #sessionCommands = "export KDEWM=${pkgs.i3-gaps}/bin/i3";
+          #defaultSession = "plasma5+i3+whatever";
            session = [
-                  {
-                      manage = "desktop";
-                      name = "plasma5+i3+whatever";
-                      start = ''exec env KDEWM=${pkgs.i3-gaps}/bin/i3 ${pkgs.plasma-workspace}/bin/startplasma-x11'';
-                  }
+                  #{
+                      #manage = "desktop";
+                      #name = "plasma5+i3+whatever";
+                      #start = ''exec env KDEWM=${pkgs.i3-gaps}/bin/i3 ${pkgs.plasma-workspace}/bin/startplasma-x11'';
+                  #}
                   {
                       manage = "desktop";
                       name = "i3+whatever";
-                      start = ''exec i3'';
+                      start = ''${pkgs.kwallet-pam}/libexec/pam_kwallet_init; exec i3'';
                   }
               ];
         };

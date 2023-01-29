@@ -94,25 +94,8 @@ let
     grex # A command-line tool for generating regular expressions from user-provided test cases
     pstree
   ];
-  gui_apps = with pkgs; [
-    i3-gaps
-    i3status
-    brightnessctl
 
-#    polybar
-    feh
-    zoom-us
-    libsForQt5.kdeconnect-kde
-    discord
-    zoom-us
-    slack
-
-    wireshark
-    tev
-    
-    maim
-    gdbgui
-  ];
+  gui_apps = (import ./gui.nix pkgs).gui_packages;
   nixos_app = with pkgs; [
     jetbrains.clion
     jetbrains.idea-ultimate
