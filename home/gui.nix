@@ -16,6 +16,7 @@
     
     maim
     gdbgui
+    haruna
   ];
 
 }
