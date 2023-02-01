@@ -20,30 +20,29 @@ let
     name = "foreign-env";
     src = pkgs.fishPlugins.foreign-env.src;
   };
-  aliases = ''
-  alias z  "zoxide"
-  alias nuco  "nvim ~/.config/nushell/config.nu"
-  alias hxco  "hx ~/.config/helix/config.toml"
-  alias alco  "nvim ~/.config/alacritty/alacritty.yml"
-  alias swim  "home-manager switch --flake '/home/kosumi/nixpkgs#kosumi'"
-  alias swir  "home-manager switch --flake '/home/kaminari/nixpkgs#kaminari'"
-  alias nico  "nvim ~/.config/nixpkgs/home.nix"
-  alias ll  "exa -l"
-  alias v  "nvim"
-  alias his  "history"
-  alias c  "bat"
-  alias lt  "exa --icons --tree --no-user --no-permissions"
-  alias e "exa --icons -l --no-user --no-permissions"
-  alias ls  "exa --icons -l --no-user --no-permissions"
-  alias du  "dust"
-  alias ps  "procs"
-  alias rfr  "rofi -show run"
-  alias diff "delta"
-  alias ca "cargo"
-  alias idea "idea-ultimate"
-  alias clo "clion"
-  alias dnix "echo 'use nix' >> .envrc; direnv allow"
-  '';
+  #aliases = ''
+  #alias z  "zoxide"
+  #alias nuco  "nvim ~/.config/nushell/config.nu"
+  #alias hxco  "hx ~/.config/helix/config.toml"
+  #alias alco  "nvim ~/.config/alacritty/alacritty.yml"
+  #alias swim  "home-manager switch --flake '/home/kosumi/nixpkgs#kosumi'"
+  #alias swir  "home-manager switch --flake '/home/kaminari/nixpkgs#kaminari'"
+  #alias nico  "nvim ~/.config/nixpkgs/home.nix"
+  #alias ll  "exa -l"
+  #alias his  "history"
+  #alias c  "bat"
+  #alias lt  "exa --icons --tree --no-user --no-permissions"
+  #alias e "exa --icons -l --no-user --no-permissions"
+  #alias ls  "exa --icons -l --no-user --no-permissions"
+  #alias du  "dust"
+  #alias ps  "procs"
+  #alias rfr  "rofi -show run"
+  #alias diff "delta"
+  #alias ca "cargo"
+  #alias idea "idea-ultimate"
+  #alias clo "clion"
+  #alias dnix "echo 'use nix' >> .envrc; direnv allow"
+  #'';
   fishConfig = "
 
     set -g fish_color_autosuggestion 555 yellow
@@ -135,11 +134,35 @@ let
     bind \\e\\[A _atuin_search
     bind -M insert \\e\\[A _atuin_search
     set_color normal
-  " + fzfConfig + themeConfig + aliases;
+  " + fzfConfig + themeConfig; 
+   #+ aliases;
 in
 {
   programs.fish = {
         enable = true;
+        shellAbbrs = {
+          v = "nvim";
+    z  = "zoxide";
+    nuco =  "nvim ~/.config/nushell/config.nu";
+    hxco = "hx ~/.config/helix/config.toml";
+    alco = "nvim ~/.config/alacritty/alacritty.yml";
+    swim = "home-manager switch --flake '/home/kosumi/nixpkgs#kosumi'";
+    swir = "home-manager switch --flake '/home/kaminari/nixpkgs#kaminari'";
+    nico = "nvim ~/.config/nixpkgs/home.nix";
+    ll = "exa -l";
+    his = "history";
+    c  = "bat";
+    lt  = "exa --icons --tree --no-user --no-permissions";
+    e = "exa --icons -l --no-user --no-permissions";
+    ls = "exa --icons -l --no-user --no-permissions";
+    du = "dust";
+    ps  = "procs";
+    rfr = "rofi -show run";
+    diff = "delta";
+    ca = "cargo";
+    idea = "idea-ultimate";
+    clo = "clion";
+        };
         plugins = [ custom.theme fenv ];
             interactiveShellInit = ''
               eval (direnv hook fish)
