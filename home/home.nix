@@ -1,7 +1,6 @@
 { config, pkgs, lib, stdenv, ... }:
 
 let
-
   defaultPkgs = with pkgs; [
     any-nix-shell
     xclip
@@ -36,7 +35,6 @@ let
 
     simplescreenrecorder # screen recorder gui
 #    kitty
-    fish
     rofi
 
 
@@ -60,6 +58,7 @@ let
 
     python
   ];
+
   rust_cli = with pkgs; [
     nushell
     tealdeer
@@ -74,8 +73,6 @@ let
     atuin
     broot
     delta
-    helix
-    zellij
     ripgrep # fast grep
     navi # cheatsheet
     skim
