@@ -1,9 +1,6 @@
 { config, pkgs, lib, stdenv, ... }:
 
 let
-  username = "kosumi";
-    homeDirectory = "/home/${username}";
-    configHome = "${homeDirectory}/.config";
 
   defaultPkgs = with pkgs; [
     any-nix-shell
@@ -118,20 +115,14 @@ in
        ./programs
       ./scripts
       ./services
+      ../shellEnv
 #      ./themes
     ];
 
-    xdg = {
-      inherit configHome;
-      enable = true;
-    };
     home = {
-      inherit username homeDirectory;
       stateVersion = "22.05";
-
   #    packages = defaultPkgs ++ gnomePkgs;
       packages = defaultPkgs ++ rust_cli ++ gui_apps ++ nixos_app;
-
       sessionVariables = {
         DISPLAY = ":0";
         EDITOR = "nvim";

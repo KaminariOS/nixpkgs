@@ -33,8 +33,8 @@ let
     ../home/home.nix
   ];
 
-  mkHome = { hidpi ? false }: (
-    home-manager.lib.homeManagerConfiguration rec {
+  mkHome = { hidpi ? false, username }: (
+    home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
       extraSpecialArgs = {
@@ -42,13 +42,26 @@ let
         addons = nur.repos.rycee.firefox-addons;
       };
 
-      modules = [{ inherit imports; }];
+      modules = let homeDirectory = "/home/${username}"; in [
+      { inherit imports; }
+         {
+          home = {
+            inherit username;
+            inherit homeDirectory; 
+          };
+
+          xdg = {
+            configHome = "${homeDirectory}/.config";
+            enable = true;
+          };
+        }
+      ];
     }
   );
 in
 {
-  kosumi = mkHome { hidpi = false; };
-  kaminari = mkHome { hidpi = true; };
+  kosumi = mkHome { hidpi = false; username = "kosumi";};
+  kaminari = mkHome { hidpi = true; username = "kaminari";};
 
   # Continuos Integration automation
 #  ci = {
