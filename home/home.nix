@@ -59,35 +59,7 @@ let
     python
   ];
 
-  rust_cli = with pkgs; [
-    nushell
-    tealdeer
-    zoxide
-    tokei
-    procs
-    starship
-    gitui
-    sd
-    bandwhich
-    hexyl
-    atuin
-    broot
-    delta
-    ripgrep # fast grep
-    navi # cheatsheet
-    skim
-
-    bottom # alternative to htop & ytop
-    du-dust # disk usage/free utility
-    exa # a better `ls`
-    fd # "find" for files
-    hyperfine # command-line benchmarking tool
-    ripgrep-all
-    xplr
-    rustscan
-    grex # A command-line tool for generating regular expressions from user-provided test cases
-    pstree
-  ];
+  rust_cli = import ../shellEnv/shellList.nix pkgs;
 
   gui_apps = (import ./gui.nix pkgs).gui_packages;
   nixos_app = with pkgs; [
