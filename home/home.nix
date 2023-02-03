@@ -1,65 +1,27 @@
 { config, pkgs, lib, stdenv, ... }:
 
 let
+  shellPkgs  = import ../shellEnv/shellList.nix pkgs;
   defaultPkgs = with pkgs; [
-    any-nix-shell
-    xclip
     arandr # simple GUI for xrandr
     asciinema # record the terminal
     cachix # nix caching
 
     gimp # gnu image manipulation program
-    killall # kill processes by name
 
     multilockscreen # fast lockscreen based on i3lock
     nyancat # the famous rainbow cat!
-    ranger # terminal file explorer
-    direnv
 
-    rnix-lsp # nix lsp server
-    rust-analyzer
     # nodePackages_latest.bash-language-server
     #   nodePackages_latest.vscode-css-languageserver-bin
     #    nodePackages.dockerfile-language-server-nodejs
-    gopls
-    haskell-language-server
-    java-language-server
     #   nodePackages.vscode-json-languageserver
-    texlab
-    taplo-lsp # A TOML toolkit written in Rust
-    sumneko-lua-language-server
-    #    wgsl_analyzer
-    #  nodePackages_latest.yaml-language-server
-    python-language-server
-    cmake-language-server
 
     simplescreenrecorder # screen recorder gui
-#    kitty
     rofi
-
-
-
-#    alacritty
-    fortune
-    neofetch
-
-    nyancat              # the famous rainbow cat!
-    prettyping           # a nicer ping
-    xsel                 # clipboard support (also for neovim)
-
-    zip 
-    unzip
     networkmanagerapplet
-
-
-    gnumake
-    cmake
-    gcc
-
-    python
   ];
 
-  rust_cli = import ../shellEnv/shellList.nix pkgs;
 
   gui_apps = (import ./gui.nix pkgs).gui_packages;
   nixos_app = with pkgs; [
@@ -91,7 +53,7 @@ in
     home = {
       stateVersion = "22.05";
   #    packages = defaultPkgs ++ gnomePkgs;
-      packages = defaultPkgs ++ rust_cli ++ gui_apps ++ nixos_app;
+      packages = defaultPkgs ++ shellPkgs ++ gui_apps ++ nixos_app;
       sessionVariables = {
         DISPLAY = ":0";
         EDITOR = "nvim";
