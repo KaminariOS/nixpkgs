@@ -8,11 +8,13 @@
         configRC = builtins.readFile ./init.vim;
         viAlias = true;
         vimAlias = true;
+        preventJunkFiles = true;
         customPlugins = with pkgs.vimPlugins; [
           multiple-cursors
           vim-repeat
           vim-surround
         ];
+        neovim.package = pkgs.neovim-nightly;
         lsp = {
           enable = true;
           folds = true;
@@ -71,6 +73,7 @@
           hideDotFiles = false;
           hideFiles = [ "node_modules" ".cache" ];
         };
+        neoclip.enable = true;
         hop.enable = true;
         todo.enable = true;
         tabline.nvimBufferline.enable = true;
@@ -91,6 +94,9 @@
           type = "nerdcommenter";
         };
         shortcuts = {
+          enable = true;
+        };
+        surround = {
           enable = true;
         };
         telescope = {

@@ -63,7 +63,7 @@ let rustcli = with pkgs; [
     cmake
     gcc
 
-    python
+    python3
   ];
   in
   (defaultShell ++ rustcli)
