@@ -10,4 +10,5 @@
   # ./xmonad
   ./yubikey
   ./networkmanager
+  ./steam
 ]

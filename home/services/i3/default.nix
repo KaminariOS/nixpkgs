@@ -15,7 +15,7 @@ in {
   '';
   xsession.windowManager.i3 = {
     enable = true;
-    package = pkgs.i3-gaps;
+    package = pkgs.i3;
     extraConfig = builtins.readFile ./config;
     config = {
       modifier = mod;

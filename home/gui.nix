@@ -1,7 +1,6 @@
 {config, pkgs, ...}:
 {
   gui_packages = with pkgs; [
-    i3-gaps
     i3status
     brightnessctl
 #    polybar
@@ -21,6 +20,9 @@
     nodePackages_latest.http-server
 
     blender
+    gparted
+    steam
+    heroic
   ];
 
 }
