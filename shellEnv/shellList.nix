@@ -64,6 +64,7 @@ let rustcli = with pkgs; [
     gcc
 
     python3
+    iftop
   ];
   in
   (defaultShell ++ rustcli)
