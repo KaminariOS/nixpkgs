@@ -140,8 +140,13 @@ in
 {
   programs.fish = {
         enable = true;
+
+  shellAliases = {
+    v = "nvim";
+    c  = "bat";
+  };
         shellAbbrs = {
-          v = "nvim";
+          #v = "nvim";
     z  = "zoxide";
     nuco =  "nvim ~/.config/nushell/config.nu";
     hxco = "hx ~/.config/helix/config.toml";
@@ -151,7 +156,6 @@ in
     nico = "nvim ~/.config/nixpkgs/home.nix";
     ll = "exa -l";
     his = "history";
-    c  = "bat";
     lt  = "exa --icons --tree --no-user --no-permissions";
     e = "exa --icons -l --no-user --no-permissions";
     ls = "exa --icons -l --no-user --no-permissions";
