@@ -28,6 +28,28 @@ let rustcli = with pkgs; [
     rustscan
     grex # A command-line tool for generating regular expressions from user-provided test cases
     pstree
+
+    choose
+    dog
+    dua
+    fclones
+    htmlq
+    jless
+    jql
+    miniserve
+    monolith
+    ouch
+    pastel
+    pipr
+
+    #rip
+    rargs
+    xcp
+    kalker 
+    fend
+    cargo-audit
+    systeroid
+    
   ];
 
   defaultShell = with pkgs; [

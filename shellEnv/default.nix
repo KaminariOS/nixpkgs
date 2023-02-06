@@ -4,6 +4,7 @@ let
        bat.enable = true;
        direnv = {
              enable = true;
+             #enableFishIntegration = true;
              nix-direnv.enable = true;
            };
        broot = {
@@ -32,6 +33,22 @@ let
            enableFishIntegration = true;
            enableZshIntegration = true;
        };
+       nix-index = {
+          enable = true;
+          enableFishIntegration = true;
+       };
+       #oh-my-posh = {
+          #enable = true;
+          #enableFishIntegration = true;
+       #};
+       #scmpuff = {
+          #enable = true;
+          #enableFishIntegration = true;
+       #};
+       #z-lua = {
+          #enable = true;
+          #enableFishIntegration = true;
+       #};
        navi = {
            enable = true;
            enableZshIntegration = true;

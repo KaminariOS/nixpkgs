@@ -23,6 +23,9 @@
     gparted
     steam
     heroic
+
+    mdcat
+    wezterm
   ];
 
 }
