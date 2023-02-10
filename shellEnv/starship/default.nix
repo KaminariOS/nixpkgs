@@ -121,7 +121,7 @@
     };
 
     shell = {
-    fish_indicator = "🐟";
+    fish_indicator = ">";
     powershell_indicator = "_";
     unknown_indicator = "mystery shell";
     style = "cyan bold";
@@ -131,7 +131,7 @@
     nix_shell = {
       disabled = false;
     style = "bg:#06969A";
-      impure_msg = "[impure](fg:bold blue $style)";
+      impure_msg = "[!pure](fg:bold blue $style)";
       pure_msg = "[pure](fg:bold green $style)";
       format = ''[ $symbol$state(\($name\))]($style)'';
     };
@@ -144,7 +144,8 @@
 
     time = {
     disabled = false;
-    time_format = "%I:%M%p %a %h-%e"; # Hour:Minute Format
+    #time_format = "%I:%M%p %a %h-%e"; # Hour:Minute Format
+    time_format = "%I:%M%p"; # Hour:Minute Format
     style = "bg:#33658A";
     format = "[ $time ]($style)";
     };
