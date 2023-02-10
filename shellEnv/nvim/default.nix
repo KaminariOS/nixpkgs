@@ -29,8 +29,8 @@
             enable = true;
             type = "nil";
           };
-          dhall = true;
-          elm = true;
+          dhall = !true;
+          elm = !true;
           haskell = true;
           sql = true;
           python = true;
