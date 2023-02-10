@@ -17,7 +17,6 @@
     gdbgui
     haruna
     zettlr
-    nodePackages_latest.http-server
 
     blender
     gparted

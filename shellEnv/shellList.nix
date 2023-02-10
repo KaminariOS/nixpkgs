@@ -84,6 +84,7 @@ let rustcli = with pkgs; [
     gnumake
     cmake
     gcc
+    gdb
 
     python3
     iftop
