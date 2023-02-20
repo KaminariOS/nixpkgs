@@ -24,7 +24,7 @@
     heroic
 
     mdcat
-    wezterm
+    #wezterm
   ];
 
 }

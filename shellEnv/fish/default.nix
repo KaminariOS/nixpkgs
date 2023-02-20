@@ -147,6 +147,7 @@ in
   };
         shellAbbrs = {
           #v = "nvim";
+    tt = "taskwarrior-tui";
     z  = "zoxide";
     nuco =  "nvim ~/.config/nushell/config.nu";
     hxco = "hx ~/.config/helix/config.toml";

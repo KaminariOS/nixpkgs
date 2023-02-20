@@ -2,9 +2,9 @@
   description = "Home Manager configuration of Kosumi";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    #nixpkgs.url = "nixpkgs/nixos-unstable";
     #nixpkgs.url = "nixpkgs/nixos-22.05";
-    # nixpkgs.url = "github:NixOS/nixpkgs/a0b7e70db7a55088d3de0cc370a59f9fbcc906c3";
+    nixpkgs.url = "github:NixOS/nixpkgs/e913ad8b17d40a12d982384372f387b63f3b5812";
 
     nurpkgs.url = github:nix-community/NUR;
 

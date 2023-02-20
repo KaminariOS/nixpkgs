@@ -88,6 +88,11 @@ let rustcli = with pkgs; [
 
     python3
     iftop
+
+    nix-prefetch-git
+
+    taskwarrior
+    taskwarrior-tui
   ];
   in
   (defaultShell ++ rustcli)
