@@ -14,6 +14,7 @@
           vim-repeat
           vim-surround
         ];
+        useSystemClipboard = true;
         neovim.package = pkgs.neovim-nightly;
         lsp = {
           enable = true;
@@ -70,6 +71,7 @@
         };
         filetree.nvimTreeLua = {
           enable = true;
+          openOnSetup = false;
           hideDotFiles = false;
           hideFiles = [ "node_modules" ".cache" ];
         };
