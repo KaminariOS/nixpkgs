@@ -25,6 +25,7 @@
 
     mdcat
     #wezterm
+    xdotool
   ];
 
 }
