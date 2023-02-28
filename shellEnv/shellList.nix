@@ -67,9 +67,9 @@ let rustcli = with pkgs; [
     texlab
     taplo-lsp # A TOML toolkit written in Rust
     sumneko-lua-language-server
-    #    wgsl_analyzer
+    #   wgsl_analyzer
     #  nodePackages_latest.yaml-language-server
-    python-language-server
+    #python-lsp-server
     cmake-language-server
 
     fortune
