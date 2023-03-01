@@ -103,6 +103,7 @@ let
         filetree.nvimTreeLua = {
           enable = true;
           openOnSetup = false;
+          closeOnFileOpen = true;
           hideDotFiles = false;
           hideFiles = [ "node_modules" ".cache" ];
         };
