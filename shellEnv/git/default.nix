@@ -65,4 +65,6 @@ in
     userEmail = "chankocyo@gmail.com";
     userName = "kosumi";
   };
+
+  home.packages = with pkgs; [ git-crypt git-annex ];
 }

@@ -85,3 +85,5 @@ else
   " some mappings for Vim/Neovim
   nnoremap <leader>f <cmd>Telescope find_files<cr>
 endif
+
+luafile ~/.config/nvim/config.lua

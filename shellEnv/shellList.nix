@@ -93,6 +93,12 @@ let rustcli = with pkgs; [
 
     taskwarrior
     taskwarrior-tui
+
+    file
+    nix-diff
+    nix-prefetch-git
+    gh
+    cachix
   ];
   in
   (defaultShell ++ rustcli)

@@ -1,5 +1,13 @@
 { config, lib, pkgs, ... }:
 
+let
+  preferPath = command: default: pkgs.writeShellScript "${command}-wrapper" ''
+    if command -v ${command}; then
+        exec ${command} "$@"
+    else
+        exec ${default} "$@"
+    fi
+  ''; in
 {
   programs.neovim-ide = {
     enable = true;
@@ -13,6 +21,29 @@
           multiple-cursors
           vim-repeat
           vim-surround
+
+          
+          lsp-colors-nvim
+          lsp_extensions-nvim
+          nvim-compe
+          nvim-lspconfig
+          rust-tools-nvim
+          rust-vim
+          vim-airline
+          vim-cpp-enhanced-highlight
+          vim-fish
+          vim-fugitive
+          vim-hcl
+          vim-localvimrc
+
+          vim-nix
+          vim-pathogen
+          vim-sensible
+          vim-terraform
+          vim-tmux-navigator
+          vim-twig
+          vim-vue
+          vimtex
         ];
         useSystemClipboard = true;
         neovim.package = pkgs.neovim-nightly;
@@ -25,7 +56,7 @@
           nvimCodeActionMenu.enable = true;
           trouble.enable = true;
           lspSignature.enable = true;
-          rust.enable = true;
+          rust.enable = !true;
           nix = {
             enable = true;
             type = "nil";
@@ -114,5 +145,12 @@
         };
       };
     };
+  };
+
+
+  xdg.configFile."nvim/config.lua".source = pkgs.substituteAll {
+    src = ./init.lua;
+    pyrightLangserver = preferPath "pyright-langserver" "${pkgs.pyright}/bin/pyright-langserver";
+    rustAnalyzer = preferPath "rust-analyzer" "${pkgs.rust-analyzer}/bin/rust-analyzer";
   };
 }

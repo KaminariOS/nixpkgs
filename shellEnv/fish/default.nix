@@ -25,8 +25,6 @@ let
   #alias nuco  "nvim ~/.config/nushell/config.nu"
   #alias hxco  "hx ~/.config/helix/config.toml"
   #alias alco  "nvim ~/.config/alacritty/alacritty.yml"
-  #alias swim  "home-manager switch --flake '/home/kosumi/nixpkgs#kosumi'"
-  #alias swir  "home-manager switch --flake '/home/kaminari/nixpkgs#kaminari'"
   #alias nico  "nvim ~/.config/nixpkgs/home.nix"
   #alias ll  "exa -l"
   #alias his  "history"
@@ -140,7 +138,31 @@ in
 {
   programs.fish = {
         enable = true;
-
+        
+         functions = {
+          #fish_greeting = {
+            #description = "Hi!";
+            #body = ''
+              ##echo -e "\e[3m "(${pkgs.fortune}/bin/fortune literature riddles)"\e[0m\n"
+            #'';
+          #};
+          prepend_path = {
+            description = "Prepends a path to PATH if it exists";
+            body = ''
+              if test -e $argv[1]
+                set PATH $argv[1] $PATH
+              end
+            '';
+          };
+          source_if_exists = {
+            description = "Sources a script if it exists";
+            body = ''
+              if test -e $argv[1]
+                source $argv[1]
+              end
+            '';
+          };
+        };
   shellAliases = {
     v = "nvim";
     c  = "bat";
@@ -152,8 +174,7 @@ in
     nuco =  "nvim ~/.config/nushell/config.nu";
     hxco = "hx ~/.config/helix/config.toml";
     alco = "nvim ~/.config/alacritty/alacritty.yml";
-    swim = "home-manager switch --flake '/home/kosumi/nixpkgs#kosumi'";
-    swir = "home-manager switch --flake '/home/kaminari/nixpkgs#kaminari'";
+    swim = "home-manager switch --flake '${config.home.homeDirectory}/nixpkgs#${config.home.username}'";
     nico = "nvim ~/.config/nixpkgs/home.nix";
     ll = "exa -l";
     his = "history";

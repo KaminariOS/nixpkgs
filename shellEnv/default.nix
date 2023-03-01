@@ -81,6 +81,7 @@ in
   ./helix
   ./nushell
   ./nvim
+  #./neovim
   ./starship
   ./starship/symbols.nix
   ./zellij
@@ -88,5 +89,7 @@ in
   ./fish
   ./neofetch
   ./xplr
+  ./terminfo.nix
+  ./nix-index.nix
   more
 ]
