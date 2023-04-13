@@ -18,12 +18,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixpkgs-nautilus-gtk3.url = github:NixOS/nixpkgs?ref=37bd398;
+
+    rycee-nurpkgs = {
+      url = gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     neovim-flake = {
       #url = git+file:///home/gvolpe/workspace/neovim-flake;
-      url = github:gvolpe/neovim-flake;
+      url = github:gvolpe/neovim-flake?ref=42bf1c4db87553951a57fd558478ba9f00fe4def;
       # neovim-flake pushes its binaries to the cache using its own nixpkgs version
       # if we instead use ours, we'd be rebuilding all plugins from scratch
-      #inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Fish shell

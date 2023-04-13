@@ -21,7 +21,7 @@
     blender
     gparted
     steam
-    heroic
+    #heroic
 
     mdcat
     #wezterm

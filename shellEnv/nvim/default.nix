@@ -116,9 +116,9 @@ let
           autotagHtml = true;
           context.enable = true;
         };
-        scala = {
-          highlightMode = "treesitter";
-        };
+        #scala = {
+          #highlightMode = "treesitter";
+        #};
         keys = {
           enable = true;
           whichKey.enable = true;
