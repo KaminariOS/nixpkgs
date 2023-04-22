@@ -18,15 +18,15 @@
     haruna
     zettlr
 
+    obs-studio
     blender
     gparted
     steam
     #heroic
 
     mdcat
-    #wezterm
+    wezterm
     xdotool
-
     via
   ];
 
