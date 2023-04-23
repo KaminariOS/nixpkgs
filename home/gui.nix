@@ -15,7 +15,6 @@
     
     maim
     gdbgui
-    haruna
     zettlr
 
     obs-studio
@@ -23,7 +22,7 @@
     gparted
     steam
     #heroic
-    smplayer
+    mpv
     mdcat
     wezterm
     xdotool
