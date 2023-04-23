@@ -19,11 +19,11 @@
     zettlr
 
     obs-studio
-    blender
+    #blender
     gparted
     steam
     #heroic
-
+    smplayer
     mdcat
     wezterm
     xdotool
