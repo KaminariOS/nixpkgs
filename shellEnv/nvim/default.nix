@@ -19,10 +19,11 @@ let
         preventJunkFiles = true;
         customPlugins = with pkgs.vimPlugins; [
           multiple-cursors
+          # . last command
           vim-repeat
+          # cs"'
           vim-surround
 
-          
           lsp-colors-nvim
           lsp_extensions-nvim
           nvim-compe
@@ -32,14 +33,17 @@ let
           vim-airline
           vim-cpp-enhanced-highlight
           vim-fish
+          # :G git command 
           vim-fugitive
-          vim-hcl
+          #vim-hcl
           vim-localvimrc
 
           vim-nix
           vim-pathogen
+          # a universal set of defaults that (hopefully) everyone can agree on.
           vim-sensible
-          vim-terraform
+          # Automate infrastructure on any cloud
+          # vim-terraform
           vim-tmux-navigator
           vim-twig
           vim-vue
@@ -64,7 +68,7 @@ let
           dhall = !true;
           elm = !true;
           haskell = true;
-          #sql = true;
+          sql = true;
           python = true;
           clang = true;
           ts = false;
@@ -122,6 +126,7 @@ let
         chatgpt = {
           enable = false;
         };
+        # Displays availale keybinds
         keys = {
           enable = true;
           whichKey.enable = true;
@@ -136,6 +141,7 @@ let
         surround = {
           enable = true;
         };
+        # Leader ff search
         telescope = {
           enable = true;
         };
