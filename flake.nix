@@ -27,6 +27,7 @@
     neovim-flake = {
       #url = git+file:///home/gvolpe/workspace/neovim-flake;
       url = github:gvolpe/neovim-flake?ref=42bf1c4db87553951a57fd558478ba9f00fe4def;
+      #url = github:gvolpe/neovim-flake;
       # neovim-flake pushes its binaries to the cache using its own nixpkgs version
       # if we instead use ours, we'd be rebuilding all plugins from scratch
       inputs.nixpkgs.follows = "nixpkgs";
