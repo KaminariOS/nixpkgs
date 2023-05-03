@@ -71,7 +71,6 @@ let rustcli = with pkgs; [
     #  nodePackages_latest.yaml-language-server
     #python-lsp-server
     cmake-language-server
-
     fortune
 
     prettyping           # a nicer ping

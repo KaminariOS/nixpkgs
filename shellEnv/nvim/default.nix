@@ -68,7 +68,7 @@ let
           dhall = !true;
           elm = !true;
           haskell = true;
-          sql = true;
+          #sqlls = true;
           python = true;
           clang = true;
           ts = false;
