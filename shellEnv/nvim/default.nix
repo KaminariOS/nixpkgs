@@ -119,6 +119,9 @@ let
         #scala = {
           #highlightMode = "treesitter";
         #};
+        chatgpt = {
+          enable = false;
+        };
         keys = {
           enable = true;
           whichKey.enable = true;
@@ -139,6 +142,12 @@ let
         markdown = {
           enable = true;
           glow.enable = true;
+        };
+        notifications.enable = true;
+        dial.enable = true;
+        spider = {
+          enable = false;
+          skipInsignificantPunctuation = true;
         };
         git = {
           enable = true;
