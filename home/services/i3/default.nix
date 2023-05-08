@@ -100,7 +100,7 @@ in {
           notification = false;
         }
         {
-          command = ''${pkgs.feh}/bin/feh --bg-scale ~/Pictures/wallpaper.jpg'';
+          command = ''${config.home.homeDirectory}/.nix-profile/bin/feh --bg-scale ~/Pictures/wallpaper.jpg'';
           always = true;
           notification = false;
         }

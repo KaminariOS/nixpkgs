@@ -67,8 +67,8 @@ in
       timers.wallpaper = {
         Install.WantedBy = [ "timers.target" ];
         Timer = {
-      OnBootSec = "3m";
-      OnUnitActiveSec = "30m";
+      OnBootSec = "40m";
+      OnUnitActiveSec = "40m";
     };
   };
     services = {
