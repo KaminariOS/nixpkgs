@@ -39,6 +39,7 @@ let
 
     gnome.seahorse
   ];
+  homeDirectory = config.home.homeDirectory;
 in
 {
     imports = builtins.concatMap import [
@@ -63,6 +64,13 @@ in
     # restart services on change
     systemd.user = {
       startServices = "sd-switch";
+      timers.wallpaper = {
+        Install.WantedBy = [ "timers.target" ];
+        Timer = {
+      OnBootSec = "3m";
+      OnUnitActiveSec = "30m";
+    };
+  };
     services = {
       imec = {
         Unit.Description = "...";
@@ -71,10 +79,22 @@ in
     };
       rclone = {
         Service = {
-          Type = "notify";
+          Type = "simple";
           ExecStart = "${pkgs.rclone}/bin/rclone mount --umask 022  --allow-other remote: %h/rclone";
           Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
         };
+        Install.WantedBy = ["default.target"];
+      };
+      wallpaper = {
+        Service = {
+          Type = "oneshot";
+          ExecStart = 
+          "${homeDirectory}/nixpkgs/wallpaper/wallpaper.sh"; 
+        #''${pkgs.wget}/bin/wget -O wallpaper.jpg "http://www.bing.com/$(wget -q -O- https://binged.it/2ZButYc | sed -e 's/<[^>]*>//g' | cut -d / -f2 | cut -d \& -f1)" -O ${homeDirectory}/Pictures/wallpaper.jpg && 
+          #${pkgs.feh}/bin/feh --bg-scale /Pictures/wallpaper.jpg'';
+          Environment = [ "PATH=/run/current-system/sw/bin:${homeDirectory}/.nix-profile/bin:$PATH" ];
+        };
+        #Install.WantedBy = ["default.target"];
         Install.WantedBy = ["default.target"];
       };
     };

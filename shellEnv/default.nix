@@ -1,6 +1,11 @@
 let
   more = {
     programs = {
+       readline = {
+          enable = true;
+          extraConfig = "set editing-mode vi
+          ";
+       };
        bat.enable = true;
        direnv = {
              enable = true;
