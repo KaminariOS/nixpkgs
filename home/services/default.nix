@@ -15,5 +15,6 @@ in
   ./screenlocker
   ./udiskie
   ./i3
+  ./eww
   more
 ]
