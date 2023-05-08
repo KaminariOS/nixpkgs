@@ -27,6 +27,8 @@
     wezterm
     xdotool
     via
+
+   inlyne
   ];
 
 }

@@ -84,6 +84,10 @@ Plug 'machakann/vim-highlightedyank'
 else
   " some mappings for Vim/Neovim
   nnoremap <leader>f <cmd>Telescope find_files<cr>
+  nnoremap <leader><leader> <cmd>bn<cr>
 endif
+
+inoremap <C-j> <Esc>
+vnoremap <C-j> <Esc>
 
 luafile ~/.config/nvim/config.lua

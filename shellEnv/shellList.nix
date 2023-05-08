@@ -15,6 +15,9 @@ let rustcli = with pkgs; [
     delta
     helix
     ripgrep # fast grep
+    # rga
+    ripgrep-all
+
     navi # cheatsheet
     skim
 
@@ -23,33 +26,56 @@ let rustcli = with pkgs; [
     exa # a better `ls`
     fd # "find" for files
     hyperfine # command-line benchmarking tool
-    ripgrep-all
+    # File manager
     xplr
+    # Port scanner
     rustscan
     grex # A command-line tool for generating regular expressions from user-provided test cases
     pstree
 
+    # This is choose, a human-friendly and fast alternative to cut and (sometimes) awk
     choose
+    # dog is a command-line DNS client.
     dog
+    # dua (-> Disk Usage Analyzer) is a tool to conveniently learn about the usage of disk space of a given directory. It's parallel by default and will max out your SSD, providing relevant information as fast as possible. Optionally delete superfluous data, and do so more quickly than rm.
     dua
+    # Efficient duplicate file finder and remover
     fclones
     htmlq
     jless
     jql
     miniserve
+
+    # CLI tool for saving web pages as a single HTML file
     monolith
+    # ouch stands for Obvious Unified Compression Helper.
     ouch
+    # pastel is a command-line tool to generate, analyze, convert and manipulate colors. It supports many different color formats and color spaces like RGB (sRGB), HSL, CIELAB, CIELCh as well as ANSI 8-bit and 24-bit representations.
     pastel
+    # Pipr is a commandline pipe-building tool, written in Rust!
     pipr
 
     #rip
     rargs
     xcp
     kalker 
+    # fend is an arbitrary-precision unit-aware calculator.
+    # > 5'10" to cm
+    # 177.8 cm
     fend
-    cargo-audit
+    # systeroid — A more powerful alternative to sysctl(8).
     systeroid
-    
+
+    cargo-audit
+    cargo-feature
+    cargo-readme
+    cargo-geiger
+    cargo-msrv
+    cargo-expand
+    cargo-bloat
+    cargo-flamegraph
+    cargo-license
+    cargo-supply-chain
   ];
 
   defaultShell = with pkgs; [
@@ -83,7 +109,7 @@ let rustcli = with pkgs; [
     gnumake
     cmake
     gcc
-    #gdb
+    gdb
 
     python3
     iftop

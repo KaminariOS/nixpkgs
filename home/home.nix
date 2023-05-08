@@ -35,7 +35,7 @@ let
     libsForQt5.kdeconnect-kde
     firefox
     kate
-    dolphin
+    #dolphin
 
     gnome.seahorse
   ];
