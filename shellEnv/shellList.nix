@@ -110,6 +110,9 @@ let rustcli = with pkgs; [
     cmake
     gcc
     gdb
+    #rust-gdb
+    lldb
+    evcxr
 
     python3
     iftop
