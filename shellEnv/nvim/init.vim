@@ -89,5 +89,7 @@ endif
 
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-j> <C-\><C-n>
 
 luafile ~/.config/nvim/config.lua
