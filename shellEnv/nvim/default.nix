@@ -14,7 +14,7 @@ let
     settings = {
       vim = {
         configRC = builtins.readFile ./init.vim;
-        viAlias = true;
+        viAlias = false;
         vimAlias = true;
         preventJunkFiles = true;
         customPlugins = with pkgs.vimPlugins; [
