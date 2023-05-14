@@ -63,7 +63,7 @@ let
           rust.enable = !true;
           nix = {
             enable = true;
-            type = "nil";
+            #type = "nil";
           };
           dhall = !true;
           elm = !true;
