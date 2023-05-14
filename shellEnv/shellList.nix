@@ -76,6 +76,11 @@ let rustcli = with pkgs; [
     cargo-flamegraph
     cargo-license
     cargo-supply-chain
+    cargo-hack
+    cargo-deny
+    cargo-llvm-lines
+    cargo-outdated
+    cargo-udeps
   ];
 
   defaultShell = with pkgs; [
