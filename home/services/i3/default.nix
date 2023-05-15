@@ -1,17 +1,18 @@
 { config, lib, pkgs, ... }:
 
-let 
+let
   mod = "Mod4";
-in {
-  xsession.initExtra = 
-  ''
-#${pkgs.kwallet-pam}/libexec/pam_kwallet_init
-#${pkgs.networkmanagerapplet}/bin/nm-applet --sm-disable 
-'';
+in
+{
+  xsession.initExtra =
+    ''
+      #${pkgs.kwallet-pam}/libexec/pam_kwallet_init
+      #${pkgs.networkmanagerapplet}/bin/nm-applet --sm-disable 
+    '';
 
   xsession.profileExtra = ''
-      #eval $(${pkgs.gnome3.gnome-keyring}/bin/gnome-keyring-daemon --daemonize --components=ssh,secrets)
-      #export SSH_AUTH_SOCK
+    #eval $(${pkgs.gnome3.gnome-keyring}/bin/gnome-keyring-daemon --daemonize --components=ssh,secrets)
+    #export SSH_AUTH_SOCK
   '';
   xsession.windowManager.i3 = {
     enable = true;
@@ -30,13 +31,13 @@ in {
       };
 
       assigns = {
-        "1" = [{class = "kitty";}];
+        "1" = [{ class = "kitty"; }];
       };
 
       defaultWorkspace = "workspace number 9";
-  
+
       terminal = "kitty";
-      
+
 
       keybindings = lib.mkOptionDefault {
         "XF86AudioMute" = "exec amixer set Master toggle";
@@ -47,7 +48,7 @@ in {
         "${mod}+p" = "exec ${pkgs.dmenu}/bin/dmenu_run";
         "${mod}+x" = "exec sh -c '${pkgs.maim}/bin/maim -s | xclip -selection clipboard -t image/png'";
         # "${mod}+Shift+x" = "exec sh -c '${pkgs.i3lock}/bin/i3lock -c 222222 & sleep 5 && xset dpms force of'";
-#        "${mod}+Shift+x" = "exec i3lock-fancy-dualmonitor";
+        #        "${mod}+Shift+x" = "exec i3lock-fancy-dualmonitor";
         "${mod}+Shift+x" = "exec loginctl lock-session";
         "${mod}+Return" = "exec kitty; workspace1";
         "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
@@ -64,7 +65,7 @@ in {
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
 
-   #     "${mod}+1" = "workspace Terminal";
+        #     "${mod}+1" = "workspace Terminal";
 
         # My multi monitor setup
         "${mod}+m" = "move workspace to output DP-2";

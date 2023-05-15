@@ -1,7 +1,7 @@
 { config, pkgs, lib, stdenv, ... }:
 
 let
-  shellPkgs  = import ../shellEnv/shellList.nix pkgs;
+  shellPkgs = import ../shellEnv/shellList.nix pkgs;
   defaultPkgs = with pkgs; [
     arandr # simple GUI for xrandr
     asciinema # record the terminal
@@ -42,66 +42,66 @@ let
   homeDirectory = config.home.homeDirectory;
 in
 {
-    imports = builtins.concatMap import [
-#      ./age
-       ./programs
-      ./scripts
-      ./services
-      ../shellEnv
-#      ./themes
-    ];
+  imports = builtins.concatMap import [
+    #      ./age
+    ./programs
+    ./scripts
+    ./services
+    ../shellEnv
+    #      ./themes
+  ];
 
-    home = {
-      stateVersion = "22.05";
-  #    packages = defaultPkgs ++ gnomePkgs;
-      packages = defaultPkgs ++ shellPkgs ++ gui_apps ++ nixos_app;
-      sessionVariables = {
-        DISPLAY = ":0";
-        EDITOR = "nvim";
-      };
-    };
-
-    # restart services on change
-    systemd.user = {
-      startServices = "sd-switch";
-      timers.wallpaper = {
-        Install.WantedBy = [ "timers.target" ];
-        Timer = {
-      OnBootSec = "40m";
-      OnUnitActiveSec = "40m";
+  home = {
+    stateVersion = "22.05";
+    #    packages = defaultPkgs ++ gnomePkgs;
+    packages = defaultPkgs ++ shellPkgs ++ gui_apps ++ nixos_app;
+    sessionVariables = {
+      DISPLAY = ":0";
+      EDITOR = "nvim";
     };
   };
+
+  # restart services on change
+  systemd.user = {
+    startServices = "sd-switch";
+    timers.wallpaper = {
+      Install.WantedBy = [ "timers.target" ];
+      Timer = {
+        OnBootSec = "40m";
+        OnUnitActiveSec = "40m";
+      };
+    };
     services = {
       imec = {
         Unit.Description = "...";
         Service.ExecStart = "/run/current-system/sw/bin/fcitx5";
         Install.WantedBy = [ "default.target" ]; # starts after login
-    };
+      };
       rclone = {
         Service = {
           Type = "simple";
           ExecStart = "${pkgs.rclone}/bin/rclone mount --umask 022  --allow-other remote: %h/rclone";
           Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
         };
-        Install.WantedBy = ["default.target"];
+        Install.WantedBy = [ "default.target" ];
       };
       wallpaper = {
         Service = {
           Type = "oneshot";
-          ExecStart = 
-          "${homeDirectory}/nixpkgs/wallpaper/wallpaper.sh"; 
-        #''${pkgs.wget}/bin/wget -O wallpaper.jpg "http://www.bing.com/$(wget -q -O- https://binged.it/2ZButYc | sed -e 's/<[^>]*>//g' | cut -d / -f2 | cut -d \& -f1)" -O ${homeDirectory}/Pictures/wallpaper.jpg && 
+          ExecStart =
+            "${homeDirectory}/nixpkgs/wallpaper/wallpaper.sh";
+          #''${pkgs.wget}/bin/wget -O wallpaper.jpg "http://www.bing.com/$(wget -q -O- https://binged.it/2ZButYc | sed -e 's/<[^>]*>//g' | cut -d / -f2 | cut -d \& -f1)" -O ${homeDirectory}/Pictures/wallpaper.jpg && 
           #${pkgs.feh}/bin/feh --bg-scale /Pictures/wallpaper.jpg'';
           Environment = [ "PATH=/run/current-system/sw/bin:${homeDirectory}/.nix-profile/bin:$PATH" ];
         };
         #Install.WantedBy = ["default.target"];
-        Install.WantedBy = ["default.target"];
+        Install.WantedBy = [ "default.target" ];
       };
     };
-    };
+  };
 
-    # notifications about home-manager news
-    news.display = "silent";
+  # notifications about home-manager news
+  news.display = "silent";
 
 
   # This value determines the Home Manager release that your

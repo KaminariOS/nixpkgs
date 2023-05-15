@@ -4,15 +4,15 @@ let
   gitConfig = {
     core = {
       editor = "nvim";
-      pager  = "delta";
+      pager = "delta";
     };
     init.defaultBranch = "main";
     merge = {
       conflictStyle = "diff3";
-      tool          = "vim_mergetool";
+      tool = "vim_mergetool";
     };
     mergetool."vim_mergetool" = {
-      cmd    = "nvim -f -c \"MergetoolStart\" \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"";
+      cmd = "nvim -f -c \"MergetoolStart\" \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"";
       prompt = false;
     };
     pull.rebase = false;
@@ -32,19 +32,19 @@ in
     enable = true;
     delta = {
       options = {
-      decorations = {
-      commit-decoration-style = "bold yellow box ul";
-      file-decoration-style = "none";
-      file-style = "bold yellow ul";
-      };
-    features = "decorations";
-    whitespace-error-style = "22 reverse";
+        decorations = {
+          commit-decoration-style = "bold yellow box ul";
+          file-decoration-style = "none";
+          file-style = "bold yellow ul";
+        };
+        features = "decorations";
+        whitespace-error-style = "22 reverse";
       };
     };
     aliases = {
       amend = "commit --amend -m";
       fixup = "!f(){ git reset --soft HEAD~\${1} && git commit --amend -C HEAD; };f";
-      loc   = "!f(){ git ls-files | ${rg} \"\\.\${1}\" | xargs wc -l; };f"; # lines of code
+      loc = "!f(){ git ls-files | ${rg} \"\\.\${1}\" | xargs wc -l; };f"; # lines of code
       br = "branch";
       co = "checkout";
       st = "status";
@@ -64,10 +64,10 @@ in
       "*.metals.sbt"
       "*metals.sbt"
       "*.direnv"
-      "*.envrc"        # there is lorri, nix-direnv & simple direnv; let people decide
-      "*hie.yaml"      # ghcide files
+      "*.envrc" # there is lorri, nix-direnv & simple direnv; let people decide
+      "*hie.yaml" # ghcide files
       "*.mill-version" # used by metals
-      "*.jvmopts"      # should be local to every project
+      "*.jvmopts" # should be local to every project
     ];
     signing = {
       key = "0x5710C5966568BAC5";

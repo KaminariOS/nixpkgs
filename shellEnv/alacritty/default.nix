@@ -27,8 +27,8 @@ in
       };
       selection.save_to_clipboard = true;
       shell = {
-      program = "${pkgs.zellij}/bin/zellij";
-      args = ["options" "--default-shell" "fish"];
+        program = "${pkgs.zellij}/bin/zellij";
+        args = [ "options" "--default-shell" "fish" ];
       };
       window = {
         decorations = "full";

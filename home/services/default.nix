@@ -10,7 +10,7 @@ in
   ./dunst
   ./gpg-agent
   ./networkmanager
-   ./picom
+  ./picom
   ./polybar
   ./screenlocker
   ./udiskie

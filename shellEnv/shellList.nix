@@ -1,5 +1,6 @@
 pkgs:
-let rustcli = with pkgs; [
+let
+  rustcli = with pkgs; [
     nushell
     tealdeer
     zoxide
@@ -58,7 +59,7 @@ let rustcli = with pkgs; [
     #rip
     rargs
     xcp
-    kalker 
+    kalker
     # fend is an arbitrary-precision unit-aware calculator.
     # > 5'10" to cm
     # 177.8 cm
@@ -104,10 +105,10 @@ let rustcli = with pkgs; [
     cmake-language-server
     fortune
 
-    prettyping           # a nicer ping
-    xsel                 # clipboard support (also for neovim)
+    prettyping # a nicer ping
+    xsel # clipboard support (also for neovim)
 
-    zip 
+    zip
     unzip
 
 
@@ -133,5 +134,5 @@ let rustcli = with pkgs; [
     gh
     cachix
   ];
-  in
-  (defaultShell ++ rustcli)
+in
+(defaultShell ++ rustcli)

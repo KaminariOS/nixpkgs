@@ -11,5 +11,5 @@
   ./yubikey
   ./networkmanager
   ./steam
-  
+
 ]

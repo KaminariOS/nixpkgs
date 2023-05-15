@@ -7,7 +7,8 @@ let
     else
         exec ${default} "$@"
     fi
-  ''; in
+  '';
+in
 {
   programs.neovim-ide = {
     enable = true;
@@ -121,7 +122,7 @@ let
           context.enable = true;
         };
         #scala = {
-          #highlightMode = "treesitter";
+        #highlightMode = "treesitter";
         #};
         chatgpt = {
           enable = false;

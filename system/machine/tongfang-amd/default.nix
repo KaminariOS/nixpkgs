@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =  [
+  imports = [
     # Hardware scan
     ./hardware-configuration.nix
   ];
@@ -33,7 +33,8 @@
     videoDrivers = [ "amdgpu" ];
 
     xrandrHeads = [
-      { output = "HDMI-A-0";
+      {
+        output = "HDMI-A-0";
         primary = true;
         monitorConfig = ''
           Modeline "3840x2160_30.00"  338.75  3840 4080 4488 5136  2160 2163 2168 2200 -hsync +vsync
@@ -41,7 +42,8 @@
           Option "Position" "0 0"
         '';
       }
-      { output = "eDP";
+      {
+        output = "eDP";
         primary = false;
         monitorConfig = ''
           Option "PreferredMode" "1920x1080"

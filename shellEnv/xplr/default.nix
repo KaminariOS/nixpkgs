@@ -1,5 +1,5 @@
 {
-#  programs.xplr = {
-#    enable = true;
-#  };
+  #  programs.xplr = {
+  #    enable = true;
+  #  };
 }

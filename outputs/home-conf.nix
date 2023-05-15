@@ -43,11 +43,11 @@ let
       };
 
       modules = let homeDirectory = "/home/${username}"; in [
-      { inherit imports; }
-         {
+        { inherit imports; }
+        {
           home = {
             inherit username;
-            inherit homeDirectory; 
+            inherit homeDirectory;
           };
 
           xdg = {
@@ -60,12 +60,12 @@ let
   );
 in
 {
-  kosumi = mkHome { hidpi = false; username = "kosumi";};
-  kaminari = mkHome { hidpi = true; username = "kaminari";};
+  kosumi = mkHome { hidpi = false; username = "kosumi"; };
+  kaminari = mkHome { hidpi = true; username = "kaminari"; };
 
   # Continuos Integration automation
-#  ci = {
-#    metals = pkgs.callPackage ../home/programs/neovim-ide/metals.nix { };
-#    metals-updater = pkgs.callPackage ../home/programs/neovim-ide/update-metals.nix { };
-#  };
+  #  ci = {
+  #    metals = pkgs.callPackage ../home/programs/neovim-ide/metals.nix { };
+  #    metals-updater = pkgs.callPackage ../home/programs/neovim-ide/update-metals.nix { };
+  #  };
 }

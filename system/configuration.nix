@@ -26,7 +26,7 @@ in
   networking = {
     # Enables wireless support and openvpn via network manager.
     networkmanager = {
-      enable   = true;
+      enable = true;
       plugins = [ pkgs.networkmanager-openvpn ];
     };
 
@@ -45,7 +45,7 @@ in
 
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-rime fcitx5-chinese-addons fcitx5-mozc];
+    fcitx5.addons = with pkgs; [ fcitx5-rime fcitx5-chinese-addons fcitx5-mozc ];
   };
 
   # Set your time zone.
@@ -65,7 +65,7 @@ in
   # started in user sessions.
   # programs.mtr.enable = true;
   programs.gnupg.agent = {
-    enable           = true;
+    enable = true;
     enableSSHSupport = true;
   };
 
@@ -103,10 +103,10 @@ in
     mediaKeys.enable = true;
   };
 
-#  hardware.pulseaudio = {
-#    enable = true;
-#    package = pkgs.pulseaudioFull;
-#  };
+  #  hardware.pulseaudio = {
+  #    enable = true;
+  #    package = pkgs.pulseaudioFull;
+  #  };
 
   # Scanner backend
   hardware.sane = {
@@ -119,7 +119,7 @@ in
     # Mount MTP devices
 
     gvfs.enable = true;
-    gnome.gnome-keyring.enable = true; 
+    gnome.gnome-keyring.enable = true;
 
     xserver.enable = true;
     #xserver.autorun = false;
@@ -149,17 +149,17 @@ in
   fonts = {
     enableDefaultFonts = true;
     fonts = with pkgs; [
-       ubuntu_font_family
-       customFonts
-       font-awesome
-       myfonts.flags-world-color
-       myfonts.icomoon-feather
-       fira-code
-       unifont
-       ipafont
+      ubuntu_font_family
+      customFonts
+      font-awesome
+      myfonts.flags-world-color
+      myfonts.icomoon-feather
+      fira-code
+      unifont
+      ipafont
 
-       noto-fonts-cjk-serif
-       noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-cjk-sans
     ];
 
     fontconfig = {
@@ -171,15 +171,15 @@ in
     };
   };
 
-  programs= {
+  programs = {
     fish.enable = true;
     fuse.userAllowOther = true;
   };
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kosumi = {
     isNormalUser = true;
-    extraGroups  = [ "docker" "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
-    shell        = pkgs.fish;
+    extraGroups = [ "docker" "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
+    shell = pkgs.fish;
   };
 
   security = {
@@ -205,8 +205,8 @@ in
     # Automate garbage collection
     gc = {
       automatic = true;
-      dates     = "weekly";
-      options   = "--delete-older-than 7d";
+      dates = "weekly";
+      options = "--delete-older-than 7d";
     };
 
     # Flakes settings
@@ -219,12 +219,12 @@ in
 
       # Required by Cachix to be used as non-root user
       trusted-users = [ "root" "kosumi" ];
-      
-      experimental-features = ["nix-command" "flakes"];
-      
+
+      experimental-features = [ "nix-command" "flakes" ];
+
       # Avoid unwanted garbage collection when using nix-direnv
-      keep-outputs          = true;
-      keep-derivations      = true;
+      keep-outputs = true;
+      keep-derivations = true;
     };
   };
 

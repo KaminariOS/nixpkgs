@@ -10,9 +10,10 @@ let
       home.packages =
         [
           gen-ssh-key # generate ssh key and add it to the system
-          kls         # switch keyboard layout
-          szp         # show zombie parents
+          kls # switch keyboard layout
+          szp # show zombie parents
           # hms       # custom home-manager switcher that considers the current DISPLAY
         ];
     };
-in [ scripts ]
+in
+[ scripts ]

@@ -63,9 +63,9 @@
 
   outputs = inputs:
     let
-    system = "x86_64-linux";
-    pkgs = inputs.nixpkgs.legacyPackages.${system};
-     in
+      system = "x86_64-linux";
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
+    in
     {
       formatter.${system} = pkgs.nixpkgs-fmt;
       homeConfigurations = (

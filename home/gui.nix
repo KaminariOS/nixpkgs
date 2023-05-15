@@ -1,9 +1,9 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
   gui_packages = with pkgs; [
     i3status
     brightnessctl
-#    polybar
+    #    polybar
     feh
     zoom-us
     libsForQt5.kdeconnect-kde
@@ -12,7 +12,7 @@
 
     wireshark
     tev
-    
+
     maim
     gdbgui
     zettlr
@@ -28,7 +28,7 @@
     xdotool
     via
 
-   inlyne
+    inlyne
   ];
 
 }

@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -29,38 +30,38 @@
   time.timeZone = "America/Denver";
 
   # Select internationalisation properties.
-#  i18n.defaultLocale = "en_US.utf8";
+  #  i18n.defaultLocale = "en_US.utf8";
   hardware.opengl.enable = true;
 
   services.xserver = {
-      # Enable the X11 windowing system.
-      enable = true;
+    # Enable the X11 windowing system.
+    enable = true;
 
-        # Enable the KDE Plasma Desktop Environment.
-        displayManager = {
-          sddm.enable = true;
-          #sessionCommands = "export KDEWM=${pkgs.i3-gaps}/bin/i3";
-          #defaultSession = "plasma5+i3+whatever";
-           session = [
-                  #{
-                      #manage = "desktop";
-                      #name = "plasma5+i3+whatever";
-                      #start = ''exec env KDEWM=${pkgs.i3-gaps}/bin/i3 ${pkgs.plasma-workspace}/bin/startplasma-x11'';
-                  #}
-                  {
-                      manage = "desktop";
-                      name = "i3+whatever";
-                      start = ''${pkgs.kwallet-pam}/libexec/pam_kwallet_init; exec i3'';
-                  }
-              ];
-        };
-        desktopManager.plasma5.enable = true;
-        windowManager.i3.enable = true;
-
-        # Configure keymap in X11
-         layout = "us";
-         xkbVariant = "";
+    # Enable the KDE Plasma Desktop Environment.
+    displayManager = {
+      sddm.enable = true;
+      #sessionCommands = "export KDEWM=${pkgs.i3-gaps}/bin/i3";
+      #defaultSession = "plasma5+i3+whatever";
+      session = [
+        #{
+        #manage = "desktop";
+        #name = "plasma5+i3+whatever";
+        #start = ''exec env KDEWM=${pkgs.i3-gaps}/bin/i3 ${pkgs.plasma-workspace}/bin/startplasma-x11'';
+        #}
+        {
+          manage = "desktop";
+          name = "i3+whatever";
+          start = ''${pkgs.kwallet-pam}/libexec/pam_kwallet_init; exec i3'';
+        }
+      ];
     };
+    desktopManager.plasma5.enable = true;
+    windowManager.i3.enable = true;
+
+    # Configure keymap in X11
+    layout = "us";
+    xkbVariant = "";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -91,7 +92,7 @@
     description = "kosumi";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -101,8 +102,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit default.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit default.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

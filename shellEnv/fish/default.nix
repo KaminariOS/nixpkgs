@@ -14,7 +14,7 @@ let
     set -g theme_color_scheme solarized
   '';
 
-  custom = pkgs.callPackage ./plugins.nix {};
+  custom = pkgs.callPackage ./plugins.nix { };
 
   fenv = {
     name = "foreign-env";
@@ -132,69 +132,69 @@ let
     bind \\e\\[A _atuin_search
     bind -M insert \\e\\[A _atuin_search
     set_color normal
-  " + fzfConfig + themeConfig; 
-   #+ aliases;
+  " + fzfConfig + themeConfig;
+  #+ aliases;
 in
 {
   programs.fish = {
-        enable = true;
-        
-         functions = {
-          #fish_greeting = {
-            #description = "Hi!";
-            #body = ''
-              ##echo -e "\e[3m "(${pkgs.fortune}/bin/fortune literature riddles)"\e[0m\n"
-            #'';
-          #};
-          prepend_path = {
-            description = "Prepends a path to PATH if it exists";
-            body = ''
-              if test -e $argv[1]
-                set PATH $argv[1] $PATH
-              end
-            '';
-          };
-          source_if_exists = {
-            description = "Sources a script if it exists";
-            body = ''
-              if test -e $argv[1]
-                source $argv[1]
-              end
-            '';
-          };
-        };
-  shellAliases = {
-    v = "nvim";
-    c  = "bat";
-  };
-        shellAbbrs = {
-          #v = "nvim";
-    tt = "taskwarrior-tui";
-    #z  = "zoxide";
-    nuco =  "nvim ~/.config/nushell/config.nu";
-    hxco = "hx ~/.config/helix/config.toml";
-    alco = "nvim ~/.config/alacritty/alacritty.yml";
-    swim = "home-manager switch --flake '${config.home.homeDirectory}/nixpkgs#${config.home.username}'";
-    nico = "nvim ~/.config/nixpkgs/home.nix";
-    ll = "exa -l --git";
-    his = "history";
-    lt  = "exa --icons --tree --no-user --no-permissions --git";
-    e = "exa --icons -l --no-user --no-permissions --git";
-    ls = "exa --icons -l --no-user --no-permissions --git";
-    du = "dust";
-    ps  = "procs";
-    rfr = "rofi -show run";
-    diff = "delta";
-    ca = "cargo";
-    idea = "idea-ultimate";
-    clo = "clion";
-        };
-        plugins = [ custom.theme fenv ];
-            interactiveShellInit = ''
-              eval (direnv hook fish)
-              any-nix-shell fish --info-right | source
-            '';
-        shellInit = fishConfig;
+    enable = true;
+
+    functions = {
+      #fish_greeting = {
+      #description = "Hi!";
+      #body = ''
+      ##echo -e "\e[3m "(${pkgs.fortune}/bin/fortune literature riddles)"\e[0m\n"
+      #'';
+      #};
+      prepend_path = {
+        description = "Prepends a path to PATH if it exists";
+        body = ''
+          if test -e $argv[1]
+            set PATH $argv[1] $PATH
+          end
+        '';
+      };
+      source_if_exists = {
+        description = "Sources a script if it exists";
+        body = ''
+          if test -e $argv[1]
+            source $argv[1]
+          end
+        '';
+      };
+    };
+    shellAliases = {
+      v = "nvim";
+      c = "bat";
+    };
+    shellAbbrs = {
+      #v = "nvim";
+      tt = "taskwarrior-tui";
+      #z  = "zoxide";
+      nuco = "nvim ~/.config/nushell/config.nu";
+      hxco = "hx ~/.config/helix/config.toml";
+      alco = "nvim ~/.config/alacritty/alacritty.yml";
+      swim = "home-manager switch --flake '${config.home.homeDirectory}/nixpkgs#${config.home.username}'";
+      nico = "nvim ~/.config/nixpkgs/home.nix";
+      ll = "exa -l --git";
+      his = "history";
+      lt = "exa --icons --tree --no-user --no-permissions --git";
+      e = "exa --icons -l --no-user --no-permissions --git";
+      ls = "exa --icons -l --no-user --no-permissions --git";
+      du = "dust";
+      ps = "procs";
+      rfr = "rofi -show run";
+      diff = "delta";
+      ca = "cargo";
+      idea = "idea-ultimate";
+      clo = "clion";
+    };
+    plugins = [ custom.theme fenv ];
+    interactiveShellInit = ''
+      eval (direnv hook fish)
+      any-nix-shell fish --info-right | source
+    '';
+    shellInit = fishConfig;
   };
 
   xdg.configFile."fish/completions/keytool.fish".text = custom.completions.keytool;

@@ -12,9 +12,9 @@ in
     enable = true;
 
     hooks = {
-      predetect = {};
+      predetect = { };
 
-      preswitch = {};
+      preswitch = { };
 
       postswitch = {
         "notify-xmonad" = ''
