@@ -50,6 +50,7 @@ in
           vim-vue
           vimtex
           auto-save-nvim
+          zoxide-vim
         ];
         useSystemClipboard = true;
         neovim.package = pkgs.neovim-nightly;
