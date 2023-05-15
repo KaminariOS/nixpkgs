@@ -1,3 +1,13 @@
+" =============================================================================
+" # Editor settings
+" =============================================================================
+set encoding=utf-8
+set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
+
+" Sane splits
+set splitright
+set splitbelow
+
 set cursorline
 set noswapfile
 set shell=fish
@@ -27,6 +37,7 @@ augroup END
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching
 set ignorecase              " case insensitive
+set smartcase
 set mouse=v                 " middle-click paste with
 set hlsearch                " highlight search
 set incsearch               " incremental search
@@ -87,9 +98,45 @@ else
   nnoremap <leader><leader> <cmd>bn<cr>
 endif
 
+" Ctrl+j and Ctrl+k as Esc
+" Ctrl-j is a little awkward unfortunately:
+" https://github.com/neovim/neovim/issues/5916
+" So we also map Ctrl+k
+nnoremap <C-j> <Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
+snoremap <C-j> <Esc>
+xnoremap <C-j> <Esc>
+cnoremap <C-j> <C-c>
+onoremap <C-j> <Esc>
+lnoremap <C-j> <Esc>
+tnoremap <C-j> <Esc>
+
+nnoremap <C-k> <Esc>
+inoremap <C-k> <Esc>
+vnoremap <C-k> <Esc>
+snoremap <C-k> <Esc>
+xnoremap <C-k> <Esc>
+cnoremap <C-k> <C-c>
+onoremap <C-k> <Esc>
+lnoremap <C-k> <Esc>
+tnoremap <C-k> <Esc>
+
 tnoremap <Esc> <C-\><C-n>
-tnoremap <C-j> <C-\><C-n>
+
+" https://stackoverflow.com/questions/16134457/insert-a-newline-without-entering-in-insert-mode-vim
+nmap oo o<Esc>k 
+nmap OO O<Esc>j
+
+
+" Left and right can switch buffers
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+
+" For local replace
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+
+" For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 luafile ~/.config/nvim/config.lua
