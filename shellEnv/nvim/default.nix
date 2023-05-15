@@ -49,6 +49,7 @@ in
           vim-twig
           vim-vue
           vimtex
+          auto-save-nvim
         ];
         useSystemClipboard = true;
         neovim.package = pkgs.neovim-nightly;
