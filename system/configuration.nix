@@ -131,6 +131,7 @@ in
       allowSFTP = true;
     };
 
+    blueman.enable = true;
     # Yubikey smart card mode (CCID) and OTP mode (udev)
     pcscd.enable = true;
     udev.packages = [ pkgs.yubikey-personalization ];

@@ -3,6 +3,7 @@ let
     services = {
       flameshot.enable = true;
       gnome-keyring.enable = true;
+      blueman-applet.enable = true;
     };
   };
 in
