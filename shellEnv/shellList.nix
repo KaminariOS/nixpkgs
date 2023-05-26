@@ -107,9 +107,7 @@ let
     nodePackages.svelte-language-server
     jdt-language-server
     marksman
-
     #   wgsl_analyzer
-    #  nodePackages_latest.yaml-language-server
     #python-lsp-server
     cmake-language-server
     fortune
