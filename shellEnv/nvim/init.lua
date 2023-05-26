@@ -49,6 +49,8 @@ require('lspconfig').pyright.setup {
 require'lspconfig'.jdtls.setup{}
 
 require'lspconfig'.cmake.setup{}
+require'lspconfig'.taplo.setup{}
+require'lspconfig'.texlab.setup{}
 
 require('compe').setup {
     enable = true;
