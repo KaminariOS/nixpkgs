@@ -140,6 +140,7 @@ let
     nix-prefetch-git
     gh
     cachix
+    sshfs
   ];
 in
 (defaultShell ++ rustcli)
