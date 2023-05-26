@@ -117,8 +117,12 @@
         # Escape the madness! No more fighting with the cursor! Or with multiple cursors!
         esc = [ "collapse_selection" "keep_primary_selection" "normal_mode" ];
       };
+    };
 
-    language = [
+
+    languages = {
+      language = 
+      [
       { name = "nix"; auto-format = true; }
       {
         name = "cpp";
@@ -180,7 +184,6 @@
       {
         name = "yaml";
       }
-    ];
-    };
+    ];};
   };
 }
