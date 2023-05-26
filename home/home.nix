@@ -9,7 +9,7 @@ let
 
     gimp # gnu image manipulation program
 
-    multilockscreen # fast lockscreen based on i3lock
+    betterlockscreen # fast lockscreen based on i3lock
     nyancat # the famous rainbow cat!
 
     # nodePackages_latest.bash-language-server

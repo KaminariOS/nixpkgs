@@ -5,7 +5,7 @@
     enable = true;
     inactiveInterval = 30;
     #lockCmd = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
-    lockCmd = "${pkgs.multilockscreen}/bin/multilockscreen -l";
+    lockCmd = "${pkgs.betterlockscreen}/bin/betterlockscreen -l --off 30";
     #    xautolock.extraOptions = [
     #      "Xautolock.killer: systemctl suspend"
     #    ];
