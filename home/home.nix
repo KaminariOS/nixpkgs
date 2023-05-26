@@ -20,6 +20,7 @@ let
     simplescreenrecorder # screen recorder gui
     rofi
     networkmanagerapplet
+    xpra
   ];
 
 
