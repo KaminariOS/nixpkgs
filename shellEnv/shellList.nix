@@ -91,6 +91,7 @@ let
     ranger # terminal file explorer
     direnv
 
+    clang-tools
     rnix-lsp # nix lsp server
     rust-analyzer
     gopls
@@ -99,6 +100,14 @@ let
     texlab
     taplo-lsp # A TOML toolkit written in Rust
     sumneko-lua-language-server
+    nodePackages.vim-language-server
+    nodePackages.yaml-language-server
+    nodePackages.vscode-json-languageserver
+    nodePackages.bash-language-server
+    nodePackages.svelte-language-server
+    jdt-language-server
+    marksman
+
     #   wgsl_analyzer
     #  nodePackages_latest.yaml-language-server
     #python-lsp-server

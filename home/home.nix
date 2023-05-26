@@ -35,8 +35,6 @@ let
     libsForQt5.kdeconnect-kde
     firefox
     kate
-    #dolphin
-
     gnome.seahorse
   ];
   homeDirectory = config.home.homeDirectory;

@@ -120,6 +120,7 @@ in
 
     gvfs.enable = true;
     gnome.gnome-keyring.enable = true;
+    tailscale.enable = true;
 
     xserver.enable = true;
     #xserver.autorun = false;

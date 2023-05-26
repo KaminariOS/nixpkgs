@@ -51,6 +51,8 @@ in
           vimtex
           auto-save-nvim
           zoxide-vim
+
+          nvim-jdtls
         ];
         useSystemClipboard = true;
         neovim.package = pkgs.neovim-nightly;

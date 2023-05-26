@@ -46,6 +46,10 @@ require('lspconfig').pyright.setup {
     on_attach = on_lsp_attach,
 }
 
+require'lspconfig'.jdtls.setup{}
+
+require'lspconfig'.cmake.setup{}
+
 require('compe').setup {
     enable = true;
     autocomplete = true;
