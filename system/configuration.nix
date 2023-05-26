@@ -109,11 +109,14 @@ in
   #  };
 
   # Scanner backend
-  hardware.sane = {
+  hardware = {
+    sane = {
     enable = true;
     extraBackends = [ pkgs.epkowa pkgs.sane-airscan ];
+   };
+    opengl.driSupport32Bit = true;
+    bluetooth.enable = true;
   };
-  hardware.opengl.driSupport32Bit = true;
 
   services = {
     # Mount MTP devices
