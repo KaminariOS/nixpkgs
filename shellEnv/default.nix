@@ -6,7 +6,6 @@ let
         extraConfig = "set editing-mode vi
           ";
       };
-      bat.enable = true;
       direnv = {
         enable = true;
         #enableFishIntegration = true;
@@ -96,5 +95,6 @@ in
   ./xplr
   ./terminfo.nix
   ./nix-index.nix
+  ./bat
   more
 ]
