@@ -32,14 +32,14 @@ let
   ];
 
   #imports = [
-    #../home/home.nix
+  #../home/home.nix
   #] ++ commonImports;
 
   #shellImports = [
-    #../shellEnv/home.nix
+  #../shellEnv/home.nix
   #] ++ commonImports;
 
-  mkHome = { hidpi ? false, username, shell? false }: (
+  mkHome = { hidpi ? false, username, shell ? false }: (
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
@@ -49,7 +49,7 @@ let
       };
 
       modules = let homeDirectory = "/home/${username}"; in [
-        { imports = commonImports ++ (if shell then [../shellEnv/home.nix] else [../home/home.nix]); }
+        { imports = commonImports ++ (if shell then [ ../shellEnv/home.nix ] else [ ../home/home.nix ]); }
         {
           home = {
             inherit username;
@@ -69,7 +69,7 @@ in
   kosumi = mkHome { hidpi = false; username = "kosumi"; };
   kaminari = mkHome { hidpi = true; username = "kaminari"; };
 
-  shellhome = mkHome {hidpi = false; username = "Kosumi"; shell = true;};
+  shellhome = mkHome { hidpi = false; username = "Kosumi"; shell = true; };
   # Continuos Integration automation
   #  ci = {
   #    metals = pkgs.callPackage ../home/programs/neovim-ide/metals.nix { };

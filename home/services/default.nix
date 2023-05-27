@@ -22,6 +22,6 @@ in
   ./udiskie
   ./i3
   ./eww
-  #./espanso
+  ./espanso
   more
 ]
