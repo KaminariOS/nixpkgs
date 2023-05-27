@@ -12,4 +12,5 @@
   ./networkmanager
   ./steam
 
+  ./alacritty
 ]

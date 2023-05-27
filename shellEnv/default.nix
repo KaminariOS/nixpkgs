@@ -81,7 +81,6 @@ let
 in
 [
 
-  ./alacritty
   ./helix
   ./nushell
   ./nvim
