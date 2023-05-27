@@ -69,7 +69,7 @@ in
   kosumi = mkHome { hidpi = false; username = "kosumi"; };
   kaminari = mkHome { hidpi = true; username = "kaminari"; };
 
-  shellhome = mkHome {hidpi = false; username = "nox"; shell = true;};
+  shellhome = mkHome {hidpi = false; username = "Kosumi"; shell = true;};
   # Continuos Integration automation
   #  ci = {
   #    metals = pkgs.callPackage ../home/programs/neovim-ide/metals.nix { };
