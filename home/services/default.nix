@@ -4,6 +4,11 @@ let
       flameshot.enable = true;
       gnome-keyring.enable = true;
       blueman-applet.enable = true;
+      kdeconnect = {
+        enable = true;
+        indicator = true;
+      };
+      #taskwarrior-sync.enable = true;
     };
   };
 in
@@ -17,5 +22,6 @@ in
   ./udiskie
   ./i3
   ./eww
+  #./espanso
   more
 ]

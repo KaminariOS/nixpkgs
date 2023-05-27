@@ -6,7 +6,6 @@
     #    polybar
     feh
     zoom-us
-    libsForQt5.kdeconnect-kde
     discord
     slack
 
