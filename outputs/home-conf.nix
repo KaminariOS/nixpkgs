@@ -31,15 +31,15 @@ let
     neovim-flake.nixosModules.${system}.hm
   ];
 
-  imports = [
-    ../home/home.nix
-  ] ++ commonImports;
+  #imports = [
+    #../home/home.nix
+  #] ++ commonImports;
 
-  shellImports = [
-    ../shellEnv/home.nix
-  ] ++ commonImports;
+  #shellImports = [
+    #../shellEnv/home.nix
+  #] ++ commonImports;
 
-  mkHome = { hidpi ? false, username }: (
+  mkHome = { hidpi ? false, username, shell? false }: (
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
@@ -49,7 +49,7 @@ let
       };
 
       modules = let homeDirectory = "/home/${username}"; in [
-        { inherit imports; }
+        { imports = commonImports ++ (if shell then [../shellEnv/home.nix] else [../home/home.nix]); }
         {
           home = {
             inherit username;
@@ -69,11 +69,7 @@ in
   kosumi = mkHome { hidpi = false; username = "kosumi"; };
   kaminari = mkHome { hidpi = true; username = "kaminari"; };
 
-  shellhome =
-    home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [{ imports = shellImports; }];
-    };
+  shellhome = mkHome {hidpi = false; username = "nox"; shell = true;};
   # Continuos Integration automation
   #  ci = {
   #    metals = pkgs.callPackage ../home/programs/neovim-ide/metals.nix { };
