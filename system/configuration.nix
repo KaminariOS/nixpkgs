@@ -111,9 +111,9 @@ in
   # Scanner backend
   hardware = {
     sane = {
-    enable = true;
-    extraBackends = [ pkgs.epkowa pkgs.sane-airscan ];
-   };
+      enable = true;
+      extraBackends = [ pkgs.epkowa pkgs.sane-airscan ];
+    };
     opengl.driSupport32Bit = true;
     bluetooth.enable = true;
   };

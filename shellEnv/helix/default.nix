@@ -121,69 +121,70 @@
 
 
     languages = {
-      language = 
-      [
-      { name = "nix"; auto-format = true; }
-      {
-        name = "cpp";
-      }
-      {
-        name = "bash";
-      }
-      {
-        name = "c";
-      }
-      {
-        name = "css";
-      }
-      {
-        name = "glsl";
-      }
-      {
-        name = "git-ignore";
-      }
-      {
-        name = "glsl";
-      }
-      {
-        name = "go";
-      }
-      {
-        name = "html";
-      }
-      {
-        name = "java";
-      }
-      {
-        name = "javascript";
-      }
-      {
-        name = "json";
-      }
-      {
-        name = "make";
-      }
-      {
-        name = "markdown";
-      }
-      {
-        name = "nasm";
-      }
-      {
-        name = "regex";
-      }
-      {
-        name = "rust";
-      }
-      {
-        name = "wgsl";
-      }
-      {
-        name = "toml";
-      }
-      {
-        name = "yaml";
-      }
-    ];};
+      language =
+        [
+          { name = "nix"; auto-format = true; }
+          {
+            name = "cpp";
+          }
+          {
+            name = "bash";
+          }
+          {
+            name = "c";
+          }
+          {
+            name = "css";
+          }
+          {
+            name = "glsl";
+          }
+          {
+            name = "git-ignore";
+          }
+          {
+            name = "glsl";
+          }
+          {
+            name = "go";
+          }
+          {
+            name = "html";
+          }
+          {
+            name = "java";
+          }
+          {
+            name = "javascript";
+          }
+          {
+            name = "json";
+          }
+          {
+            name = "make";
+          }
+          {
+            name = "markdown";
+          }
+          {
+            name = "nasm";
+          }
+          {
+            name = "regex";
+          }
+          {
+            name = "rust";
+          }
+          {
+            name = "wgsl";
+          }
+          {
+            name = "toml";
+          }
+          {
+            name = "yaml";
+          }
+        ];
+    };
   };
 }
