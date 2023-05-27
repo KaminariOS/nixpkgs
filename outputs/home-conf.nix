@@ -26,12 +26,18 @@ let
     inherit pkgs;
     nurpkgs = pkgs;
   };
-
-  imports = [
+  commonImports = [
     homeage.homeManagerModules.homeage
     neovim-flake.nixosModules.${system}.hm
-    ../home/home.nix
   ];
+
+  imports = [
+    ../home/home.nix
+  ] ++ commonImports;
+
+  shellImports = [
+    ../shellEnv/home.nix
+  ] ++ commonImports;
 
   mkHome = { hidpi ? false, username }: (
     home-manager.lib.homeManagerConfiguration {
@@ -63,6 +69,11 @@ in
   kosumi = mkHome { hidpi = false; username = "kosumi"; };
   kaminari = mkHome { hidpi = true; username = "kaminari"; };
 
+  shellhome =
+    home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [{ imports = shellImports; }];
+    };
   # Continuos Integration automation
   #  ci = {
   #    metals = pkgs.callPackage ../home/programs/neovim-ide/metals.nix { };

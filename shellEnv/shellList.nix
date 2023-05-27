@@ -139,8 +139,10 @@ let
     nix-diff
     nix-prefetch-git
     gh
-    cachix
     sshfs
+
+    cachix # nix caching
+    nyancat # the famous rainbow cat!
   ];
 in
 (defaultShell ++ rustcli)

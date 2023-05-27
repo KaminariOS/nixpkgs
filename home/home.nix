@@ -5,12 +5,10 @@ let
   defaultPkgs = with pkgs; [
     arandr # simple GUI for xrandr
     asciinema # record the terminal
-    cachix # nix caching
 
     gimp # gnu image manipulation program
 
     betterlockscreen # fast lockscreen based on i3lock
-    nyancat # the famous rainbow cat!
 
     # nodePackages_latest.bash-language-server
     #   nodePackages_latest.vscode-css-languageserver-bin
