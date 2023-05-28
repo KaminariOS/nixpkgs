@@ -189,6 +189,8 @@ in
       clo = "clion .";
       man = "batman";
       scs = "systemctl suspend";
+      gp = "git pso";
+      ga = "git ca";
     };
     plugins = [ custom.theme fenv ];
     interactiveShellInit = ''
