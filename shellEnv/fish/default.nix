@@ -189,7 +189,6 @@ in
       clo = "clion .";
       man = "batman";
       scs = "systemctl suspend";
-
     };
     plugins = [ custom.theme fenv ];
     interactiveShellInit = ''
