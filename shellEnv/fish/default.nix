@@ -170,7 +170,6 @@ in
     shellAbbrs = {
       #v = "nvim";
       tt = "taskwarrior-tui";
-      #z  = "zoxide";
       nuco = "nvim ~/.config/nushell/config.nu";
       hxco = "hx ~/.config/helix/config.toml";
       alco = "nvim ~/.config/alacritty/alacritty.yml";
@@ -187,7 +186,10 @@ in
       diff = "delta";
       ca = "cargo";
       idea = "idea-ultimate";
-      clo = "clion";
+      clo = "clion .";
+      man = "batman";
+      scs = "systemctl suspend";
+
     };
     plugins = [ custom.theme fenv ];
     interactiveShellInit = ''

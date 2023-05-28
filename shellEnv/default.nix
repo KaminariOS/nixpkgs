@@ -67,6 +67,9 @@ let
         enable = true;
         enableFishIntegration = true;
         enableZshIntegration = true;
+        settings = {
+          dialect = "uk";
+        };
       };
       tealdeer = {
         enable = true;
