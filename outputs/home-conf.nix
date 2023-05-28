@@ -66,7 +66,7 @@ let
   );
 in
 {
-  kosumi = let username = "Kosumi"; in mkHome { hidpi = false;inherit username; homed = "/home/${username}"; };
+  kosumi = let username = "kosumi"; in mkHome { hidpi = false;inherit username; homed = "/home/${username}"; };
 
   shellhome = let username = "Kosumi"; in mkHome { hidpi = false;inherit username; shell = true; homed = "/users/${username}"; };
   # Continuos Integration automation
