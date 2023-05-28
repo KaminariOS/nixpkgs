@@ -96,6 +96,9 @@ else
   " some mappings for Vim/Neovim
   nnoremap <leader>f <cmd>Telescope find_files<cr>
   nnoremap <leader><leader> <cmd>bn<cr>
+  vnoremap <leader><leader> <cmd>bn<cr>
+  nnoremap <leader>e <cmd>bp<cr>
+  vnoremap <leader>e <cmd>bp<cr>
 endif
 
 " Ctrl+j and Ctrl+k as Esc
