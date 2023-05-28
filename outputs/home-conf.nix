@@ -39,7 +39,7 @@ let
   #../shellEnv/home.nix
   #] ++ commonImports;
 
-  mkHome = { hidpi ? false, username, shell ? false }: (
+  mkHome = { hidpi ? false, username, shell ? false, homed}: (
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
@@ -48,7 +48,7 @@ let
         addons = nur.repos.rycee.firefox-addons;
       };
 
-      modules = let homeDirectory = "/home/${username}"; in [
+      modules = let homeDirectory = homed ; in [
         { imports = commonImports ++ (if shell then [ ../shellEnv/home.nix ] else [ ../home/home.nix ]); }
         {
           home = {
@@ -66,10 +66,9 @@ let
   );
 in
 {
-  kosumi = mkHome { hidpi = false; username = "kosumi"; };
-  kaminari = mkHome { hidpi = true; username = "kaminari"; };
+  kosumi = let username = "Kosumi"; in mkHome { hidpi = false;inherit username; homed = "/home/${username}";};
 
-  shellhome = mkHome { hidpi = false; username = "Kosumi"; shell = true; };
+  shellhome = let username = "Kosumi"; in mkHome { hidpi = false;inherit username; shell = true; homed = "/users/${username}";};
   # Continuos Integration automation
   #  ci = {
   #    metals = pkgs.callPackage ../home/programs/neovim-ide/metals.nix { };
