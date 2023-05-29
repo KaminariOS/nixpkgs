@@ -8,5 +8,5 @@ Based on [nix-config](https://github.com/gvolpe/nix-config).
 
 ### CLI only
 ```console
-home-manager switch --flake github:KaminariOS/nixpkgs\?ref=dev#shellhome --extra-experimental-features nix-command --extra-experimental-features flakes
+home-manager switch --flake github:KaminariOS/nixpkgs/dev#shellhome --extra-experimental-features nix-command --extra-experimental-features flakes
 ```
