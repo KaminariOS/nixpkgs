@@ -127,22 +127,21 @@ onoremap <S-j> <Esc>
 lnoremap <S-j> <Esc>
 tnoremap <S-j> <C-\><C-n>
 
-nnoremap <C-k> <Esc>
-inoremap <C-k> <Esc>
-vnoremap <C-k> <Esc>
-snoremap <C-k> <Esc>
-xnoremap <C-k> <Esc>
-cnoremap <C-k> <C-c>
-onoremap <C-k> <Esc>
-lnoremap <C-k> <Esc>
-tnoremap <C-k> <C-\><C-n>
+"nnoremap <C-k> <Esc>
+"inoremap <C-k> <Esc>
+"vnoremap <C-k> <Esc>
+"snoremap <C-k> <Esc>
+"xnoremap <C-k> <Esc>
+"cnoremap <C-k> <C-c>
+"onoremap <C-k> <Esc>
+"lnoremap <C-k> <Esc>
+"tnoremap <C-k> <C-\><C-n>
 
 tnoremap <Esc> <C-\><C-n>
 
 " https://stackoverflow.com/questions/16134457/insert-a-newline-without-entering-in-insert-mode-vim
-nmap oo o<Esc> 
-nmap OO O<Esc>
-
+nmap oo o<Esc>k 
+nmap OO O<Esc>j
 
 " Left and right can switch buffers
 nnoremap <left> :bp<CR>

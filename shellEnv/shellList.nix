@@ -66,7 +66,8 @@ let
     fend
     # systeroid — A more powerful alternative to sysctl(8).
     systeroid
-
+    # Like df
+    lfs
     cargo-audit
     cargo-feature
     cargo-readme
@@ -144,6 +145,8 @@ let
     cachix # nix caching
     nyancat # the famous rainbow cat!
     rclone
+    # Postgres cli
+    pgcli
   ];
 in
 (defaultShell ++ rustcli)
