@@ -97,8 +97,10 @@ else
   nnoremap <leader>f <cmd>Telescope find_files<cr>
   nnoremap <leader><leader> <cmd>bn<cr>
   vnoremap <leader><leader> <cmd>bn<cr>
+  tnoremap <leader><leader> <cmd>bn<cr>
   nnoremap <leader>e <cmd>bp<cr>
   vnoremap <leader>e <cmd>bp<cr>
+  tnoremap <leader>e <cmd>bp<cr>
 endif
 
 " Ctrl+j and Ctrl+k as Esc
@@ -113,7 +115,7 @@ xnoremap <C-j> <Esc>
 cnoremap <C-j> <C-c>
 onoremap <C-j> <Esc>
 lnoremap <C-j> <Esc>
-tnoremap <C-j> <Esc>
+tnoremap <C-j> <C-\><C-n>
 
 nnoremap <S-j> <Esc>
 inoremap <S-j> <Esc>
@@ -123,7 +125,7 @@ xnoremap <S-j> <Esc>
 cnoremap <S-j> <C-c>
 onoremap <S-j> <Esc>
 lnoremap <S-j> <Esc>
-tnoremap <S-j> <Esc>
+tnoremap <S-j> <C-\><C-n>
 
 nnoremap <C-k> <Esc>
 inoremap <C-k> <Esc>
@@ -133,13 +135,13 @@ xnoremap <C-k> <Esc>
 cnoremap <C-k> <C-c>
 onoremap <C-k> <Esc>
 lnoremap <C-k> <Esc>
-tnoremap <C-k> <Esc>
+tnoremap <C-k> <C-\><C-n>
 
 tnoremap <Esc> <C-\><C-n>
 
 " https://stackoverflow.com/questions/16134457/insert-a-newline-without-entering-in-insert-mode-vim
-nmap oo o<Esc>k 
-nmap OO O<Esc>j
+nmap oo o<Esc> 
+nmap OO O<Esc>
 
 
 " Left and right can switch buffers
