@@ -10,4 +10,5 @@ Based on [nix-config](https://github.com/gvolpe/nix-config).
 ```console
 nix build github:KaminariOS/nixpkgs\?ref=dev#homeConfigurations.shellhome.activationPackage --extra-experimental-features nix-command --extra-experimental-features flakes
 result/activate
+
 ```
