@@ -174,6 +174,7 @@ in
       hxco = "hx ~/.config/helix/config.toml";
       alco = "nvim ~/.config/alacritty/alacritty.yml";
       swim = "home-manager switch --flake '${config.home.homeDirectory}/nixpkgs#${config.home.username}'";
+      shr = "home-manager switch --flake github:KaminariOS/nixpkgs/dev#shellhome --extra-experimental-features nix-command --extra-experimental-features flakes";
       nico = "nvim ~/.config/nixpkgs/home.nix";
       ll = "exa -l --git";
       his = "history";
