@@ -143,6 +143,7 @@ let
 
     cachix # nix caching
     nyancat # the famous rainbow cat!
+    rclone
   ];
 in
 (defaultShell ++ rustcli)
