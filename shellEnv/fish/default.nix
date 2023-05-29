@@ -191,6 +191,10 @@ in
       scs = "systemctl suspend";
       gp = "git pso";
       ga = "git ca";
+      gs = "git st";
+      gd = "git diff";
+      gl = "git plo";
+      gsh = "git show";
     };
     plugins = [ custom.theme fenv ];
     interactiveShellInit = ''

@@ -54,17 +54,18 @@ in
       ca = "commit -am";
       dc = "diff --cached";
       pso = "push origin";
-      plo = "pull origin main";
+      plo = "pull origin";
     };
     extraConfig = gitConfig;
     ignores = [
       "*.bloop"
       "*.bsp"
       "*.metals"
+      ".idea/*"
       "*.metals.sbt"
       "*metals.sbt"
       "*.direnv"
-      "*.envrc" # there is lorri, nix-direnv & simple direnv; let people decide
+      #"*.envrc" # there is lorri, nix-direnv & simple direnv; let people decide
       "*hie.yaml" # ghcide files
       "*.mill-version" # used by metals
       "*.jvmopts" # should be local to every project
