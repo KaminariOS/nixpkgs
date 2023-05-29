@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config,... }:
 {
   # Starship Prompt
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.starship.enable
@@ -10,8 +10,12 @@
 
     directory = {
       style = "bg:#DA627D";
-      format = "[ $path ]($style)";
-      truncation_length = 20;
+      format = "[ $path ]($style)[$read_only]($read_only_style)";
+      truncation_length = 5;
+      truncate_to_repo = false;
+      substitutions = {
+        ${config.home.homeDirectory} = "~";
+      };
       truncation_symbol = "…/";
     };
     gcloud.disabled = true; # annoying to always have on
