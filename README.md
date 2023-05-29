@@ -1,5 +1,7 @@
 # My NixOS & Home-manager configuration
 
+Based on [nix-config](https://github.com/gvolpe/nix-config).
+
 ## Build
 
 (Change the username in [outputs](outputs/home-conf.nix) to your username)
