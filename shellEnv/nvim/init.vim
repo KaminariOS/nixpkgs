@@ -140,8 +140,8 @@ tnoremap <S-j> <C-\><C-n>
 "tnoremap <Esc> <C-\><C-n>
 
 " https://stackoverflow.com/questions/16134457/insert-a-newline-without-entering-in-insert-mode-vim
-nmap oo o<Esc>k 
-nmap OO O<Esc>j
+"nmap oo o<Esc>k 
+"nmap OO O<Esc>j
 
 " Left and right can switch buffers
 nnoremap <left> :bp<CR>
