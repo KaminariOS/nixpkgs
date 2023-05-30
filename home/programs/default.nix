@@ -9,8 +9,6 @@
   ./rofi
   # ./xmonad
   ./yubikey
-  ./networkmanager
   ./steam
-
   ./alacritty
 ]

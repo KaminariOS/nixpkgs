@@ -26,7 +26,8 @@
     wezterm
     xdotool
     via
-
+    networkmanager_dmenu
+    networkmanagerapplet
     inlyne
   ];
 
