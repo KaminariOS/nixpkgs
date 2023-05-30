@@ -75,7 +75,6 @@ Plug 'machakann/vim-highlightedyank'
   map <leader>f <Action>(GotoFile)
   map <leader>g <Action>(FindInPath)
   map <leader>b <Action>(Switcher)
-
   """ IdeaVim options
   " Smart join for <C-J>
   set ideajoin
@@ -95,6 +94,7 @@ Plug 'machakann/vim-highlightedyank'
 else
   " some mappings for Vim/Neovim
   nnoremap <leader>f <cmd>Telescope find_files<cr>
+  nnoremap <leader>dd <cmd>Telescope diagnostics<cr>
   nnoremap <leader><leader> <cmd>bn<cr>
   vnoremap <leader><leader> <cmd>bn<cr>
   tnoremap <leader><leader> <cmd>bn<cr>
