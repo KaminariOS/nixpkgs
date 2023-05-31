@@ -76,7 +76,8 @@ in
       rclone = {
         Service = {
           Type = "simple";
-          ExecStart = "${pkgs.rclone}/bin/rclone mount --umask 022  --allow-other remote: %h/rclone --vfs-cache-mode full";
+          ExecStart = "${pkgs.rclone}/bin/rclone mount --umask 022  --allow-other remote: %h/rclone --vfs-cache-mode full --vfs-fast-fingerprint --vfs-cache-max-size 10G";
+          ExecStop = "umount ${homeDirectory}/rclone";
           Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
         };
         Install.WantedBy = [ "default.target" ];
