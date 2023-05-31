@@ -1,7 +1,7 @@
 { inputs, system, ... }:
 
 let
-  nixosSystem = inputs.nixpkgs.lib.nixosSystem;
+  inherit (inputs.nixpkgs.lib) nixosSystem;
 in
 {
   savior = nixosSystem {

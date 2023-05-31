@@ -18,7 +18,7 @@ let
 
   fenv = {
     name = "foreign-env";
-    src = pkgs.fishPlugins.foreign-env.src;
+    inherit (pkgs.fishPlugins.foreign-env) src;
   };
   #aliases = ''
   #alias z  "zoxide"

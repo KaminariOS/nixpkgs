@@ -35,7 +35,7 @@ let
     kate
     gnome.seahorse
   ];
-  homeDirectory = config.home.homeDirectory;
+  inherit (config.home) homeDirectory;
 in
 {
   imports = builtins.concatMap import [

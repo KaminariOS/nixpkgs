@@ -156,4 +156,4 @@ let
     pgcli
   ];
 in
-(defaultShell ++ rustcli)
+defaultShell ++ rustcli
