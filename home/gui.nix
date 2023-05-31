@@ -29,6 +29,7 @@
     networkmanager_dmenu
     networkmanagerapplet
     inlyne
+    graphviz
   ];
 
 }
