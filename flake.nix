@@ -69,11 +69,11 @@
     {
       formatter.${system} = pkgs.nixpkgs-fmt;
       homeConfigurations = import ./outputs/home-conf.nix {
-          inherit inputs system;
-        };
+        inherit inputs system;
+      };
 
       nixosConfigurations = import ./outputs/nixos-conf.nix {
-          inherit inputs system;
-        };
+        inherit inputs system;
+      };
     };
 }
