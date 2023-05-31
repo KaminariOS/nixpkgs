@@ -1,4 +1,4 @@
-{ lib, config,... }:
+{ lib, config, ... }:
 {
   # Starship Prompt
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.starship.enable

@@ -131,14 +131,21 @@ let
     python3
     iftop
 
-    nix-prefetch-git
-
     taskwarrior
     taskwarrior-tui
 
     file
+
     nix-diff
+    nix-tree
+    nix-du
     nix-prefetch-git
+    # Run unpatched binaries on Nix/NixOS easily.
+    manix
+    statix
+    # Comma runs software without installing it.
+    comma
+
     gh
     sshfs
 
