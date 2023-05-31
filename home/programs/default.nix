@@ -11,4 +11,5 @@
   ./yubikey
   ./steam
   ./alacritty
+  ./zathura
 ]
