@@ -10,6 +10,7 @@
     slack
 
     wireshark
+    # HDR image viewer
     tev
 
     maim
@@ -18,7 +19,6 @@
 
     obs-studio
     #blender
-    gparted
     steam
     #heroic
     mpv

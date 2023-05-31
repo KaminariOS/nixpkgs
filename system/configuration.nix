@@ -69,7 +69,6 @@ in
     enableSSHSupport = true;
   };
 
-  programs.dconf.enable = true;
 
   # List services that you want to enable:
 
@@ -122,12 +121,13 @@ in
     # Mount MTP devices
 
     gvfs.enable = true;
-    gnome.gnome-keyring.enable = true;
+    #gnome.gnome-keyring.enable = true;
     tailscale.enable = true;
 
     xserver.enable = true;
     #xserver.autorun = false;
     #xserver.displayManager.startx.enable = true;
+    #xserver.displayManager.xpra.enable = true;
 
     # Enable the OpenSSH daemon.
     openssh = {
@@ -194,6 +194,9 @@ in
   programs = {
     fish.enable = true;
     fuse.userAllowOther = true;
+    partition-manager.enable = true;
+    #xwayland.enable = true;
+    dconf.enable = true;
   };
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kosumi = {
@@ -209,7 +212,7 @@ in
       debug = false;
       mode = "challenge-response";
     };
-    pam.services.login.enableGnomeKeyring = true;
+    #pam.services.login.enableGnomeKeyring = true;
     pam.services.kwallet.enableKwallet = true;
     # Sudo custom prompt message
     sudo.configFile = ''
