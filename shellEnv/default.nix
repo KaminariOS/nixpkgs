@@ -62,6 +62,10 @@ let
         enable = true;
         enableFishIntegration = true;
         enableZshIntegration = true;
+        changeDirWidgetCommand = "fd --type d";
+        fileWidgetOptions = [
+          "--preview 'head {}'"
+        ];
       };
       atuin = {
         enable = true;
