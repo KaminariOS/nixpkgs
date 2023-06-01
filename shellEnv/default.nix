@@ -91,9 +91,9 @@ in
   ./git
   ./fish
   ./neofetch
-  ./xplr
   ./terminfo.nix
   ./nix-index.nix
   ./bat
+  ./xplr
   more
 ]
