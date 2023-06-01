@@ -72,7 +72,7 @@ let
         enable = true;
         settings = {
           updates = {
-            auto_update = false;
+            auto_update = true;
           };
         };
       };
