@@ -53,6 +53,9 @@ in
           zoxide-vim
 
           nvim-jdtls
+          #Debugging
+          plenary-nvim
+          nvim-dap
         ];
         useSystemClipboard = true;
         neovim.package = pkgs.neovim-nightly;
