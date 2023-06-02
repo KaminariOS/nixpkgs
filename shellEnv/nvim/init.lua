@@ -156,9 +156,9 @@ local function open_nvim_tree(data)
   local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
 
   if not directory and not no_name then
+    vim.cmd.cd(vim.fs.dirname(data.file))
     return
   end
-    
   if directory then
     -- change to the directory
     vim.cmd.cd(data.file)
