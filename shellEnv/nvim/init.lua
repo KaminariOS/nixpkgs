@@ -54,7 +54,9 @@ require'lspconfig'.texlab.setup{}
 require'lspconfig'.svelte.setup{}
 require'lspconfig'.marksman.setup{}
 require'lspconfig'.bashls.setup{}
-require'lspconfig'.jsonls.setup{}
+require'lspconfig'.jsonls.setup{
+    cmd = { "vscode-json-languageserver", "--stdio" },
+}
 require'lspconfig'.yamlls.setup{}
 require'lspconfig'.lua_ls.setup {
   settings = {

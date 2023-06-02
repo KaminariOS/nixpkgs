@@ -56,6 +56,7 @@ in
           #Debugging
           plenary-nvim
           nvim-dap
+          nvim-dap-ui
         ];
         useSystemClipboard = true;
         neovim.package = pkgs.neovim-nightly;
