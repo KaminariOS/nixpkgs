@@ -30,6 +30,7 @@ in
 {
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     delta = {
       options = {
         decorations = {

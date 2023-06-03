@@ -1,4 +1,4 @@
--- https://stackoverflow.com/a/27028488
+-- https://stackoverflow.c om/a/27028488
 function dump(o)
     if type(o) == 'table' then
         local s = '{ '
