@@ -45,7 +45,7 @@ in
         "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
         "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
         "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
-        "${mod}+p" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+        #"${mod}+p" = "exec ${pkgs.dmenu}/bin/dmenu_run";
         "${mod}+x" = "exec sh -c '${pkgs.maim}/bin/maim -s | xclip -selection clipboard -t image/png'";
         # "${mod}+Shift+x" = "exec sh -c '${pkgs.i3lock}/bin/i3lock -c 222222 & sleep 5 && xset dpms force of'";
         #        "${mod}+Shift+x" = "exec i3lock-fancy-dualmonitor";

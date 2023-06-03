@@ -1,6 +1,8 @@
 set $mod Mod4
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
+bindsym $mod+Shift+Ctrl+greater move window to output right
+bindsym $mod+Shift+Ctrl+less move window to output left
 bindsym $mod+b exec firefox, workspace 2
 bindsym $mod+i exec idea-ultimate, workspace 3
 bindsym $mod+c exec clion, workspace 3
