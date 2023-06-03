@@ -147,6 +147,13 @@ tnoremap <S-j> <C-\><C-n>
 
 "tnoremap <Esc> <C-\><C-n>
 
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+
 " https://stackoverflow.com/questions/16134457/insert-a-newline-without-entering-in-insert-mode-vim
 "nmap oo o<Esc>k 
 "nmap OO O<Esc>j
@@ -162,3 +169,4 @@ nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 luafile ~/.config/nvim/config.lua
+
