@@ -99,8 +99,10 @@ Plug 'machakann/vim-highlightedyank'
   endif
 else
   " some mappings for Vim/Neovim
-  nnoremap <leader>f <cmd>Telescope find_files<cr>
+  nnoremap <leader>f <cmd>Telescope find_files<cr/>
   nnoremap <leader>dd <cmd>Telescope diagnostics<cr>
+  nnoremap <leader>rr <cmd>lua vim.lsp.buf.references()<cr>
+  nnoremap <leader>rn :lua vim.lsp.buf.rename("")<left><left>
   nnoremap <leader><leader> <cmd>bn<cr>
   vnoremap <leader><leader> <cmd>bn<cr>
   tnoremap <leader><leader> <cmd>bn<cr>
