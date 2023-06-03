@@ -112,6 +112,7 @@ let
     #python-lsp-server
     cmake-language-server
     fortune
+    ccls
 
     prettyping # a nicer ping
     xsel # clipboard support (also for neovim)

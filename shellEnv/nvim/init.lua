@@ -46,12 +46,22 @@ require('lspconfig').pyright.setup {
     on_attach = on_lsp_attach,
 }
 
-require'lspconfig'.jdtls.setup{}
+require'lspconfig'.ccls.setup{
+    on_attach = on_lsp_attach,
+}
+
+require'lspconfig'.jdtls.setup{
+    on_attach = on_lsp_attach,
+}
 
 require'lspconfig'.cmake.setup{}
 require'lspconfig'.taplo.setup{}
-require'lspconfig'.texlab.setup{}
-require'lspconfig'.svelte.setup{}
+require'lspconfig'.texlab.setup{
+    on_attach = on_lsp_attach,
+}
+require'lspconfig'.svelte.setup{
+    on_attach = on_lsp_attach,
+}
 require'lspconfig'.marksman.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.jsonls.setup{

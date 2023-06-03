@@ -78,8 +78,8 @@ in
           elm = !true;
           haskell = true;
           #sqlls = true;
-          python = true;
-          clang = true;
+          python = !true;
+          clang = false;
           ts = false;
           go = true;
         };
