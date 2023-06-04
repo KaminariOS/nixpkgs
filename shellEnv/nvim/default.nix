@@ -60,6 +60,8 @@ in {
           nvim-dap-ui
           rust-vim
           rust-tools-nvim
+
+          nightfox-nvim
         ];
         debugMode = {
           enable = false;
@@ -135,12 +137,44 @@ in {
       vim.statusline = {
         lualine = {
           enable = true;
-          theme = "catppuccin";
+          activeSection = {
+            a = ''
+              {
+                {
+                  "mode",
+                  separator = {
+                  },
+                },
+              }
+            '';
+            z = ''
+              {
+                {
+                  "progress",
+                  color = {bg='none', fg='lavender'},
+                },
+                {
+                  "location",
+                  color = {bg='none', fg='lavender'},
+                },
+                {
+                  "branch",
+                  icon = ' •',
+                  separator = {
+                    left = ' ',
+                    right = ""
+                  },
+                  color = {bg='none', fg='lavender'},
+                },
+              }
+            '';
+          };
+          # theme = "catppuccin";
         };
       };
 
       vim.theme = {
-        enable = true;
+        enable = !true;
         name = "catppuccin";
         style = "macchiato";
         transparent = true;
