@@ -41,7 +41,7 @@ in {
           vim-localvimrc
 
           vim-nix
-          vim-pathogen
+          # vim-pathogen
           # a universal set of defaults that (hopefully) everyone can agree on.
           vim-sensible
           # Automate infrastructure on any cloud
