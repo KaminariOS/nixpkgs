@@ -25,7 +25,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-flake = {
-      url = "github:notashelf/neovim-flake";
+      # url = "github:notashelf/neovim-flake";
+      url = "github:KaminariOS/neovim-flake-nas";
       # neovim-flake pushes its binaries to the cache using its own nixpkgs version
       # if we instead use ours, we'd be rebuilding all plugins from scratch
       inputs.nixpkgs.follows = "nixpkgs";
@@ -59,19 +60,17 @@
     };
   };
 
-  outputs = inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = inputs.nixpkgs.legacyPackages.${system};
-    in
-    {
-      formatter.${system} = pkgs.nixpkgs-fmt;
-      homeConfigurations = import ./outputs/home-conf.nix {
-        inherit inputs system;
-      };
-
-      nixosConfigurations = import ./outputs/nixos-conf.nix {
-        inherit inputs system;
-      };
+  outputs = inputs: let
+    system = "x86_64-linux";
+    pkgs = inputs.nixpkgs.legacyPackages.${system};
+  in {
+    formatter.${system} = pkgs.nixpkgs-fmt;
+    homeConfigurations = import ./outputs/home-conf.nix {
+      inherit inputs system;
     };
+
+    nixosConfigurations = import ./outputs/nixos-conf.nix {
+      inherit inputs system;
+    };
+  };
 }

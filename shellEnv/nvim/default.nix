@@ -205,7 +205,9 @@ in {
       };
 
       vim.notify = {
-        nvim-notify.enable = true;
+        nvim-notify = {
+          enable = true;
+        };
       };
 
       vim.projects = {
