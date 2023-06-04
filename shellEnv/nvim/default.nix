@@ -78,6 +78,18 @@ in {
         lspSignature.enable = true;
       };
 
+      vim.nnoremap = {
+        "<leader>dd" = "<cmd>Telescope diagnostics<cr>";
+        "<leader>rr" = "<cmd>lua vim.lsp.buf.references()<cr>";
+        "<leader><leader>" = "<cmd>bn<cr>";
+      };
+      vim.vnoremap = {
+        "<leader><leader>" = "<cmd>bn<cr>";
+      };
+      vim.tnoremap = {
+        "<leader><leader>" = "<cmd>bn<cr>";
+      };
+
       vim.languages = {
         enableLSP = true;
         enableFormat = true;
