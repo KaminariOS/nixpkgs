@@ -99,7 +99,7 @@ in {
         nix.enable = true;
         html.enable = isMaximal;
         clang.enable = false;
-        sql.enable = isMaximal;
+        sql.enable = false;
         rust = {
           enable = false;
           crates.enable = true;
