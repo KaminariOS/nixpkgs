@@ -23,7 +23,7 @@ in {
         viAlias = true;
         vimAlias = true;
         configRC.custom = let vimrc = builtins.readFile ./init.vim; in entryBetween ["basic"] [] vimrc;
-        optPlugins = with pkgs.vimPlugins; [
+        startPlugins = with pkgs.vimPlugins; [
           rust-vim
           rust-tools-nvim
         ];
@@ -52,10 +52,10 @@ in {
 
         nix.enable = true;
         html.enable = isMaximal;
-        clang.enable = isMaximal;
+        clang.enable = false;
         sql.enable = isMaximal;
         rust = {
-          #enable = isMaximal;
+          enable = false;
           crates.enable = true;
         };
         ts.enable = false;
