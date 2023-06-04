@@ -10,83 +10,83 @@ let
   '';
 in
 {
-  programs.neovim-ide = {
+  programs.neovim-flake = {
     enable = true;
     settings = {
       vim = {
-        configRC = builtins.readFile ./init.vim;
+        #configRC = builtins.readFile ./init.vim;
         viAlias = false;
         vimAlias = true;
         preventJunkFiles = true;
-        customPlugins = with pkgs.vimPlugins; [
-          multiple-cursors
-          # . last command
-          vim-repeat
-          # cs"'
-          vim-surround
+        #customPlugins = with pkgs.vimPlugins; [
+          #multiple-cursors
+          ## . last command
+          #vim-repeat
+          ## cs"'
+          #vim-surround
 
-          lsp-colors-nvim
-          lsp_extensions-nvim
-          nvim-compe
-          nvim-lspconfig
-          rust-tools-nvim
-          rust-vim
-          vim-airline
-          vim-cpp-enhanced-highlight
-          vim-fish
-          # :G git command 
-          vim-fugitive
-          #vim-hcl
-          vim-localvimrc
+          #lsp-colors-nvim
+          #lsp_extensions-nvim
+          #nvim-compe
+          #nvim-lspconfig
+          #rust-tools-nvim
+          #rust-vim
+          #vim-airline
+          #vim-cpp-enhanced-highlight
+          #vim-fish
+          ## :G git command 
+          #vim-fugitive
+          ##vim-hcl
+          #vim-localvimrc
 
-          vim-nix
-          vim-pathogen
-          # a universal set of defaults that (hopefully) everyone can agree on.
-          vim-sensible
-          # Automate infrastructure on any cloud
-          # vim-terraform
-          vim-tmux-navigator
-          vim-twig
-          vim-vue
-          vimtex
-          auto-save-nvim
-          zoxide-vim
+          #vim-nix
+          #vim-pathogen
+          ## a universal set of defaults that (hopefully) everyone can agree on.
+          #vim-sensible
+          ## Automate infrastructure on any cloud
+          ## vim-terraform
+          #vim-tmux-navigator
+          #vim-twig
+          #vim-vue
+          #vimtex
+          #auto-save-nvim
+          #zoxide-vim
 
-          nvim-jdtls
-          #Debugging
-          plenary-nvim
-          nvim-dap
-          nvim-dap-ui
-        ];
+          #nvim-jdtls
+          ##Debugging
+          #plenary-nvim
+          #nvim-dap
+          #nvim-dap-ui
+        #];
         useSystemClipboard = true;
-        neovim.package = pkgs.neovim-nightly;
+        #neovim.package = pkgs.neovim-nightly;
         lsp = {
-          enable = true;
-          folds = true;
-          formatOnSave = false;
-          lightbulb.enable = true;
-          lspsaga.enable = false;
-          nvimCodeActionMenu.enable = true;
-          trouble.enable = true;
-          lspSignature.enable = true;
-          rust.enable = !true;
-          nix = {
-            enable = true;
-            #type = "nil";
-          };
-          dhall = !true;
-          elm = !true;
-          haskell = true;
-          #sqlls = true;
-          python = !true;
-          clang = false;
-          ts = false;
-          go = true;
+          #enable = true;
+          #folds = true;
+          #formatOnSave = false;
+          #lightbulb.enable = true;
+          #lspsaga.enable = false;
+          #nvimCodeActionMenu.enable = true;
+          #trouble.enable = true;
+          #lspSignature.enable = true;
+          #rust.enable = !true;
+          #nix = {
+            #enable = true;
+            ##type = "nil";
+          #};
+          #dhall = !true;
+          #elm = !true;
+          #haskell = true;
+          ##sqlls = true;
+          #python = !true;
+          ##clang = false;
+          #ts = false;
+          #go = true;
         };
         visuals = {
           enable = true;
           nvimWebDevicons.enable = true;
-          lspkind.enable = true;
+          #lspkind.enable = true;
           indentBlankline = {
             enable = true;
             fillChar = "";
@@ -100,13 +100,13 @@ in
         };
         statusline.lualine = {
           enable = true;
-          theme = "nightfox";
+          #theme = "nightfox";
         };
         theme = {
           enable = true;
-          name = "nightfox";
-          style = "nightfox";
-          transparency = true;
+          #name = "nightfox";
+          #style = "nightfox";
+          #transparency = true;
         };
         autopairs.enable = true;
         autocomplete = {
@@ -116,13 +116,13 @@ in
         filetree.nvimTreeLua = {
           enable = true;
           openOnSetup = false;
-          closeOnFileOpen = true;
+          #closeOnFileOpen = true;
           hideDotFiles = false;
           hideFiles = [ "node_modules" ".cache" ];
         };
-        neoclip.enable = true;
-        hop.enable = true;
-        todo.enable = true;
+        #neoclip.enable = true;
+        #hop.enable = true;
+        #todo.enable = true;
         tabline.nvimBufferline.enable = true;
         treesitter = {
           enable = true;
@@ -132,42 +132,39 @@ in
         #scala = {
         #highlightMode = "treesitter";
         #};
-        chatgpt = {
-          enable = false;
-        };
         # Displays availale keybinds
-        keys = {
-          enable = true;
-          whichKey.enable = true;
-        };
-        comments = {
-          enable = true;
-          type = "nerdcommenter";
-        };
-        shortcuts = {
-          enable = true;
-        };
-        surround = {
-          enable = true;
-        };
+        #keys = {
+          #enable = true;
+          #whichKey.enable = true;
+        #};
+        #comments = {
+          #enable = true;
+          #type = "nerdcommenter";
+        #};
+        #shortcuts = {
+          #enable = true;
+        #};
+        #surround = {
+          #enable = true;
+        #};
         # Leader ff search
         telescope = {
           enable = true;
         };
-        markdown = {
-          enable = true;
-          glow.enable = true;
-        };
-        notifications.enable = true;
-        dial.enable = true;
-        spider = {
-          enable = false;
-          skipInsignificantPunctuation = true;
-        };
-        git = {
-          enable = true;
-          gitsigns.enable = true;
-        };
+        #markdown = {
+          #enable = true;
+          #glow.enable = true;
+        #};
+        #notifications.enable = true;
+        #dial.enable = true;
+        #spider = {
+          #enable = false;
+          #skipInsignificantPunctuation = true;
+        #};
+        #git = {
+          #enable = true;
+          #gitsigns.enable = true;
+        #};
       };
     };
   };
@@ -178,4 +175,5 @@ in
     pyrightLangserver = preferPath "pyright-langserver" "${pkgs.pyright}/bin/pyright-langserver";
     rustAnalyzer = preferPath "rust-analyzer" "${pkgs.rust-analyzer}/bin/rust-analyzer";
   };
+  xdg.configFile."nvim/init.vim".source = ./init.vim;
 }
