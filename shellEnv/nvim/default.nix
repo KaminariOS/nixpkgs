@@ -32,7 +32,7 @@ in {
           lsp_extensions-nvim
 
           # vim-compe
-          vim-airline
+          # vim-airline
           vim-cpp-enhanced-highlight
           vim-fish
           # :G git command
