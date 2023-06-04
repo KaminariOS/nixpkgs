@@ -168,5 +168,9 @@ nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 " For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
+nnoremap <C-F> :NvimTreeToggle<CR>
+nnoremap <C-s> :NvimTreeFindFile<CR>
+nnoremap <leader>tr :NvimTreeRefresh<CR>
+
 luafile ~/.config/nvim/config.lua
 

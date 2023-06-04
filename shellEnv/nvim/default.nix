@@ -23,6 +23,10 @@ in {
         viAlias = true;
         vimAlias = true;
         configRC.custom = let vimrc = builtins.readFile ./init.vim; in entryBetween ["basic"] [] vimrc;
+        optPlugins = with pkgs.vimPlugins; [
+          rust-vim
+          rust-tools-nvim
+        ];
         debugMode = {
           enable = false;
           level = 20;
@@ -51,7 +55,7 @@ in {
         clang.enable = isMaximal;
         sql.enable = isMaximal;
         rust = {
-          enable = isMaximal;
+          #enable = isMaximal;
           crates.enable = true;
         };
         ts.enable = false;
@@ -110,6 +114,13 @@ in {
           view = {
             width = 25;
           };
+          actions = {
+            openFile = {
+              quitOnOpen = true;
+            };
+          };
+          openTreeOnNewTab = false;
+          openOnSetup = false;
         };
       };
 
