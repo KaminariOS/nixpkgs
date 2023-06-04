@@ -1,174 +1,214 @@
-{ config, lib, pkgs, ... }:
-
-let
-  preferPath = command: default: pkgs.writeShellScript "${command}-wrapper" ''
-    if command -v ${command}; then
-        exec ${command} "$@"
-    else
-        exec ${default} "$@"
-    fi
-  '';
-in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  preferPath = command: default:
+    pkgs.writeShellScript "${command}-wrapper" ''
+      if command -v ${command}; then
+          exec ${command} "$@"
+      else
+          exec ${default} "$@"
+      fi
+    '';
+in {
   programs.neovim-flake = {
     enable = true;
-    settings = {
+    settings = let
+      isMaximal = true;
+    in {
       vim = {
-        #configRC = builtins.readFile ./init.vim;
-        viAlias = false;
+        viAlias = true;
         vimAlias = true;
-        preventJunkFiles = true;
-        #customPlugins = with pkgs.vimPlugins; [
-          #multiple-cursors
-          ## . last command
-          #vim-repeat
-          ## cs"'
-          #vim-surround
-
-          #lsp-colors-nvim
-          #lsp_extensions-nvim
-          #nvim-compe
-          #nvim-lspconfig
-          #rust-tools-nvim
-          #rust-vim
-          #vim-airline
-          #vim-cpp-enhanced-highlight
-          #vim-fish
-          ## :G git command 
-          #vim-fugitive
-          ##vim-hcl
-          #vim-localvimrc
-
-          #vim-nix
-          #vim-pathogen
-          ## a universal set of defaults that (hopefully) everyone can agree on.
-          #vim-sensible
-          ## Automate infrastructure on any cloud
-          ## vim-terraform
-          #vim-tmux-navigator
-          #vim-twig
-          #vim-vue
-          #vimtex
-          #auto-save-nvim
-          #zoxide-vim
-
-          #nvim-jdtls
-          ##Debugging
-          #plenary-nvim
-          #nvim-dap
-          #nvim-dap-ui
-        #];
-        useSystemClipboard = true;
-        #neovim.package = pkgs.neovim-nightly;
-        lsp = {
-          #enable = true;
-          #folds = true;
-          #formatOnSave = false;
-          #lightbulb.enable = true;
-          #lspsaga.enable = false;
-          #nvimCodeActionMenu.enable = true;
-          #trouble.enable = true;
-          #lspSignature.enable = true;
-          #rust.enable = !true;
-          #nix = {
-            #enable = true;
-            ##type = "nil";
-          #};
-          #dhall = !true;
-          #elm = !true;
-          #haskell = true;
-          ##sqlls = true;
-          #python = !true;
-          ##clang = false;
-          #ts = false;
-          #go = true;
+        # configRC = ./init.vim;
+        debugMode = {
+          enable = false;
+          level = 20;
+          logFile = "/tmp/nvim.log";
         };
-        visuals = {
+      };
+
+      vim.lsp = {
+        formatOnSave = true;
+        lspkind.enable = false;
+        lightbulb.enable = true;
+        lspsaga.enable = false;
+        nvimCodeActionMenu.enable = true;
+        trouble.enable = true;
+        lspSignature.enable = true;
+      };
+
+      vim.languages = {
+        enableLSP = true;
+        enableFormat = true;
+        enableTreesitter = true;
+        enableExtraDiagnostics = true;
+
+        nix.enable = true;
+        html.enable = isMaximal;
+        clang.enable = isMaximal;
+        sql.enable = isMaximal;
+        rust = {
+          enable = isMaximal;
+          crates.enable = true;
+        };
+        ts.enable = false;
+        go.enable = isMaximal;
+        zig.enable = false;
+        python.enable = isMaximal;
+        dart.enable = false;
+        elixir.enable = false;
+      };
+
+      vim.visuals = {
+        enable = true;
+        nvimWebDevicons.enable = true;
+        scrollBar.enable = true;
+        smoothScroll.enable = true;
+        cellularAutomaton.enable = true;
+        fidget-nvim.enable = true;
+        indentBlankline = {
           enable = true;
-          nvimWebDevicons.enable = true;
-          #lspkind.enable = true;
-          indentBlankline = {
-            enable = true;
-            fillChar = "";
-            eolChar = "";
-            showCurrContext = true;
+          fillChar = null;
+          eolChar = null;
+          showCurrContext = true;
+        };
+        cursorWordline = {
+          enable = true;
+          lineTimeout = 0;
+        };
+      };
+
+      vim.statusline = {
+        lualine = {
+          enable = true;
+          theme = "catppuccin";
+        };
+      };
+
+      vim.theme = {
+        enable = true;
+        name = "catppuccin";
+        style = "mocha";
+        transparent = true;
+      };
+      vim.autopairs.enable = true;
+
+      vim.autocomplete = {
+        enable = true;
+        type = "nvim-cmp";
+      };
+
+      vim.filetree = {
+        nvimTreeLua = {
+          enable = true;
+          renderer = {
+            rootFolderLabel = null;
           };
-          cursorWordline = {
-            enable = true;
-            lineTimeout = 0;
+          view = {
+            width = 25;
           };
         };
-        statusline.lualine = {
-          enable = true;
-          #theme = "nightfox";
+      };
+
+      vim.tabline = {
+        nvimBufferline.enable = true;
+      };
+
+      vim.treesitter.context.enable = true;
+
+      vim.binds = {
+        whichKey.enable = true;
+        cheatsheet.enable = true;
+      };
+
+      vim.telescope.enable = true;
+
+      vim.git = {
+        enable = true;
+        gitsigns.enable = true;
+        gitsigns.codeActions = false; # throws an annoying debug message
+      };
+
+      vim.minimap = {
+        minimap-vim.enable = false;
+        codewindow.enable = true; # lighter, faster, and uses lua for configuration
+      };
+
+      vim.dashboard = {
+        dashboard-nvim.enable = false;
+        alpha.enable = true;
+      };
+
+      vim.notify = {
+        nvim-notify.enable = true;
+      };
+
+      vim.projects = {
+        project-nvim.enable = true;
+      };
+
+      vim.utility = {
+        colorizer.enable = true;
+        icon-picker.enable = true;
+        diffview-nvim.enable = true;
+        motion = {
+          hop.enable = true;
+          leap.enable = true;
         };
-        theme = {
+      };
+
+      vim.notes = {
+        obsidian.enable = false; # FIXME neovim fails to build if obsidian is enabled
+        orgmode.enable = false;
+        mind-nvim.enable = true;
+        todo-comments.enable = true;
+      };
+
+      vim.terminal = {
+        toggleterm = {
           enable = true;
-          #name = "nightfox";
-          #style = "nightfox";
-          #transparency = true;
+          lazygit.enable = true;
         };
-        autopairs.enable = true;
-        autocomplete = {
+      };
+
+      vim.ui = {
+        noice.enable = true;
+        smartcolumn.enable = true;
+      };
+
+      vim.assistant = {
+        copilot.enable = false;
+        #tabnine.enable = false; # FIXME: this is not working because the plugin depends on an internal script to be ran by the package manager
+      };
+
+      vim.session = {
+        nvim-session-manager.enable = true;
+      };
+
+      vim.gestures = {
+        gesture-nvim.enable = false;
+      };
+
+      vim.comments = {
+        comment-nvim.enable = true;
+      };
+
+      vim.presence = {
+        presence-nvim = {
           enable = true;
-          type = "nvim-cmp";
+          auto_update = true;
+          image_text = "The Superior Text Editor";
+          client_id = "793271441293967371";
+          main_image = "neovim";
+          rich_presence = {
+            editing_text = "Editing %s";
+          };
         };
-        filetree.nvimTreeLua = {
-          enable = true;
-          openOnSetup = false;
-          #closeOnFileOpen = true;
-          hideDotFiles = false;
-          hideFiles = [ "node_modules" ".cache" ];
-        };
-        #neoclip.enable = true;
-        #hop.enable = true;
-        #todo.enable = true;
-        tabline.nvimBufferline.enable = true;
-        treesitter = {
-          enable = true;
-          autotagHtml = true;
-          context.enable = true;
-        };
-        #scala = {
-        #highlightMode = "treesitter";
-        #};
-        # Displays availale keybinds
-        #keys = {
-          #enable = true;
-          #whichKey.enable = true;
-        #};
-        #comments = {
-          #enable = true;
-          #type = "nerdcommenter";
-        #};
-        #shortcuts = {
-          #enable = true;
-        #};
-        #surround = {
-          #enable = true;
-        #};
-        # Leader ff search
-        telescope = {
-          enable = true;
-        };
-        #markdown = {
-          #enable = true;
-          #glow.enable = true;
-        #};
-        #notifications.enable = true;
-        #dial.enable = true;
-        #spider = {
-          #enable = false;
-          #skipInsignificantPunctuation = true;
-        #};
-        #git = {
-          #enable = true;
-          #gitsigns.enable = true;
-        #};
       };
     };
   };
-
 
   xdg.configFile."nvim/config.lua".source = pkgs.substituteAll {
     src = ./init.lua;
