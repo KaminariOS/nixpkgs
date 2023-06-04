@@ -274,7 +274,7 @@ in {
 
       vim.ui = {
         noice.enable = !true;
-        smartcolumn.enable = true;
+        smartcolumn.enable = !true;
       };
 
       vim.assistant = {
