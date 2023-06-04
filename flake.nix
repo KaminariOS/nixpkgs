@@ -25,8 +25,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-flake = {
-      url = "github:notashelf/neovim-flake";
-      # url = "github:KaminariOS/neovim-flake-nas";
+      # url = "github:notashelf/neovim-flake";
+      url = "github:KaminariOS/neovim-flake/my";
       # neovim-flake pushes its binaries to the cache using its own nixpkgs version
       # if we instead use ours, we'd be rebuilding all plugins from scratch
       inputs.nixpkgs.follows = "nixpkgs";

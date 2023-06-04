@@ -601,11 +601,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1685865037,
-        "narHash": "sha256-atwfu0IUL2f6oWFt3KG1uqPTj7DxUoYW7+KVOv+o5DY=",
+        "lastModified": 1685885003,
+        "narHash": "sha256-+OB0EvZBfGvnlTGg6mtyUCqkMnUp9DkmRUU4d7BZBVE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "57ed23cd29e7b72518e19d2917e2b2880a94162c",
+        "rev": "607d8fad96436b134424b9935166a7cd0884003e",
         "type": "github"
       },
       "original": {
@@ -942,15 +942,16 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1683212430,
-        "narHash": "sha256-6PfFi0gkVoXvHcG3lLD4bG5lUWelG75tLPvsD8PxDLY=",
-        "owner": "notashelf",
+        "lastModified": 1685908228,
+        "narHash": "sha256-ofbcLoI2NAZK2cMzsw7jgHgC3R2DifFH9YkuhHZkKnU=",
+        "owner": "KaminariOS",
         "repo": "neovim-flake",
-        "rev": "1678ef4738d18ecc963003059be42c6733a5aef7",
+        "rev": "a6595c67af83ee8ccf223f13267c4d874f1d807f",
         "type": "github"
       },
       "original": {
-        "owner": "notashelf",
+        "owner": "KaminariOS",
+        "ref": "my",
         "repo": "neovim-flake",
         "type": "github"
       }
@@ -1144,11 +1145,11 @@
     },
     "nurpkgs": {
       "locked": {
-        "lastModified": 1685862238,
-        "narHash": "sha256-HlcMK0cWdiZGCi+T02xbxaow0TvZV3qvFpeTvLEv5jI=",
+        "lastModified": 1685907961,
+        "narHash": "sha256-nOP/5uRfqBubcawND6tnMq/W/CxFe6SkbIWrk74TnPc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c7e56e7335a355919eb9b72050cf9e3c29007335",
+        "rev": "89af1d9471b83b18e09c50e0f0d0da969bc2026b",
         "type": "github"
       },
       "original": {
