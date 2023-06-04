@@ -942,16 +942,16 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1685871627,
-        "narHash": "sha256-EyGLgT1Qu5i0BiqYEZZulBwqe0Myq7+8KG5QuufXBPg=",
-        "owner": "KaminariOS",
-        "repo": "neovim-flake-nas",
-        "rev": "356a5d8d731fa020e2a7b46a5deaf83eaecaf3bf",
+        "lastModified": 1683212430,
+        "narHash": "sha256-6PfFi0gkVoXvHcG3lLD4bG5lUWelG75tLPvsD8PxDLY=",
+        "owner": "notashelf",
+        "repo": "neovim-flake",
+        "rev": "1678ef4738d18ecc963003059be42c6733a5aef7",
         "type": "github"
       },
       "original": {
-        "owner": "KaminariOS",
-        "repo": "neovim-flake-nas",
+        "owner": "notashelf",
+        "repo": "neovim-flake",
         "type": "github"
       }
     },
