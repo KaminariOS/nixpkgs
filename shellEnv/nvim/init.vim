@@ -99,7 +99,6 @@ Plug 'machakann/vim-highlightedyank'
   endif
 else
   " some mappings for Vim/Neovim
-  nnoremap <leader>f <cmd>Telescope find_files<cr/>
   nnoremap <leader>dd <cmd>Telescope diagnostics<cr>
   nnoremap <leader>rr <cmd>lua vim.lsp.buf.references()<cr>
   nnoremap <leader>rn :lua vim.lsp.buf.rename("")<left><left>
@@ -116,7 +115,7 @@ endif
 " https://github.com/neovim/neovim/issues/5916
 " So we also map Ctrl+k
 nnoremap <C-j> <Esc>
-inoremap <C-j> <Esc>
+inoremap <C-j> J
 vnoremap <C-j> <Esc>
 snoremap <C-j> <Esc>
 xnoremap <C-j> <Esc>
@@ -167,6 +166,10 @@ nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 
 " For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+nnoremap <C-F> :NvimTreeToggle<CR>
+nnoremap <C-s> :NvimTreeFindFile<CR>
+nnoremap <leader>tr :NvimTreeRefresh<CR>
 
 luafile ~/.config/nvim/config.lua
 
