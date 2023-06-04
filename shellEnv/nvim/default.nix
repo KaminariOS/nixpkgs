@@ -12,6 +12,7 @@
           exec ${default} "$@"
       fi
     '';
+  entryBetween = before: after: data: {inherit data before after;};
 in {
   programs.neovim-flake = {
     enable = true;
@@ -21,7 +22,7 @@ in {
       vim = {
         viAlias = true;
         vimAlias = true;
-        # configRC = ./init.vim;
+        configRC.custom = let vimrc = builtins.readFile ./init.vim; in entryBetween ["basic"] [] vimrc;
         debugMode = {
           enable = false;
           level = 20;
