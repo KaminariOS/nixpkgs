@@ -20,7 +20,7 @@ in {
       isMaximal = true;
     in {
       vim = {
-        viAlias = true;
+        viAlias = false;
         vimAlias = true;
         configRC.custom = let vimrc = builtins.readFile ./init.vim; in entryBetween ["basic"] [] vimrc;
         startPlugins = with pkgs.vimPlugins; [
