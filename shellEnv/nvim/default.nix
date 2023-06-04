@@ -22,8 +22,42 @@ in {
       vim = {
         viAlias = false;
         vimAlias = true;
+        preventJunkFiles = true;
         configRC.custom = let vimrc = builtins.readFile ./init.vim; in entryBetween ["basic"] [] vimrc;
         startPlugins = with pkgs.vimPlugins; [
+          multiple-cursors
+          # cs"'
+          vim-surround
+          lsp-colors-nvim
+          lsp_extensions-nvim
+
+          # vim-compe
+          vim-airline
+          vim-cpp-enhanced-highlight
+          vim-fish
+          # :G git command
+          vim-fugitive
+          #vim-hcl
+          vim-localvimrc
+
+          vim-nix
+          vim-pathogen
+          # a universal set of defaults that (hopefully) everyone can agree on.
+          vim-sensible
+          # Automate infrastructure on any cloud
+          # vim-terraform
+          # vim-tmux-navigator
+          vim-twig
+          vim-vue
+          vimtex
+          auto-save-nvim
+          zoxide-vim
+
+          nvim-jdtls
+          #Debugging
+          plenary-nvim
+          nvim-dap
+          nvim-dap-ui
           rust-vim
           rust-tools-nvim
         ];
@@ -36,7 +70,7 @@ in {
 
       vim.lsp = {
         formatOnSave = true;
-        lspkind.enable = false;
+        lspkind.enable = true;
         lightbulb.enable = true;
         lspsaga.enable = false;
         nvimCodeActionMenu.enable = true;
@@ -64,6 +98,7 @@ in {
         python.enable = isMaximal;
         dart.enable = false;
         elixir.enable = false;
+        markdown.enable = true;
       };
 
       vim.visuals = {
@@ -128,7 +163,11 @@ in {
         nvimBufferline.enable = true;
       };
 
-      vim.treesitter.context.enable = true;
+      vim.treesitter = {
+        enable = true;
+        autotagHtml = true;
+        context.enable = true;
+      };
 
       vim.binds = {
         whichKey.enable = true;
