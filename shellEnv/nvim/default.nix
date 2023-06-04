@@ -142,7 +142,7 @@ in {
       vim.theme = {
         enable = true;
         name = "catppuccin";
-        style = "mocha";
+        style = "macchiato";
         transparent = true;
       };
       vim.autopairs.enable = true;
@@ -239,7 +239,7 @@ in {
       };
 
       vim.ui = {
-        noice.enable = true;
+        noice.enable = !true;
         smartcolumn.enable = true;
       };
 
