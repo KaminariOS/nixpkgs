@@ -1,5 +1,10 @@
 let
   more = {
+    home.file.".ssh/config".text = ''
+      Host *.cloudlab.us
+        ForwardAgent yes
+        forwardX11Trusted yes
+    '';
     programs = {
       readline = {
         enable = true;
@@ -20,22 +25,18 @@ let
         enable = true;
         enableFishIntegration = true;
         defaultCommand = "fd --type file --follow"; # FZF_DEFAULT_COMMAND
-        defaultOptions = [ "--height 20%" ]; # FZF_DEFAULT_OPTS
+        defaultOptions = ["--height 20%"]; # FZF_DEFAULT_OPTS
         fileWidgetCommand = "fd --type file --follow"; # FZF_CTRL_T_COMMAND
       };
 
       gpg.enable = true;
       ssh = {
         enable = true;
-        extraConfig = ''
-          Host *.cloudlab.us
-            ForwardAgent yes
-        '';
       };
       zoxide = {
         enable = true;
         enableFishIntegration = true;
-        options = [ ];
+        options = [];
       };
       starship = {
         enable = true;
@@ -87,8 +88,7 @@ let
       };
     };
   };
-in
-[
+in [
   ./helix
   ./nushell
   ./nvim
