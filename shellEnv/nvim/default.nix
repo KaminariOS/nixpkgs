@@ -234,7 +234,7 @@ in {
       };
 
       vim.dashboard = {
-        dashboard-nvim.enable = false;
+        dashboard-nvim.enable = true;
         alpha.enable = true;
       };
 
@@ -283,7 +283,10 @@ in {
       };
 
       vim.session = {
-        nvim-session-manager.enable = true;
+        nvim-session-manager = {
+          enable = true;
+          autoloadMode = "Disabled";
+        };
       };
 
       vim.gestures = {
