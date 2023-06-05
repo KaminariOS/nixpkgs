@@ -1,13 +1,13 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the default.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, inputs
+, ...
+}:
+let
   customFonts = pkgs.nerdfonts.override {
     fonts = [
       "JetBrainsMono"
@@ -15,8 +15,9 @@
     ];
   };
 
-  myfonts = pkgs.callPackage fonts/default.nix {inherit pkgs;};
-in {
+  myfonts = pkgs.callPackage fonts/default.nix { inherit pkgs; };
+in
+{
   imports = [
     # Window manager
     #./wm/xmonad.nix
@@ -28,7 +29,7 @@ in {
     # Enables wireless support and openvpn via network manager.
     networkmanager = {
       enable = true;
-      plugins = [pkgs.networkmanager-openvpn];
+      plugins = [ pkgs.networkmanager-openvpn ];
     };
 
     # The global useDHCP flag is deprecated, therefore explicitly set to false here.
@@ -46,7 +47,7 @@ in {
 
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [fcitx5-rime fcitx5-chinese-addons fcitx5-mozc];
+    fcitx5.addons = with pkgs; [ fcitx5-rime fcitx5-chinese-addons fcitx5-mozc ];
   };
 
   # Set your time zone.
@@ -94,7 +95,7 @@ in {
     };
   };
 
-  users.extraGroups.vboxusers.members = ["kosumi"];
+  users.extraGroups.vboxusers.members = [ "kosumi" ];
 
   # Enable sound.
   sound = {
@@ -111,7 +112,7 @@ in {
   hardware = {
     sane = {
       enable = true;
-      extraBackends = [pkgs.epkowa pkgs.sane-airscan];
+      extraBackends = [ pkgs.epkowa pkgs.sane-airscan ];
     };
     opengl.driSupport32Bit = true;
     bluetooth.enable = true;
@@ -138,7 +139,7 @@ in {
     blueman.enable = true;
     # Yubikey smart card mode (CCID) and OTP mode (udev)
     pcscd.enable = true;
-    udev.packages = [pkgs.yubikey-personalization];
+    udev.packages = [ pkgs.yubikey-personalization ];
 
     # SSH daemon.
     sshd.enable = true;
@@ -146,7 +147,7 @@ in {
     # Enable CUPS to print documents.
     printing = {
       enable = true;
-      drivers = [pkgs.epson-escpr];
+      drivers = [ pkgs.epson-escpr ];
     };
 
     postgresql = {
@@ -184,9 +185,9 @@ in {
 
     fontconfig = {
       defaultFonts = {
-        serif = ["noto-fonts-cjk-serif" "Ubuntu"];
-        sansSerif = ["noto-fonts-cjk-sans" "IPAPGothic" "Ubuntu"];
-        monospace = ["fira-code"];
+        serif = [ "noto-fonts-cjk-serif" "Ubuntu" ];
+        sansSerif = [ "noto-fonts-cjk-sans" "IPAPGothic" "Ubuntu" ];
+        monospace = [ "fira-code" ];
       };
     };
   };
@@ -205,7 +206,7 @@ in {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kosumi = {
     isNormalUser = true;
-    extraGroups = ["docker" "networkmanager" "wheel" "scanner" "lp"]; # wheel for ‘sudo’.
+    extraGroups = [ "docker" "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
     shell = pkgs.fish;
   };
 
@@ -245,9 +246,9 @@ in {
       auto-optimise-store = true;
 
       # Required by Cachix to be used as non-root user
-      trusted-users = ["root" "kosumi"];
+      trusted-users = [ "root" "kosumi" ];
 
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [ "nix-command" "flakes" ];
 
       # Avoid unwanted garbage collection when using nix-direnv
       keep-outputs = true;
