@@ -17,38 +17,30 @@ function on_lsp_attach(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 end
 
-local rust_tools_nvim = {
-    tools = {
-    },
-
-    server = {
-        cmd = { "@rustAnalyzer@" },
-        on_attach = on_lsp_attach,
-        settings = {
-            ["rust-analyzer"] = {
-                checkOnSave = {
-                    -- 	command = { "clippy" },
-                    extraArgs = { "--target-dir", "/tmp/rust-analyzer-check" },
-                },
-            },
-        },
-    },
-}
+-- local rust_tools_nvim = {
+--     tools = {
+--     },
+--
+--     server = {
+--         cmd = { "@rustAnalyzer@" },
+--         on_attach = on_lsp_attach,
+--         settings = {
+--             ["rust-analyzer"] = {
+--                 checkOnSave = {
+--                     -- 	command = { "clippy" },
+--                     extraArgs = { "--target-dir", "/tmp/rust-analyzer-check" },
+--                 },
+--             },
+--         },
+--     },
+-- }
 
 -- if os.execute('command -v cargo-clippy') == 0 then
 --     rust_tools_nvim.server.settings["rust-analyzer"].checkOnSave.command = "clippy"
 -- end
 
-require('rust-tools').setup(rust_tools_nvim)
+-- require('rust-tools').setup(rust_tools_nvim)
 
-require('lspconfig').pyright.setup {
-    cmd = { "@pyrightLangserver@", "--stdio" },
-    on_attach = on_lsp_attach,
-}
-
-require'lspconfig'.ccls.setup{
-    on_attach = on_lsp_attach,
-}
 
 require'lspconfig'.jdtls.setup{
     on_attach = on_lsp_attach,
@@ -68,28 +60,6 @@ require'lspconfig'.jsonls.setup{
     cmd = { "vscode-json-languageserver", "--stdio" },
 }
 require'lspconfig'.yamlls.setup{}
-require'lspconfig'.lua_ls.setup {
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-}
 
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -162,7 +132,6 @@ end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
-vim.g.cargo_shell_command_runner = '!'
 
 -- Default options
 require('nightfox').setup({
