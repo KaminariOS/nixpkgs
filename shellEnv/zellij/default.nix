@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.zellij = {
     enable = true;
     #enableFishIntegration = true;
@@ -7,15 +7,16 @@
       theme = "Tokyo Night Storm";
       copy_command = "xclip -selection clipboard";
       #keybinds = {
-        #normal = {
-          ##"bind \"Ctrl 4\"" = {NewTab = ";"; };
-        #};
+      #normal = {
+      ##"bind \"Ctrl 4\"" = {NewTab = ";"; };
+      #};
       #};
     };
   };
   xdg.configFile."zellij/config.kdl".text = ''
     keybinds {
       unbind "Ctrl t"
+      unbind "Ctrl o"
       normal {
         bind "Ctrl u" {SwitchToMode "tab"; }
       }
