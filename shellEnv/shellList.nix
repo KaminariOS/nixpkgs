@@ -155,6 +155,8 @@ let
     rclone
     # Postgres cli
     pgcli
+
+    xpra
   ];
 in
 defaultShell ++ rustcli
