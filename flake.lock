@@ -906,11 +906,11 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1686031567,
-        "narHash": "sha256-h5wL8lotc1NLsAsby3JgB3G6jKruaxGB4ZaHbdSN57Q=",
+        "lastModified": 1686038293,
+        "narHash": "sha256-eEzTZQOw20BbfqqlWyc+tZmbG42BmARHdrGwEvnnl6w=",
         "owner": "KaminariOS",
         "repo": "neovim-flake",
-        "rev": "6418cb70ab21375ecee278e6e24d5fd02e475d6a",
+        "rev": "5df926fea462d3a5457d64d762035ab8f976eb17",
         "type": "github"
       },
       "original": {
@@ -1109,11 +1109,11 @@
     },
     "nurpkgs": {
       "locked": {
-        "lastModified": 1686030115,
-        "narHash": "sha256-zv01tpM0aGOJMwPYZtWGxKhueQJwPys8/hvG6+JBeAg=",
+        "lastModified": 1686033919,
+        "narHash": "sha256-eSkt/vmE7M0eg9Xd2OEpJHWXNZSn3CjgnKJdOtEw8Bc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "878654e3c67353ef27cc707271ec3fe3998a26ce",
+        "rev": "30bca189f3a02281d51db0be0d537825b02059ca",
         "type": "github"
       },
       "original": {
