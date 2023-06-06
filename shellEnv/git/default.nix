@@ -75,7 +75,7 @@ in
       key = "0x5710C5966568BAC5";
     };
     userEmail = "chankocyo@gmail.com";
-    userName = "kosumi";
+    userName = config.home.username;
   };
 
   home.packages = with pkgs; [ git-crypt git-annex ];

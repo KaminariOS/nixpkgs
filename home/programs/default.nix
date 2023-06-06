@@ -3,9 +3,7 @@
   ./kitty
   ./dconf
 
-
   ./nheko
-  ./orage
   ./rofi
   # ./xmonad
   ./yubikey
