@@ -906,11 +906,11 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1686047785,
-        "narHash": "sha256-2/gZZEXG1gWA3MGdksIfOt6YvxRFnjCNrcC1u5u/lJY=",
+        "lastModified": 1686081232,
+        "narHash": "sha256-ENF9eAlp6sw1RiymmWqovKyxPorc4Si/9S/xwhsvv7I=",
         "owner": "KaminariOS",
         "repo": "neovim-flake",
-        "rev": "90d4000f0fa9ec537efe36b5dfce78e55bb81254",
+        "rev": "fa3e4df6a8de08cc68bc0813b2a0536c1019463a",
         "type": "github"
       },
       "original": {
