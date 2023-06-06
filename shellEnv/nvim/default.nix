@@ -107,6 +107,7 @@ in {
         vim.enable = true;
         toml.enable = true;
         java.enable = true;
+        bash.enable = true;
       };
 
       vim.visuals = {
