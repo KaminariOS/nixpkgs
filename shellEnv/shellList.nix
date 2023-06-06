@@ -97,10 +97,10 @@ let
     rust-analyzer
     gopls
     haskell-language-server
-    java-language-server
+    # java-language-server
     texlab
     taplo-lsp # A TOML toolkit written in Rust
-    sumneko-lua-language-server
+    # sumneko-lua-language-server
     nodePackages.vim-language-server
     nodePackages.yaml-language-server
     nodePackages.vscode-json-languageserver
