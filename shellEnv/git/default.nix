@@ -73,7 +73,6 @@ in
     ];
     signing = {
       key = "0x5710C5966568BAC5";
-      signByDefault = true;
     };
     userEmail = "chankocyo@gmail.com";
     userName = "kosumi";

@@ -55,7 +55,7 @@ let
             inherit username;
             inherit homeDirectory;
           };
-
+          programs.git.signing.signByDefault = !shell;
           xdg = {
             configHome = "${homeDirectory}/.config";
             enable = true;
