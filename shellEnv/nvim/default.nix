@@ -101,6 +101,12 @@ in {
         dart.enable = false;
         elixir.enable = false;
         markdown.enable = true;
+        yaml.enable = true;
+        cmake.enable = true;
+        json.enable = true;
+        vim.enable = true;
+        toml.enable = true;
+        java.enable = true;
       };
 
       vim.visuals = {

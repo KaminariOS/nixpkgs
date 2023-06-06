@@ -41,26 +41,6 @@ end
 
 -- require('rust-tools').setup(rust_tools_nvim)
 
-
-require'lspconfig'.jdtls.setup{
-    on_attach = on_lsp_attach,
-}
-
-require'lspconfig'.cmake.setup{}
-require'lspconfig'.taplo.setup{}
-require'lspconfig'.texlab.setup{
-    on_attach = on_lsp_attach,
-}
-require'lspconfig'.svelte.setup{
-    on_attach = on_lsp_attach,
-}
-require'lspconfig'.marksman.setup{}
-require'lspconfig'.bashls.setup{}
-require'lspconfig'.jsonls.setup{
-    cmd = { "vscode-json-languageserver", "--stdio" },
-}
-require'lspconfig'.yamlls.setup{}
-
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
 end

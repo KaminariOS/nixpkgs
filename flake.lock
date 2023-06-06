@@ -906,11 +906,11 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1686013114,
-        "narHash": "sha256-kDBnMisdm3S6eAnRQE7S3I1KJfNw5hfCZd6o0HuwakE=",
+        "lastModified": 1686031567,
+        "narHash": "sha256-h5wL8lotc1NLsAsby3JgB3G6jKruaxGB4ZaHbdSN57Q=",
         "owner": "KaminariOS",
         "repo": "neovim-flake",
-        "rev": "369d6e904c0f255397da1756d123207138fa7ecf",
+        "rev": "6418cb70ab21375ecee278e6e24d5fd02e475d6a",
         "type": "github"
       },
       "original": {
@@ -1109,11 +1109,11 @@
     },
     "nurpkgs": {
       "locked": {
-        "lastModified": 1686012200,
-        "narHash": "sha256-A9TWJjEP8P//lOrEawDZRyMWAU7G7uxlzS82n6/B4fo=",
+        "lastModified": 1686030115,
+        "narHash": "sha256-zv01tpM0aGOJMwPYZtWGxKhueQJwPys8/hvG6+JBeAg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "dbc2ec5eed49f4ed2f5b5f6ea55aa817d509ae3a",
+        "rev": "878654e3c67353ef27cc707271ec3fe3998a26ce",
         "type": "github"
       },
       "original": {
@@ -1238,11 +1238,11 @@
     "nvim-lspconfig": {
       "flake": false,
       "locked": {
-        "lastModified": 1685926136,
-        "narHash": "sha256-+lq+a5Fk481W/TbUZrhxwwGJue4PTZ7m7j2zaSgyQDg=",
+        "lastModified": 1686011199,
+        "narHash": "sha256-h0lXBNrIjJMyxsMWnwRdI6D+0FOAL6qpWBtpr53diuQ=",
         "owner": "neovim",
         "repo": "nvim-lspconfig",
-        "rev": "664de12a7816dfa348bb475607edfa4fe0122025",
+        "rev": "c89b22e9a6fd9747df1d101a2425f7454bb6d2ef",
         "type": "github"
       },
       "original": {
@@ -1546,11 +1546,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1686000057,
-        "narHash": "sha256-/5IVBdI9cUafv6DatiD3oUOTi28g7DjlG0rjS757tqc=",
+        "lastModified": 1686024140,
+        "narHash": "sha256-bR1Ua8ucl3FwkqnToP9b9PBR4O4GLu3PIu+T9ISc+c8=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "345ce9bde191773f62daed8d46df11b9b9fd739e",
+        "rev": "52ee9f7eccae028fca3dabbd0e75603a916d3ac6",
         "type": "gitlab"
       },
       "original": {
