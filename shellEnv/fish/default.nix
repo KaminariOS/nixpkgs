@@ -166,6 +166,7 @@ in
     shellAliases = {
       v = "nvim";
       c = "bat";
+      e = "exa --icons -l --no-user --no-permissions --git";
     };
     shellAbbrs = {
       #v = "nvim";
@@ -179,7 +180,6 @@ in
       ll = "exa -l --git";
       his = "history";
       lt = "exa --icons --tree --no-user --no-permissions --git";
-      e = "exa --icons -l --no-user --no-permissions --git";
       ls = "exa --icons -l --no-user --no-permissions --git";
       du = "dust";
       ps = "procs";
