@@ -268,7 +268,7 @@ in {
       };
 
       vim.ui = {
-        noice.enable = !true;
+        noice.enable = true;
         smartcolumn.enable = !true;
       };
 
