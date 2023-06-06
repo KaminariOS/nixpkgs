@@ -6,7 +6,7 @@ let
       editor = "nvim";
       pager = "delta";
     };
-    init.defaultBranch = "main";
+    init.defaultBranch = "master";
     merge = {
       conflictStyle = "diff3";
       tool = "vim_mergetool";
