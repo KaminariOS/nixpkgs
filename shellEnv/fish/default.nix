@@ -196,6 +196,7 @@ in
       gd = "git diff";
       gl = "git plo";
       gsh = "git show";
+      gdb = "gdb --tui";
     };
     plugins = [ custom.theme fenv ];
     interactiveShellInit = ''

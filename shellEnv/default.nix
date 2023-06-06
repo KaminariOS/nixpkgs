@@ -1,10 +1,16 @@
 let
   more = {
-    home.file.".ssh/config".text = ''
-      Host *.cloudlab.us
-        ForwardAgent yes
-        forwardX11Trusted yes
-    '';
+    home.file = {
+      ".ssh/config".text = ''
+        Host *.cloudlab.us
+          ForwardAgent yes
+          forwardX11Trusted yes
+      '';
+      ".gdbinit".text = ''
+        set auto-load safe-path / 
+        tui enable 
+      '';
+    };
     programs = {
       readline = {
         enable = true;
