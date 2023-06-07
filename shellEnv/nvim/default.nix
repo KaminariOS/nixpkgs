@@ -80,7 +80,7 @@ in
 
         vim.nnoremap = {
           "<leader>dd" = "<cmd>Telescope diagnostics<cr>";
-          "<leader>rr" = "<cmd>lua vim.lsp.buf.references()<cr>";
+          "<leader>rr" = "<cmd>Telescope lsp_references<cr>";
         };
 
         vim.languages = {
