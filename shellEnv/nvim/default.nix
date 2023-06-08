@@ -55,11 +55,8 @@ in
             vimtex
             zoxide-vim
 
-            nvim-jdtls
             #Debugging
             plenary-nvim
-            nvim-dap
-            nvim-dap-ui
           ];
           debugMode = {
             enable = false;
@@ -87,6 +84,7 @@ in
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
+          enableDebugger = true;
 
           nix.enable = true;
           html.enable = isMaximal;
