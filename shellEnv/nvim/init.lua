@@ -12,10 +12,10 @@ function dump(o)
     end
 end
 
-function on_lsp_attach(client, bufnr)
-	local opts = { noremap=true, silent=true }
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-end
+-- function on_lsp_attach(client, bufnr)
+-- 	local opts = { noremap=true, silent=true }
+--     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+-- end
 
 -- local rust_tools_nvim = {
 --     tools = {

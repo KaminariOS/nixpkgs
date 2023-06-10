@@ -97,7 +97,10 @@ in
           python.enable = isMaximal;
           dart.enable = false;
           elixir.enable = false;
-          markdown.enable = true;
+          markdown = {
+            enable = true;
+            glow.enable = true;
+          };
           yaml.enable = true;
           cmake.enable = true;
           json.enable = true;
