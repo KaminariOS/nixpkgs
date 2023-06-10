@@ -1,6 +1,5 @@
-{ config
-, lib
-, pkgs
+{ 
+  pkgs
 , ...
 }:
 let
@@ -30,7 +29,6 @@ in
           startPlugins = with pkgs.vimPlugins; [
             multiple-cursors
             # cs"'
-            vim-surround
             lsp-colors-nvim
             lsp_extensions-nvim
 
@@ -44,7 +42,6 @@ in
             vim-localvimrc
 
             vim-nix
-            # vim-pathogen
             # a universal set of defaults that (hopefully) everyone can agree on.
             vim-sensible
             # Automate infrastructure on any cloud
@@ -132,38 +129,6 @@ in
         vim.statusline = {
           lualine = {
             enable = true;
-            activeSection = {
-              a = ''
-                {
-                  {
-                    "mode",
-                    separator = {
-                    },
-                  },
-                }
-              '';
-              z = ''
-                {
-                  {
-                    "progress",
-                    color = {bg='none', fg='lavender'},
-                  },
-                  {
-                    "location",
-                    color = {bg='none', fg='lavender'},
-                  },
-                  {
-                    "branch",
-                    icon = ' •',
-                    separator = {
-                      left = ' ',
-                      right = ""
-                    },
-                    color = {bg='none', fg='lavender'},
-                  },
-                }
-              '';
-            };
             # theme = "catppuccin";
           };
         };
