@@ -1,12 +1,10 @@
 pkgs:
 let
   rustcli = with pkgs; [
-    nushell
     tealdeer
     zoxide
     tokei
     procs
-    starship
     gitui
     sd
     bandwhich
@@ -14,7 +12,6 @@ let
     atuin
     broot
     delta
-    helix
     ripgrep # fast grep
     # rga
     ripgrep-all
@@ -68,6 +65,10 @@ let
     systeroid
     # Like df
     lfs
+
+  ];
+
+  cargoAddons = with pkgs; [
     cargo-audit
     cargo-feature
     cargo-readme
@@ -85,14 +86,21 @@ let
     cargo-udeps
   ];
 
-  defaultShell = with pkgs; [
+  nixAddons = with pkgs; [
     any-nix-shell
-    xclip
-    killall # kill processes by name
-    ranger # terminal file explorer
-    direnv
+    nix-diff
+    nix-tree
+    nix-du
+    nix-prefetch-git
+    # Run unpatched binaries on Nix/NixOS easily.
+    manix
+    statix
+    # Comma runs software without installing it.
+    comma
+    cachix # nix caching
+  ];
 
-    clang-tools
+  lsps = with pkgs; [
     rnix-lsp # nix lsp server
     rust-analyzer
     gopls
@@ -111,6 +119,15 @@ let
     #   wgsl_analyzer
     #python-lsp-server
     cmake-language-server
+  ];
+
+  defaultShell = with pkgs; [
+    xclip
+    killall # kill processes by name
+    ranger # terminal file explorer
+    direnv
+
+    clang-tools
     fortune
     ccls
 
@@ -140,20 +157,10 @@ let
 
     file
 
-    nix-diff
-    nix-tree
-    nix-du
-    nix-prefetch-git
-    # Run unpatched binaries on Nix/NixOS easily.
-    manix
-    statix
-    # Comma runs software without installing it.
-    comma
 
     gh
     sshfs
 
-    cachix # nix caching
     nyancat # the famous rainbow cat!
     rclone
     # Postgres cli
@@ -162,4 +169,4 @@ let
     xpra
   ];
 in
-defaultShell ++ rustcli
+defaultShell ++ rustcli ++ cargoAddons ++ nixAddons ++ lsps

@@ -17,7 +17,6 @@ let
 
     simplescreenrecorder # screen recorder gui
     rofi
-    networkmanagerapplet
   ];
 
 
@@ -31,7 +30,6 @@ let
     rclone
     libsForQt5.kio-gdrive
     firefox
-    kate
     gnome.seahorse
   ];
   inherit (config.home) homeDirectory;
