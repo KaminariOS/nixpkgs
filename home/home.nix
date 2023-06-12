@@ -24,7 +24,6 @@ let
   nixos_app = with pkgs; [
     jetbrains.clion
     jetbrains.idea-ultimate
-    kitty
     i3status
     google-chrome
     rclone

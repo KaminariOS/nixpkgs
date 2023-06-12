@@ -6,6 +6,7 @@
       paths = with pkgs; [
         kitty.terminfo
         alacritty.terminfo
+        wezterm.terminfo
       ];
       postBuild = ''
         mv $out/share/terminfo/* $out/

@@ -132,6 +132,9 @@ let
     bind \\e\\[A _atuin_search
     bind -M insert \\e\\[A _atuin_search
     set_color normal
+
+    # Make vi mode work in wezterm
+    set fish_vi_force_cursor 1
   " + fzfConfig + themeConfig;
   #+ aliases;
 in

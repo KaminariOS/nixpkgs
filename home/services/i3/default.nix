@@ -31,12 +31,12 @@ in
       };
 
       assigns = {
-        "1" = [{ class = "kitty"; }];
+        "1" = [{ class = "wezterm"; }];
       };
 
       defaultWorkspace = "workspace number 9";
 
-      terminal = "kitty";
+      terminal = "wezterm";
 
 
       keybindings = lib.mkOptionDefault {
@@ -50,7 +50,7 @@ in
         # "${mod}+Shift+x" = "exec sh -c '${pkgs.i3lock}/bin/i3lock -c 222222 & sleep 5 && xset dpms force of'";
         #        "${mod}+Shift+x" = "exec i3lock-fancy-dualmonitor";
         "${mod}+Shift+x" = "exec loginctl lock-session";
-        "${mod}+Return" = "exec kitty; workspace1";
+        "${mod}+Return" = "exec wezterm; workspace1";
         "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
         "${mod}+Shift+d" = "exec ${pkgs.rofi}/bin/rofi -show window";
         # Focus
@@ -80,7 +80,7 @@ in
 
       startup = [
         {
-          command = "i3-msg 'workspace 1; exec kitty'";
+          command = "i3-msg 'workspace 1; exec wezterm'";
           always = true;
           notification = false;
         }
