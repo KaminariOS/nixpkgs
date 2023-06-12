@@ -8,6 +8,7 @@
   # ./xmonad
   ./yubikey
   ./steam
-  ./alacritty
+  # ./alacritty
   ./zathura
+  ./wezterm
 ]

@@ -23,7 +23,6 @@
     #heroic
     mpv
     mdcat
-    wezterm
     xdotool
     via
     networkmanager_dmenu
