@@ -29,7 +29,7 @@
            config.window_background_opacity = 0.8
 
            -- config.font = wezterm.font('Fira Code', { })
-           config.font_size = 30
+           config.font_size = 28
 
            config.window_frame = {
              -- The font used in the tab bar.
@@ -104,6 +104,13 @@
       end)
     }
   }
+      
+      config.window_padding = {
+        left = '0.5cell',
+        right = '0.5cell',
+        top = '0.1cell',
+        bottom = '0.0cell',
+      }
 
        -- and finally, return the configuration to wezterm
        return config
