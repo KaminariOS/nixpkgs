@@ -26,10 +26,10 @@
            -- For example, changing the color scheme:
            config.color_scheme = 'Catppuccin Mocha'
 
-           config.window_background_opacity = 0.8
+           config.window_background_opacity = 0.7
 
            -- config.font = wezterm.font('Fira Code', { })
-           config.font_size = 28
+           config.font_size = 36
 
            config.window_frame = {
              -- The font used in the tab bar.
@@ -106,9 +106,9 @@
   }
       
       config.window_padding = {
-        left = '0.5cell',
-        right = '0.5cell',
-        top = '0.1cell',
+        left = '0.0cell',
+        right = '0.0cell',
+        top = '0.2cell',
         bottom = '0.0cell',
       }
 
