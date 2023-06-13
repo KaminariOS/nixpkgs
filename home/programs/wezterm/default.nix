@@ -29,7 +29,7 @@
            config.window_background_opacity = 0.8
 
            -- config.font = wezterm.font('Fira Code', { })
-           config.font_size = 22
+           config.font_size = 30
 
            config.window_frame = {
              -- The font used in the tab bar.
