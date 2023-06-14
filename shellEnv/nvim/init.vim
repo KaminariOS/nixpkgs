@@ -115,7 +115,7 @@ endif
 " https://github.com/neovim/neovim/issues/5916
 " So we also map Ctrl+k
 nnoremap <C-j> <Esc>
-inoremap <C-j> J
+inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
 snoremap <C-j> <Esc>
 xnoremap <C-j> <Esc>
@@ -124,25 +124,35 @@ onoremap <C-j> <Esc>
 lnoremap <C-j> <Esc>
 tnoremap <C-j> <C-\><C-n>
 
-nnoremap <S-j> <Esc>
-inoremap <S-j> <Esc>
-vnoremap <S-j> <Esc>
-snoremap <S-j> <Esc>
-xnoremap <S-j> <Esc>
-cnoremap <S-j> <C-c>
-onoremap <S-j> <Esc>
-lnoremap <S-j> <Esc>
-tnoremap <S-j> <C-\><C-n>
+nnoremap <C-S-j> <Esc>
+inoremap <C-S-j> <Esc>
+vnoremap <C-S-j> <Esc>
+snoremap <C-S-j> <Esc>
+xnoremap <C-S-j> <Esc>
+cnoremap <C-S-j> <C-c>
+onoremap <C-S-j> <Esc>
+lnoremap <C-S-j> <Esc>
+tnoremap <C-S-j> <C-\><C-n>
 
-"nnoremap <C-k> <Esc>
-"inoremap <C-k> <Esc>
-"vnoremap <C-k> <Esc>
-"snoremap <C-k> <Esc>
-"xnoremap <C-k> <Esc>
-"cnoremap <C-k> <C-c>
-"onoremap <C-k> <Esc>
-"lnoremap <C-k> <Esc>
-"tnoremap <C-k> <C-\><C-n>
+" nnoremap kj <Esc>
+" inoremap kj <Esc>
+" vnoremap kj <Esc>
+" snoremap kj <Esc>
+" xnoremap kj <Esc>
+" cnoremap kj <C-c>
+" onoremap kj <Esc>
+" lnoremap kj <Esc>
+" tnoremap kj <C-\><C-n>
+
+nnoremap <C-k> <Esc>
+inoremap <C-k> <Esc>
+vnoremap <C-k> <Esc>
+snoremap <C-k> <Esc>
+xnoremap <C-k> <Esc>
+cnoremap <C-k> <C-c>
+onoremap <C-k> <Esc>
+lnoremap <C-k> <Esc>
+tnoremap <C-k> <C-\><C-n>
 
 "tnoremap <Esc> <C-\><C-n>
 
