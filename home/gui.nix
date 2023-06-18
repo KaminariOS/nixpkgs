@@ -21,7 +21,8 @@
     obs-studio
     #blender
     steam
-    #heroic
+    # heroic
+    lutris
     mpv
     mdcat
     xdotool
