@@ -60,6 +60,7 @@
        config.tab_bar_at_bottom = true
        config.tab_max_width = 36
        config.tab_bar_style = disabled_new_tab
+       config.adjust_window_size_when_changing_font_size = false
 
        config.colors = {
          tab_bar = {
