@@ -60,7 +60,7 @@ in
       Install.WantedBy = [ "timers.target" ];
       Timer = {
         OnBootSec = "40m";
-        OnUnitActiveSec = "40m";
+        OnUnitActiveSec = "1d";
       };
     };
     services = {
