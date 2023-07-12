@@ -49,7 +49,7 @@ let
       };
 
       modules = let homeDirectory = homed; in [
-        { imports = commonImports ++ (if shell then [ ../shellEnv/home.nix ] else [ ../home/home.nix ]); }
+        { imports = commonImports ++ (if shell then [ ../shellEnv/home.nix ] else [ ../home/home.nix inputs.plasma-manager.homeManagerModules.plasma-manager]); }
         {
           home = {
             inherit username;

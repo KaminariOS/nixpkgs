@@ -1395,6 +1395,29 @@
         "type": "github"
       }
     },
+    "plasma-manager": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1664383871,
+        "narHash": "sha256-dOnnzfqd/PCf1K3USKq2PqSGKmIqkr/SD7zHb1yoAyw=",
+        "owner": "pjones",
+        "repo": "plasma-manager",
+        "rev": "16c437e43a0e049b15c9bfd37295f6e978ea9955",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pjones",
+        "repo": "plasma-manager",
+        "type": "github"
+      }
+    },
     "plenary-nvim": {
       "flake": false,
       "locked": {
@@ -1490,6 +1513,7 @@
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-nautilus-gtk3": "nixpkgs-nautilus-gtk3",
         "nurpkgs": "nurpkgs",
+        "plasma-manager": "plasma-manager",
         "rycee-nurpkgs": "rycee-nurpkgs",
         "tex2nix": "tex2nix"
       }

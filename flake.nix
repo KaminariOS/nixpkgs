@@ -20,6 +20,10 @@
 
     nixpkgs-nautilus-gtk3.url = "github:NixOS/nixpkgs?ref=37bd398";
 
+    plasma-manager.url = "github:pjones/plasma-manager";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    plasma-manager.inputs.home-manager.follows = "home-manager";
+
     rycee-nurpkgs = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
