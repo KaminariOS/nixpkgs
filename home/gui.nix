@@ -8,7 +8,7 @@
     zoom-us
     discord
     slack
-    telegram-desktop   
+    telegram-desktop
 
     wireshark
     # HDR image viewer

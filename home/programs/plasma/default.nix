@@ -9,16 +9,16 @@
       "kcm_touchpad"."Enable Touchpad" = "Touchpad On";
       "kcm_touchpad"."Toggle Touchpad" = "Touchpad Toggle";
       "kded5"."Show System Activity" = "Ctrl+Esc";
-      "kded5"."display" = ["Display" "Meta+P"];
+      "kded5"."display" = [ "Display" "Meta+P" ];
       "khotkeys"."{d03619b6-9b3c-48cc-9d9c-a2aadb485550}" = [ ];
       "kmix"."decrease_microphone_volume" = "Microphone Volume Down";
       "kmix"."decrease_volume" = "Volume Down";
       "kmix"."increase_microphone_volume" = "Microphone Volume Up";
       "kmix"."increase_volume" = "Volume Up";
-      "kmix"."mic_mute" = ["Microphone Mute" "Meta+Volume Mute"];
+      "kmix"."mic_mute" = [ "Microphone Mute" "Meta+Volume Mute" ];
       "kmix"."mute" = "Volume Mute";
       "ksmserver"."Halt Without Confirmation" = [ ];
-      "ksmserver"."Lock Session" = ["Meta+L" "Ctrl+Alt+L" "Screensaver"];
+      "ksmserver"."Lock Session" = [ "Meta+L" "Ctrl+Alt+L" "Screensaver" ];
       "ksmserver"."Log Out" = "Ctrl+Alt+Del";
       "ksmserver"."Log Out Without Confirmation" = [ ];
       "ksmserver"."Reboot Without Confirmation" = [ ];
@@ -26,7 +26,7 @@
       "kwin"."Decrease Opacity" = [ ];
       "kwin"."Edit Tiles" = "Meta+T";
       "kwin"."Expose" = "Ctrl+F9";
-      "kwin"."ExposeAll" = ["Ctrl+F10" "Launch (C)"];
+      "kwin"."ExposeAll" = [ "Ctrl+F10" "Launch (C)" ];
       "kwin"."ExposeClass" = "Ctrl+F7";
       "kwin"."ExposeClassCurrentDesktop" = [ ];
       "kwin"."Increase Opacity" = [ ];
@@ -190,7 +190,7 @@
       "org.kde.konsole.desktop"."NewWindow" = [ ];
       "org.kde.konsole.desktop"."_launch" = "Ctrl+Alt+T";
       "org.kde.krunner.desktop"."RunClipboard" = "Alt+Shift+F2";
-      "org.kde.krunner.desktop"."_launch" = ["Alt+Space" "Alt+F2" "Search"];
+      "org.kde.krunner.desktop"."_launch" = [ "Alt+Space" "Alt+F2" "Search" ];
       "org.kde.plasma.emojier.desktop"."_launch" = "Meta+.";
       "org.kde.spectacle.desktop"."ActiveWindowScreenShot" = "Meta+Print";
       "org.kde.spectacle.desktop"."CurrentMonitorScreenShot" = [ ];
