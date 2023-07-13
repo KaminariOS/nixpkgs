@@ -168,6 +168,7 @@ in
     };
     shellAliases = {
       v = "nvim";
+      vc= "nvim --clean";
       c = "bat";
       e = "exa --icons -l --no-user --no-permissions --git";
     };
