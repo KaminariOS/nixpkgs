@@ -24,7 +24,11 @@ noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
 set clipboard+=unnamedplus
+
+" Auto reload when file changes
 set autoread
+au CursorHold * checktime  
+
 set autowriteall
 set undofile
 set undodir=~/.config/nvim
