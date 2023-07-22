@@ -24,6 +24,7 @@ in
           viAlias = false;
           vimAlias = true;
           preventJunkFiles = true;
+          lineNumberMode = "number";
           configRC.custom = let vimrc = builtins.readFile ./init.vim; in entryBetween [ "basic" ] [ ] vimrc;
           startPlugins = with pkgs.vimPlugins; [
             multiple-cursors
@@ -71,8 +72,11 @@ in
           lspSignature.enable = true;
         };
 
-        vim.nnoremap = {
-          "<leader>dd" = "<cmd>Telescope diagnostics<cr>";
+        vim.debugger = {
+          nvim-dap = {
+            enable = true;
+            ui.enable = true;
+          };
         };
 
         vim.languages = {
@@ -80,7 +84,6 @@ in
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
-          enableDebugger = true;
 
           nix.enable = true;
           html.enable = isMaximal;
@@ -137,8 +140,8 @@ in
 
         vim.theme = {
           enable = true;
-          name = "catppuccin";
-          style = "mocha";
+          name = "nightfox";
+          style = "auto";
           transparent = true;
         };
         vim = {
@@ -192,7 +195,7 @@ in
         };
 
         vim.minimap = {
-          minimap-vim.enable = false;
+          minimap-vim.enable = true;
           codewindow.enable = true; # lighter, faster, and uses lua for configuration
         };
 
@@ -212,7 +215,7 @@ in
         };
 
         vim.utility = {
-          colorizer.enable = true;
+          ccc.enable = true;
           icon-picker.enable = true;
           diffview-nvim.enable = true;
           motion = {

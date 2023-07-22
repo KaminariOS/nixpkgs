@@ -63,7 +63,7 @@ filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 " set spell                 " enable spell check (may need to download language package)
-set relativenumber
+" set relativenumber
 set visualbell
 map <C-c> <Esc>
 
