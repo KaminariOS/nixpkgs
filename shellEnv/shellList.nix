@@ -119,6 +119,7 @@ let
     #   wgsl_analyzer
     #python-lsp-server
     cmake-language-server
+    code-minimap
   ];
 
   defaultShell = with pkgs; [
