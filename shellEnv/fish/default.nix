@@ -20,6 +20,18 @@ let
     name = "foreign-env";
     inherit (pkgs.fishPlugins.foreign-env) src;
   };
+  bass = {
+    name = "bass";
+    inherit (pkgs.fishPlugins.bass) src;
+  };
+  puffer = {
+    name = "puffer";
+    inherit (pkgs.fishPlugins.puffer) src;
+  };
+  done = {
+    name = "done";
+    inherit (pkgs.fishPlugins.done) src;
+  };
   #aliases = ''
   #alias z  "zoxide"
   #alias nuco  "nvim ~/.config/nushell/config.nu"
@@ -202,7 +214,7 @@ in
       gsh = "git show";
       gdb = "gdb --tui";
     };
-    plugins = [ custom.theme fenv ];
+    plugins = [ custom.theme fenv bass puffer done];
     interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
