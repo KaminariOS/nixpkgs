@@ -6,7 +6,7 @@
   ./nheko
   ./rofi
   # ./xmonad
-  ./yubikey
+  # ./yubikey
   ./steam
   # ./alacritty
   ./zathura
