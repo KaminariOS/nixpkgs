@@ -168,8 +168,8 @@ in
 
   # Making fonts accessible to applications.
   fonts = {
-    enableDefaultFonts = true;
-    fonts = with pkgs; [
+    enableDefaultPackages = true;
+    packages = with pkgs; [
       ubuntu_font_family
       customFonts
       font-awesome
