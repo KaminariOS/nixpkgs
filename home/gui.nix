@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   gui_packages = with pkgs; [
-    i3status
+    # i3status
     brightnessctl
     #    polybar
     feh
@@ -16,6 +16,7 @@
 
     maim
     gdbgui
+    # Your One-Stop Publication Workbench 
     zettlr
 
     obs-studio
@@ -29,6 +30,7 @@
     via
     networkmanager_dmenu
     networkmanagerapplet
+    # Inlyne - a GPU powered, browserless, markdown + html viewer
     inlyne
     graphviz
   ];

@@ -15,7 +15,7 @@ let
     #    nodePackages.dockerfile-language-server-nodejs
     #   nodePackages.vscode-json-languageserver
 
-    simplescreenrecorder # screen recorder gui
+    # simplescreenrecorder # screen recorder gui
     rofi
   ];
 
@@ -24,10 +24,9 @@ let
   nixos_app = with pkgs; [
     jetbrains.clion
     jetbrains.idea-ultimate
-    i3status
     google-chrome
     rclone
-    libsForQt5.kio-gdrive
+    # libsForQt5.kio-gdrive
     firefox
     gnome.seahorse
   ];
