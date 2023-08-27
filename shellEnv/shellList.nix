@@ -13,8 +13,7 @@ let
     broot
     delta
     ripgrep # fast grep
-    # rga
-    ripgrep-all
+    # ripgrep-all
 
     navi # cheatsheet
     skim
@@ -133,7 +132,7 @@ let
     ccls
 
     #An implementation of the Debug Adapter Protocol for Python 
-    python310Packages.debugpy
+    # python310Packages.debugpy
 
     prettyping # a nicer ping
     xsel # clipboard support (also for neovim)

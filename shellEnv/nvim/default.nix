@@ -125,7 +125,7 @@ in
             eolChar = null;
             showCurrContext = true;
           };
-          cursorWordline = {
+          cursorline = {
             enable = true;
             lineTimeout = 0;
           };
@@ -155,10 +155,10 @@ in
         };
 
         vim.filetree = {
-          nvimTreeLua = {
+          nvimTree = {
             enable = true;
             renderer = {
-              rootFolderLabel = null;
+              rootFolderLabel = true;
             };
             view = {
               width = 25;
@@ -168,7 +168,7 @@ in
                 quitOnOpen = true;
               };
             };
-            openTreeOnNewTab = false;
+            # openTreeOnNewTab = false;
             openOnSetup = false;
           };
         };
