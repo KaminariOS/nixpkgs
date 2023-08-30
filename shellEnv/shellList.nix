@@ -132,7 +132,7 @@ let
     ccls
 
     #An implementation of the Debug Adapter Protocol for Python 
-    # python310Packages.debugpy
+    python310Packages.debugpy
 
     prettyping # a nicer ping
     xsel # clipboard support (also for neovim)
@@ -167,6 +167,9 @@ let
     pgcli
 
     xpra
+
+    pandoc
+    texlive.combined.scheme-small
   ];
 in
 defaultShell ++ rustcli ++ cargoAddons ++ nixAddons ++ lsps
