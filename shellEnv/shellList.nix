@@ -1,6 +1,8 @@
 pkgs:
 let
   rustcli = with pkgs; [
+    # A fast duplicate file finder
+    # ddh
     tealdeer
     zoxide
     tokei
@@ -9,6 +11,7 @@ let
     sd
     bandwhich
     hexyl
+    # Shell history
     atuin
     broot
     delta
@@ -41,6 +44,7 @@ let
     htmlq
     jless
     jql
+    # file server
     miniserve
 
     # CLI tool for saving web pages as a single HTML file
