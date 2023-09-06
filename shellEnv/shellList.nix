@@ -145,15 +145,11 @@ let
     unzip
 
 
-    gnumake
-    cmake
-    gcc
-    gdb
     #rust-gdb
     lldb
     evcxr
 
-    python3
+    # python3
     iftop
 
     taskwarrior
