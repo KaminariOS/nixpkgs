@@ -68,7 +68,8 @@ let
     systeroid
     # Like df
     lfs
-
+    # Put a rainbow in everything you `cat` to the console. Like lolcat
+    dotacat
   ];
 
   cargoAddons = with pkgs; [
