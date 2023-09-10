@@ -4,8 +4,10 @@ let
     # A fast duplicate file finder
     # ddh
     tealdeer
+    # Better cd 
     zoxide
     tokei
+    # ps
     procs
     gitui
     sd
@@ -13,7 +15,9 @@ let
     hexyl
     # Shell history
     atuin
+    # A new way to see and navigate directory trees (get an overview of a directory, even a big one; find a directory then cd to it; never lose track of file hierarchy while you search; manipulate your files, ...)
     broot
+    # Better diff
     delta
     ripgrep # fast grep
     # ripgrep-all
@@ -70,6 +74,12 @@ let
     lfs
     # Put a rainbow in everything you `cat` to the console. Like lolcat
     dotacat
+    # Command-line Git information tool 
+    onefetch
+    # Fast, minimal and customizable system information frontend.
+    macchina
+    # Rust REPL
+    evcxr
   ];
 
   cargoAddons = with pkgs; [
@@ -146,15 +156,10 @@ let
     unzip
 
 
-    gnumake
-    cmake
-    gcc
-    gdb
     #rust-gdb
     lldb
-    evcxr
 
-    python3
+    # python3
     iftop
 
     taskwarrior
