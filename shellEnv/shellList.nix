@@ -146,6 +146,11 @@ let
     fortune
     ccls
 
+    # gnumake
+    # cmake 
+    # gcc
+    gdb
+
     #An implementation of the Debug Adapter Protocol for Python 
     python310Packages.debugpy
 
@@ -159,7 +164,7 @@ let
     #rust-gdb
     lldb
 
-    # python3
+    python3
     iftop
 
     taskwarrior
