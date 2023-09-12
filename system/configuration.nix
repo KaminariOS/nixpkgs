@@ -224,6 +224,9 @@ in
       Defaults lecture=always
       Defaults lecture_file=${misc/groot.txt}
     '';
+
+  # lets users use sudo without password
+    sudo.wheelNeedsPassword = false;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -236,6 +239,8 @@ in
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
+
+    nixPath = ["nixpkgs=${pkgs.path}"];
 
     # Flakes settings
     package = pkgs.nixVersions.stable;
