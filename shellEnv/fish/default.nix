@@ -38,12 +38,12 @@ let
   #alias hxco  "hx ~/.config/helix/config.toml"
   #alias alco  "nvim ~/.config/alacritty/alacritty.yml"
   #alias nico  "nvim ~/.config/nixpkgs/home.nix"
-  #alias ll  "exa -l"
+  #alias ll  "eza -l"
   #alias his  "history"
   #alias c  "bat"
-  #alias lt  "exa --icons --tree --no-user --no-permissions"
-  #alias e "exa --icons -l --no-user --no-permissions"
-  #alias ls  "exa --icons -l --no-user --no-permissions"
+  #alias lt  "eza --icons --tree --no-user --no-permissions"
+  #alias e "eza --icons -l --no-user --no-permissions"
+  #alias ls  "eza --icons -l --no-user --no-permissions"
   #alias du  "dust"
   #alias ps  "procs"
   #alias rfr  "rofi -show run"
@@ -182,7 +182,7 @@ in
       v = "nvim";
       vc= "nvim --clean";
       c = "bat";
-      e = "exa --icons -l --no-user --no-permissions --git";
+      e = "eza --icons -l --no-user --no-permissions --git";
     };
     shellAbbrs = {
       #v = "nvim";
@@ -193,10 +193,10 @@ in
       swim = "home-manager switch --flake '${config.home.homeDirectory}/nixpkgs#${config.home.username}'";
       shr = "home-manager switch --flake github:KaminariOS/nixpkgs/dev#shellhome --extra-experimental-features nix-command --extra-experimental-features flakes";
       nico = "nvim ~/.config/nixpkgs/home.nix";
-      ll = "exa -l --git";
+      ll = "eza -l --git";
       his = "history";
-      lt = "exa --icons --tree --no-user --no-permissions --git";
-      ls = "exa --icons -l --no-user --no-permissions --git";
+      lt = "eza --icons --tree --no-user --no-permissions --git";
+      ls = "eza --icons -l --no-user --no-permissions --git";
       du = "dust";
       ps = "procs";
       rfr = "rofi -show run";

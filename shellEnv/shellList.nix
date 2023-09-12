@@ -27,7 +27,7 @@ let
 
     bottom # alternative to htop & ytop
     du-dust # disk usage/free utility
-    exa # a better `ls`
+    eza # a better `ls`
     fd # "find" for files
     hyperfine # command-line benchmarking tool
     # File manager
@@ -80,6 +80,9 @@ let
     macchina
     # Rust REPL
     evcxr
+
+    # File manager
+    # yazi
   ];
 
   cargoAddons = with pkgs; [

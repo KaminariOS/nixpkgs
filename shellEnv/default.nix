@@ -109,7 +109,7 @@ in
   ./terminfo.nix
   ./nix-index.nix
   ./bat
-  ./xplr
+  # ./xplr
   ./gitui
   more
 ]
