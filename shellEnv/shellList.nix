@@ -82,7 +82,7 @@ let
     evcxr
 
     # File manager
-    # yazi
+    yazi
   ];
 
   cargoAddons = with pkgs; [
