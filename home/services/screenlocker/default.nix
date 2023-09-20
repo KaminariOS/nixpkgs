@@ -3,7 +3,7 @@
 {
   services.screen-locker = {
     enable = true;
-    inactiveInterval = 30;
+    inactiveInterval = 3600;
     #lockCmd = "${pkgs.betterlockscreen}/bin/betterlockscreen -l blur";
     lockCmd = "${pkgs.betterlockscreen}/bin/betterlockscreen -l --off 30";
     #    xautolock.extraOptions = [
