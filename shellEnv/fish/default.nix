@@ -210,7 +210,7 @@ in
       ga = "git ca";
       gs = "git st";
       gd = "git diff";
-      gl = "git plo";
+      gl = "git plo --ff-only";
       gsh = "git show";
       gdb = "gdb --tui";
     };
