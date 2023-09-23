@@ -213,6 +213,7 @@ in
       gl = "git plo --ff-only";
       gsh = "git show";
       gdb = "gdb --tui";
+      zel = "zellij -l compact";
     };
     plugins = [ custom.theme fenv bass puffer done];
     interactiveShellInit = ''
