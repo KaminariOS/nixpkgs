@@ -188,6 +188,8 @@ let
 
     pandoc
     texlive.combined.scheme-small
+
+    screen
   ];
 in
 defaultShell ++ rustcli ++ cargoAddons ++ nixAddons ++ lsps
