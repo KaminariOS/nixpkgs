@@ -190,6 +190,8 @@ let
     texlive.combined.scheme-small
 
     screen
+    dmidecode
+    gptfdisk
   ];
 in
 defaultShell ++ rustcli ++ cargoAddons ++ nixAddons ++ lsps
