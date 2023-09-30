@@ -225,7 +225,7 @@ in
       Defaults lecture_file=${misc/groot.txt}
     '';
 
-  # lets users use sudo without password
+    # lets users use sudo without password
     sudo.wheelNeedsPassword = false;
   };
 
@@ -240,7 +240,7 @@ in
       options = "--delete-older-than 7d";
     };
 
-    nixPath = ["nixpkgs=${pkgs.path}"];
+    nixPath = [ "nixpkgs=${pkgs.path}" ];
 
     # Flakes settings
     package = pkgs.nixVersions.stable;

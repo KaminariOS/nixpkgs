@@ -180,7 +180,7 @@ in
     };
     shellAliases = {
       v = "nvim";
-      vc= "nvim --clean";
+      vc = "nvim --clean";
       c = "bat";
       e = "eza --icons -l --no-user --no-permissions --git";
     };
@@ -215,7 +215,7 @@ in
       gdb = "gdb --tui";
       zel = "zellij -l compact";
     };
-    plugins = [ custom.theme fenv bass puffer done];
+    plugins = [ custom.theme fenv bass puffer done ];
     interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source
