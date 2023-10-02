@@ -198,6 +198,7 @@ in
     partition-manager.enable = true;
     #xwayland.enable = true;
     dconf.enable = true;
+    nm-applet.enable = true;
     ssh.extraConfig = ''
       Host *.cloudlab.us
         ForwardAgent yes
