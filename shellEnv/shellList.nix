@@ -192,6 +192,8 @@ let
     screen
     dmidecode
     gptfdisk
+
+    glow
   ];
 in
 defaultShell ++ rustcli ++ cargoAddons ++ nixAddons ++ lsps

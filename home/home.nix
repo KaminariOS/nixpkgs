@@ -54,6 +54,12 @@ in
 
   # restart services on change
   systemd.user = {
+    targets.tray = {
+		Unit = {
+			Description = "Home Manager System Tray";
+			Requires = [ "graphical-session-pre.target" ];
+		};
+	};
     startServices = "sd-switch";
     timers.wallpaper = {
       Install.WantedBy = [ "timers.target" ];

@@ -33,6 +33,8 @@
     # Inlyne - a GPU powered, browserless, markdown + html viewer
     inlyne
     graphviz
+
+    steam-run
   ];
 
 }
