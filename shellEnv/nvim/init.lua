@@ -112,3 +112,126 @@ end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
+local handler = function(virtText, lnum, endLnum, width, truncate)
+    local newVirtText = {}
+    local suffix = (' 󰁂 %d '):format(endLnum - lnum)
+    local sufWidth = vim.fn.strdisplaywidth(suffix)
+    local targetWidth = width - sufWidth
+    local curWidth = 0
+    for _, chunk in ipairs(virtText) do
+        local chunkText = chunk[1]
+        local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+        if targetWidth > curWidth + chunkWidth then
+            table.insert(newVirtText, chunk)
+        else
+            chunkText = truncate(chunkText, targetWidth - curWidth)
+            local hlGroup = chunk[2]
+            table.insert(newVirtText, {chunkText, hlGroup})
+            chunkWidth = vim.fn.strdisplaywidth(chunkText)
+            -- str width returned from truncate() may less than 2nd argument, need padding
+            if curWidth + chunkWidth < targetWidth then
+                suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
+            end
+            break
+        end
+        curWidth = curWidth + chunkWidth
+    end
+    table.insert(newVirtText, {suffix, 'MoreMsg'})
+    return newVirtText
+end
+
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
+
+------------------------------------------enhanceAction---------------------------------------------
+local function peekOrHover()
+    local winid = require('ufo').peekFoldedLinesUnderCursor()
+    if winid then
+        local bufnr = vim.api.nvim_win_get_buf(winid)
+        local keys = {'a', 'i', 'o', 'A', 'I', 'O', 'gd', 'gr'}
+        for _, k in ipairs(keys) do
+            -- Add a prefix key to fire `trace` action,
+            -- if Neovim is 0.8.0 before, remap yourself
+            vim.keymap.set('n', k, '<CR>' .. k, {noremap = false, buffer = bufnr})
+        end
+    else
+        -- nvimlsp
+        vim.lsp.buf.hover()
+    end
+end
+
+local function goPreviousClosedAndPeek()
+    require('ufo').goPreviousClosedFold()
+    require('ufo').peekFoldedLinesUnderCursor()
+end
+
+local function goNextClosedAndPeek()
+    require('ufo').goNextClosedFold()
+    require('ufo').peekFoldedLinesUnderCursor()
+end
+
+require('ufo').setup({
+    open_fold_hl_timeout = 150,
+    close_fold_kinds = {'imports', 'comment'},
+    preview = {
+        win_config = {
+            border = {'', '─', '', '', '', '─', '', ''},
+            winhighlight = 'Normal:Folded',
+            winblend = 0
+        },
+        mappings = {
+            scrollU = '<C-u>',
+            scrollD = '<C-d>',
+            jumpTop = '[',
+            jumpBot = ']'
+        }
+    },
+    fold_virt_text_handler = handler,
+    enhanceAction = peekOrHover,
+    provider_selector = function(bufnr, filetype, buftype)
+        return {'treesitter', 'indent'}
+    end
+})
+
+-- require('fold-preview').setup({
+--          -- Your configuration goes here.
+--          auto = 400
+-- })
+M = {}
+local api = vim.api
+local fn = vim.fn
+api.nvim_create_autocmd('CursorMoved', {
+         callback = function()
+            local curwin = api.nvim_get_current_win()
+            local line = api.nvim_win_get_cursor(curwin)[1]
+
+            local function callback()
+               if M.timer then
+                  M.timer:stop()
+                  M.timer:close()
+                  M.timer = nil
+               end
+
+               if curwin == api.nvim_get_current_win()
+                  and line == api.nvim_win_get_cursor(curwin)[1]
+                  and fn.foldclosed('.') ~= -1
+               then
+		  peekOrHover()
+               end
+            end
+
+            if M.timer then
+               M.timer:stop()
+            else
+               M.timer = vim.loop.new_timer()
+            end
+            M.timer:start(400, 0, vim.schedule_wrap(callback))
+         end
+      })

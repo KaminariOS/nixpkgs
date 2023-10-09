@@ -54,6 +54,11 @@ in
 
             #Debugging
             plenary-nvim
+
+            promise-async
+            nvim-ufo
+            
+            # fold-preview-nvim
           ];
           debugMode = {
             enable = false;
@@ -181,6 +186,7 @@ in
           enable = true;
           autotagHtml = true;
           context.enable = true;
+          # fold = true;
         };
 
         vim.binds = {
