@@ -28,11 +28,14 @@
     mdcat
     xdotool
     via
-    networkmanager_dmenu
+    # networkmanager_dmenu
     networkmanagerapplet
     # Inlyne - a GPU powered, browserless, markdown + html viewer
     inlyne
     graphviz
+    
+    # File manager
+    gnome.nautilus
 
     steam-run
   ];
