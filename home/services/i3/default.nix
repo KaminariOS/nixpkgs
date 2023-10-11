@@ -6,8 +6,10 @@ in
 {
   xsession.initExtra =
     ''
-      #${pkgs.kwallet-pam}/libexec/pam_kwallet_init
-      #${pkgs.networkmanagerapplet}/bin/nm-applet --sm-disable 
+    # Disable screensaver
+    xset s off
+    xset s noblank
+    xset -dpms
     '';
 
   xsession.profileExtra = ''
