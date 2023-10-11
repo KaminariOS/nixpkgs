@@ -72,6 +72,7 @@ let
     systeroid
     # Like df
     lfs
+    duf
     # Put a rainbow in everything you `cat` to the console. Like lolcat
     dotacat
     # Command-line Git information tool 
