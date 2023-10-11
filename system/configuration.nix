@@ -55,13 +55,35 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = let themes = pkgs.callPackage ./sddm-theme.nix {}; in 
+  (with pkgs; [
     firejail
     vim
     wget
     home-manager
-    kwallet-pam
-  ];
+    # kwallet-pam
+  ]) ++ 
+  (with pkgs.libsForQt5.qt5; [qtgraphicaleffects qtsvg qtquickcontrols]) ++
+  [themes.sddm-sugar-candy];
+
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    cheese # webcam tool
+    gnome-music
+    gnome-terminal
+    gedit # text editor
+    epiphany # web browser
+    geary # email reader
+    evince # document viewer
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ]);
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -125,10 +147,41 @@ in
     #gnome.gnome-keyring.enable = true;
     tailscale.enable = true;
 
-    xserver.enable = true;
-    #xserver.autorun = false;
-    #xserver.displayManager.startx.enable = true;
-    #xserver.displayManager.xpra.enable = true;
+    xserver = {
+      # Enable the X11 windowing system.
+      enable = true;
+
+        displayManager = {                          # Display Manage
+        sddm = {
+          enable = true;
+          enableHidpi = true;
+          theme = "sugar-candy";
+        };
+          # lightdm = {
+          #   enable = true;
+          #   background = pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath;
+          #   greeters = {
+          #     gtk = {
+          #       theme = {
+          #         name = "Dracula";
+          #         package = pkgs.dracula-theme;
+          #       };
+          #       cursorTheme = {
+          #         name = "Dracula-cursors";
+          #         package = pkgs.dracula-theme;
+          #         size = 16;
+          #       };
+          #     };
+          #   };
+          # };
+        defaultSession = "none+i3";
+    };
+    windowManager.i3.enable = true;
+
+    # Configure keymap in X11
+    layout = "us";
+    xkbVariant = "";
+  };
 
     # Enable the OpenSSH daemon.
     openssh = {
@@ -218,8 +271,8 @@ in
       debug = false;
       mode = "challenge-response";
     };
-    #pam.services.login.enableGnomeKeyring = true;
-    pam.services.kwallet.enableKwallet = true;
+    pam.services.login.enableGnomeKeyring = true;
+    # pam.services.kwallet.enableKwallet = true;
     # Sudo custom prompt message
     sudo.configFile = ''
       Defaults lecture=always
