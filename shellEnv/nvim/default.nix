@@ -57,7 +57,7 @@ in
 
             promise-async
             nvim-ufo
-            
+
             # fold-preview-nvim
           ];
           debugMode = {

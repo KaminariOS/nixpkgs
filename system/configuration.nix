@@ -55,16 +55,16 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = let themes = pkgs.callPackage ./sddm-theme.nix {}; in 
-  (with pkgs; [
-    firejail
-    vim
-    wget
-    home-manager
-    # kwallet-pam
-  ]) ++ 
-  (with pkgs.libsForQt5.qt5; [qtgraphicaleffects qtsvg qtquickcontrols]) ++
-  [themes.sddm-sugar-candy];
+  environment.systemPackages = let themes = pkgs.callPackage ./sddm-theme.nix { }; in
+    (with pkgs; [
+      firejail
+      vim
+      wget
+      home-manager
+      # kwallet-pam
+    ]) ++
+    (with pkgs.libsForQt5.qt5; [ qtgraphicaleffects qtsvg qtquickcontrols ]) ++
+    [ themes.sddm-sugar-candy ];
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
@@ -151,37 +151,38 @@ in
       # Enable the X11 windowing system.
       enable = true;
 
-        displayManager = {                          # Display Manage
+      displayManager = {
+        # Display Manage
         sddm = {
           enable = true;
           enableHidpi = true;
           theme = "sugar-candy";
         };
-          # lightdm = {
-          #   enable = true;
-          #   background = pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath;
-          #   greeters = {
-          #     gtk = {
-          #       theme = {
-          #         name = "Dracula";
-          #         package = pkgs.dracula-theme;
-          #       };
-          #       cursorTheme = {
-          #         name = "Dracula-cursors";
-          #         package = pkgs.dracula-theme;
-          #         size = 16;
-          #       };
-          #     };
-          #   };
-          # };
+        # lightdm = {
+        #   enable = true;
+        #   background = pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath;
+        #   greeters = {
+        #     gtk = {
+        #       theme = {
+        #         name = "Dracula";
+        #         package = pkgs.dracula-theme;
+        #       };
+        #       cursorTheme = {
+        #         name = "Dracula-cursors";
+        #         package = pkgs.dracula-theme;
+        #         size = 16;
+        #       };
+        #     };
+        #   };
+        # };
         defaultSession = "none+i3";
-    };
-    windowManager.i3.enable = true;
+      };
+      windowManager.i3.enable = true;
 
-    # Configure keymap in X11
-    layout = "us";
-    xkbVariant = "";
-  };
+      # Configure keymap in X11
+      layout = "us";
+      xkbVariant = "";
+    };
 
     # Enable the OpenSSH daemon.
     openssh = {
