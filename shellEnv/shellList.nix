@@ -60,7 +60,6 @@ let
     # Pipr is a commandline pipe-building tool, written in Rust!
     pipr
 
-    #rip
     rargs
     xcp
     kalker
@@ -84,6 +83,9 @@ let
 
     # File manager
     yazi
+
+    # Replacement for rm with focus on safety, ergonomics and performance
+    rm-improved
   ];
 
   cargoAddons = with pkgs; [
