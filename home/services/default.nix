@@ -21,7 +21,7 @@ in
   ./screenlocker
   ./udiskie
   ./i3
-  # ./eww
+  ./eww
   ./espanso
   more
 ]
