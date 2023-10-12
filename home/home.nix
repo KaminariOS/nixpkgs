@@ -113,16 +113,16 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-   home.pointerCursor = {
-      x11.enable = true;
-      # name = "Adwaita";
-      # package = pkgs.gnome.adwaita-icon-theme;
-      # name = "WhiteSur-cursors";
-      # package = pkgs.whitesur-cursors;
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 48;
-    };
+  home.pointerCursor = {
+    x11.enable = true;
+    # name = "Adwaita";
+    # package = pkgs.gnome.adwaita-icon-theme;
+    # name = "WhiteSur-cursors";
+    # package = pkgs.whitesur-cursors;
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
+    size = 48;
+  };
   gtk = {
     enable = true;
     iconTheme = {

@@ -33,7 +33,7 @@
     # Inlyne - a GPU powered, browserless, markdown + html viewer
     inlyne
     graphviz
-    
+
     # File manager
     gnome.nautilus
 

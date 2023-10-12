@@ -3,37 +3,43 @@
     #cross platform text expander in Rust.
     espanso = {
       enable = true;
-      settings =
-        {
+      matches = {
+        base = {
           matches = [
             {
-              # Simple text replacement
+              #     # Simple text replacement
               trigger = ":espanso";
               replace = "Hi there!";
             }
             {
-              # Dates
-              trigger = ":date";
-              replace = "{{mydate}}";
-              vars = [{
-                name = "mydate";
-                type = "date";
-                params = { format = "%m/%d/%Y"; };
-              }];
+              trigger = ":now";
+              replace = "It's {{currentdate}} {{currenttime}}";
             }
             {
-              # Shell commands
-              trigger = ":shell";
-              replace = "{{output}}";
-              vars = [{
-                name = "output";
-                type = "shell";
-                params = { cmd = "echo Hello from your shell"; };
-              }];
+              trigger = ":hello";
+              replace = "line1\nline2";
+            }
+            {
+              regex = ":hi(?P<person>.*)\\.";
+              replace = "Hi {{person}}!";
             }
           ];
         };
-
+        global_vars = {
+          global_vars = [
+            {
+              name = "currentdate";
+              type = "date";
+              params = { format = "%d/%m/%Y"; };
+            }
+            {
+              name = "currenttime";
+              type = "date";
+              params = { format = "%R"; };
+            }
+          ];
+        };
+      };
 
     };
   };

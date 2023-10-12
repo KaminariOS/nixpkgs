@@ -6,10 +6,10 @@ in
 {
   xsession.initExtra =
     ''
-    # Disable screensaver
-    xset s off
-    xset s noblank
-    xset -dpms
+      # Disable screensaver
+      xset s off
+      xset s noblank
+      xset -dpms
     '';
 
   xsession.profileExtra = ''
