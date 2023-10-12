@@ -183,6 +183,7 @@ in
       vc = "nvim --clean";
       c = "bat";
       e = "eza --icons -l --no-user --no-permissions --git";
+      r = "rip";
     };
     shellAbbrs = {
       #v = "nvim";
@@ -214,6 +215,7 @@ in
       gsh = "git show";
       gdb = "gdb --tui";
       zel = "zellij -l compact";
+      logout = "pkill -u $USER";
     };
     plugins = [ custom.theme fenv bass puffer done ];
     interactiveShellInit = ''

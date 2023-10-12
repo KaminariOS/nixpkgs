@@ -70,8 +70,9 @@ let
     # systeroid — A more powerful alternative to sysctl(8).
     systeroid
     # Like df
-    lfs
     duf
+    # lfs
+
     # Put a rainbow in everything you `cat` to the console. Like lolcat
     dotacat
     # Command-line Git information tool 
