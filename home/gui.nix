@@ -3,7 +3,6 @@
   gui_packages = with pkgs; [
     # i3status
     brightnessctl
-    #    polybar
     feh
     zoom-us
     discord
@@ -38,6 +37,8 @@
     gnome.nautilus
 
     steam-run
+
+    okular
   ];
 
 }
