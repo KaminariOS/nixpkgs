@@ -3,8 +3,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    #nixpkgs.url = "nixpkgs/nixos-22.05";
-    #nixpkgs.url = "github:NixOS/nixpkgs/e913ad8b17d40a12d982384372f387b63f3b5812";
 
     nurpkgs.url = "github:nix-community/NUR";
 
@@ -20,9 +18,9 @@
 
     nixpkgs-nautilus-gtk3.url = "github:NixOS/nixpkgs?ref=37bd398";
 
-    plasma-manager.url = "github:pjones/plasma-manager";
-    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
-    plasma-manager.inputs.home-manager.follows = "home-manager";
+    # plasma-manager.url = "github:pjones/plasma-manager";
+    # plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # plasma-manager.inputs.home-manager.follows = "home-manager";
 
     rycee-nurpkgs = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
