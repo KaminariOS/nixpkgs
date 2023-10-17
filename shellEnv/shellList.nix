@@ -10,20 +10,20 @@ let
     # ps
     procs
     gitui
-    sd
+    sd # is an intuitive find & replace CLI.
     bandwhich
     hexyl
     # Shell history
     atuin
     # A new way to see and navigate directory trees (get an overview of a directory, even a big one; find a directory then cd to it; never lose track of file hierarchy while you search; manipulate your files, ...)
     broot
-    # Better diff
-    delta
+    
+    delta # Better diff
     ripgrep # fast grep
     # ripgrep-all
 
     navi # cheatsheet
-    skim
+    skim # Half of our life is spent on navigation: files, lines, commands… You need skim! It is a general fuzzy finder that saves you time.
 
     bottom # alternative to htop & ytop
     du-dust # disk usage/free utility
@@ -31,18 +31,19 @@ let
     fd # "find" for files
     hyperfine # command-line benchmarking tool
     # File manager
-    xplr
-    # Port scanner
-    rustscan
+    # xplr
+    
+    rustscan # Port scanner
     grex # A command-line tool for generating regular expressions from user-provided test cases
-    pstree
 
     # This is choose, a human-friendly and fast alternative to cut and (sometimes) awk
     choose
     # dog is a command-line DNS client.
     dog
+
     # dua (-> Disk Usage Analyzer) is a tool to conveniently learn about the usage of disk space of a given directory. It's parallel by default and will max out your SSD, providing relevant information as fast as possible. Optionally delete superfluous data, and do so more quickly than rm.
     dua
+
     # Efficient duplicate file finder and remover
     fclones
     htmlq
@@ -61,7 +62,8 @@ let
     pipr
 
     rargs
-    xcp
+    xcp # xcp is a (partial) clone of the Unix cp command. It is not intended as a full replacement, but as a companion utility with some more user-friendly feedback and some optimisations that make sense under certain tasks (see below).
+
     kalker
     # fend is an arbitrary-precision unit-aware calculator.
     # > 5'10" to cm
@@ -198,6 +200,8 @@ let
     gptfdisk
 
     glow
+
+    picocom
   ];
 in
 defaultShell ++ rustcli ++ cargoAddons ++ nixAddons ++ lsps
