@@ -62,6 +62,9 @@
            config.tab_bar_style = disabled_new_tab
            config.adjust_window_size_when_changing_font_size = false
 
+           config.xim_im_name = 'fcitx'
+           config.use_ime = true
+
            config.colors = {
              tab_bar = {
           -- The color of the strip that goes along the top of the window
