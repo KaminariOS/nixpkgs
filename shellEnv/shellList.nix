@@ -1,6 +1,7 @@
 pkgs:
 let
   rustcli = with pkgs; [
+    # xsv
     # A fast duplicate file finder
     # ddh
     tealdeer
