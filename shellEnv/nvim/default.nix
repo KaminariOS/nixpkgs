@@ -98,6 +98,7 @@ in
             enable = isMaximal;
             crates.enable = true;
           };
+          tex.enable = true;
           ts.enable = false;
           go.enable = isMaximal;
           zig.enable = false;
