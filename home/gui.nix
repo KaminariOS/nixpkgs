@@ -39,6 +39,7 @@
     steam-run
 
     okular
+    oculante 
   ];
 
 }

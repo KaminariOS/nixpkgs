@@ -90,6 +90,8 @@ let
 
     # Replacement for rm with focus on safety, ergonomics and performance
     rm-improved
+
+    viu
   ];
 
   cargoAddons = with pkgs; [
