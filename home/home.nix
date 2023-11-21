@@ -49,6 +49,7 @@ in
     sessionVariables = {
       DISPLAY = ":0";
       EDITOR = "nvim";
+      TERM_PROGRAM = "WezTerm";
     };
   };
 
