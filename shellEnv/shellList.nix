@@ -191,7 +191,7 @@ let
     nyancat # the famous rainbow cat!
     rclone
     # Postgres cli
-    pgcli
+    # pgcli
 
     xpra
 
