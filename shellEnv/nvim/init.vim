@@ -31,7 +31,7 @@ au CursorHold * checktime
 
 set autowriteall
 set undofile
-set undodir=~/.config/nvim
+set undodir=~/.cache/nvim
 augroup jump_last_position
   autocmd!
   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -187,3 +187,4 @@ nnoremap <leader>tr :NvimTreeRefresh<CR>
 
 luafile ~/.config/nvim/config.lua
 
+nnoremap gx <CMD>execute '!open ' .. shellescape(expand('<cfile>'), v:true)<CR><CR>
