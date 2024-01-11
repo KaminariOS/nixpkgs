@@ -176,6 +176,8 @@ let
     #rust-gdb
     lldb
 
+    rr
+
     python3
     iftop
 
