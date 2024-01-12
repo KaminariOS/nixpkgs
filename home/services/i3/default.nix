@@ -99,9 +99,13 @@ in
             always = true;
             notification = false;
           }
-
           {
             command = "systemctl --user restart polybar.service";
+            always = true;
+            notification = false;
+          }
+          {
+            command = "systemctl --user restart imec.service";
             always = true;
             notification = false;
           }
