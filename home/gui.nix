@@ -11,7 +11,7 @@
 
     wireshark
     # HDR image viewer
-    tev
+    # tev
 
     maim
     gdbgui

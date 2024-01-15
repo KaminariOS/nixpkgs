@@ -164,7 +164,7 @@ let
     gdb
 
     #An implementation of the Debug Adapter Protocol for Python 
-    python310Packages.debugpy
+    # python310Packages.debugpy
 
     prettyping # a nicer ping
     xsel # clipboard support (also for neovim)
