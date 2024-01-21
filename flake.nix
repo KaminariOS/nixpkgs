@@ -12,20 +12,20 @@
     };
 
     homeage = {
-      url = "github:jordanisaacs/homeage?ref=323037e";
+      url = "github:jordanisaacs/homeage";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs-nautilus-gtk3.url = "github:NixOS/nixpkgs?ref=37bd398";
+    # nixpkgs-nautilus-gtk3.url = "github:NixOS/nixpkgs?ref=37bd398";
 
     # plasma-manager.url = "github:pjones/plasma-manager";
     # plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
     # plasma-manager.inputs.home-manager.follows = "home-manager";
 
-    rycee-nurpkgs = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # rycee-nurpkgs = {
+    #   url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     neovim-flake = {
       # url = "github:notashelf/neovim-flake";
       url = "github:KaminariOS/neovim-flake/master";

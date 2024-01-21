@@ -25,6 +25,7 @@ in
           vimAlias = true;
           preventJunkFiles = true;
           lineNumberMode = "number";
+          useSystemClipboard = true;
           configRC.custom = let vimrc = builtins.readFile ./init.vim; in entryBetween [ "basic" ] [ ] vimrc;
           startPlugins = with pkgs.vimPlugins; [
             multiple-cursors
@@ -32,7 +33,6 @@ in
             lsp-colors-nvim
             lsp_extensions-nvim
 
-            # vim-compe
             # vim-airline
             vim-cpp-enhanced-highlight
             vim-fish
@@ -45,19 +45,20 @@ in
             # a universal set of defaults that (hopefully) everyone can agree on.
             vim-sensible
             # Automate infrastructure on any cloud
-            # vim-terraform
             # vim-tmux-navigator
             vim-twig
             vim-vue
             vimtex
+
+            # https://github.com/nanotee/zoxide.vim
             zoxide-vim
 
             #Debugging
-            plenary-nvim
 
             promise-async
-            nvim-ufo
 
+            # https://github.com/kevinhwang91/nvim-ufo
+            nvim-ufo
             # fold-preview-nvim
           ];
           debugMode = {
@@ -89,10 +90,14 @@ in
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
+          enableDAP = true;
 
           nix.enable = true;
           html.enable = isMaximal;
-          clang.enable = isMaximal;
+          clang = {
+            enable = isMaximal;
+            cHeader = true;
+          };
           sql.enable = false;
           rust = {
             enable = isMaximal;
@@ -116,6 +121,7 @@ in
           toml.enable = true;
           java.enable = true;
           bash.enable = true;
+          terraform.enable = isMaximal;
         };
 
         vim.visuals = {
@@ -125,6 +131,9 @@ in
           smoothScroll.enable = true;
           cellularAutomaton.enable = true;
           fidget-nvim.enable = !true;
+          highlight-undo = {
+            enable = true;
+          };
           indentBlankline = {
             enable = true;
             fillChar = null;
@@ -154,6 +163,11 @@ in
           autopairs.enable = true;
           autosaving.enable = true;
           telescope.enable = true;
+          spellChecking = {
+            enable = true;
+            # Ensure that the :DirtytalkUpdate command is executed after install and update
+            enableProgrammingWordList = true;
+          };
         };
         vim.autocomplete = {
           enable = true;
@@ -176,6 +190,30 @@ in
             };
             # openTreeOnNewTab = false;
             openOnSetup = false;
+            diagnostics = {
+              enable = true;
+              showOnDirs = true;
+            };
+            git = {
+              enable = true;
+
+            };
+            modified = {
+              enable = true;
+            };
+            renderer = {
+              highlightGit = true;
+              highlightModified = "all";
+              highlightOpenedFiles = "all";
+              icons = {
+                gitPlacement = "after";
+                modifiedPlacement = "before";
+                show = {
+                  git = true;
+                  modified = true;
+                };
+              };
+            };
           };
         };
 
@@ -187,6 +225,7 @@ in
           enable = true;
           autotagHtml = true;
           context.enable = true;
+          fold = true;
           # fold = true;
         };
 
@@ -225,6 +264,9 @@ in
           ccc.enable = true;
           icon-picker.enable = true;
           diffview-nvim.enable = true;
+          surround = {
+            enable = true;
+          };
           motion = {
             hop.enable = true;
             leap.enable = true;
@@ -248,6 +290,8 @@ in
         vim.ui = {
           noice.enable = true;
           smartcolumn.enable = !true;
+          # Whether to enable vim-illuminate: automatically highlight other uses of the word under the cursor.
+          illuminate.enable = true;
         };
 
         vim.assistant = {
@@ -259,6 +303,9 @@ in
           nvim-session-manager = {
             enable = true;
             autoloadMode = "Disabled";
+          };
+          neoconf = {
+            enable = true;
           };
         };
 
