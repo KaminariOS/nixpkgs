@@ -1006,11 +1006,11 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1705948249,
-        "narHash": "sha256-aZe1bsOScFzI9/kOEz9y4+wlglRjZ82/MVsHpU1XcE4=",
+        "lastModified": 1705959702,
+        "narHash": "sha256-vEaKtqQ8SeQ0y3SZU7mWLZJkbhY6yCx41mLQnR3jaNk=",
         "owner": "KaminariOS",
         "repo": "neovim-flake",
-        "rev": "f3ed8e7581a09b18f605a166e8cad2e87c7649b2",
+        "rev": "f30666bef235acbc7659ad1441f9b8a71d2463af",
         "type": "github"
       },
       "original": {
