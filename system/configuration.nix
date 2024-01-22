@@ -110,11 +110,6 @@ in
         dates = "weekly";
       };
     };
-
-    virtualbox.host = {
-      enable = false;
-      enableExtensionPack = false;
-    };
   };
 
   users.extraGroups.vboxusers.members = [ "kosumi" ];

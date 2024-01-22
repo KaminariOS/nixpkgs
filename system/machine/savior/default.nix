@@ -26,6 +26,12 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  virtualisation = {
+    virtualbox.host = {
+      enable = true;
+      enableExtensionPack = true;
+    };
+  };
   # Set your time zone.
   time.timeZone = "America/Denver";
 
