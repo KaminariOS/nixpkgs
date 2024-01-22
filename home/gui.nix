@@ -24,7 +24,7 @@
     # heroic
     lutris
     mpv
-    mdcat
+    # mdcat
     xdotool
     via
     # networkmanager_dmenu

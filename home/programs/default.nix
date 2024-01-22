@@ -9,7 +9,7 @@
   # ./yubikey
   ./steam
   # ./alacritty
-  ./zathura
+  # ./zathura
   ./wezterm
   # ./plasma
 ]

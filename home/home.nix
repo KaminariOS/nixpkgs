@@ -6,14 +6,12 @@ let
     arandr # simple GUI for xrandr
     asciinema # record the terminal
 
-    gimp # gnu image manipulation program
+    # gimp # gnu image manipulation program
 
     betterlockscreen # fast lockscreen based on i3lock
 
     # nodePackages_latest.bash-language-server
-    #   nodePackages_latest.vscode-css-languageserver-bin
     #    nodePackages.dockerfile-language-server-nodejs
-    #   nodePackages.vscode-json-languageserver
 
     # simplescreenrecorder # screen recorder gui
     rofi
