@@ -30,6 +30,9 @@
 
                -- config.font = wezterm.font('Fira Code', { })
                config.font_size = 32
+               config.font = wezterm.font_with_fallback {
+               }
+
 
                config.window_frame = {
                  -- The font used in the tab bar.

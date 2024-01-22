@@ -5,14 +5,14 @@ in
 {
   programs.starship.settings = {
     aws.symbol = mkDefault " ";
-    battery.full_symbol = mkDefault "";
+    battery.full_symbol = mkDefault "";
     battery.charging_symbol = mkDefault "";
     battery.discharging_symbol = mkDefault "";
-    battery.unknown_symbol = mkDefault "";
-    battery.empty_symbol = mkDefault "";
-    cmake.symbol = mkDefault "△ ";
+    battery.unknown_symbol = mkDefault "󰂑";
+    battery.empty_symbol = mkDefault "";
+    cmake.symbol = mkDefault " ";
     conda.symbol = mkDefault " ";
-    crystal.symbol = mkDefault " ";
+    crystal.symbol = mkDefault " ";
     dart.symbol = mkDefault " ";
     directory.read_only = mkDefault " ";
     docker_context.symbol = mkDefault " ";
@@ -42,11 +42,11 @@ in
     kotlin.symbol = mkDefault " ";
     kubernetes.symbol = mkDefault "☸ ";
     lua.symbol = mkDefault " ";
-    memory_usage.symbol = mkDefault " ";
+    memory_usage.symbol = mkDefault "󰍛 ";
     nim.symbol = mkDefault " ";
     nix_shell.symbol = mkDefault " ";
-    nodejs.symbol = mkDefault " ";
-    openstack.symbol = mkDefault " ";
+    nodejs.symbol = mkDefault "󰎙 ";
+    openstack.symbol = mkDefault " ";
     package.symbol = mkDefault " ";
     perl.symbol = mkDefault " ";
     php.symbol = mkDefault " ";
@@ -57,11 +57,11 @@ in
     shlvl.symbol = mkDefault " ";
     status.symbol = mkDefault " ";
     status.not_executable_symbol = mkDefault " ";
-    status.not_found_symbol = mkDefault " ";
+    status.not_found_symbol = mkDefault " ";
     status.sigint_symbol = mkDefault " ";
     status.signal_symbol = mkDefault " ";
     swift.symbol = mkDefault " ";
-    terraform.symbol = mkDefault "𝗧 ";
+    terraform.symbol = mkDefault "󱁢 ";
     vagrant.symbol = mkDefault "𝗩 ";
     zig.symbol = mkDefault " ";
   };
