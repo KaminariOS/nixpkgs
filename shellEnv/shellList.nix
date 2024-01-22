@@ -18,7 +18,7 @@ let
     atuin
     # A new way to see and navigate directory trees (get an overview of a directory, even a big one; find a directory then cd to it; never lose track of file hierarchy while you search; manipulate your files, ...)
     broot
-    
+
     delta # Better diff
     ripgrep # fast grep
     ripgrep-all
@@ -33,8 +33,7 @@ let
     hyperfine # command-line benchmarking tool
     # File manager
     # xplr
-    
-    rustscan # Port scanner
+
     grex # A command-line tool for generating regular expressions from user-provided test cases
 
     # This is choose, a human-friendly and fast alternative to cut and (sometimes) awk
@@ -94,6 +93,12 @@ let
     viu
   ];
 
+  security = with pkgs; [
+    rustcat # Port listener and reverse shell
+    rustscan # Port scanner
+
+  ];
+
   cargoAddons = with pkgs; [
     cargo-audit
     cargo-feature
@@ -146,17 +151,17 @@ let
     #python-lsp-server
     cmake-language-server
     code-minimap
+    ccls
   ];
 
   defaultShell = with pkgs; [
     xclip
     killall # kill processes by name
-    ranger # terminal file explorer
+    # ranger # terminal file explorer
     direnv
 
     clang-tools
     fortune
-    ccls
 
     # gnumake
     # cmake 
@@ -209,4 +214,6 @@ let
     picocom
   ];
 in
-defaultShell ++ rustcli ++ cargoAddons ++ nixAddons ++ lsps
+defaultShell ++ rustcli ++
+# cargoAddons ++ 
+nixAddons ++ lsps

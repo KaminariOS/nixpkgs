@@ -101,7 +101,6 @@ in
   ./nvim
   #./neovim
   ./starship
-  ./starship/symbols.nix
   ./zellij
   ./git
   ./fish
