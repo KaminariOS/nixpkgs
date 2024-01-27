@@ -96,7 +96,7 @@ let
   security = with pkgs; [
     rustcat # Port listener and reverse shell
     rustscan # Port scanner
-
+    ropgadget # Tool to search for gadgets in binaries to facilitate ROP exploitation
   ];
 
   cargoAddons = with pkgs; [
@@ -184,7 +184,7 @@ let
     rr
 
     python3
-    iftop
+    # iftop
 
     taskwarrior
     taskwarrior-tui

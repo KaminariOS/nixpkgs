@@ -58,7 +58,7 @@ in
   environment.systemPackages = let themes = pkgs.callPackage ./sddm-theme.nix { }; in
     (with pkgs; [
       firejail
-      vim
+      neovim
       wget
       home-manager
       # kwallet-pam
