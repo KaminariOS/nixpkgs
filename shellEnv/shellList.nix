@@ -97,6 +97,7 @@ let
     rustcat # Port listener and reverse shell
     rustscan # Port scanner
     ropgadget # Tool to search for gadgets in binaries to facilitate ROP exploitation
+    metasploit # pentesting
   ];
 
   cargoAddons = with pkgs; [
