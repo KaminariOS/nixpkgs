@@ -175,8 +175,8 @@ in
       windowManager.i3.enable = true;
 
       # Configure keymap in X11
-      layout = "us";
-      xkbVariant = "";
+      xkb.layout = "us";
+      xkb.variant = "";
     };
 
     # Enable the OpenSSH daemon.

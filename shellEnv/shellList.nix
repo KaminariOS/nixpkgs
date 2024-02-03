@@ -90,7 +90,7 @@ let
     # Replacement for rm with focus on safety, ergonomics and performance
     rm-improved
 
-    viu
+    viu # A command-line application to view images from the terminal written in Rust
   ];
 
   security = with pkgs; [
@@ -98,6 +98,13 @@ let
     rustscan # Port scanner
     ropgadget # Tool to search for gadgets in binaries to facilitate ROP exploitation
     metasploit # pentesting
+
+    hashcat # Fast password cracker 
+    hashcat-utils # Small utilities that are useful in advanced password cracking
+
+    aircrack-ng
+    kismet # Wireless network sniffer
+    burpsuite # An integrated platform for performing security testing of web applications
   ];
 
   cargoAddons = with pkgs; [
@@ -134,25 +141,27 @@ let
 
   lsps = with pkgs; [
     rnix-lsp # nix lsp server
-    rust-analyzer
-    gopls
+    # rust-analyzer
+    # gopls
     haskell-language-server
     # java-language-server
-    texlab
-    taplo-lsp # A TOML toolkit written in Rust
+    # texlab
+    # taplo-lsp # A TOML toolkit written in Rust
     # sumneko-lua-language-server
-    nodePackages.vim-language-server
-    nodePackages.yaml-language-server
-    nodePackages.vscode-json-languageserver
-    nodePackages.bash-language-server
-    nodePackages.svelte-language-server
-    jdt-language-server
-    marksman
+    # nodePackages.vim-language-server
+    # nodePackages.yaml-language-server
+    # nodePackages.vscode-json-languageserver
+    # nodePackages.bash-language-server
+    # nodePackages.svelte-language-server
+    # jdt-language-server
+    # marksman
     #   wgsl_analyzer
     #python-lsp-server
-    cmake-language-server
+    # cmake-language-server
+    # ccls
+
+    # ruff # An extremely fast Python linter and code formatter, written in Rust. 
     code-minimap
-    ccls
   ];
 
   defaultShell = with pkgs; [
@@ -213,6 +222,11 @@ let
     glow
 
     picocom
+
+    usbutils
+    pciutils
+
+    iw # iw is a new nl80211 based CLI configuration utility for wireless devices. The old tool iwconfig, which uses Wireless Extensions interface, is deprecated and it's strongly recommended to switch to iw and nl80211. 
   ];
 in
 defaultShell ++ rustcli ++
