@@ -206,7 +206,7 @@ let
     sshfs
 
     nyancat # the famous rainbow cat!
-    rclone
+    # rclone
     # Postgres cli
     # pgcli
 
