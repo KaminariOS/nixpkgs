@@ -197,11 +197,11 @@ in
       ll = "eza -l --git";
       his = "history";
       lt = "eza --icons --tree --no-user --no-permissions --git";
-      ls = "eza --icons -l --no-user --no-permissions --git";
+      # ls = "eza --icons -l --no-user --no-permissions --git";
       du = "dust";
       ps = "procs";
       rfr = "rofi -show run";
-      diff = "delta";
+      dif = "delta";
       ca = "cargo";
       idea = "idea-ultimate";
       clo = "clion .";
@@ -213,7 +213,7 @@ in
       gd = "git diff";
       gl = "git plo --ff-only";
       gsh = "git show";
-      gdb = "gdb --tui";
+      gdb = "gdb";
       zel = "zellij -l compact";
       logout = "pkill -u $USER";
     };

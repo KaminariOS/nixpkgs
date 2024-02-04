@@ -7,9 +7,10 @@ let
     tealdeer
     # Better cd 
     zoxide
-    tokei
+    tokei # Count your code, quickly.
     # ps
     procs
+
     gitui
     sd # is an intuitive find & replace CLI.
     bandwhich
@@ -20,6 +21,7 @@ let
     broot
 
     delta # Better diff
+
     ripgrep # fast grep
     ripgrep-all
 
@@ -61,10 +63,11 @@ let
     # Pipr is a commandline pipe-building tool, written in Rust!
     pipr
 
-    rargs
+    rargs # Rargs is kind of xargs + awk with pattern-matching support. https://github.com/lotabout/rargs
     xcp # xcp is a (partial) clone of the Unix cp command. It is not intended as a full replacement, but as a companion utility with some more user-friendly feedback and some optimisations that make sense under certain tasks (see below).
 
-    kalker
+    kalker # https://github.com/PaddiM8/kalker
+
     # fend is an arbitrary-precision unit-aware calculator.
     # > 5'10" to cm
     # 177.8 cm
@@ -182,7 +185,7 @@ let
     # python310Packages.debugpy
 
     prettyping # a nicer ping
-    xsel # clipboard support (also for neovim)
+    # xsel # clipboard support (also for neovim)
 
     zip
     unzip
@@ -201,12 +204,11 @@ let
 
     file
 
-
     gh
     sshfs
 
     nyancat # the famous rainbow cat!
-    # rclone
+
     # Postgres cli
     # pgcli
 

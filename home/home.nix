@@ -24,7 +24,6 @@ let
     jetbrains.idea-ultimate
     google-chrome
     rclone
-    # libsForQt5.kio-gdrive
     firefox
     gnome.seahorse
   ];
@@ -70,7 +69,7 @@ in
     services = {
       imec = {
         Unit.Description = "...";
-        Service.ExecStart = "/run/current-system/sw/bin/fcitx5";
+        Service.ExecStart = "${pkgs.fcitx5-with-addons}/bin/fcitx5";
         Install.WantedBy = [ "default.target" ]; # starts after login
       };
       rclone = {
