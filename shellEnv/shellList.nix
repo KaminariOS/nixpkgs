@@ -229,6 +229,8 @@ let
     pciutils
 
     iw # iw is a new nl80211 based CLI configuration utility for wireless devices. The old tool iwconfig, which uses Wireless Extensions interface, is deprecated and it's strongly recommended to switch to iw and nl80211. 
+
+    wthrr # Weather companion for the terminal 
   ];
 in
 defaultShell ++ rustcli ++

@@ -137,6 +137,21 @@ let
       fortune -a
     end
 
+    function oku 
+      okular $argv &; disown
+    end 
+
+    function clo 
+      clion $argv &; disown 
+    end
+
+    function idea 
+      idea-ultimate $argv &; disown 
+    end
+
+    function wssh 
+      wezterm ssh $argv &; disown 
+    end
 
     set -gx ATUIN_NOBIND true
     # bind to ctrl-r in normal and insert mode, add any other bindings you want here too
@@ -184,8 +199,14 @@ in
       c = "bat";
       e = "eza --icons -l --no-user --no-permissions --git";
       r = "rip";
+      yz = "yazi";
+      mk = "make";
+      wt = "wthrr";
     };
     shellAbbrs = {
+      drr = "direnv reload";
+      dra = "direnv allow";
+      drb = "direnv block";
       #v = "nvim";
       tt = "taskwarrior-tui";
       # nuco = "nvim ~/.config/nushell/config.nu";
@@ -203,8 +224,6 @@ in
       rfr = "rofi -show run";
       dif = "delta";
       ca = "cargo";
-      idea = "idea-ultimate";
-      clo = "clion .";
       man = "batman";
       scs = "systemctl suspend";
       gp = "git pso";
@@ -213,6 +232,7 @@ in
       gd = "git diff";
       gl = "git plo --ff-only";
       gsh = "git show";
+      gcl = "git clone";
       gdb = "gdb";
       zel = "zellij -l compact";
       logout = "pkill -u $USER";

@@ -9,8 +9,9 @@ bindsym $mod+c exec clion, workspace 3
 
 assign [class="chrome"] 2
 assign [class="firefox"] 2
-#assign [class="clion"] 3
-#assign [class="idea"] 3
+assign [class="clion"] 3
+assign [class="idea"] 3
+assign [class="okular"] 4
 
 popup_during_fullscreen smart
 default_border pixel 2

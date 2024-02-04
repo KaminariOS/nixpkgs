@@ -58,6 +58,8 @@ in
       plo = "pull origin";
       pop = "reset --soft HEAD^1";
       url = "remote set-url origin";
+      rs = "restore";
+      ch = "checkout";
     };
     extraConfig = gitConfig;
     ignores = [
