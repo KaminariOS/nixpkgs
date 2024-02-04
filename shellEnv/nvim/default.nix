@@ -22,7 +22,7 @@ in
       {
         vim = {
           viAlias = false;
-          vimAlias = true;
+          vimAlias = false;
           preventJunkFiles = true;
           lineNumberMode = "number";
           useSystemClipboard = true;
