@@ -26,7 +26,6 @@
     mpv
     # mdcat
     xdotool
-    via
     # networkmanager_dmenu
     networkmanagerapplet
     # Inlyne - a GPU powered, browserless, markdown + html viewer

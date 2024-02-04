@@ -188,7 +188,7 @@ in
     blueman.enable = true;
     # Yubikey smart card mode (CCID) and OTP mode (udev)
     pcscd.enable = true;
-    udev.packages = [ pkgs.yubikey-personalization ];
+    udev.packages = with pkgs; [ yubikey-personalization via ];
     udev.extraRules = ''
       # https://github.com/stlink-org/stlink/blob/32e8dcc8b5dbed7b6412e7838ea1b2c41f0247fd/config/udev/rules.d/49-stlinkv1.rules
       ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3744", TAG+="uaccess"
