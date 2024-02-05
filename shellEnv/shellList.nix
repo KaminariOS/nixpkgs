@@ -99,7 +99,11 @@ let
   security = with pkgs; [
     rustcat # Port listener and reverse shell
     rustscan # Port scanner
+    feroxbuster # Fast, simple, recursive content discovery tool
+
     ropgadget # Tool to search for gadgets in binaries to facilitate ROP exploitation
+    pwndbg # Exploit Development and Reverse Engineering with GDB Made Easy
+
     metasploit # pentesting
 
     hashcat # Fast password cracker 

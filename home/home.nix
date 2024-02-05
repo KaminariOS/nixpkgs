@@ -50,6 +50,10 @@ in
     };
   };
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [ fcitx5-rime fcitx5-chinese-addons fcitx5-mozc ];
+  };
   # restart services on change
   systemd.user = {
     targets.tray = {
@@ -69,7 +73,7 @@ in
     services = {
       imec = {
         Unit.Description = "...";
-        Service.ExecStart = "${pkgs.fcitx5-with-addons}/bin/fcitx5";
+        Service.ExecStart = "${config.home.homeDirectory}/.nix-profile/bin/fcitx5";
         Install.WantedBy = [ "default.target" ]; # starts after login
       };
       rclone = {
