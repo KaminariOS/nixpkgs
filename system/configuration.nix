@@ -240,13 +240,14 @@ in
 
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
+      arphic-ukai
     ];
 
     fontconfig = {
       defaultFonts = {
-        serif = [ "noto-fonts-cjk-serif" "Ubuntu" ];
-        sansSerif = [ "noto-fonts-cjk-sans" "IPAPGothic" "Ubuntu" ];
-        monospace = [ "fira-code" ];
+        serif = [ "arphic-ukai" "Ubuntu" ];
+        sansSerif = [ "arphic-ukai" "IPAPGothic" "Ubuntu" ];
+        monospace = ["arphic-ukai" "fira-code" ];
       };
     };
   };
