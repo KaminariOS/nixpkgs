@@ -202,6 +202,12 @@ in
       yz = "yazi";
       mk = "make";
       wt = "wthrr";
+      py = "python";
+
+      nfu = "nix flake update";
+      ngc = "nix-collect-garbage -d";
+      nsh = "nix-shell -p";
+      gad = "git add";
     };
     shellAbbrs = {
       drr = "direnv reload";
