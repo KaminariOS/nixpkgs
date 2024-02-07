@@ -5,11 +5,11 @@ in
 {
   programs.starship.settings = {
     aws.symbol = mkDefault " ";
-    battery.full_symbol = mkDefault "";
-    battery.charging_symbol = mkDefault "";
-    battery.discharging_symbol = mkDefault "";
+    battery.full_symbol = mkDefault " ";
+    battery.charging_symbol = mkDefault " ";
+    battery.discharging_symbol = mkDefault " ";
     battery.unknown_symbol = mkDefault "󰂑";
-    battery.empty_symbol = mkDefault "";
+    battery.empty_symbol = mkDefault " ";
     cmake.symbol = mkDefault " ";
     conda.symbol = mkDefault " ";
     crystal.symbol = mkDefault " ";
@@ -21,7 +21,7 @@ in
     elm.symbol = mkDefault " ";
     erlang.symbol = mkDefault " ";
     gcloud.symbol = mkDefault " ";
-    git_branch.symbol = mkDefault " ";
+    git_branch.symbol = mkDefault " ";
     git_commit.tag_symbol = mkDefault " ";
     git_status.format = mkDefault "([$all_status$ahead_behind]($style) )";
     git_status.conflicted = mkDefault " ";
