@@ -5,11 +5,13 @@ in
 {
   programs.starship.settings = {
     aws.symbol = mkDefault " ";
-    battery.full_symbol = mkDefault " ";
-    battery.charging_symbol = mkDefault " ";
-    battery.discharging_symbol = mkDefault " ";
-    battery.unknown_symbol = mkDefault "󰂑";
-    battery.empty_symbol = mkDefault " ";
+    battery = {
+      full_symbol = mkDefault " ";
+      charging_symbol = mkDefault " ";
+      discharging_symbol = mkDefault " ";
+      unknown_symbol = mkDefault "󰂑";
+      empty_symbol = mkDefault " ";
+    };
     cmake.symbol = mkDefault " ";
     conda.symbol = mkDefault " ";
     crystal.symbol = mkDefault " ";
@@ -23,17 +25,19 @@ in
     gcloud.symbol = mkDefault " ";
     git_branch.symbol = mkDefault " ";
     git_commit.tag_symbol = mkDefault " ";
-    git_status.format = mkDefault "([$all_status$ahead_behind]($style) )";
-    git_status.conflicted = mkDefault " ";
-    git_status.ahead = mkDefault " ";
-    git_status.behind = mkDefault " ";
-    git_status.diverged = mkDefault " ";
-    git_status.untracked = mkDefault " ";
-    git_status.stashed = mkDefault "📚 ";
-    git_status.modified = mkDefault "✒️ ";
-    git_status.staged = mkDefault " ";
-    git_status.renamed = mkDefault " ";
-    git_status.deleted = mkDefault " ";
+    git_status = {
+      format = mkDefault "([$all_status$ahead_behind]($style) )";
+      conflicted = mkDefault "⚔️ ";
+      ahead = mkDefault " ";
+      behind = mkDefault " ";
+      diverged = mkDefault " ";
+      untracked = mkDefault "❔";
+      stashed = mkDefault "📚 ";
+      modified = mkDefault "✒️ ";
+      staged = mkDefault " ";
+      renamed = mkDefault " ";
+      deleted = mkDefault "🗑️";
+    };
     golang.symbol = mkDefault " ";
     helm.symbol = mkDefault "⎈ ";
     hg_branch.symbol = mkDefault " ";
@@ -56,11 +60,13 @@ in
     ruby.symbol = mkDefault " ";
     rust.symbol = mkDefault " ";
     shlvl.symbol = mkDefault " ";
-    status.symbol = mkDefault " ";
-    status.not_executable_symbol = mkDefault " ";
-    status.not_found_symbol = mkDefault " ";
-    status.sigint_symbol = mkDefault " ";
-    status.signal_symbol = mkDefault " ";
+    status = {
+      symbol = mkDefault " ";
+      not_executable_symbol = mkDefault " ";
+      not_found_symbol = mkDefault " ";
+      sigint_symbol = mkDefault " ";
+      signal_symbol = mkDefault " ";
+    };
     swift.symbol = mkDefault " ";
     terraform.symbol = mkDefault "󱁢 ";
     vagrant.symbol = mkDefault "𝗩 ";

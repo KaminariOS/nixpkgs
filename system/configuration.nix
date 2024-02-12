@@ -247,7 +247,7 @@ in
       defaultFonts = {
         serif = [ "arphic-ukai" "Ubuntu" ];
         sansSerif = [ "arphic-ukai" "IPAPGothic" "Ubuntu" ];
-        monospace = ["arphic-ukai" "fira-code" "font-awesome"];
+        monospace = [ "arphic-ukai" "fira-code" "font-awesome" ];
       };
     };
   };

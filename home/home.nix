@@ -102,9 +102,7 @@ in
 
   xdg.mimeApps = {
     # enable = true;
-    defaultApplications = {
-
-    };
+    defaultApplications = { };
   };
 
   # notifications about home-manager news
