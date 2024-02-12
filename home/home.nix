@@ -100,6 +100,13 @@ in
     };
   };
 
+  xdg.mimeApps = {
+    # enable = true;
+    defaultApplications = {
+
+    };
+  };
+
   # notifications about home-manager news
   news.display = "silent";
 

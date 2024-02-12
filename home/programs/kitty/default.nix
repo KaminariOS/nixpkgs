@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   programs.kitty = {
-    enable = true;
+    enable = !true;
     extraConfig = builtins.readFile ./kitty.conf;
   };
 }

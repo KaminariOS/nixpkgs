@@ -138,19 +138,19 @@ let
     end
 
     function oku 
-      okular $argv &; disown
+      okular $argv &>/dev/null &; disown
     end 
 
     function clo 
-      clion $argv &; disown 
+      clion $argv &>/dev/null &; disown 
     end
 
     function idea 
-      idea-ultimate $argv &; disown 
+      idea-ultimate $argv &>/dev/null &; disown 
     end
 
     function wssh 
-      wezterm ssh $argv &; disown 
+      wezterm ssh $argv &>/dev/null &; disown 
     end
 
     set -gx ATUIN_NOBIND true

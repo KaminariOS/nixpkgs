@@ -33,6 +33,7 @@
     graphviz
 
     # File manager
+    # spacedrive
     gnome.nautilus
 
     steam-run
