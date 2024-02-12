@@ -207,7 +207,10 @@ in
       nfu = "nix flake update";
       ngc = "nix-collect-garbage -d";
       nsh = "nix-shell -p";
+
       gad = "git add";
+      glg = "git log";
+      grs = "git restore";
     };
     shellAbbrs = {
       drr = "direnv reload";
