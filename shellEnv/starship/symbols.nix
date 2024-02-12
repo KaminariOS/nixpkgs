@@ -29,8 +29,8 @@ in
     git_status.behind = mkDefault " ";
     git_status.diverged = mkDefault " ";
     git_status.untracked = mkDefault " ";
-    git_status.stashed = mkDefault " ";
-    git_status.modified = mkDefault " ";
+    git_status.stashed = mkDefault "📚 ";
+    git_status.modified = mkDefault "✒️ ";
     git_status.staged = mkDefault " ";
     git_status.renamed = mkDefault " ";
     git_status.deleted = mkDefault " ";
@@ -50,7 +50,8 @@ in
     package.symbol = mkDefault " ";
     perl.symbol = mkDefault " ";
     php.symbol = mkDefault " ";
-    purescript.symbol = mkDefault "<≡> ";
+    scala.symbol = mkDefault " ";
+    purescript.symbol = mkDefault "<≡>";
     python.symbol = mkDefault " ";
     ruby.symbol = mkDefault " ";
     rust.symbol = mkDefault " ";
@@ -63,6 +64,6 @@ in
     swift.symbol = mkDefault " ";
     terraform.symbol = mkDefault "󱁢 ";
     vagrant.symbol = mkDefault "𝗩 ";
-    zig.symbol = mkDefault " ";
+    zig.symbol = mkDefault " ";
   };
 }

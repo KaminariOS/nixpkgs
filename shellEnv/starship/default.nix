@@ -10,8 +10,8 @@
     # Symbols config configured ./starship-symbols.nix.
 
     directory = {
-      style = "bg:#DA627D";
-      format = "[ $path ]($style)[$read_only]($read_only_style)";
+      # style = "bg:#DA627D";
+      format = "[ 📂 $path ]($style)[$read_only]($read_only_style)";
       truncation_length = 5;
       truncate_to_repo = false;
       substitutions = {
@@ -25,34 +25,39 @@
     username = {
       show_always = true;
       style_root = "bg:#9A348E";
-      style_user = "bg:#9A348E";
-      format = "[$user ]($style)";
+      # style_user = "bg:#9A348E";
+      format = "[ 🗿$user ]($style)";
     }; # don't like the default
 
     format = lib.concatStrings [
-      "[](#9A348E)"
-      "$sudo"
+      # "$sudo"
       "$username"
-      "[](bg:#DA627D fg:#9A348E)"
       "$directory"
-      "[](fg:#DA627D bg:#FCA17D)"
+      # "[](bg:#DA627D fg:#9A348E)"
+      "[](#FCA17D)"
+      # "[](fg:#DA627D bg:#FCA17D)"
       "$git_branch"
+      "$git_commit"
       "$git_status"
       "[](fg:#FCA17D bg:#86BBD8)"
       "$c"
+      "$cmake"
       "$golang"
       "$haskell"
       "$java"
+      "$scala"
+      "$gradle"
       "$nodejs"
       "$rust"
       "$python"
-      "[](fg:#86BBD8 bg:#06969A)"
+      "[](fg:#86BBD8 bg:#ff00ff)"
       "$docker_context"
       "$nix_shell"
-      "[](fg:#06969A bg:#33658A)"
+      # "$direnv"
+      "[](fg:#ff00ff bg:#33658A)"
+      "[ ](fg:#33658A)"
       "$time"
       "$battery"
-      "[ ](fg:#33658A)"
       "$status"
       "$line_break"
       "$shell"
@@ -68,21 +73,27 @@
     };
 
     c = {
-      symbol = "";
-      style = "bg:#86BBD8";
+      symbol = " ";
+      style = "fg:#4682b4 bg:#86BBD8";
+      format = "[ $symbol ($version) ]($style)";
+    };
+
+    cmake = {
+      symbol = "🛆";
+      style = "fg:#4682b4 bg:#86BBD8";
       format = "[ $symbol ($version) ]($style)";
     };
 
     docker_context = {
       symbol = " ";
-      style = "bg:#06969A";
+      style = "bg:#ff00ff";
       format = "[ $symbol $context ]($style) $path";
     };
 
     git_branch = {
-      symbol = "";
-      style = "bg:#FCA17D";
-      format = "[ $symbol $branch ]($style)";
+      # symbol = "";
+      style = "fg:#a0522d bg:#FCA17D";
+      format = "[$symbol$branch ]($style)";
     };
 
     git_status = {
@@ -104,7 +115,13 @@
 
     java = {
       symbol = " ";
-      style = "bg:#86BBD8";
+      style = "fg:#39af49 bg:#86BBD8";
+      format = "[ $symbol($version) ]($style)";
+    };
+
+    gradle = {
+      symbol = " ";
+      style = "fg:#39af49 bg:#86BBD8";
       format = "[ $symbol($version) ]($style)";
     };
 
@@ -114,13 +131,19 @@
       format = "[ $symbol($version) ]($style)";
     };
 
+    scala = {
+      symbol = " ";
+      style = "fg:#693b66 bg:#86BBD8";
+      format = "[ $symbol($version) ]($style)";
+    };
+
     rust = {
       symbol = " ";
-      style = "bg:#86BBD8";
+      style = "fg:#ff4500 bg:#86BBD8";
       format = "[ $symbol($version) ]($style)";
     };
     python = {
-      style = "bg:#86BBD8";
+      style = "fg:#ffff00 bg:#86BBD8";
       format = "[ $symbol($version) ]($style)";
     };
 
@@ -134,13 +157,13 @@
 
     nix_shell = {
       disabled = false;
-      style = "bg:#06969A";
-      impure_msg = "[!pure](fg:bold blue $style)";
-      pure_msg = "[pure](fg:bold green $style)";
-      format = ''[ $symbol$state(\($name\))]($style)'';
+      style = "bg:#ff00ff";
+      impure_msg = "󱄅 (fg:bold blue $style)";
+      pure_msg = "󱄅 (fg:bold purple $style)";
+      format = ''[ $state(\($name\))]($style)'';
     };
     sudo = {
-      style = "bg:#9A348E";
+      # style = "bg:#9A348E";
       symbol = "👑 ";
       disabled = false;
       format = "[$symbol]($style)";
@@ -150,8 +173,8 @@
       disabled = false;
       #time_format = "%I:%M%p %a %h-%e"; # Hour:Minute Format
       time_format = "%I:%M%p"; # Hour:Minute Format
-      style = "bg:#33658A";
-      format = "[ $time ]($style)";
+      # style = "bg:#33658A";
+      format = "[$time ]($style)";
     };
     add_newline = true;
     battery = {
@@ -162,7 +185,7 @@
       display = [
         {
           threshold = 90;
-          style = "bg:#33658A";
+          # style = "bg:#33658A";
         }
       ];
     };
