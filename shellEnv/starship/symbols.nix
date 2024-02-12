@@ -28,13 +28,13 @@ in
     git_status = {
       format = mkDefault "([$all_status$ahead_behind]($style) )";
       conflicted = mkDefault "⚔️ ";
-      ahead = mkDefault " ";
-      behind = mkDefault " ";
+      ahead = mkDefault "📤";
+      behind = mkDefault "📥";
       diverged = mkDefault " ";
       untracked = mkDefault "❔";
       stashed = mkDefault "📚 ";
       modified = mkDefault "✒️ ";
-      staged = mkDefault " ";
+      staged = mkDefault "💾";
       renamed = mkDefault " ";
       deleted = mkDefault "🗑️";
     };
@@ -51,7 +51,7 @@ in
     nix_shell.symbol = mkDefault " ";
     nodejs.symbol = mkDefault "󰎙 ";
     openstack.symbol = mkDefault " ";
-    package.symbol = mkDefault " ";
+    package.symbol = mkDefault "📦";
     perl.symbol = mkDefault " ";
     php.symbol = mkDefault " ";
     scala.symbol = mkDefault " ";

@@ -50,6 +50,7 @@
       "$nodejs"
       "$rust"
       "$python"
+      "$package"
       "[](fg:#86BBD8 bg:#ff00ff)"
       "$docker_context"
       "$nix_shell"
@@ -146,6 +147,10 @@
     rust = {
       symbol = " ";
       style = "fg:#ff4500 bg:#86BBD8";
+      format = "[ $symbol($version) ]($style)";
+    };
+    package = {
+      style = "fg:#707bee bg:#86BBD8";
       format = "[ $symbol($version) ]($style)";
     };
     python = {
