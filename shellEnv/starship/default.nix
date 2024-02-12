@@ -96,6 +96,12 @@
       format = "[$symbol$branch ]($style)";
     };
 
+    git_commit = {
+      # symbol = "";
+      style = "fg:#a0522d bg:#FCA17D";
+      format = "[#️\($hash$tag\) ]($style)";
+    };
+
     git_status = {
       style = "bg:#FCA17D";
       format = "[$all_status$ahead_behind ]($style)";
