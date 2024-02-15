@@ -229,25 +229,30 @@ in
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
+      noto-fonts-emoji
       ubuntu_font_family
+      jetbrains-mono
       customFonts
       font-awesome
       myfonts.flags-world-color
       myfonts.icomoon-feather
+
       fira-code
+      fira-code-symbols
       unifont
       ipafont
 
-      noto-fonts-cjk-serif
-      noto-fonts-cjk-sans
+      # noto-fonts-cjk-serif
+      # noto-fonts-cjk-sans
       arphic-ukai
     ];
 
     fontconfig = {
       defaultFonts = {
-        serif = [ "arphic-ukai" "Ubuntu" ];
-        sansSerif = [ "arphic-ukai" "IPAPGothic" "Ubuntu" ];
-        monospace = [ "arphic-ukai" "fira-code" "font-awesome" ];
+        serif = [ "AR PL UKai HK" "Ubuntu" ];
+        sansSerif = [ "AR PL UKai HK" "IPAPGothic" "Ubuntu" ];
+        monospace = [ "AR PL UKai HK" "fira-code" "font-awesome" ];
+        emoji = [ "Noto Emoji" ];
       };
     };
   };

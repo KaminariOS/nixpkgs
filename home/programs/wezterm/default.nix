@@ -31,6 +31,10 @@
                -- config.font = wezterm.font('Fira Code', { })
                config.font_size = 32
                config.font = wezterm.font_with_fallback {
+                 'JetBrains Mono', 
+                 'Noto Color Emoji',
+                 'Nerd Font Symbols',
+                 'AR PL UKai TW',
                }
 
 
