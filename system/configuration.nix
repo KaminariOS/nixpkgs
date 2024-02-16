@@ -241,7 +241,8 @@ in
       fira-code-symbols
       unifont
       ipafont
-
+      
+      noto-fonts
       # noto-fonts-cjk-serif
       # noto-fonts-cjk-sans
       arphic-ukai
