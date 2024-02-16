@@ -249,8 +249,8 @@ in
 
     fontconfig = {
       defaultFonts = {
-        serif = [ "AR PL UKai HK" "Ubuntu" ];
-        sansSerif = [ "AR PL UKai HK" "IPAPGothic" "Ubuntu" ];
+        serif = [ "Noto fonts" "AR PL UKai HK" "Ubuntu" ];
+        sansSerif = [ "Noto fonts" "AR PL UKai HK" "IPAPGothic" "Ubuntu" ];
         monospace = [ "AR PL UKai HK" "fira-code" "font-awesome" ];
         emoji = [ "Noto Emoji" ];
       };
