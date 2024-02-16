@@ -80,7 +80,7 @@
     };
 
     cmake = {
-      symbol = "🛆";
+      # symbol = "🛆";
       style = "fg:#4682b4 bg:#86BBD8";
       format = "[ $symbol ($version) ]($style)";
     };
