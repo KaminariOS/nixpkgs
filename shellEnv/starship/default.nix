@@ -39,7 +39,7 @@
       "$git_branch"
       "$git_commit"
       "$git_status"
-      "[](fg:#FCA17D bg:#86BBD8)"
+      "[](fg:#FCA17D bg:#ffff00)"
       "$c"
       "$cmake"
       "$golang"
@@ -51,7 +51,7 @@
       "$rust"
       "$python"
       "$package"
-      "[](fg:#86BBD8 bg:#ff00ff)"
+      "[](fg:#ffff00 bg:#ff00ff)"
       "$docker_context"
       "$nix_shell"
       # "$direnv"
@@ -75,13 +75,13 @@
 
     c = {
       symbol = " ";
-      style = "fg:#4682b4 bg:#86BBD8";
+      style = "fg:#4682b4 bg:#ffff00";
       format = "[ $symbol ($version) ]($style)";
     };
 
     cmake = {
       # symbol = "🛆";
-      style = "fg:#4682b4 bg:#86BBD8";
+      style = "fg:#4682b4 bg:#ffff00";
       format = "[ $symbol ($version) ]($style)";
     };
 
@@ -110,51 +110,51 @@
 
     golang = {
       symbol = " ";
-      style = "bg:#86BBD8";
+      style = "bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
 
     haskell = {
       symbol = " ";
-      style = "bg:#86BBD8";
+      style = "bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
 
     java = {
       symbol = " ";
-      style = "fg:#39af49 bg:#86BBD8";
+      style = "fg:#39af49 bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
 
     gradle = {
       symbol = " ";
-      style = "fg:#39af49 bg:#86BBD8";
+      style = "fg:#39af49 bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
 
     nodejs = {
       symbol = " ";
-      style = "bg:#86BBD8";
+      style = "bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
 
     scala = {
       symbol = " ";
-      style = "fg:#693b66 bg:#86BBD8";
+      style = "fg:#693b66 bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
 
     rust = {
       symbol = " ";
-      style = "fg:#ff4500 bg:#86BBD8";
+      style = "fg:#ff4500 bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
     package = {
-      style = "fg:#707bee bg:#86BBD8";
+      style = "fg:#707bee bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
     python = {
-      style = "fg:#ffff00 bg:#86BBD8";
+      style = "fg:#ffff00 bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
 
