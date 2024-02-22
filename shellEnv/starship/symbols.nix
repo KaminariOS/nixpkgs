@@ -16,7 +16,7 @@ in
     conda.symbol = mkDefault " ";
     crystal.symbol = mkDefault " ";
     dart.symbol = mkDefault " ";
-    directory.read_only = mkDefault " ";
+    directory.read_only = mkDefault " 💿";
     docker_context.symbol = mkDefault " ";
     dotnet.symbol = mkDefault " ";
     elixir.symbol = mkDefault " ";
