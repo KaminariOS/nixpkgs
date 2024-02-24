@@ -154,7 +154,7 @@
       format = "[ $symbol($version) ]($style)";
     };
     python = {
-      style = "fg:#ffff00 bg:#ffff00";
+      style = "fg:#011738 bg:#ffff00";
       format = "[ $symbol($version) ]($style)";
     };
 
