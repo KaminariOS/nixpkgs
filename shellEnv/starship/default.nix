@@ -76,13 +76,13 @@
     c = {
       symbol = " ";
       style = "fg:#4682b4 bg:#ffff00";
-      format = "[ $symbol ($version) ]($style)";
+      format = "[ $symbol($version) ]($style)";
     };
 
     cmake = {
       # symbol = "🛆";
       style = "fg:#4682b4 bg:#ffff00";
-      format = "[ $symbol ($version) ]($style)";
+      format = "[ $symbol($version) ]($style)";
     };
 
     docker_context = {
