@@ -104,7 +104,7 @@ in
             crates.enable = true;
           };
           tex.enable = true;
-          ts.enable = false;
+          ts.enable = true;
           go.enable = isMaximal;
           zig.enable = false;
           python.enable = isMaximal;
@@ -122,6 +122,8 @@ in
           java.enable = true;
           bash.enable = true;
           terraform.enable = isMaximal;
+          vue.enable = true;
+          svelte.enable = true;
         };
 
         vim.visuals = {
