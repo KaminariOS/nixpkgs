@@ -97,6 +97,7 @@ in
           clang = {
             enable = isMaximal;
             cHeader = true;
+            # lsp.server = "clangd";
           };
           sql.enable = false;
           rust = {
