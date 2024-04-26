@@ -73,7 +73,7 @@ let
     # 177.8 cm
     fend
     # systeroid — A more powerful alternative to sysctl(8).
-    # systeroid
+    systeroid
     # Like df
     duf
     # lfs
