@@ -6,7 +6,7 @@
     backend = "glx";
     fade = true;
     fadeDelta = 5;
-    opacityRules = [ "100:name *= 'i3lock'" ];
+    opacityRules = [ "100:name *= 'i3lock'" "100:name *= 'Firefox'"];
     shadow = true;
     shadowOpacity = 0.95;
     settings = {
