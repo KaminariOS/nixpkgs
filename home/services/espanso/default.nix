@@ -12,6 +12,18 @@
               replace = "Hi there!";
             }
             {
+              # For ChatGPT
+              trigger = ":ag";
+              replace = "Analyze the grammar in English";
+            }
+
+            {
+              # For ChatGPT
+              trigger = ":is";
+              replace = "How to say the following in Spanish: ";
+            }
+
+            {
               trigger = ":now";
               replace = "It's {{currentdate}} {{currenttime}}";
             }
