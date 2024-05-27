@@ -201,6 +201,11 @@ in
               enable = true;
 
             };
+            updateFocusedFile = {
+              enable = true;
+              updateRoot = false;
+              ignoreList = [];
+            };
             modified = {
               enable = true;
             };

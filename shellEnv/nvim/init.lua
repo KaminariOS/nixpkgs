@@ -91,6 +91,7 @@ require("nvim-tree").setup()
 
 local function open_nvim_tree(data)
 
+  local tree_api = require("nvim-tree.api").tree
   -- buffer is a directory
   local directory = vim.fn.isdirectory(data.file) == 1
 
@@ -98,19 +99,19 @@ local function open_nvim_tree(data)
   local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
 
   if not directory and not no_name then
-    vim.cmd.cd(vim.fs.dirname(data.file))
+    tree_api.change_root(vim.fs.dirname(data.file))
     return
   end
   if directory then
     -- change to the directory
-    vim.cmd.cd(data.file)
-  -- open the tree
-  require("nvim-tree.api").tree.open()
+    tree_api.change_root(data.file)
+    -- open the tree
+    tree_api.open()
   end
 
 end
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 local handler = function(virtText, lnum, endLnum, width, truncate)
     local newVirtText = {}
@@ -235,3 +236,31 @@ api.nvim_create_autocmd('CursorMoved', {
             M.timer:start(400, 0, vim.schedule_wrap(callback))
          end
       })
+
+-- Array of file names indicating root directory. Modify to your liking.
+local root_names = { '.git', 'Makefile', 'CMakeList.txt', 'flake.nix', 'package.json', 'Cargo.lock'}
+
+-- Cache to use for speed up (at cost of possibly outdated results)
+local root_cache = {}
+
+local set_root = function()
+  -- Get directory path to start search from
+  local path = vim.api.nvim_buf_get_name(0)
+  if path == '' then return end
+  path = vim.fs.dirname(path)
+
+  -- Try cache and resort to searching upward for root directory
+  local root = root_cache[path]
+  if root == nil then
+    local root_file = vim.fs.find(root_names, { path = path, upward = true })[1]
+    if root_file == nil then return end
+    root = vim.fs.dirname(root_file)
+    root_cache[path] = root
+  end
+
+  -- Set current directory
+  vim.fn.chdir(root)
+end
+
+local root_augroup = vim.api.nvim_create_augroup('MyAutoRoot', {})
+vim.api.nvim_create_autocmd('BufEnter', { group = root_augroup, callback = set_root })
