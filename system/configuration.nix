@@ -247,6 +247,7 @@ in
       # noto-fonts-cjk-serif
       # noto-fonts-cjk-sans
       arphic-ukai
+      noto-fonts-lgc-plus
     ];
 
     fontconfig = {
