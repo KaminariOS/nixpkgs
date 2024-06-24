@@ -131,7 +131,7 @@ in
       enable = true;
       extraBackends = [ pkgs.epkowa pkgs.sane-airscan ];
     };
-    opengl.driSupport32Bit = true;
+    graphics.enable32Bit = true;
     bluetooth.enable = true;
   };
 
