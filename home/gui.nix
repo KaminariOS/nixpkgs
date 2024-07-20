@@ -29,12 +29,13 @@
     # networkmanager_dmenu
     networkmanagerapplet
     # Inlyne - a GPU powered, browserless, markdown + html viewer
-    inlyne
+    # inlyne
     graphviz
 
     # File manager
     # spacedrive
-    gnome.nautilus
+    # nautilus
+    dolphin
 
     steam-run
 

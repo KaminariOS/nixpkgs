@@ -114,16 +114,12 @@ in
 
   users.extraGroups.vboxusers.members = [ "kosumi" ];
 
-  # Enable sound.
-  sound = {
-    enable = true;
-    mediaKeys.enable = true;
-  };
+   # hardware.pulseaudio = {
+   #   enable = true;
+   #   package = pkgs.pulseaudioFull;
+   # };
 
-  #  hardware.pulseaudio = {
-  #    enable = true;
-  #    package = pkgs.pulseaudioFull;
-  #  };
+  security.rtkit.enable = true;
 
   # Scanner backend
   hardware = {

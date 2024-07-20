@@ -25,7 +25,7 @@ let
     google-chrome
     rclone
     firefox
-    gnome.seahorse
+    seahorse
   ];
   inherit (config.home) homeDirectory;
 in
