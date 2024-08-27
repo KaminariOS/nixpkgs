@@ -135,6 +135,7 @@
             regex = [[["]?([\w\d]{1}[-\w\d]+)(/){1}([-\w\d\.]+)["]?]],
             format = 'https://www.github.com/$1/$3',
           })
+          config.front_end = "WebGpu"
 
            -- and finally, return the configuration to wezterm
            return config

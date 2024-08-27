@@ -203,7 +203,7 @@ let
     python3
     # iftop
 
-    taskwarrior
+    taskwarrior3
     taskwarrior-tui
 
     file

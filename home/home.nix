@@ -26,6 +26,7 @@ let
     rclone
     firefox
     seahorse
+    pulseaudio
   ];
   inherit (config.home) homeDirectory;
 in

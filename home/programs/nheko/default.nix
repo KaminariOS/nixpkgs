@@ -9,7 +9,7 @@ let
 in
 {
   programs.nheko = {
-    enable = true;
+    # enable = true;
 
     settings = {
       general = {
