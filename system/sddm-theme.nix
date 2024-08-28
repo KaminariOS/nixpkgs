@@ -9,10 +9,11 @@
       mkdir -p $out/share/sddm/themes
       cp -aR $src $out/share/sddm/themes/sugar-candy
     '';
-    src = fetchgit {
-      url = "https://framagit.org/MarianArlt/sddm-sugar-candy.git";
-      rev = "2b72ef6c6f720fe0ffde5ea5c7c48152e02f6c4f";
-      hash = "sha256-XggFVsEXLYklrfy1ElkIp9fkTw4wvXbyVkaVCZq4ZLU=";
+    src = fetchFromGitHub {
+      owner = "Kangie";
+      repo = "sddm-sugar-candy";
+      rev = "d31dbf58286ecdcd3a490cd0c9d9ba2f15c26920";
+      sha256 = "sha256-HMlzUyRvXvzjaeq4FDxsHZga1zsn1w2Ln7SpctqjWk8=";
     };
   };
   sddm-clairvoyance = stdenv.mkDerivation rec {
