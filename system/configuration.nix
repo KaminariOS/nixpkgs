@@ -295,6 +295,8 @@ in
   };
 
   nixpkgs.config.allowUnfree = true;
+  hardware.graphics.enable = true;
+
 
   # Nix daemon config
   nix = {

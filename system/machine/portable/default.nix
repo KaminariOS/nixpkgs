@@ -31,7 +31,6 @@
 
   # Select internationalisation properties.
   #  i18n.defaultLocale = "en_US.utf8";
-  hardware.opengl.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
