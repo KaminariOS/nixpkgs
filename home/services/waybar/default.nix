@@ -274,7 +274,7 @@ in {
         ${
           lib.optionalString (config.stylix.polarity == "light") "
           tooltip {
-            background: alpha(@base05, ${builtins.toString (config.stylix.opacity.desktop / 4)});
+            background: alpha(@base05, ${builtins.toString config.stylix.opacity.desktop});
             color: ${config.lib.stylix.colors.withHashtag.base00};
           }"
         }
