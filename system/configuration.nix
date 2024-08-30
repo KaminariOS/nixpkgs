@@ -152,7 +152,7 @@ in {
     #gnome.gnome-keyring.enable = true;
     tailscale.enable = true;
 
-    wireplumber = {
+    pipewire.wireplumber = {
       enable = true;
     };
 

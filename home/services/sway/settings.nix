@@ -106,6 +106,10 @@ in {
         "${modifier}+Return" = "exec ${lib.getExe cfg.defaultApps.terminal}";
         "${modifier}+Tab" = "exec ${lib.getExe config.programs.rofi.package} -show window";
         "${modifier}+D" = "exec 'rofi -modi run, drun, window -show drun'";
+        "${modifier}+Ctrl+greater" = "move workspace to output right";
+        "${modifier}+Ctrl+less" = "move workspace to output left";
+        "${modifier}+Shift+Ctrl+greater" = "move window to output right";
+        "${modifier}+Shift+Ctrl+less" = "move window to output left";
         "Control+F12" = "exec ${helpers.screenshot}";
         "Ctrl+Mod1+M" = "mode move";
         "Ctrl+Mod1+R" = "mode resize";

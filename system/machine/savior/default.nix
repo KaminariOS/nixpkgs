@@ -15,6 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.kernelModules = [ "nouveau" ];
 
   networking.hostName = "savior"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -33,29 +34,35 @@
     # };
   };
 
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.utf8";
-
-  services.xserver.videoDrivers = ["nvidia"];
-
   # Optionally, you may need to select the appropriate driver version for your specific GPU.
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  services.logind.lidSwitch = "ignore";
-
-  services.pipewire = {
+  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.open = true;
+  hardware.graphics = {
     enable = true;
-    audio.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    extraPackages = with pkgs; [mesa mesa.drivers];
+  };
+  services = {
+    # Select internationalisation properties.
+    # i18n.defaultLocale = "en_US.utf8";
 
-    wireplumber.enable = true;
+    xserver.videoDrivers = ["nouveau"];
+
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
+    logind.lidSwitch = "ignore";
+
+    pipewire = {
+      enable = true;
+      audio.enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+
+      wireplumber.enable = true;
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).

@@ -78,6 +78,7 @@
         "media.ffmpeg.vaapi.enabled" = true;
         "media.navigator.mediadatadecoder_vpx_enabled" = true;
         "media.rdd-ffmpeg.enabled" = true;
+        "layout.css.devPixelsPerPx" = 2;
       };
 
       UserMessaging = {
