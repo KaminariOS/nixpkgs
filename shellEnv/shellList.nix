@@ -1,11 +1,10 @@
-pkgs:
-let
+pkgs: let
   rustcli = with pkgs; [
     # xsv
     # A fast duplicate file finder
     # ddh
     tealdeer
-    # Better cd 
+    # Better cd
     zoxide
     tokei # Count your code, quickly.
     # ps
@@ -80,7 +79,7 @@ let
 
     # Put a rainbow in everything you `cat` to the console. Like lolcat
     dotacat
-    # Command-line Git information tool 
+    # Command-line Git information tool
     onefetch
     # Fast, minimal and customizable system information frontend.
     macchina
@@ -106,7 +105,7 @@ let
 
     metasploit # pentesting
 
-    hashcat # Fast password cracker 
+    hashcat # Fast password cracker
     hashcat-utils # Small utilities that are useful in advanced password cracking
 
     aircrack-ng
@@ -167,7 +166,7 @@ let
     # cmake-language-server
     # ccls
 
-    # ruff # An extremely fast Python linter and code formatter, written in Rust. 
+    # ruff # An extremely fast Python linter and code formatter, written in Rust.
     code-minimap
   ];
 
@@ -181,11 +180,11 @@ let
     fortune
 
     # gnumake
-    # cmake 
+    # cmake
     # gcc
     gdb
 
-    #An implementation of the Debug Adapter Protocol for Python 
+    #An implementation of the Debug Adapter Protocol for Python
     # python310Packages.debugpy
 
     prettyping # a nicer ping
@@ -194,13 +193,13 @@ let
     zip
     unzip
 
-
     #rust-gdb
     lldb
 
     rr
 
     python3
+    python3.pkgs.dbus-python
     # iftop
 
     taskwarrior3
@@ -232,11 +231,20 @@ let
     usbutils
     pciutils
 
-    iw # iw is a new nl80211 based CLI configuration utility for wireless devices. The old tool iwconfig, which uses Wireless Extensions interface, is deprecated and it's strongly recommended to switch to iw and nl80211. 
+    iw # iw is a new nl80211 based CLI configuration utility for wireless devices. The old tool iwconfig, which uses Wireless Extensions interface, is deprecated and it's strongly recommended to switch to iw and nl80211.
 
-    wthrr # Weather companion for the terminal 
+    wthrr # Weather companion for the terminal
+
+    sysvtools
+
+    gcalcli
+    # gtasks
+    # gkeep
   ];
 in
-defaultShell ++ rustcli ++
-# cargoAddons ++ 
-nixAddons ++ lsps
+  defaultShell
+  ++ rustcli
+  ++
+  # cargoAddons ++
+  nixAddons
+  ++ lsps

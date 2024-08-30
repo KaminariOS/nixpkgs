@@ -7,8 +7,8 @@ let
           forwardX11Trusted yes
       '';
       ".gdbinit".text = ''
-        set auto-load safe-path / 
-        tui enable 
+        set auto-load safe-path /
+        tui enable
       '';
     };
     programs = {
@@ -31,7 +31,7 @@ let
         enable = true;
         enableFishIntegration = true;
         defaultCommand = "fd --type file --follow"; # FZF_DEFAULT_COMMAND
-        defaultOptions = [ "--height 20%" ]; # FZF_DEFAULT_OPTS
+        defaultOptions = ["--height 20%"]; # FZF_DEFAULT_OPTS
         fileWidgetCommand = "fd --type file --follow"; # FZF_CTRL_T_COMMAND
       };
 
@@ -42,7 +42,7 @@ let
       zoxide = {
         enable = true;
         enableFishIntegration = true;
-        options = [ ];
+        options = [];
       };
       starship = {
         enable = true;
@@ -94,8 +94,7 @@ let
       };
     };
   };
-in
-[
+in [
   ./helix
   ./nushell
   ./nvim

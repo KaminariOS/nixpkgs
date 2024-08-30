@@ -1,13 +1,15 @@
-{ config, lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.kitty = {
     enable = !true;
     extraConfig = builtins.readFile ./kitty.conf;
   };
 }
-
 #with lib;
-
 #let
 #  gruvbox-light = {
 #    bg = "#fbf1c7";

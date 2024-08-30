@@ -1,9 +1,12 @@
-{ pkgs, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs.rofi = {
     enable = true;
+    package = pkgs.rofi-wayland;
     terminal = "${pkgs.wezterm}/bin/wezterm";
-    theme = ./launcher/type2-style-10.rasi;
+    theme = lib.mkForce ./launcher/type2-style-10.rasi;
   };
 }

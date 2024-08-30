@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-
+{pkgs, ...}:
 # Created By @icanwalkonwater
 # Edited and ported to Nix by Th0rgal
-
 let
   ac = "#1E88E5";
   mf = "#383838";
@@ -27,11 +25,9 @@ let
 
   # Red
   urgency = "#e74c3c";
-
-in
-{
+in {
   services.polybar = {
-    enable = true;
+    # enable = true;
 
     package = pkgs.polybar.override {
       i3Support = true;

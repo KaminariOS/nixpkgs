@@ -1,7 +1,12 @@
-{ config, pkgs, lib, stdenv, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  stdenv,
+  ...
+}: let
   shellPkgs = import ../shellEnv/shellList.nix pkgs;
+  mimeTypes = import ./mimeTypes.nix;
   defaultPkgs = with pkgs; [
     arandr # simple GUI for xrandr
     asciinema # record the terminal
@@ -14,9 +19,7 @@ let
     #    nodePackages.dockerfile-language-server-nodejs
 
     # simplescreenrecorder # screen recorder gui
-    rofi
   ];
-
 
   gui_apps = (import ./gui.nix pkgs).gui_packages;
   nixos_app = with pkgs; [
@@ -24,21 +27,55 @@ let
     jetbrains.idea-ultimate
     google-chrome
     rclone
-    firefox
     seahorse
     pulseaudio
   ];
   inherit (config.home) homeDirectory;
-in
-{
-  imports = builtins.concatMap import [
-    #      ./age
-    ./programs
-    ./scripts
-    ./services
-    ../shellEnv
-    #      ./themes
-  ];
+in {
+  imports =
+    builtins.concatMap import [
+      #      ./age
+      ./programs
+      ./scripts
+      ./services
+      ../shellEnv
+      #      ./themes
+    ]
+    ++ [./options.nix ./stylix.nix];
+
+  wayland.windowManager.sway = {
+    enable = true;
+    # package = pkgs.swayfx;
+    checkConfig = false;
+    config = {
+      modifier = "Mod4"; # Super key
+      terminal = "wezterm";
+      output = {
+        "Virtual-1" = {
+          mode = "2880x1800@60Hz";
+        };
+      };
+      focus = {
+        wrapping = "yes";
+        mouseWarping = false;
+        # followMouse = false;
+      };
+      window.titlebar = false;
+      # keybindings = {
+      #   "${modifier}+d" = "exec 'rofi -modi run, drun, window -show drun'";
+      # };
+    };
+    extraConfig = ''
+      set $mod Mod4
+      output Virtual-1 scale 3
+      bindsym Print+Shift exec shotman -c output
+      bindsym $mod+P exec shotman -c region
+      bindsym $mod+Shift+d exec 'rofi -show window'
+      bindsym Print+Shift+Control exec shotman -c window
+
+      # corner_radius 4
+    '';
+  };
 
   home = {
     stateVersion = "22.05";
@@ -47,25 +84,26 @@ in
     sessionVariables = {
       DISPLAY = ":0";
       EDITOR = "nvim";
+      BROWSER = "firefox";
       TERM_PROGRAM = "WezTerm";
     };
   };
 
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-rime fcitx5-chinese-addons fcitx5-mozc ];
+    fcitx5.addons = with pkgs; [fcitx5-rime fcitx5-chinese-addons fcitx5-mozc];
   };
   # restart services on change
   systemd.user = {
     targets.tray = {
       Unit = {
         Description = "Home Manager System Tray";
-        Requires = [ "graphical-session-pre.target" ];
+        Requires = ["graphical-session-pre.target"];
       };
     };
     startServices = "sd-switch";
     timers.wallpaper = {
-      Install.WantedBy = [ "timers.target" ];
+      Install.WantedBy = ["timers.target"];
       Timer = {
         OnBootSec = "40m";
         OnUnitActiveSec = "1d";
@@ -75,40 +113,90 @@ in
       imec = {
         Unit.Description = "...";
         Service.ExecStart = "${config.home.homeDirectory}/.nix-profile/bin/fcitx5";
-        Install.WantedBy = [ "default.target" ]; # starts after login
+        Install.WantedBy = ["default.target"]; # starts after login
       };
       rclone = {
         Service = {
           Type = "simple";
           ExecStart = "${pkgs.rclone}/bin/rclone mount --umask 022  --allow-other remote: %h/rclone --vfs-cache-mode full --vfs-fast-fingerprint --vfs-cache-max-size 10G";
           ExecStop = "umount ${homeDirectory}/rclone";
-          Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
+          Environment = ["PATH=/run/wrappers/bin/:$PATH"];
         };
-        Install.WantedBy = [ "default.target" ];
+        Install.WantedBy = ["default.target"];
       };
       wallpaper = {
         Service = {
           Type = "oneshot";
-          ExecStart =
-            "${homeDirectory}/nixpkgs/wallpaper/wallpaper.sh";
-          #''${pkgs.wget}/bin/wget -O wallpaper.jpg "http://www.bing.com/$(wget -q -O- https://binged.it/2ZButYc | sed -e 's/<[^>]*>//g' | cut -d / -f2 | cut -d \& -f1)" -O ${homeDirectory}/Pictures/wallpaper.jpg && 
+          ExecStart = "${homeDirectory}/nixpkgs/wallpaper/wallpaper.sh";
+          #''${pkgs.wget}/bin/wget -O wallpaper.jpg "http://www.bing.com/$(wget -q -O- https://binged.it/2ZButYc | sed -e 's/<[^>]*>//g' | cut -d / -f2 | cut -d \& -f1)" -O ${homeDirectory}/Pictures/wallpaper.jpg &&
           #${pkgs.feh}/bin/feh --bg-scale /Pictures/wallpaper.jpg'';
-          Environment = [ "PATH=/run/current-system/sw/bin:${homeDirectory}/.nix-profile/bin:$PATH" ];
+          Environment = ["PATH=/run/current-system/sw/bin:${homeDirectory}/.nix-profile/bin:$PATH"];
         };
         #Install.WantedBy = ["default.target"];
-        Install.WantedBy = [ "default.target" ];
+        Install.WantedBy = ["default.target"];
       };
     };
   };
 
   xdg.mimeApps = {
-    # enable = true;
-    defaultApplications = { };
+    enable = true;
+    defaultApplications = let
+      mkDefaults = files: desktopFile: lib.genAttrs files (_: [desktopFile]);
+      audioTypes =
+        mkDefaults mimeTypes.audioFiles
+        "defaultAudioPlayer.desktop";
+
+      browserTypes =
+        mkDefaults mimeTypes.browserFiles
+        "defaultWebBrowser.desktop";
+
+      documentTypes =
+        mkDefaults mimeTypes.documentFiles
+        "defaultPdfViewer.desktop";
+
+      editorTypes =
+        mkDefaults mimeTypes.editorFiles
+        "defaultEditor.desktop";
+
+      folderTypes = {"inode/directory" = "defaultFileManager.desktop";};
+
+      imageTypes =
+        mkDefaults mimeTypes.imageFiles
+        "defaultImageViewer.desktop";
+
+      videoTypes =
+        mkDefaults mimeTypes.videoFiles
+        "defaultVideoPlayer.desktop";
+    in
+      audioTypes
+      // browserTypes
+      // documentTypes
+      // editorTypes
+      // folderTypes
+      // imageTypes
+      // videoTypes;
+  };
+  xdg.desktopEntries = let
+    mkDefaultEntry = name: package: {
+      name = "Default ${name}";
+      exec = "QT_SCALE_FACTOR=2 ${lib.getExe package} %U";
+      terminal = false;
+      settings = {
+        NoDisplay = "true";
+      };
+    };
+  in {
+    # defaultAudioPlayer = mkDefaultEntry "Audio Player" cfg.audioPlayer;
+    # defaultEditor = mkDefaultEntry "Editor" cfg.editor;
+    # defaultFileManager = mkDefaultEntry "File Manager" cfg.fileManager;
+    # defaultImageViewer = mkDefaultEntry "Image Viewer" cfg.imageViewer;
+    defaultPdfViewer = mkDefaultEntry "PDF Viewer" pkgs.okular;
+    # defaultVideoPlayer = mkDefaultEntry "Video Player" cfg.videoPlayer;
+    # defaultWebBrowser = mkDefaultEntry "Web Browser" cfg.webBrowser;
   };
 
   # notifications about home-manager news
   news.display = "silent";
-
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -121,15 +209,16 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
   home.pointerCursor = {
-    x11.enable = true;
+    # x11.enable = true;
     # name = "Adwaita";
     # package = pkgs.gnome.adwaita-icon-theme;
     # name = "WhiteSur-cursors";
     # package = pkgs.whitesur-cursors;
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
-    size = 48;
+    # name = "Bibata-Modern-Ice";
+    # package = pkgs.bibata-cursors;
+    # size = 60;
   };
   gtk = {
     enable = true;
@@ -137,14 +226,14 @@ in
       name = "WhiteSur";
       package = pkgs.whitesur-icon-theme;
     };
-    theme = {
-      name = "WhiteSur-Dark-hdpi";
-      package = pkgs.whitesur-gtk-theme;
-    };
-    font = {
-      name = "Noto fonts";
-      package = pkgs.noto-fonts;
-      size = 24;
-    };
+    # theme = {
+    #   name = "WhiteSur-Dark-hdpi";
+    #   package = pkgs.whitesur-gtk-theme;
+    # };
+    # font = {
+    #   name = "Noto fonts";
+    #   package = pkgs.noto-fonts;
+    #   size = 24;
+    # };
   };
 }

@@ -1,9 +1,6 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   buildTmuxPlugin = pkgs.tmuxPlugins.mkDerivation;
-in
-{
+in {
   nord = buildTmuxPlugin {
     pluginName = "nord";
     version = "v0.3.0";

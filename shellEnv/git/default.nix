@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   gitConfig = {
     core = {
       editor = "nvim";
@@ -26,8 +28,7 @@ let
   };
 
   rg = "${pkgs.ripgrep}/bin/rg";
-in
-{
+in {
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
@@ -82,5 +83,5 @@ in
     userName = config.home.username;
   };
 
-  home.packages = with pkgs; [ git-crypt git-annex ];
+  home.packages = with pkgs; [git-crypt git-annex];
 }

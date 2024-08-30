@@ -1,11 +1,13 @@
 # nix-index setup with pre-built indices
-
-{ pkgs, lib, ... }:
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   # https://github.com/Mic92/nix-index-database
   updateScript = pkgs.writeShellScriptBin "update-nix-index" ''
     set -euo pipefail
-    export PATH="${lib.makeBinPath [ pkgs.coreutils pkgs.wget ]}"
+    export PATH="${lib.makeBinPath [pkgs.coreutils pkgs.wget]}"
 
     finish() {
       ret=$?
@@ -30,9 +32,8 @@ let
     wget -q -N https://github.com/Mic92/nix-index-database/releases/latest/download/$filename
     ln -f $filename files
   '';
-in
-{
-  home.packages = [ updateScript ];
+in {
+  home.packages = [updateScript];
 
   programs.nix-index.enable = true;
 }

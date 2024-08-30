@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.file.".terminfo" = {
     source = pkgs.symlinkJoin {
       name = "terminfo";

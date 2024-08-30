@@ -11,8 +11,7 @@ let
       #taskwarrior-sync.enable = true;
     };
   };
-in
-[
+in [
   ./dunst
   ./gpg-agent
   ./networkmanager
@@ -23,5 +22,18 @@ in
   ./i3
   ./eww
   ./espanso
+
+  ./sway
+  ./wayland
+  ./easyeffects
+  ./gammastep
+  ./mako
+  ./mpd
+  ./pipewire-inhibit
+  ./randomWallpaper
+  ./swayidle
+  ./swayosd
+  ./waybar
+
   more
 ]

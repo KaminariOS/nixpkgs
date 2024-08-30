@@ -1,9 +1,10 @@
-{ pkgs, specialArgs, ... }:
-
-let
-  fontSize = 10;
-in
 {
+  pkgs,
+  specialArgs,
+  ...
+}: let
+  fontSize = 10;
+in {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -28,7 +29,7 @@ in
       selection.save_to_clipboard = true;
       shell = {
         program = "${pkgs.zellij}/bin/zellij";
-        args = [ "options" "--default-shell" "fish" ];
+        args = ["options" "--default-shell" "fish"];
       };
       window = {
         decorations = "full";

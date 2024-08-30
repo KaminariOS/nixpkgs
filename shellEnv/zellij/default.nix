@@ -1,10 +1,14 @@
-{ pkgs, ... }: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.zellij = {
     enable = true;
     #enableFishIntegration = true;
     settings = {
       default_shell = "${pkgs.fish}/bin/fish";
-      theme = "Tokyo Night Storm";
+      theme = lib.mkDefault "Tokyo Night Storm";
       # copy_command = "xclip -selection clipboard";
       #keybinds = {
       #normal = {

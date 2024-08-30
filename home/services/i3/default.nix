@@ -1,13 +1,13 @@
-{ config, lib, pkgs, ... }:
-
-let
-  mod = "Mod4";
-in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  mod = "Mod4";
+in {
   xsession = {
-
-    initExtra =
-      ''
+    initExtra = ''
     '';
 
     profileExtra = ''
@@ -36,13 +36,12 @@ in
         };
 
         assigns = {
-          "1" = [{ class = "wezterm"; }];
+          "1" = [{class = "wezterm";}];
         };
 
         defaultWorkspace = "workspace number 9";
 
         terminal = "wezterm";
-
 
         keybindings = lib.mkOptionDefault {
           "XF86AudioMute" = "exec amixer set Master toggle";

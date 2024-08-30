@@ -1,12 +1,13 @@
-{ inputs, system, ... }:
-
-let
-  inherit (inputs.nixpkgs.lib) nixosSystem;
-in
 {
+  inputs,
+  system,
+  ...
+}: let
+  inherit (inputs.nixpkgs.lib) nixosSystem;
+in {
   savior = nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs; };
+    specialArgs = {inherit inputs;};
     modules = [
       ../system/machine/savior
       ../system/configuration.nix
@@ -15,9 +16,17 @@ in
 
   portable = nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs; };
+    specialArgs = {inherit inputs;};
     modules = [
       ../system/machine/portable
+      ../system/configuration.nix
+    ];
+  };
+  redmoon = nixosSystem {
+    inherit system;
+    specialArgs = {inherit inputs;};
+    modules = [
+      ../system/machine/redmoon
       ../system/configuration.nix
     ];
   };

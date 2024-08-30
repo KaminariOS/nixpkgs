@@ -1,6 +1,4 @@
-self: super:
-
-{
+self: super: {
   mtxclient = super.mtxclient.overrideAttrs (
     old: rec {
       version = "0.6.2";

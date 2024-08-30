@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   fzfConfig = ''
     set -x FZF_DEFAULT_OPTS "--preview='bat {} --color=always'" \n
     set -x SKIM_DEFAULT_COMMAND "rg --files || fd || find ."
@@ -14,7 +17,7 @@ let
     set -g theme_color_scheme solarized
   '';
 
-  custom = pkgs.callPackage ./plugins.nix { };
+  custom = pkgs.callPackage ./plugins.nix {};
 
   fenv = {
     name = "foreign-env";
@@ -53,7 +56,8 @@ let
   #alias clo "clion"
   #alias dnix "echo 'use nix' >> .envrc; direnv allow"
   #'';
-  fishConfig = "
+  fishConfig =
+    "
 
     set -g fish_color_autosuggestion 555 yellow
     set -g fish_color_command 5f87d7
@@ -120,7 +124,7 @@ let
     #set -gx LESS_TERMCAP_ue \e'[0m'           # end underline
     #set -gx LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
     "
-  + "
+    + "
     fish_vi_key_bindings
     # Emulates vim's cursor shape behavior
     # Set the normal and visual mode cursors to a block
@@ -162,10 +166,11 @@ let
 
     # Make vi mode work in wezterm
     set fish_vi_force_cursor 1
-  " + fzfConfig + themeConfig;
+  "
+    + fzfConfig
+    + themeConfig;
   #+ aliases;
-in
-{
+in {
   programs.fish = {
     enable = true;
 
@@ -246,7 +251,7 @@ in
       zel = "zellij -l compact";
       logout = "pkill -u $USER";
     };
-    plugins = [ custom.theme fenv bass puffer done ];
+    plugins = [custom.theme fenv bass puffer done];
     interactiveShellInit = ''
       eval (direnv hook fish)
       any-nix-shell fish --info-right | source

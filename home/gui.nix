@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   gui_packages = with pkgs; [
     # i3status
     brightnessctl
@@ -15,7 +18,7 @@
 
     maim
     gdbgui
-    # Your One-Stop Publication Workbench 
+    # Your One-Stop Publication Workbench
     zettlr
 
     obs-studio
@@ -41,6 +44,19 @@
 
     okular
     oculante
-  ];
 
+    # wayland stuff
+    mako
+    wl-clipboard
+    shotman
+
+    swayidle #idle locker
+    swaylock #screen locker
+    waybar
+    swaybg #background
+    pavucontrol
+    pamixer
+    # pulseaudioFull
+    brightnessctl
+  ];
 }

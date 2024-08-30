@@ -12,5 +12,7 @@
   # ./zathura
   ./wezterm
   # ./plasma
+  ./firefox.nix
+  ./swaylock.nix
+  ./wlogout.nix
 ]
-

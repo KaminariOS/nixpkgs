@@ -1,14 +1,10 @@
-{ gh-md-toc }:
-
-self: super:
-
-{
+{gh-md-toc}: self: super: {
   md-toc = self.stdenv.mkDerivation {
     name = "gh-md-toc-24-08-2022";
 
     src = gh-md-toc;
 
-    phases = [ "installPhase" "patchPhase" ];
+    phases = ["installPhase" "patchPhase"];
 
     installPhase = ''
       mkdir -p $out/bin
