@@ -268,10 +268,13 @@ in {
       };
 
       style = lib.mkAfter ''
+        * {
+            font-size: 33px;
+          }
         ${
           lib.optionalString (config.stylix.polarity == "light") "
           tooltip {
-            background: alpha(@base05, ${builtins.toString config.stylix.opacity.desktop});
+            background: alpha(@base05, ${builtins.toString (config.stylix.opacity.desktop / 4)});
             color: ${config.lib.stylix.colors.withHashtag.base00};
           }"
         }

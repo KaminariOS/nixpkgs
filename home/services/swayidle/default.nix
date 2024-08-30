@@ -36,7 +36,7 @@ in {
           }
         ]
         ++ lib.optional cfg.desktop.autoSuspend {
-          timeout = 600;
+          timeout = 900;
           command = "${lib.getExe' pkgs.systemd "systemctl"} suspend";
         }
         ++ lib.optional (!cfg.desktop.autoSuspend)
