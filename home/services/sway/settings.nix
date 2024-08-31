@@ -85,6 +85,7 @@ in {
     keybindings =
       {
         "${modifier}+B" = "exec ${lib.getExe cfg.defaultApps.webBrowser}";
+        "${modifier}+T" = "exec ${lib.getExe pkgs.wlr-randr} --output Unknown-1 --toggle";
         "${modifier}+Shift+Q" = "kill";
         "${modifier}+Comma" = "workspace prev";
         "${modifier}+Shift+X" = "exec ${lib.getExe pkgs.swaylock} -i ${config.home.homeDirectory}/Pictures/wallpaper/wallpaper.jpg";
