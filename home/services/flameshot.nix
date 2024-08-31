@@ -9,6 +9,11 @@
         ];
         buildInputs = oldAttrs.buildInputs ++ [pkgs.libsForQt5.kguiaddons];
       });
+      settings = {
+        General = {
+          disabledGrimWarning = true;
+        };
+      };
     };
   };
 }
