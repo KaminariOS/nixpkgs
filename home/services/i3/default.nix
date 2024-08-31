@@ -20,7 +20,7 @@ in {
       xset -dpms
     '';
     windowManager.i3 = {
-      enable = true;
+      # enable = true;
       package = pkgs.i3;
       extraConfig = builtins.readFile ./config;
       config = {

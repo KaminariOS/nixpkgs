@@ -133,6 +133,7 @@ in {
 
   # Scanner backend
   hardware = {
+    acpilight.enable = true;
     sane = {
       enable = true;
       extraBackends = [pkgs.epkowa pkgs.sane-airscan];
