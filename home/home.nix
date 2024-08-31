@@ -86,6 +86,8 @@ in {
       EDITOR = "nvim";
       BROWSER = "firefox";
       TERM_PROGRAM = "WezTerm";
+      QT_SCALE_FACTOR = 2;
+      GDK_SCALE = 2;
     };
   };
 

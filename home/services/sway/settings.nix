@@ -251,6 +251,17 @@ in {
       bindsym --locked XF86AudioPrev exec ${helpers.media.prev}
       bindsym --locked XF86AudioNext exec ${helpers.media.next}
 
+
+      assign [class="wezterm"] 1
+      assign [class="chrome"] 2
+      assign [class="firefox"] 2
+      assign [class="clion"] 3
+      assign [class="idea"] 3
+      assign [class="okular"] 4
+      assign [class="slack"] 5
+      assign [class="discord"] 5
+      assign [class="telegram-desktop"] 5
+
       mode "move" {
         bindgesture pinch:inward+down move down
         bindgesture pinch:inward+left move left
