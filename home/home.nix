@@ -51,9 +51,6 @@ in {
       modifier = "Mod4"; # Super key
       terminal = "wezterm";
       output = {
-        "Virtual-1" = {
-          mode = "2880x1800@60Hz";
-        };
       };
       focus = {
         wrapping = "yes";
@@ -68,10 +65,7 @@ in {
     extraConfig = ''
       set $mod Mod4
       output Virtual-1 scale 3
-      bindsym Print+Shift exec shotman -c output
-      bindsym $mod+P exec shotman -c region
       bindsym $mod+Shift+d exec 'rofi -show window'
-      bindsym Print+Shift+Control exec shotman -c window
 
       # corner_radius 4
     '';

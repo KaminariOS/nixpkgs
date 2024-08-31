@@ -15,4 +15,5 @@
   ./firefox.nix
   ./swaylock.nix
   ./wlogout.nix
+  ./swaywsr
 ]

@@ -52,11 +52,12 @@
 
     swayidle #idle locker
     swaylock #screen locker
-    waybar
-    swaybg #background
+    swaywsr
+
     pavucontrol
     pamixer
     # pulseaudioFull
     brightnessctl
+    wlprop
   ];
 }

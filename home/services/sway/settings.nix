@@ -105,12 +105,15 @@ in {
         "${modifier}+Shift+V" = "floating toggle";
         "${modifier}+Shift+W" = "fullscreen toggle";
         "${modifier}+Return" = "exec ${lib.getExe cfg.defaultApps.terminal}";
-        "${modifier}+Tab" = "exec ${lib.getExe config.programs.rofi.package} -show window";
+        # "${modifier}+Tab" = "exec ${lib.getExe config.programs.rofi.package} -show window";
         "${modifier}+D" = "exec 'rofi -modi run, drun, window -show drun'";
         "${modifier}+Ctrl+greater" = "move workspace to output right";
         "${modifier}+Ctrl+less" = "move workspace to output left";
         "${modifier}+Shift+Ctrl+greater" = "move window to output right";
         "${modifier}+Shift+Ctrl+less" = "move window to output left";
+        "${modifier}+P" = "exec flameshot gui";
+        "${modifier}+Tab" = "fullscreen toggle , focus right, fullscreen toggle";
+        "${modifier}+Shift+Tab" = "fullscreen toggle , focus left, fullscreen toggle";
         "Control+F12" = "exec ${helpers.screenshot}";
         "Ctrl+Mod1+M" = "mode move";
         "Ctrl+Mod1+R" = "mode resize";
@@ -168,10 +171,14 @@ in {
     startup = [
       {
         command = "swaymsg 'workspace 1; exec wezterm'";
-        always = true;
+        always = false;
       }
       {
         command = "swaymsg 'workspace 2; exec firefox'";
+        always = false;
+      }
+      {
+        command = "swaymsg 'exec ${lib.getExe pkgs.swaywsr}'";
         always = true;
       }
       {command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
@@ -252,15 +259,15 @@ in {
       bindsym --locked XF86AudioNext exec ${helpers.media.next}
 
 
-      assign [class="wezterm"] 1
-      assign [class="chrome"] 2
-      assign [class="firefox"] 2
-      assign [class="clion"] 3
-      assign [class="idea"] 3
-      assign [class="okular"] 4
-      assign [class="slack"] 5
-      assign [class="discord"] 5
-      assign [class="telegram-desktop"] 5
+      assign [app_id="org.wezfurlong.wezterm"] workspace number 1
+      assign [class="chrome"] workspace number 2
+      assign [app_id="firefox"] workspace number 2
+      assign [class="clion"] workspace number 3
+      assign [class="idea"] workspace number 3
+      assign [app_id="org.kde.okular"] workspace number 4
+      assign [class="Slack"] workspace number 5
+      assign [class="discord"] workspace number 5
+      assign [app_id="org.telegram.desktop"] workspace number 5
 
       mode "move" {
         bindgesture pinch:inward+down move down
