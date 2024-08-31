@@ -2,7 +2,6 @@
   config,
   pkgs,
   lib,
-  stdenv,
   ...
 }: let
   shellPkgs = import ../shellEnv/shellList.nix pkgs;
@@ -37,11 +36,14 @@ in {
       #      ./age
       ./programs
       ./scripts
-      ./services
       ../shellEnv
+      ./services
       #      ./themes
     ]
-    ++ [./options.nix ./stylix.nix];
+    ++ [
+      ./options.nix
+      ./stylix.nix
+    ];
 
   wayland.windowManager.sway = {
     enable = true;

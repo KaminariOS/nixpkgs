@@ -53,6 +53,7 @@
     swayidle #idle locker
     swaylock #screen locker
     swaywsr
+    grim
 
     pavucontrol
     pamixer

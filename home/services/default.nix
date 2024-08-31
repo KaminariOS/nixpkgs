@@ -1,7 +1,6 @@
 let
   more = {
     services = {
-      flameshot.enable = true;
       gnome-keyring.enable = true;
       blueman-applet.enable = true;
       kdeconnect = {
@@ -34,6 +33,6 @@ in [
   ./swayidle
   ./swayosd
   ./waybar
-
+  ./flameshot.nix
   more
 ]
