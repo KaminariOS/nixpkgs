@@ -189,7 +189,26 @@ in {
             tooltip-format-wifi = "{essid} ({signalStrength}%) {icon}";
           };
 
-          tray = {spacing = 15;};
+          cpu = {
+            format = " {usage}%";
+          };
+
+          memory = {
+            format = "{used}G";
+          };
+
+          tray = {
+            icon-size = 33;
+            spacing = 15;
+          };
+
+          temperature = {
+            format = "{temperatureC}°";
+          };
+          systemd-failed-units = {
+            hide-on-ok = true;
+            format = " {nr_failed}";
+          };
 
           "custom/dnd" = let
             mako-dnd = pkgs.writeShellScript "mako-dnd" ''
@@ -254,7 +273,14 @@ in {
 
           "group/hardware" = {
             modules =
-              ["pulseaudio" "bluetooth" "network"]
+              [
+                "pulseaudio"
+                "memory"
+                "cpu"
+                "systemd-failed-units"
+                "temperature"
+                # "bluetooth" "network"
+              ]
               ++ ["power-profiles-daemon" "battery"];
 
             orientation = "horizontal";
@@ -317,6 +343,10 @@ in {
 
           #workspaces button {
             border-radius: 0px;
+          }
+
+          #tray > .active {
+            color: blue;
           }
 
           #workspaces button.active,
