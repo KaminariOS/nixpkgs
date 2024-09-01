@@ -13,4 +13,3 @@
   ./wezterm
   # ./plasma
 ]
-

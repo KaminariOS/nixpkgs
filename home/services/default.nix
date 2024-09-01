@@ -11,8 +11,7 @@ let
       #taskwarrior-sync.enable = true;
     };
   };
-in
-[
+in [
   ./dunst
   ./gpg-agent
   ./networkmanager

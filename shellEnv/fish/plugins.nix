@@ -1,6 +1,4 @@
-{ pkgs }:
-
-let
+{pkgs}: let
   bobthefish = {
     name = "theme-bobthefish";
     src = pkgs.fish-bobthefish-theme;
@@ -10,8 +8,7 @@ let
     name = "keytool-completions";
     src = pkgs.fish-keytool-completions;
   };
-in
-{
+in {
   completions = {
     keytool = builtins.readFile "${keytool-completions.src}/completions/keytool.fish";
   };

@@ -1,6 +1,8 @@
-{ stdenv, fetchFromGitHub, fetchgit }:
 {
-
+  stdenv,
+  fetchFromGitHub,
+  fetchgit,
+}: {
   sddm-sugar-candy = stdenv.mkDerivation {
     pname = "sddm-sugar-candy";
     version = "1.2";

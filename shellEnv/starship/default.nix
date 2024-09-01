@@ -1,9 +1,12 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   # Starship Prompt
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.starship.enable
   programs.starship.enable = true;
-  imports = [ ./symbols.nix ];
+  imports = [./symbols.nix];
 
   programs.starship.settings = {
     # See docs here: https://starship.rs/config/
@@ -200,7 +203,5 @@
         }
       ];
     };
-
-
   };
 }

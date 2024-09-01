@@ -42,17 +42,16 @@
             {
               name = "currentdate";
               type = "date";
-              params = { format = "%d/%m/%Y"; };
+              params = {format = "%d/%m/%Y";};
             }
             {
               name = "currenttime";
               type = "date";
-              params = { format = "%R"; };
+              params = {format = "%R";};
             }
           ];
         };
       };
-
     };
   };
 }

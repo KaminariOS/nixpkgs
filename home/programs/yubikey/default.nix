@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     yubikey-manager # yubikey manager cli
     #    yubioath-desktop # yubikey OTP manager (gui)

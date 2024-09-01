@@ -1,6 +1,10 @@
-{ config, pkgs, lib, stdenv, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  stdenv,
+  ...
+}: let
   shellPkgs = import ../shellEnv/shellList.nix pkgs;
   defaultPkgs = with pkgs; [
     arandr # simple GUI for xrandr
@@ -17,7 +21,6 @@ let
     rofi
   ];
 
-
   gui_apps = (import ./gui.nix pkgs).gui_packages;
   nixos_app = with pkgs; [
     jetbrains.clion
@@ -29,8 +32,7 @@ let
     pulseaudio
   ];
   inherit (config.home) homeDirectory;
-in
-{
+in {
   imports = builtins.concatMap import [
     #      ./age
     ./programs
@@ -53,19 +55,19 @@ in
 
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-rime fcitx5-chinese-addons fcitx5-mozc ];
+    fcitx5.addons = with pkgs; [fcitx5-rime fcitx5-chinese-addons fcitx5-mozc];
   };
   # restart services on change
   systemd.user = {
     targets.tray = {
       Unit = {
         Description = "Home Manager System Tray";
-        Requires = [ "graphical-session-pre.target" ];
+        Requires = ["graphical-session-pre.target"];
       };
     };
     startServices = "sd-switch";
     timers.wallpaper = {
-      Install.WantedBy = [ "timers.target" ];
+      Install.WantedBy = ["timers.target"];
       Timer = {
         OnBootSec = "40m";
         OnUnitActiveSec = "1d";
@@ -75,40 +77,38 @@ in
       imec = {
         Unit.Description = "...";
         Service.ExecStart = "${config.home.homeDirectory}/.nix-profile/bin/fcitx5";
-        Install.WantedBy = [ "default.target" ]; # starts after login
+        Install.WantedBy = ["default.target"]; # starts after login
       };
       rclone = {
         Service = {
           Type = "simple";
           ExecStart = "${pkgs.rclone}/bin/rclone mount --umask 022  --allow-other remote: %h/rclone --vfs-cache-mode full --vfs-fast-fingerprint --vfs-cache-max-size 10G";
           ExecStop = "umount ${homeDirectory}/rclone";
-          Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
+          Environment = ["PATH=/run/wrappers/bin/:$PATH"];
         };
-        Install.WantedBy = [ "default.target" ];
+        Install.WantedBy = ["default.target"];
       };
       wallpaper = {
         Service = {
           Type = "oneshot";
-          ExecStart =
-            "${homeDirectory}/nixpkgs/wallpaper/wallpaper.sh";
-          #''${pkgs.wget}/bin/wget -O wallpaper.jpg "http://www.bing.com/$(wget -q -O- https://binged.it/2ZButYc | sed -e 's/<[^>]*>//g' | cut -d / -f2 | cut -d \& -f1)" -O ${homeDirectory}/Pictures/wallpaper.jpg && 
+          ExecStart = "${homeDirectory}/nixpkgs/wallpaper/wallpaper.sh";
+          #''${pkgs.wget}/bin/wget -O wallpaper.jpg "http://www.bing.com/$(wget -q -O- https://binged.it/2ZButYc | sed -e 's/<[^>]*>//g' | cut -d / -f2 | cut -d \& -f1)" -O ${homeDirectory}/Pictures/wallpaper.jpg &&
           #${pkgs.feh}/bin/feh --bg-scale /Pictures/wallpaper.jpg'';
-          Environment = [ "PATH=/run/current-system/sw/bin:${homeDirectory}/.nix-profile/bin:$PATH" ];
+          Environment = ["PATH=/run/current-system/sw/bin:${homeDirectory}/.nix-profile/bin:$PATH"];
         };
         #Install.WantedBy = ["default.target"];
-        Install.WantedBy = [ "default.target" ];
+        Install.WantedBy = ["default.target"];
       };
     };
   };
 
   xdg.mimeApps = {
     # enable = true;
-    defaultApplications = { };
+    defaultApplications = {};
   };
 
   # notifications about home-manager news
   news.display = "silent";
-
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

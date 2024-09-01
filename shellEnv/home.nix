@@ -1,9 +1,12 @@
-{ config, pkgs, lib, stdenv, ... }:
-
-let
-  shellPkgs = import ../shellEnv/shellList.nix pkgs;
-in
 {
+  config,
+  pkgs,
+  lib,
+  stdenv,
+  ...
+}: let
+  shellPkgs = import ../shellEnv/shellList.nix pkgs;
+in {
   imports = builtins.concatMap import [
     #      ./age
     ../shellEnv
@@ -22,7 +25,6 @@ in
 
   # notifications about home-manager news
   news.display = "silent";
-
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -1,8 +1,6 @@
-{ lib, ... }:
-let
+{lib, ...}: let
   inherit (lib) mkDefault;
-in
-{
+in {
   programs.starship.settings = {
     aws.symbol = mkDefault " ";
     battery = {

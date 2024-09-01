@@ -1,13 +1,13 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the default.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config
-, lib
-, pkgs
-, inputs
-, ...
-}:
-let
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: let
   customFonts = pkgs.nerdfonts.override {
     fonts = [
       "JetBrainsMono"
@@ -15,9 +15,8 @@ let
     ];
   };
 
-  myfonts = pkgs.callPackage fonts/default.nix { inherit pkgs; };
-in
-{
+  myfonts = pkgs.callPackage fonts/default.nix {inherit pkgs;};
+in {
   imports = [
     # Window manager
     #./wm/xmonad.nix
@@ -29,7 +28,7 @@ in
     # Enables wireless support and openvpn via network manager.
     networkmanager = {
       enable = true;
-      plugins = [ pkgs.networkmanager-openvpn ];
+      plugins = [pkgs.networkmanager-openvpn];
     };
 
     # The global useDHCP flag is deprecated, therefore explicitly set to false here.
@@ -55,35 +54,39 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = let themes = pkgs.callPackage ./sddm-theme.nix { }; in
+  environment.systemPackages = let
+    themes = pkgs.callPackage ./sddm-theme.nix {};
+  in
     (with pkgs; [
       firejail
       neovim
       wget
       home-manager
       # kwallet-pam
-    ]) ++
-    (with pkgs.libsForQt5.qt5; [ qtgraphicaleffects qtsvg qtquickcontrols ]) ++
-    [ themes.sddm-sugar-candy ];
+    ])
+    ++ (with pkgs.libsForQt5.qt5; [qtgraphicaleffects qtsvg qtquickcontrols])
+    ++ [themes.sddm-sugar-candy];
 
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    cheese # webcam tool
-    gnome-music
-    gnome-terminal
-    gedit # text editor
-    epiphany # web browser
-    geary # email reader
-    evince # document viewer
-    gnome-characters
-    totem # video player
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-  ]);
+  environment.gnome.excludePackages =
+    (with pkgs; [
+      gnome-photos
+      gnome-tour
+    ])
+    ++ (with pkgs.gnome; [
+      cheese # webcam tool
+      gnome-music
+      gnome-terminal
+      gedit # text editor
+      epiphany # web browser
+      geary # email reader
+      evince # document viewer
+      gnome-characters
+      totem # video player
+      tali # poker game
+      iagno # go game
+      hitori # sudoku game
+      atomix # puzzle game
+    ]);
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -112,12 +115,12 @@ in
     };
   };
 
-  users.extraGroups.vboxusers.members = [ "kosumi" ];
+  users.extraGroups.vboxusers.members = ["kosumi"];
 
-   # hardware.pulseaudio = {
-   #   enable = true;
-   #   package = pkgs.pulseaudioFull;
-   # };
+  # hardware.pulseaudio = {
+  #   enable = true;
+  #   package = pkgs.pulseaudioFull;
+  # };
 
   security.rtkit.enable = true;
 
@@ -125,7 +128,7 @@ in
   hardware = {
     sane = {
       enable = true;
-      extraBackends = [ pkgs.epkowa pkgs.sane-airscan ];
+      extraBackends = [pkgs.epkowa pkgs.sane-airscan];
     };
     graphics.enable32Bit = true;
     bluetooth.enable = true;
@@ -185,7 +188,7 @@ in
     blueman.enable = true;
     # Yubikey smart card mode (CCID) and OTP mode (udev)
     pcscd.enable = true;
-    udev.packages = with pkgs; [ yubikey-personalization via ];
+    udev.packages = with pkgs; [yubikey-personalization via];
     udev.extraRules = ''
       # https://github.com/stlink-org/stlink/blob/32e8dcc8b5dbed7b6412e7838ea1b2c41f0247fd/config/udev/rules.d/49-stlinkv1.rules
       ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3744", TAG+="uaccess"
@@ -203,7 +206,7 @@ in
     # Enable CUPS to print documents.
     printing = {
       enable = true;
-      drivers = [ pkgs.epson-escpr ];
+      drivers = [pkgs.epson-escpr];
     };
 
     postgresql = {
@@ -238,7 +241,7 @@ in
       fira-code-symbols
       unifont
       ipafont
-      
+
       noto-fonts
       # noto-fonts-cjk-serif
       # noto-fonts-cjk-sans
@@ -248,10 +251,10 @@ in
 
     fontconfig = {
       defaultFonts = {
-        serif = [ "Noto fonts" "AR PL UKai HK" "Ubuntu" ];
-        sansSerif = [ "Noto fonts" "AR PL UKai HK" "IPAPGothic" "Ubuntu" ];
-        monospace = [ "AR PL UKai HK" "fira-code" "font-awesome" ];
-        emoji = [ "Noto Emoji" ];
+        serif = ["Noto fonts" "AR PL UKai HK" "Ubuntu"];
+        sansSerif = ["Noto fonts" "AR PL UKai HK" "IPAPGothic" "Ubuntu"];
+        monospace = ["AR PL UKai HK" "fira-code" "font-awesome"];
+        emoji = ["Noto Emoji"];
       };
     };
   };
@@ -271,7 +274,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kosumi = {
     isNormalUser = true;
-    extraGroups = [ "docker" "networkmanager" "wheel" "scanner" "lp" ]; # wheel for ‘sudo’.
+    extraGroups = ["docker" "networkmanager" "wheel" "scanner" "lp"]; # wheel for ‘sudo’.
     shell = pkgs.fish;
   };
 
@@ -297,7 +300,6 @@ in
   nixpkgs.config.allowUnfree = true;
   hardware.graphics.enable = true;
 
-
   # Nix daemon config
   nix = {
     # Automate garbage collection
@@ -307,7 +309,7 @@ in
       options = "--delete-older-than 7d";
     };
 
-    nixPath = [ "nixpkgs=${pkgs.path}" ];
+    nixPath = ["nixpkgs=${pkgs.path}"];
 
     # Flakes settings
     package = pkgs.nixVersions.stable;
@@ -318,9 +320,9 @@ in
       auto-optimise-store = true;
 
       # Required by Cachix to be used as non-root user
-      trusted-users = [ "root" "kosumi" ];
+      trusted-users = ["root" "kosumi"];
 
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
 
       # Avoid unwanted garbage collection when using nix-direnv
       keep-outputs = true;

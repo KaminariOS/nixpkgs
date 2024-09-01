@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
-
-let
-  colors = import ../../themes/colors.nix;
-in
 {
+  config,
+  pkgs,
+  ...
+}: let
+  colors = import ../../themes/colors.nix;
+in {
   services.dunst = {
     enable = true;
     iconTheme = {

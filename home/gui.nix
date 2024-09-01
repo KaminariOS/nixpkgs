@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   gui_packages = with pkgs; [
     # i3status
     brightnessctl
@@ -15,7 +18,7 @@
 
     maim
     gdbgui
-    # Your One-Stop Publication Workbench 
+    # Your One-Stop Publication Workbench
     zettlr
 
     obs-studio
@@ -42,5 +45,4 @@
     okular
     oculante
   ];
-
 }

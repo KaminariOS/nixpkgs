@@ -1,8 +1,9 @@
-{ inputs, system, ... }:
-
-with inputs;
-
-let
+{
+  inputs,
+  system,
+  ...
+}:
+with inputs; let
   fishOverlay = f: p: {
     inherit fish-bobthefish-theme fish-keytool-completions;
   };
@@ -16,8 +17,8 @@ let
       fishOverlay
       nurpkgs.overlay
       #neovim-flake.overlays.${system}.default
-      (f: p: { tex2nix = tex2nix.defaultPackage.${system}; })
-      ((import ../home/overlays/md-toc) { inherit (inputs) gh-md-toc; })
+      (f: p: {tex2nix = tex2nix.defaultPackage.${system};})
+      ((import ../home/overlays/md-toc) {inherit (inputs) gh-md-toc;})
       (import ../home/overlays/ranger)
     ];
   };
@@ -39,7 +40,12 @@ let
   #../shellEnv/home.nix
   #] ++ commonImports;
 
-  mkHome = { hidpi ? false, username, shell ? false, homed }: (
+  mkHome = {
+    hidpi ? false,
+    username,
+    shell ? false,
+    homed,
+  }: (
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
@@ -48,8 +54,18 @@ let
         addons = nur.repos.rycee.firefox-addons;
       };
 
-      modules = let homeDirectory = homed; in [
-        { imports = commonImports ++ (if shell then [ ../shellEnv/home.nix ] else [ ../home/home.nix ]); }
+      modules = let
+        homeDirectory = homed;
+      in [
+        {
+          imports =
+            commonImports
+            ++ (
+              if shell
+              then [../shellEnv/home.nix]
+              else [../home/home.nix]
+            );
+        }
         {
           home = {
             inherit username;
@@ -64,12 +80,34 @@ let
       ];
     }
   );
-in
-{
-  kosumi = let username = "kosumi"; in mkHome { hidpi = false;inherit username; homed = "/home/${username}"; };
+in {
+  kosumi = let
+    username = "kosumi";
+  in
+    mkHome {
+      hidpi = false;
+      inherit username;
+      homed = "/home/${username}";
+    };
 
-  shellhome = let username = "Kosumi"; in mkHome { hidpi = false;inherit username; shell = true; homed = "/users/${username}"; };
-  shellhomeForWork = let username = "kchen"; in mkHome { hidpi = false;inherit username; shell = true; homed = "/home/${username}"; };
+  shellhome = let
+    username = "Kosumi";
+  in
+    mkHome {
+      hidpi = false;
+      inherit username;
+      shell = true;
+      homed = "/users/${username}";
+    };
+  shellhomeForWork = let
+    username = "kchen";
+  in
+    mkHome {
+      hidpi = false;
+      inherit username;
+      shell = true;
+      homed = "/home/${username}";
+    };
   # Continuos Integration automation
   #  ci = {
   #    metals = pkgs.callPackage ../home/programs/neovim-ide/metals.nix { };

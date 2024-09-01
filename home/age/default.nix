@@ -1,15 +1,18 @@
 let
-  secrets = { pkgs, config, ... }: {
+  secrets = {
+    pkgs,
+    config,
+    ...
+  }: {
     homeage = {
-      identityPaths = [ "~/.ssh/id_ed25519" ];
+      identityPaths = ["~/.ssh/id_ed25519"];
       pkg = pkgs.rage;
 
       file."github-token" = {
         source = ./github.age;
         path = "github-notifications-token";
-        symlinks = [ "${config.xdg.configHome}/secrets/github" ];
+        symlinks = ["${config.xdg.configHome}/secrets/github"];
       };
     };
   };
-in
-[ secrets ]
+in [secrets]

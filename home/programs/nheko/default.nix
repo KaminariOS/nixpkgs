@@ -1,13 +1,19 @@
-{ pkgs, lib, specialArgs, ... }:
-
-let
-  removeNewline = lib.replaceStrings [ "\n" ] [ "" ];
+{
+  pkgs,
+  lib,
+  specialArgs,
+  ...
+}: let
+  removeNewline = lib.replaceStrings ["\n"] [""];
   tokenFile = ../../secrets/nheko-access-token;
   fileHash = builtins.hashFile "sha256" tokenFile;
   encryptedHash = "0a4db9b5b83610b1853339804fb33be1872c5454ed261e81afbab3bdc4fb106e";
-  token = removeNewline (if fileHash == encryptedHash then "SECRET" else (builtins.readFile tokenFile));
-in
-{
+  token = removeNewline (
+    if fileHash == encryptedHash
+    then "SECRET"
+    else (builtins.readFile tokenFile)
+  );
+in {
   programs.nheko = {
     # enable = true;
 
@@ -28,7 +34,10 @@ in
       };
 
       settings = {
-        scaleFactor = if specialArgs.hidpi then 1.0 else 0.7;
+        scaleFactor =
+          if specialArgs.hidpi
+          then 1.0
+          else 0.7;
       };
 
       user = {
@@ -79,7 +88,6 @@ in
         height = 482;
         width = 950;
       };
-
     };
   };
 }

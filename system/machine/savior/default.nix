@@ -1,15 +1,15 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the default.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -36,10 +36,11 @@
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.utf8";
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   # Optionally, you may need to select the appropriate driver version for your specific GPU.
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.open = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -65,9 +66,8 @@
   users.users.kosumi = {
     isNormalUser = true;
     description = "kosumi";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-
       #  thunderbird
     ];
   };
@@ -108,5 +108,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man default.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
-
 }

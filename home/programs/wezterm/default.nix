@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   xdg.configFile."wezterm/bar.lua".source = ./bar.lua;
   programs.wezterm = {
     enable = true;
@@ -31,7 +31,7 @@
                -- config.font = wezterm.font('Fira Code', { })
                config.font_size = 32
                config.font = wezterm.font_with_fallback {
-                 'JetBrains Mono', 
+                 'JetBrains Mono',
                  'Noto Color Emoji',
                  'Nerd Font Symbols',
                  'AR PL UKai TW',
@@ -60,7 +60,7 @@
                  inactive_titlebar_bg = '#333333',
                  -- inactive_titlebar_bg = 'rgba(255, 0, 0, 0)',
                }
-          
+
            config.enable_tab_bar = true
            config.use_fancy_tab_bar = not true
            config.hide_tab_bar_if_only_one_tab = true
@@ -115,7 +115,7 @@
           end)
         }
       }
-      
+
           config.window_padding = {
             left = '0.2cell',
             right = '0.2cell',
