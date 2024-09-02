@@ -54,6 +54,7 @@
     swaylock #screen locker
     swaywsr
     grim
+    wdisplays
 
     pavucontrol
     pamixer
