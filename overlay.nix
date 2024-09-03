@@ -1,12 +1,12 @@
 self: super: {
-  obs-studio = super.obs-studio.overrideAttrs (oldAttrs: {
-    # extend old postInstall (if exists) with wrapProgram
-    postInstall =
-      (oldAttrs.postInstall or "")
-      + ''
-        wrapProgram $out/bin/obs --set QT_QPA_PLATFORM wayland
-      '';
-  });
+  # obs-studio = super.obs-studio.overrideAttrs (oldAttrs: {
+  #   # extend old postInstall (if exists) with wrapProgram
+  #   postInstall =
+  #     (oldAttrs.postInstall or "")
+  #     + ''
+  #       wrapProgram $out/bin/obs --set QT_QPA_PLATFORM wayland
+  #     '';
+  # });
 
   okular = super.okular.overrideAttrs (oldAttrs: {
     # extend old postInstall (if exists) with wrapProgram
@@ -25,14 +25,15 @@ self: super: {
         wrapProgram $out/bin/telegram-desktop --set QT_SCALE_FACTOR 2
       '';
   });
-  wireshark = super.wireshark.overrideAttrs (oldAttrs: {
-    # extend old postInstall (if exists) with wrapProgram
-    postInstall =
-      (oldAttrs.postInstall or "")
-      + ''
-        wrapProgram $out/bin/wireshark --set QT_SCALE_FACTOR 2
-      '';
-  });
+  # i3-focus-last = import ./i3_focus.nix self;
+  # wireshark = super.wireshark.overrideAttrs (oldAttrs: {
+  #   # extend old postInstall (if exists) with wrapProgram
+  #   postInstall =
+  #     (oldAttrs.postInstall or "")
+  #     + ''
+  #       wrapProgram $out/bin/wireshark --set QT_SCALE_FACTOR 2
+  #     '';
+  # });
 
   # dolphin
 

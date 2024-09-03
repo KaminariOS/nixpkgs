@@ -23,7 +23,7 @@ with inputs; let
 
     overlays = [
       fishOverlay
-      # (import ../overlay.nix)
+      (import ../overlay.nix)
       nurpkgs.overlay
       #neovim-flake.overlays.${system}.default
       (f: p: {tex2nix = tex2nix.defaultPackage.${system};})
