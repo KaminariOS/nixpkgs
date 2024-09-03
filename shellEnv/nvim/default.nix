@@ -20,6 +20,7 @@ in {
         preventJunkFiles = true;
         lineNumberMode = "number";
         useSystemClipboard = true;
+        searchCase = "smart";
         configRC.custom = let vimrc = builtins.readFile ./init.vim; in entryBetween ["basic"] [] vimrc;
         startPlugins = with pkgs.vimPlugins; [
           multiple-cursors
