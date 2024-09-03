@@ -156,6 +156,7 @@ in {
     pipewire.wireplumber = {
       enable = true;
     };
+    auto-cpufreq.enable = true;
 
     greetd = {
       enable = true;
@@ -191,7 +192,7 @@ in {
       #     };
       #   };
       # };
-      defaultSession = "none+sway";
+      # defaultSession = "none+sway";
     };
 
     xserver = {
@@ -298,6 +299,8 @@ in {
     fish.enable = true;
     fuse.userAllowOther = true;
     partition-manager.enable = true;
+    sway.enable = true;
+    sway.xwayland.enable = true;
     xwayland.enable = true;
     dconf.enable = true;
     nm-applet.enable = true;
