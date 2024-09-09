@@ -1,8 +1,9 @@
-{config, ...}: {
+{config, pkgs, ...}: {
   services = {
     #cross platform text expander in Rust.
     espanso = {
       enable = true;
+      package = pkgs.espanso-wayland;
       matches = {
         base = {
           matches = [
