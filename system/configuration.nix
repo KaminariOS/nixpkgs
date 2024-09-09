@@ -158,6 +158,7 @@ in {
     };
     auto-cpufreq.enable = true;
 
+    xserver.videoDrivers = ["displaylink" "modesetting"];
     greetd = {
       enable = true;
       settings = {
