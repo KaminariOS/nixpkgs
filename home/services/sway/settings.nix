@@ -30,6 +30,7 @@ in {
   config = {
     bars = [];
     inherit modifier;
+    inherit (cfg.defaultApps) terminal;
 
     colors = {
       focused.indicator = lib.mkForce focused;
@@ -114,6 +115,7 @@ in {
         "${modifier}+P" = "exec flameshot gui";
         "${modifier}+Tab" = "fullscreen toggle , focus right, fullscreen toggle";
         "${modifier}+Shift+Tab" = "fullscreen toggle , focus left, fullscreen toggle";
+        "${modifier}+Shift+d" = "exec 'rofi -show window";
         "Control+F12" = "exec ${helpers.screenshot}";
         "Ctrl+Mod1+M" = "mode move";
         "Ctrl+Mod1+R" = "mode resize";

@@ -30,4 +30,12 @@ in {
       ../system/configuration.nix
     ];
   };
+  thinker = nixosSystem {
+    inherit system;
+    specialArgs = {inherit inputs;};
+    modules = [
+      ../system/machine/thinker
+      ../system/configuration.nix
+    ];
+  };
 }

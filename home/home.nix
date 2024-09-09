@@ -44,35 +44,6 @@ in {
       ./options.nix
       ./stylix.nix
     ];
-
-  wayland.windowManager.sway = {
-    enable = true;
-    # package = pkgs.swayfx;
-    checkConfig = false;
-    config = {
-      modifier = "Mod4"; # Super key
-      terminal = "wezterm";
-      output = {
-      };
-      focus = {
-        wrapping = "yes";
-        mouseWarping = false;
-        # followMouse = false;
-      };
-      window.titlebar = false;
-      # keybindings = {
-      #   "${modifier}+d" = "exec 'rofi -modi run, drun, window -show drun'";
-      # };
-    };
-    extraConfig = ''
-      set $mod Mod4
-      output Virtual-1 scale 3
-      bindsym $mod+Shift+d exec 'rofi -show window'
-
-      # corner_radius 4
-    '';
-  };
-
   home = {
     stateVersion = "22.05";
     #    packages = defaultPkgs ++ gnomePkgs;
