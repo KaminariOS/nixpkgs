@@ -122,6 +122,15 @@ in {
         };
         Install.WantedBy = ["default.target"];
       };
+      edu = {
+        Service = {
+          Type = "simple";
+          ExecStart = "${pkgs.rclone}/bin/rclone mount --umask 022  --allow-other unc: %h/unc --vfs-cache-mode full --vfs-fast-fingerprint --vfs-cache-max-size 10G";
+          ExecStop = "umount ${homeDirectory}/unc";
+          Environment = ["PATH=/run/wrappers/bin/:$PATH"];
+        };
+        Install.WantedBy = ["default.target"];
+      };
       wallpaper = {
         Service = {
           Type = "oneshot";
