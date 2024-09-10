@@ -147,6 +147,7 @@ in {
   services = {
     acpid.enable = true;
     upower.enable = true;
+    logind.lidSwitch = "ignore"; 
     # Mount MTP devices
 
     gvfs.enable = true;
