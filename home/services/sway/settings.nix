@@ -63,8 +63,8 @@ in {
     };
 
     gaps = {
-      inner = 5;
-      outer = 6;
+      inner = 3;
+      outer = 3;
     };
 
     input = {
