@@ -10,11 +10,14 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot";
+  boot = {
+    loader = {
+      # Bootloader.
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot";
+    };
+  };
 
   networking.hostName = "thinker"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,7 +52,14 @@
       #media-session.enable = true;
     };
 
-    fprintd.enable = true;
+    fprintd = {
+      enable = true;
+      package = pkgs.fprintd-tod;
+      tod = {
+        enable = true;
+        driver = pkgs.libfprint-2-tod1-vfs0090;
+      };
+    };
   };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

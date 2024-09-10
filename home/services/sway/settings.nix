@@ -180,6 +180,10 @@ in {
         always = false;
       }
       {
+        command = "swaymsg 'output * scale 1.5'";
+        always = true;
+      }
+      {
         command = "swaymsg 'exec ${lib.getExe pkgs.swaywsr}'";
         always = true;
       }
