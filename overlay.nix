@@ -25,6 +25,8 @@ self: super: {
         wrapProgram $out/bin/telegram-desktop --set QT_SCALE_FACTOR 2
       '';
   });
+  tenere = import ./tenere.nix self;
+  heygpt = import ./heygpt.nix self;
   # i3-focus-last = import ./i3_focus.nix self;
   # wireshark = super.wireshark.overrideAttrs (oldAttrs: {
   #   # extend old postInstall (if exists) with wrapProgram

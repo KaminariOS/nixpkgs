@@ -93,6 +93,8 @@ pkgs: let
     rm-improved
 
     viu # A command-line application to view images from the terminal written in Rust
+    tenere
+    heygpt
   ];
 
   security = with pkgs; [
