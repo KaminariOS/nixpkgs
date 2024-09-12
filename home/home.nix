@@ -23,9 +23,9 @@
 
   gui_apps = (import ./gui.nix pkgs).gui_packages;
   nixos_app = with pkgs; [
-    jetbrains.clion
-    jetbrains.idea-ultimate
-    google-chrome
+    # jetbrains.clion
+    # jetbrains.idea-ultimate
+    # google-chrome
     rclone
     firefox
     seahorse
