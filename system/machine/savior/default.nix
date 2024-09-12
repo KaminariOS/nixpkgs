@@ -41,6 +41,7 @@
   # Optionally, you may need to select the appropriate driver version for your specific GPU.
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   hardware.nvidia.open = true;
+  hardware.nvidia-container-toolkit.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
