@@ -486,11 +486,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1725377834,
-        "narHash": "sha256-tqoAO8oT6zEUDXte98cvA1saU9+1dLJQe3pMKLXv8ps=",
+        "lastModified": 1726127872,
+        "narHash": "sha256-c/R4K4wjLooiyZc5k8lwYNpf4NXUuvRF41ZVtpgsasw=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "e55f9a8678adc02024a4877c2a403e3f6daf24fe",
+        "rev": "495c2d7673bf5dea4610cf29a800dc2f64aa3290",
         "type": "github"
       },
       "original": {
@@ -891,11 +891,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1725948275,
-        "narHash": "sha256-4QOPemDQ9VRLQaAdWuvdDBhh+lEUOAnSMHhdr4nS1mk=",
+        "lastModified": 1726142087,
+        "narHash": "sha256-uT4TRd3PgreUD5sJaNioVfMemdyWFLoPHqN4AFszGmw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e5fa72bad0c6f533e8d558182529ee2acc9454fe",
+        "rev": "da8406a6ff556b86dc368e96ca8bd81b2704a91a",
         "type": "github"
       },
       "original": {
@@ -1401,11 +1401,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1725634671,
-        "narHash": "sha256-v3rIhsJBOMLR8e/RNWxr828tB+WywYIoajrZKFM+0Gg=",
+        "lastModified": 1725983898,
+        "narHash": "sha256-4b3A9zPpxAxLnkF9MawJNHDtOOl6ruL0r6Og1TEDGCE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "574d1eac1c200690e27b8eb4e24887f8df7ac27c",
+        "rev": "1355a0cbfeac61d785b7183c0caaec1f97361b43",
         "type": "github"
       },
       "original": {
@@ -1480,11 +1480,11 @@
     },
     "nurpkgs": {
       "locked": {
-        "lastModified": 1725990395,
-        "narHash": "sha256-Sfg6DPQ11wf2lUCv20CwIpWig0BVR/h/bmO4EWNGNZw=",
+        "lastModified": 1726144869,
+        "narHash": "sha256-qkhOz11M4PbadbiLVxlPqFk0q3vOJIFjyA0BoXrO7f8=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c463727bffa9bcaec18cc8bbd2226e220aba751b",
+        "rev": "6c0484657df7e38bf357339c2db5bc6e91169d4a",
         "type": "github"
       },
       "original": {
