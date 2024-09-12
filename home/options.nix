@@ -84,7 +84,7 @@ in {
     desktop = {
       autoSuspend = lib.mkOption {
         description = "Whether to autosuspend on idle.";
-        default = cfg.desktop.hyprland.enable || cfg.desktop.sway.enable;
+        default = false;
         type = lib.types.bool;
       };
 
