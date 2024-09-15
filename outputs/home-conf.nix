@@ -100,7 +100,7 @@ in {
     };
 
   shellhome = let
-    username = "Kosumi";
+    username = "kosumic";
   in
     mkHome {
       hidpi = false;
