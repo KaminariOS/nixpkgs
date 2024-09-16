@@ -8,8 +8,8 @@
 rustPlatform.buildRustPackage rec {
   pname = "heygpt";
   version = "0.24.0";
-  nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ openssl ];
+  nativeBuildInputs = [pkg-config];
+  buildInputs = [openssl];
   src = fetchFromGitHub {
     owner = "fuyufjh";
     repo = "heygpt";

@@ -1,3 +1,3 @@
 {
-  xdg.configFile."tenere/config.toml" = ./config.toml; 
+  xdg.configFile."tenere/config.toml" = ./config.toml;
 }

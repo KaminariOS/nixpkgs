@@ -17,7 +17,7 @@
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot";
     };
-    blacklistedKernelModules = [ "ideapad_laptop" ];
+    blacklistedKernelModules = ["ideapad_laptop"];
   };
 
   networking.hostName = "thinker"; # Define your hostname.
