@@ -23,7 +23,7 @@ in {
         }
         {
           event = "lock";
-          command = "${lib.getExe pkgs.swaylock}";
+          command = "${lib.getExe pkgs.swaylock} -i ${config.home.homeDirectory}/Pictures/wallpaper/wallpaper.jpg";
         }
       ];
 
@@ -42,7 +42,7 @@ in {
         ++ lib.optional (!cfg.desktop.autoSuspend)
         {
           timeout = 600;
-          command = "${lib.getExe pkgs.swaylock}";
+          command = "${lib.getExe pkgs.swaylock} -i ${config.home.homeDirectory}/Pictures/wallpaper/wallpaper.jpg";
         }
         ++ lib.optional (!cfg.desktop.autoSuspend && cfg.desktop.hyprland.enable)
         {
@@ -61,7 +61,7 @@ in {
     systemd.user.services.swayidle = {
       Install.WantedBy = lib.mkForce (lib.optional (cfg.desktop.hyprland.enable) "hyprland-session.target" ++ lib.optional (cfg.desktop.sway.enable) "sway-session.target");
       Service.Restart = lib.mkForce "no";
-      Unit.BindsTo = lib.optional (cfg.desktop.hyprland.enable) "hyprland-session.target" ++ lib.optional (cfg.desktop.sway.enable) "sway-session.target";
+      Unit.BindsTo = lib.optional cfg.desktop.hyprland.enable "hyprland-session.target" ++ lib.optional cfg.desktop.sway.enable "sway-session.target";
     };
   };
 }
