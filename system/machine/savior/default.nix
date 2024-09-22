@@ -10,11 +10,14 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot = {
+    loader = {
+      # Bootloader.
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot/efi";
+    };
+  };
 
   networking.hostName = "savior"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -32,32 +35,37 @@
     #   enableExtensionPack = true;
     # };
   };
+  hardware = {
+    nvidia = {
+      # Optionally, you may need to select the appropriate driver version for your specific GPU.
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      modesetting.enable = true;
+      open = true;
+    };
+    nvidia-container-toolkit.enable = true;
+  };
+  services = {
+    # Select internationalisation properties.
+    # i18n.defaultLocale = "en_US.utf8";
 
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.utf8";
+    xserver.videoDrivers = ["nvidia"];
 
-  services.xserver.videoDrivers = ["nvidia"];
+    # Enable CUPS to print documents.
+    printing.enable = true;
 
-  # Optionally, you may need to select the appropriate driver version for your specific GPU.
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  hardware.nvidia.open = true;
-  hardware.nvidia-container-toolkit.enable = true;
+    logind.lidSwitch = "ignore";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+    pipewire = {
+      enable = true;
+      audio.enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
 
-  services.logind.lidSwitch = "ignore";
-
-  services.pipewire = {
-    enable = true;
-    audio.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    wireplumber.enable = true;
+      wireplumber.enable = true;
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
