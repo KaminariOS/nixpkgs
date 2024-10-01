@@ -25,6 +25,8 @@
       "https://gitlab.com/".insteadOf = "gl:";
       "ssh://git@gitlab.com".pushInsteadOf = "gl:";
     };
+    # https://news.ycombinator.com/item?id=31009675 Unsafe on share drives
+    safe.directory = "*";
   };
 
   rg = "${pkgs.ripgrep}/bin/rg";

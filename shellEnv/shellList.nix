@@ -95,6 +95,12 @@ pkgs: let
     viu # A command-line application to view images from the terminal written in Rust
     tenere
     heygpt
+
+    # Analyzer of executables using a terminal user interface
+    binsider
+
+    # Background rust code checker
+    bacon
   ];
 
   security = with pkgs; [
