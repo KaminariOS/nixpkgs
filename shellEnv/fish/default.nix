@@ -153,6 +153,10 @@
       idea-ultimate $argv &>/dev/null &; disown 
     end
 
+    function ride 
+      rider $argv &>/dev/null &; disown 
+    end
+
     function wssh 
       wezterm ssh $argv &>/dev/null &; disown 
     end

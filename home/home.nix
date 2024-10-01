@@ -27,8 +27,10 @@
     jetbrains.rider
     google-chrome
     rclone
-    seahorse
+    # seahorse
     pulseaudio
+
+    # unityhub
   ];
   inherit (config.home) homeDirectory;
 in {
