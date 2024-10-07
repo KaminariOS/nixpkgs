@@ -30,7 +30,7 @@
     # seahorse
     pulseaudio
 
-    # unityhub
+    unityhub
   ];
   inherit (config.home) homeDirectory;
 in {

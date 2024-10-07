@@ -37,8 +37,7 @@
 
     # File manager
     # spacedrive
-    # nautilus
-    dolphin
+    nautilus
 
     steam-run
 

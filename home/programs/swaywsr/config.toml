@@ -13,6 +13,7 @@ TelegramDesktop = "Telegram"
 "org.wezfurlong.wezterm" = "Wezterm"
 "org.kde.okular" = "Okular"
 "org.telegram.desktop" = "Telegram"
+"org.jetbrains.rider" = "Rider"
 
 [general]
 seperator = ""
