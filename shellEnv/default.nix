@@ -37,6 +37,11 @@ in {
         Host *.cloudlab.us
           ForwardAgent yes
           forwardX11Trusted yes
+
+        Host 123.207.234.4
+          User ubuntu
+          IdentityFile ~/.ssh/tencent_123.207.234.4_ed25519
+          IdentitiesOnly yes
       '';
       ".gdbinit".text = ''
         set auto-load safe-path /
